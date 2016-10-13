@@ -2,6 +2,8 @@
 
 ![React Storybook README addon](https://monosnap.com/file/WbXEZxDJfkh4aeg9LfxLflbT03P5ma.png)
 
+[Example Storybook with README addon](https://tuchk4.github.io/storybook-readme/)
+
 It is very similar with [Storybook Notes](https://github.com/kadirahq/storybook-addon-notes) addon but using Storybook Notes there is `<WithNotes notes={...}>` wrapper at each story function and thats why [Storybook Info](https://github.com/kadirahq/react-storybook-addon-info) always shows that [wrapper at info screen](http://take.ms/95YnX).
 
 Additional features:
