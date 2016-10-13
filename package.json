@@ -1,0 +1,38 @@
+{
+  "name": "storybook-readme",
+  "version": "1.0.0",
+  "description": "React sotrybook addon to show components README",
+  "dependencies": {
+    "github-markdown-css": "^2.4.1",
+    "highlight.js": "^9.7.0",
+    "react-highlight": "^0.9.0",
+    "react-markdown": "^2.4.2"
+  },
+  "devDependencies": {
+    "@kadira/react-storybook-addon-info": "^3.2.2",
+    "@kadira/storybook": "^2.21.0",
+    "babel-core": "^6.17.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "css-loader": "^0.25.0",
+    "json-loader": "^0.5.4",
+    "raw-loader": "^0.5.1",
+    "style-loader": "^0.13.1"
+  },
+  "peerDependencies": {
+    "@kadira/storybook-addons": "^1.5.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "prepublish": "npm run clear & babel -d ./ ./src",
+    "dev": "npm run clear & babel -d ./ ./src --watch",
+    "clear": "ls ./src | xargs rm -rf"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
