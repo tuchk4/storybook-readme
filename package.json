@@ -11,6 +11,7 @@
   "devDependencies": {
     "@kadira/react-storybook-addon-info": "^3.2.2",
     "@kadira/storybook": "^2.21.0",
+    "@kadira/storybook-addon-options": "^1.0.1",
     "babel-core": "^6.17.0",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",

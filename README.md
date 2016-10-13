@@ -1,9 +1,8 @@
 # React Storybook README addon
 
-![React Storybook README addon](https://monosnap.com/file/Zjasmpfzk0Bc1zhSzbiurGYM0ZjWYa.png)
+![React Storybook README addon](https://monosnap.com/file/WbXEZxDJfkh4aeg9LfxLflbT03P5ma.png)
 
-It is very similar with [Storybook Notes](https://github.com/kadirahq/storybook-addon-notes) addon.
-But using Storybook Notes there is *<WithNotes notes={...}* wrapper at each story function and thats why [Storybook Info](https://github.com/kadirahq/react-storybook-addon-info) also shows that [wrapper at info screen](http://take.ms/95YnX).
+It is very similar with [Storybook Notes](https://github.com/kadirahq/storybook-addon-notes) addon but using Storybook Notes there is `<WithNotes notes={...}>` wrapper at each story function and thats why [Storybook Info](https://github.com/kadirahq/react-storybook-addon-info) always shows that [wrapper at info screen](http://take.ms/95YnX).
 
 Additional features:
 
@@ -41,11 +40,9 @@ module.exports = {
 };
 ```
 
-Install all webpack loaders:
-
 `npm install --save-dev raw-loader json-loader style-loader css-loader`
 
-If you use [css modules](https://github.com/css-modules/css-modules) make sure you exclude *storybook-readme* from css modules loader. Something like this:
+If [css modules](https://github.com/css-modules/css-modules) are using make sure to exclude *storybook-readme* from css modules loader. Something like this:
 
 ```js
 module: {
@@ -65,7 +62,7 @@ Register addon at *.sotrybook/addons.js*
 import 'storybook-readme/register';
 ```
 
-Add addon at *.sotrybook/config.js*
+Set addon at *.sotrybook/config.js*
 
 ```js
 import { setAddon } from '@kadira/storybook';
@@ -77,7 +74,6 @@ setAddon(readmeAddon);
 
 ```
 
-Add stories using *addWithReadme* method.
 Then create your stories with the *.addWithReadme* API.
 
 ```js
@@ -90,7 +86,7 @@ storiesOf('Button', module)
 ```
 
 *addWithReadme* accepts README or array of README in markdown format.
-It is useful when you wrote higher order component and want to add its README and REAMDE of original component.
+It is useful when you develop higher order component and want to add its README and original component REAMDE.
 
 ```js
 import OriginalREADME from 'node_modules/component/README.md';
