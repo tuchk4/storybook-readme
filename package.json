@@ -12,6 +12,7 @@
     "@kadira/react-storybook-addon-info": "^3.2.2",
     "@kadira/storybook": "^2.21.0",
     "@kadira/storybook-addon-options": "^1.0.1",
+    "@kadira/storybook-deployer": "^1.2.0",
     "babel-core": "^6.17.0",
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
@@ -31,7 +32,8 @@
     "build-storybook": "build-storybook",
     "prepublish": "npm run clear & babel -d ./ ./src",
     "dev": "npm run clear & babel -d ./ ./src --watch",
-    "clear": "ls ./src | xargs rm -rf"
+    "clear": "ls ./src | xargs rm -rf",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "keywords": [],
   "author": "",
