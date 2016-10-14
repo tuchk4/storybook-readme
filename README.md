@@ -13,7 +13,6 @@ Additional features:
 * Code highliting
 * Accept multiple README (useful for [hoc component](https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e) - add component's and original component's REAMDE)
 * Looks like Github's README
-* Works correctly with [Storybook Info](https://github.com/kadirahq/react-storybook-addon-info) addon. There is no `<WithNotes notes={...}>` wrapper at component info screen.
 
 Also it very useful because most projects and components already have *README.md* files. Now it is easy to add them into your Storybook.
 
@@ -64,27 +63,14 @@ Register addon at *.sotrybook/addons.js*
 import 'storybook-readme/register';
 ```
 
-Set addon at *.sotrybook/config.js*
-
-```js
-import { setAddon } from '@kadira/storybook';
-import readmeAddon from 'storybook-readme/addon';
-
-setAddon(readmeAddon);
-
-...
-
-```
-
 Then create your stories with the *.addWithReadme* API.
 
 ```js
 import ButtonReadme from '../components/button/README.md';
+import withReadme from 'storybook-readme/with-readme';
 
 storiesOf('Button', module)
-  .addWithReadme('Default', ButtonReadme, () => (
-    <Button onClick={action('clicked')} label="Hello Button"/>
-  ))
+  .add('Default', withReadme(ButtonReadme, () => <Button onClick={action('clicked')} label="Hello Button"/>))
 ```
 
 *addWithReadme* accepts README or array of README in markdown format.
@@ -95,9 +81,10 @@ import OriginalREADME from 'node_modules/component/README.md';
 import hocREADME from '../components/component/README.md';
 
 storiesOf('Button', module)
-  .addWithReadme('Default', [OriginalREADME, hocREADME], () => (
-    <HocComponent />
-  ))
+  .add('Default', withReadme([OriginalREADME, hocREADME], () => {
+
+    return <Button onClick={action('clicked')} label="Hello Button"/>;
+  }));
 ```
 
 > Have a look at [this example](example/stories/index.js) stories to learn more about the `addWithReadme` API

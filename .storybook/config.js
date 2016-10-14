@@ -1,14 +1,12 @@
 import { configure, setAddon } from '@kadira/storybook';
 import { setOptions } from '@kadira/storybook-addon-options';
 import infoAddon from '@kadira/react-storybook-addon-info';
-import readmeAddon from '../src/addon';
 
 setAddon(infoAddon);
-setAddon(readmeAddon);
 
 setOptions({
   name: 'README addon',
-  url: 'http://bitbucket.loc/projects/JS/repos/pl-react-components/browse',
+  url: 'https://github.com/tuchk4/storybook-readme',
   goFullScreen: false,
   showLeftPanel: true,
   showDownPanel: true,

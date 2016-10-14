@@ -1,13 +1,10 @@
-dist
 node_modules
 .DS_Store
 .idea
 npm-debug.log
 /coverage
-jsconfig.json
-.vscode/
 /components
-addon.js
-constants.js
-readme-manager.js
-register.js
+/constants.js
+/readme-manager.js
+/register.js
+/with-readme.js
