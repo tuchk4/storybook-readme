@@ -11,7 +11,7 @@ Additional features:
 * Does not affect on *story function*. So [Storybook Info](https://github.com/kadirahq/react-storybook-addon-info) works correctly now.
 * 100% markdown support
 * Code highliting
-* Accept multiple README (useful for [hoc component](https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e) - add component's and original component's REAMDE)
+* Accept multiple README (useful for [hoc component](https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e) - add component's and original component's README)
 * Looks like Github's README
 
 Also it very useful because most projects and components already have *README.md* files. Now it is easy to add them into your Storybook.
@@ -74,7 +74,7 @@ storiesOf('Button', module)
 ```
 
 *addWithReadme* accepts README or array of README in markdown format.
-It is useful when you develop higher order component and want to add its README and original component REAMDE.
+It is useful when you develop higher order component and want to add its README and original component README.
 
 ```js
 import OriginalREADME from 'node_modules/component/README.md';
