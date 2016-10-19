@@ -66,7 +66,7 @@ export default class ReadmePanel extends React.Component {
     if (!readme.length) {
       return (
         <ReadmeContainer>
-          REAMDE.md was not added
+          README.md was not added
         </ReadmeContainer>
       );
     }
