@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
-import ReactMarkdown from 'react-markdown';
+import Markdown from './markdown';
 import { setReadme, getReadme } from '../readme-manager';
-import CodeBlock from './code-block';
 import ReadmeContainer from './readme-container';
 import { ADD_README_EVENT } from '../constants';
 
@@ -71,9 +70,9 @@ export default class ReadmePanel extends React.Component {
       );
     }
 
-    const renderers = {
-      CodeBlock
-    };
+    // const renderers = {
+    //   CodeBlock
+    // };
 
     return (
       <div>
@@ -81,9 +80,7 @@ export default class ReadmePanel extends React.Component {
           readme.map((md, index) => {
             return (
               <ReadmeContainer key={index}>
-                <ReactMarkdown
-                  renderers={renderers}
-                  source={md} />
+                <Markdown source={md} />
               </ReadmeContainer>
             )
           })

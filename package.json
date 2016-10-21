@@ -4,9 +4,8 @@
   "description": "React sotrybook addon to show components README",
   "dependencies": {
     "github-markdown-css": "^2.4.1",
-    "highlight.js": "^9.7.0",
-    "react-highlight": "^0.9.0",
-    "react-markdown": "^2.4.2"
+    "highlight.js": "=9.6.0",
+    "react-remarkable": "^1.1.1"
   },
   "devDependencies": {
     "@kadira/react-storybook-addon-info": "^3.2.2",

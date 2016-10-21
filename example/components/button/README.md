@@ -11,12 +11,16 @@ import Button form 'components/button';
 * **onClick** - click callback
 * **label** - button text
 
+| propName | propType | defaultValue | isRequired |
+|----------|----------|--------------|------------|
+| onClick  | func     | -            |            |
+| label    | string   | -            | +          |
+
 ### Roadmap
 
 #### Icons
 
 ```js
-
 import Button form 'components/button';
 
 render() {
