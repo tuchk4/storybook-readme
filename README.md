@@ -57,7 +57,7 @@ module: {
 
 ### Usage
 
-Register addon at *.sotrybook/addons.js*
+Register addon at *.storybook/addons.js*
 
 ```js
 import 'storybook-readme/register';
