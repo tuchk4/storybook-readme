@@ -70,10 +70,6 @@ export default class ReadmePanel extends React.Component {
       );
     }
 
-    // const renderers = {
-    //   CodeBlock
-    // };
-
     return (
       <div>
         {

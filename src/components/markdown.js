@@ -5,38 +5,16 @@ import Remarkable from 'react-remarkable';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/github.css';
 
-/**
- * Code/Approach that is commented - is better than highlight code
- * at componentDidMount.
- *
- * But somthing wrong with highlighting - does not hihglite jsx code blocks.
- */
+const highlight = (instance) => {
+  const domNode = ReactDOM.findDOMNode(instance);
+  const nodes = domNode.querySelectorAll('code');
 
-
-// const REMARKABLE_OPTIONS = {
-//   highlight: (str, lang) => {
-//     if (lang && hljs.getLanguage(lang)) {
-//      try {
-//        console.log(str, hljs.highlight(lang, str).value);
-//        return hljs.highlight(lang, str).value;
-//      } catch (err) {}
-//     }
-//
-//     try {
-//       return hljs.highlightAuto(str).value;
-//     } catch (err) {}
-//
-//     return ''; // use external default escaping
-//   }
-// }
-
-// const Markdown = (props) => {
-//   return <Remarkable source={props.source} options={REMARKABLE_OPTIONS} />;
-// };
-//
-// Markdown.propTypes = {
-//   source: PropTypes.string
-// };
+  if (nodes.length > 0) {
+    for (var i = 0; i < nodes.length; i=i+1) {
+      hljs.highlightBlock(nodes[i]);
+    }
+  }
+};
 
 export default class Markdown extends React.Component {
   static propTypes = {
@@ -44,14 +22,11 @@ export default class Markdown extends React.Component {
   };
 
   componentDidMount() {
-    const domNode = ReactDOM.findDOMNode(this);
-    const nodes = domNode.querySelectorAll('pre code');
+    highlight(this);
+  }
 
-    if (nodes.length > 0) {
-      for (var i = 0; i < nodes.length; i=i+1) {
-        hljs.highlightBlock(nodes[i]);
-      }
-    }
+  componentDidUpdate() {
+    highlight(this);
   }
 
   render() {

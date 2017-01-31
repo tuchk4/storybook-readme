@@ -1,33 +1,35 @@
 import React, { PropTypes } from 'react';
 import Button from '../button';
 
-const getBackground = ({ info, alert, important }) => {
+const getBackground = ({ info, alert, success }) => {
   if (info) {
     return 'blue';
   } else if (alert) {
     return 'red';
-  } else if (important) {
-    return 'yellow';
+  } else if (success) {
+    return 'green';
   }
 };
 
 const ColoredButton = ({
   info,
   alert,
-  important,
+  success,
+  style,
   ...props
 }) => {
-  const style = {
-    background: getBackground({ info, alert, important })
+  const newStyle = {
+    ...style,
+    color: getBackground({ info, alert, success })
   };
 
-  return <Button style={style} {...props}/>
+  return <Button style={newStyle} {...props}/>;
 };
 
 ColoredButton.propTypes = {
   info: PropTypes.bool,
   alert: PropTypes.bool,
-  important: PropTypes.bool,
+  success: PropTypes.bool,
   ...Button.propTypes
 };
 

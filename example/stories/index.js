@@ -13,7 +13,7 @@ import HeaderReadme from '../components/header/README.md';
 storiesOf('Button', module)
   .addWithInfo('Default', withReadme(ButtonReadme, () => <Button onClick={action('clicked')} label="Hello Button"/>))
   .addWithInfo('Colored', withReadme([ColoredButtonReadme, ButtonReadme], () => (
-    <ColoredButton important onClick={action('clicked')} label="Hello Button"/>
+    <ColoredButton success onClick={action('clicked')} label="Hello Button"/>
   )));
 
 storiesOf('Header', module)

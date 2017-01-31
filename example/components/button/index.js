@@ -2,9 +2,10 @@ import React, { PropTypes } from 'react';
 
 const Button = ({
   onClick,
-  label
+  label,
+  style
 }) => {
-  return <button onClick={onClick}>{label}</button>;
+  return <button style={style} onClick={onClick}>{label}</button>;
 };
 
 Button.propTypes = {
