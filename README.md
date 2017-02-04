@@ -73,8 +73,10 @@ storiesOf('Button', module)
   .add('Default', withReadme(ButtonReadme, () => <Button onClick={action('clicked')} label="Hello Button"/>))
 ```
 
-*addWithReadme* accepts README or array of README in markdown format.
-It is useful when you develop higher order component and want to add its README and original component README.
+#### Use as Higher Order Component
+
+*withReadme(readme, story)* accepts README or array of README in markdown format.
+Multiple REAMDE is useful when you develop higher order component and want to add its README and original component README.
 
 ```js
 import OriginalREADME from 'node_modules/component/README.md';
@@ -85,6 +87,21 @@ storiesOf('Button', module)
 
     return <Button onClick={action('clicked')} label="Hello Button"/>;
   }));
+```
+
+#### Use as decorator
+
+*withReadme(readme)* Pass only first argument - README or array of README in markdown format.
+In this way code of stories is more clean.
+
+```js
+import ButtonREADME from 'node_modules/component/README.md';
+
+storiesOf('Button', module)
+  .addDecorator(withReadme(ButtonREADME))
+  .add('Default', () => {
+    return <Button onClick={action('clicked')} label="Hello Button"/>;
+  });
 ```
 
 > Have a look at [this example](example/stories/index.js) stories to learn more about the `addWithReadme` API
