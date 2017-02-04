@@ -17,5 +17,6 @@ storiesOf('Button', module)
   )));
 
 storiesOf('Header', module)
-  .addWithInfo('Default', withReadme(HeaderReadme, () => <Header>Hello World</Header>))
-  .addWithInfo('Important', withReadme(HeaderReadme, () => <Header important>Hello World</Header>))
+  .addDecorator(withReadme(HeaderReadme))
+  .addWithInfo('Default',  () => <Header>Hello World</Header>)
+  .addWithInfo('Important', () => <Header important>Hello World</Header>)
