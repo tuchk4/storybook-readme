@@ -2,12 +2,10 @@ import React from 'react';
 import addons from '@kadira/storybook-addons';
 import { ADD_README_EVENT } from './constants';
 
-const channel = addons.getChannel();
-
 const withReadme = function(readme, storyFn = null) {
 
   const emitAddReadme = ({ kind, story }) => {
-    channel.emit(ADD_README_EVENT, {
+    addons.getChannel().emit(ADD_README_EVENT, {
       kind,
       storyName: story,
       readme
