@@ -1,5 +1,9 @@
 # React Storybook README addon
 
+## Nerest plans
+
+* Make addon work correctly without additional webpack configuration
+
 ![React Storybook README addon](https://monosnap.com/file/WbXEZxDJfkh4aeg9LfxLflbT03P5ma.png)
 
 [Example Storybook with README addon](https://tuchk4.github.io/storybook-readme/)
