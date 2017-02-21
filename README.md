@@ -1,6 +1,6 @@
 # React Storybook README addon
 
-## Nerest plans
+## Nearest plans
 
 * Make addon work correctly without additional webpack configuration
 
