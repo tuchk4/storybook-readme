@@ -7,7 +7,7 @@ import 'highlight.js/styles/github.css';
 
 const highlight = (instance) => {
   const domNode = ReactDOM.findDOMNode(instance);
-  const nodes = domNode.querySelectorAll('code');
+  const nodes = domNode.querySelectorAll('pre code');
 
   if (nodes.length > 0) {
     for (var i = 0; i < nodes.length; i=i+1) {
