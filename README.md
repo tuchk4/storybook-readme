@@ -53,7 +53,10 @@ If [css modules](https://github.com/css-modules/css-modules) are using make sure
 module: {
   loaders: [{
     test: /\.css$/,
-    exclude: 'storybook-readme',
+    exclude: [
+      /highlight\.js\/styles.+\.css$/,
+      /github-markdown-css\/.+\.css$/,
+    ],
     loader: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss'
   }]
 }
