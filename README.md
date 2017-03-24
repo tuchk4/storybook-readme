@@ -30,33 +30,12 @@ module.exports = {
     loaders: [{
       test: /\.md$/,
       loader: "raw"
-    }, {
-      test: /\.json$/,
-      loader: 'json'
-    }, {
-      test: /\.css$/,
-      loader: 'style!css'
     }]
   }
 };
 ```
 
-`npm install --save-dev raw-loader json-loader style-loader css-loader`
-
-If [css modules](https://github.com/css-modules/css-modules) are using make sure to exclude *storybook-readme* from css modules loader. Something like this:
-
-```js
-module: {
-  loaders: [{
-    test: /\.css$/,
-    exclude: [
-      /highlight\.js\/styles.+\.css$/,
-      /github-markdown-css\/.+\.css$/,
-    ],
-    loader: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss'
-  }]
-}
-```
+`npm install --save-dev raw-loader`
 
 ### Usage
 
