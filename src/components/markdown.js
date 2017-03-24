@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import Remarkable from 'react-remarkable';
 import hljs from 'highlight.js';
-import 'highlight.js/styles/github.css';
+import './highlight-github-css';
 
 const highlight = (instance) => {
   const domNode = ReactDOM.findDOMNode(instance);

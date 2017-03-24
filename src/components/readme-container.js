@@ -1,5 +1,5 @@
 import React from 'react';
-import 'github-markdown-css';
+import './github-markdown-css';
 
 const markdownContainerStyle = {
   margin: '16px'
