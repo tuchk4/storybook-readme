@@ -8,5 +8,5 @@ import Header form 'components/header';
 
 ### Properties
 
-* **important**
-* **alert**
+* `important`
+* `alert`

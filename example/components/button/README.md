@@ -8,8 +8,8 @@ import Button form 'components/button';
 
 ### Properties
 
-* **onClick** - click callback
-* **label** - button text
+* `onClick` - click callback
+* `label` - button text
 
 | propName | propType | defaultValue | isRequired |
 |----------|----------|--------------|------------|
@@ -33,7 +33,7 @@ render() {
 
 #### Value
 
-Add *value* property that will be available at all event callback. Helps to prevent numbers of bind usage
+Add `value` property that will be available at all event callback. Helps to prevent numbers of bind usage
 
 For example:
 
