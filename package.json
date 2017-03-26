@@ -2,6 +2,12 @@
   "name": "storybook-readme",
   "version": "2.0.1",
   "description": "React storybook addon to show components README",
+  "homepage": "https://github.com/tuchk4/storybook-readme",
+  "bugs": "https://github.com/tuchk4/storybook-readme/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tuchk4/storybook-readme"
+  },
   "dependencies": {
     "highlight.js": "^9.9.0",
     "react-remarkable": "^1.1.1"
