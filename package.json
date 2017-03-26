@@ -1,6 +1,6 @@
 {
   "name": "storybook-readme",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "React storybook addon to show components README",
   "dependencies": {
     "highlight.js": "^9.9.0",
