@@ -1,5 +1,5 @@
 // Took from highlight.js/styles/github.css
-const styles = `
+const styles = String.raw`
   /*
    github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   */
