@@ -1,26 +1,34 @@
 {
   "name": "storybook-readme",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "React storybook addon to show components README",
+  "homepage": "https://github.com/tuchk4/storybook-readme",
+  "bugs": "https://github.com/tuchk4/storybook-readme/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tuchk4/storybook-readme"
+  },
   "dependencies": {
     "highlight.js": "^9.9.0",
     "react-remarkable": "^1.1.1"
   },
   "devDependencies": {
-    "@kadira/react-storybook-addon-info": "^3.3.0",
-    "@kadira/storybook": "^2.35.3",
-    "@kadira/storybook-addon-options": "^1.0.1",
-    "@kadira/storybook-deployer": "^1.2.0",
+    "@storybook/addon-info": "^3.0.0-alpha.0",
+    "@storybook/addon-options": "^3.0.0-alpha.0",
+    "@storybook/react": "^3.0.0-alpha.0",
+    "babel-cli": "^6.24.1",
     "babel-core": "^6.22.1",
     "babel-preset-react": "^6.22.0",
     "babel-preset-stage-0": "^6.22.0",
-    "css-loader": "^0.26.1",
+    "css-loader": "^0.28.2",
     "json-loader": "^0.5.4",
     "raw-loader": "^0.5.1",
-    "style-loader": "^0.13.1"
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "style-loader": "^0.18.0"
   },
   "peerDependencies": {
-    "@kadira/storybook-addons": "^1.5.0",
+    "@storybook/addons": "^3.0.0-alpha.0",
     "react": "^15.3.2",
     "react-dom": "^15.3.2"
   },

@@ -1,5 +1,5 @@
 import React from 'react';
-import addons from '@kadira/storybook-addons';
+import addons from '@storybook/addons';
 import { ADD_README_EVENT } from './constants';
 
 const withReadme = function(readme, storyFn = null) {
