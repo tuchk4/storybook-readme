@@ -1,5 +1,5 @@
 import React from 'react';
-import addons from '@kadira/storybook-addons';
+import addons from '@storybook/addons';
 import ReadmePanel from './components/readme-panel';
 
 const ADDON_ID = 'tuhck4/readme';
