@@ -4,11 +4,11 @@
 
 [Example Storybook with README addon](https://tuchk4.github.io/storybook-readme/)
 
-It is very similar with [Storybook Notes](https://github.com/kadirahq/storybook-addon-notes) addon but using Storybook Notes there is `<WithNotes notes={...}>` wrapper at each story function and thats why [Storybook Info](https://github.com/kadirahq/react-storybook-addon-info) always shows that [wrapper at info screen](http://take.ms/95YnX).
+It is very similar with [Storybook Notes](https://github.com/storybooks/storybook-addon-notes) addon but using Storybook Notes there is `<WithNotes notes={...}>` wrapper at each story function and thats why [Storybook Info](https://github.com/storybooks/react-storybook-addon-info) always shows that [wrapper at info screen](http://take.ms/95YnX).
 
 Additional features:
 
-* Does not affect on *story function*. So [Storybook Info](https://github.com/kadirahq/react-storybook-addon-info) works correctly now.
+* Does not affect on *story function*. So [Storybook Info](https://github.com/storybooks/react-storybook-addon-info) works correctly now.
 * 100% markdown support
 * Code highliting
 * Accept multiple README (useful for [hoc component](https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e) - add component's and original component's README)
@@ -16,7 +16,7 @@ Additional features:
 
 Also it very useful because most projects and components already have *README.md* files. Now it is easy to add them into your Storybook.
 
-Stories will be added with *.addWithInfo* method if [React Storybook Info Addon](https://github.com/kadirahq/react-storybook-addon-info) is installed.
+Stories will be added with *.addWithInfo* method if [React Storybook Info Addon](https://github.com/storybooks/react-storybook-addon-info) is installed.
 
 ### Install
 
