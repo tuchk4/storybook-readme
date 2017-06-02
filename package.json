@@ -12,6 +12,13 @@
     "highlight.js": "^9.9.0",
     "react-remarkable": "^1.1.1"
   },
+  "files": [
+    "components",
+    "constants.js",
+    "readme-manager.js",
+    "register.js",
+    "with-readme.js"
+  ],
   "devDependencies": {
     "@storybook/addon-info": "^3.0.0-alpha.0",
     "@storybook/addon-options": "^3.0.0-alpha.0",
