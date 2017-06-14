@@ -1,6 +1,6 @@
 {
   "name": "storybook-readme",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "React storybook addon to show components README",
   "homepage": "https://github.com/tuchk4/storybook-readme",
   "bugs": "https://github.com/tuchk4/storybook-readme/issues",
@@ -10,9 +10,6 @@
   },
   "dependencies": {
     "highlight.js": "^9.9.0",
-    "husky": "^0.13.4",
-    "lint-staged": "^3.6.1",
-    "prettier": "^1.4.4",
     "react-remarkable": "^1.1.1",
     "string-raw": "^1.0.1"
   },
@@ -36,7 +33,10 @@
     "raw-loader": "^0.5.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "style-loader": "^0.18.0"
+    "style-loader": "^0.18.0",
+    "husky": "^0.13.4",
+    "lint-staged": "^3.6.1",
+    "prettier": "^1.4.4"
   },
   "peerDependencies": {
     "@storybook/addons": "^3.0.0-alpha.0",
@@ -52,7 +52,7 @@
     "clear": "ls ./src | xargs rm -rf",
     "deploy-storybook": "storybook-to-ghpages",
     "precommit": "lint-staged",
-   "format": "prettier --trailing-comma es5 --single-quote --write 'src/**/*.js'"
+    "format": "prettier --trailing-comma es5 --single-quote --write 'src/**/*.js'"
   },
   "keywords": [],
   "author": "",
