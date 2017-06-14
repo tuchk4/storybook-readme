@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "highlight.js": "^9.9.0",
-    "react-remarkable": "^1.1.1"
+    "react-remarkable": "^1.1.1",
+    "string-raw": "^1.0.1"
   },
   "files": [
     "components",

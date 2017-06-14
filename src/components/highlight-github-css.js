@@ -1,5 +1,7 @@
+import stringRaw from 'string-raw';
+
 // Took from highlight.js/styles/github.css
-const styles = String.raw`
+const styles = stringRaw`
   /*
    github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   */

@@ -4078,6 +4078,10 @@ strict-uri-encode@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/strict-uri-encode/-/strict-uri-encode-1.1.0.tgz#279b225df1d582b1f54e65addd4352e18faa0713"
 
+string-raw@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/string-raw/-/string-raw-1.0.1.tgz#01be2665a1cfa2c57520c910698f6ca276a4c726"
+
 string-width@^1.0.1, string-width@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-1.0.2.tgz#118bdf5b8cdc51a2a7e70d211e07e2b0b9b107d3"
