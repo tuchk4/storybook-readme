@@ -12,6 +12,6 @@ export const getReadme = (kind, storyName) => {
 };
 
 export const setReadme = (kind, storyName, readme = []) => {
-  const id = getReadmeId(kind, storyName)
+  const id = getReadmeId(kind, storyName);
   store.set(id, Array.isArray(readme) ? readme : [readme]);
 };

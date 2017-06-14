@@ -5,12 +5,12 @@ import Remarkable from 'react-remarkable';
 import hljs from 'highlight.js';
 import './highlight-github-css';
 
-const highlight = (instance) => {
+const highlight = instance => {
   const domNode = ReactDOM.findDOMNode(instance);
   const nodes = domNode.querySelectorAll('pre code');
 
   if (nodes.length > 0) {
-    for (var i = 0; i < nodes.length; i=i+1) {
+    for (var i = 0; i < nodes.length; i = i + 1) {
       hljs.highlightBlock(nodes[i]);
     }
   }
@@ -18,7 +18,7 @@ const highlight = (instance) => {
 
 export default class Markdown extends React.Component {
   static propTypes = {
-    source: PropTypes.string
+    source: PropTypes.string,
   };
 
   componentDidMount() {
@@ -30,6 +30,6 @@ export default class Markdown extends React.Component {
   }
 
   render() {
-    return <Remarkable source={this.props.source}/>;
+    return <Remarkable source={this.props.source} />;
   }
-};
+}

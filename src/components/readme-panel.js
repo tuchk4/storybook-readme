@@ -8,11 +8,11 @@ export default class ReadmePanel extends React.Component {
   static propTypes = {
     getReadme: PropTypes.func,
     onStory: PropTypes.func,
-    channel: PropTypes.object
+    channel: PropTypes.object,
   };
 
   state = {
-    readme: []
+    readme: [],
   };
 
   waitForReadme = null;
@@ -23,10 +23,11 @@ export default class ReadmePanel extends React.Component {
     this.props.channel.on(ADD_README_EVENT, ({ kind, storyName, readme }) => {
       setReadme(kind, storyName, readme);
 
-      if (this.waitForReadme
-          && this.waitForReadme[0] == kind
-          && this.waitForReadme[1] == storyName) {
-
+      if (
+        this.waitForReadme &&
+        this.waitForReadme[0] == kind &&
+        this.waitForReadme[1] == storyName
+      ) {
         this.showReadme(kind, storyName);
         this.waitForReadme = null;
       }
@@ -49,7 +50,7 @@ export default class ReadmePanel extends React.Component {
     }
 
     this.setState({
-      readme
+      readme,
     });
   }
 
@@ -72,15 +73,13 @@ export default class ReadmePanel extends React.Component {
 
     return (
       <div>
-        {
-          readme.map((md, index) => {
-            return (
-              <ReadmeContainer key={index}>
-                <Markdown source={md} />
-              </ReadmeContainer>
-            )
-          })
-        }
+        {readme.map((md, index) => {
+          return (
+            <ReadmeContainer key={index}>
+              <Markdown source={md} />
+            </ReadmeContainer>
+          );
+        })}
       </div>
     );
   }
