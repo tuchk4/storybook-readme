@@ -27,9 +27,9 @@ Stories will be added with *.addWithInfo* method if [React Storybook Info Addon]
 ```js
 module.exports = {
   module: {
-    loaders: [{
+    rules: [{
       test: /\.md$/,
-      loader: "raw"
+      use: "raw-loader"
     }]
   }
 };
