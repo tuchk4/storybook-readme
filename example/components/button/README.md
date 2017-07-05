@@ -3,7 +3,7 @@
 ### Usage
 
 ```js
-import Button form 'components/button';
+import Button from 'components/button';
 ```
 
 ### Properties
@@ -21,7 +21,7 @@ import Button form 'components/button';
 #### Icons
 
 ```js
-import Button form 'components/button';
+import Button from 'components/button';
 
 render() {
   return (

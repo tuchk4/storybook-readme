@@ -3,7 +3,7 @@
 ### Usage
 
 ```js
-import Button form 'components/colored-button';
+import Button from 'components/colored-button';
 ```
 
 ### Properties

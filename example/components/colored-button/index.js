@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import Button from '../button';
 
 const getBackground = ({ info, alert, success }) => {
@@ -11,26 +12,20 @@ const getBackground = ({ info, alert, success }) => {
   }
 };
 
-const ColoredButton = ({
-  info,
-  alert,
-  success,
-  style,
-  ...props
-}) => {
+const ColoredButton = ({ info, alert, success, style, ...props }) => {
   const newStyle = {
     ...style,
-    color: getBackground({ info, alert, success })
+    color: getBackground({ info, alert, success }),
   };
 
-  return <Button style={newStyle} {...props}/>;
+  return <Button style={newStyle} {...props} />;
 };
 
 ColoredButton.propTypes = {
   info: PropTypes.bool,
   alert: PropTypes.bool,
   success: PropTypes.bool,
-  ...Button.propTypes
+  ...Button.propTypes,
 };
 
 export default ColoredButton;

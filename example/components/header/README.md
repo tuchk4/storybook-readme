@@ -3,7 +3,7 @@
 ### Usage
 
 ```js
-import Header form 'components/header';
+import Header from 'components/header';
 ```
 
 ### Properties
