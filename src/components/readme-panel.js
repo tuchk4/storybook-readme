@@ -1,7 +1,8 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import Markdown from './markdown';
-import { setReadme, getReadme } from '../readme-manager';
 import ReadmeContainer from './readme-container';
+import { setReadme, getReadme } from '../readme-manager';
 import { ADD_README_EVENT } from '../constants';
 
 export default class ReadmePanel extends React.Component {

@@ -1,9 +1,9 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
-
 import Remarkable from 'react-remarkable';
-import hljs from 'highlight.js';
-import './highlight-github-css';
+import './prism';
+import './prism.theme';
 
 const highlight = instance => {
   const domNode = ReactDOM.findDOMNode(instance);
@@ -11,7 +11,13 @@ const highlight = instance => {
 
   if (nodes.length > 0) {
     for (var i = 0; i < nodes.length; i = i + 1) {
-      hljs.highlightBlock(nodes[i]);
+      console.log(nodes[i].classList);
+      if (nodes[i].classList.contains('language-js')) {
+        nodes[i].classList.remove('language-js');
+        nodes[i].classList.add('language-jsx');
+      }
+
+      Prism.highlightElement(nodes[i]);
     }
   }
 };

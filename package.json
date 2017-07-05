@@ -9,7 +9,7 @@
     "url": "git+https://github.com/tuchk4/storybook-readme"
   },
   "dependencies": {
-    "highlight.js": "^9.9.0",
+    "prop-types": "^15.5.10",
     "react-remarkable": "^1.1.1",
     "string-raw": "^1.0.1"
   },
@@ -24,19 +24,20 @@
     "@storybook/addon-info": "^3.0.0-alpha.0",
     "@storybook/addon-options": "^3.0.0-alpha.0",
     "@storybook/react": "^3.0.0-alpha.0",
+    "@storybook/storybook-deployer": "^2.0.0",
     "babel-cli": "^6.24.1",
     "babel-core": "^6.22.1",
     "babel-preset-react": "^6.22.0",
     "babel-preset-stage-0": "^6.22.0",
     "css-loader": "^0.28.2",
+    "husky": "^0.13.4",
     "json-loader": "^0.5.4",
+    "lint-staged": "^3.6.1",
+    "prettier": "^1.4.4",
     "raw-loader": "^0.5.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
-    "style-loader": "^0.18.0",
-    "husky": "^0.13.4",
-    "lint-staged": "^3.6.1",
-    "prettier": "^1.4.4"
+    "style-loader": "^0.18.0"
   },
   "peerDependencies": {
     "@storybook/addons": "^3.0.0-alpha.0",
