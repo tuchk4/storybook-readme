@@ -1,5 +1,7 @@
 # React Storybook README addon
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/tuchk4/storybook-readme.svg)](https://greenkeeper.io/)
+
 ![React Storybook README addon](https://monosnap.com/file/WbXEZxDJfkh4aeg9LfxLflbT03P5ma.png)
 
 [Example Storybook with README addon](https://tuchk4.github.io/storybook-readme/)
