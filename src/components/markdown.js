@@ -11,7 +11,6 @@ const highlight = instance => {
 
   if (nodes.length > 0) {
     for (var i = 0; i < nodes.length; i = i + 1) {
-      console.log(nodes[i].classList);
       if (nodes[i].classList.contains('language-js')) {
         nodes[i].classList.remove('language-js');
         nodes[i].classList.add('language-jsx');
