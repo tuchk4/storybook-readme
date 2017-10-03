@@ -2,7 +2,7 @@
 
 ![Storybook README addon](https://tuchk4.tinytake.com/media/6074cc?filename=1507031891423_03-10-2017-14-58-09.png&sub_type=thumbnail_preview&type=attachment&width=700&height=542&_felix_session_id=53f589ad3ebd6ae15ad9850b6bb20044&salt=MjAwMDAyNF82MzIxMzU2)
 
-[Example Storybook with README addon](https://tuchk4.github.io/storybook-readme/)
+[Example Storybook with README addon](https://tuchk4.github.io/storybook-readme/?knob-alert=false&knob-success=false&knob-label=Hello%20Im%20Button&selectedKind=Button&selectedStory=Default&full=0&down=1&left=1&panelRight=1&downPanel=storybooks%2Fstorybook-addon-knobs)
 
 It is very similar with [Storybook Notes](https://github.com/storybooks/storybook/tree/master/addons/notes) addon but using Storybook Notes there is `<WithNotes notes={...}>` wrapper at each story function and thats why [Storybook Info](https://github.com/storybooks/storybook/tree/master/addons/info) always shows that [wrapper at info screen](http://take.ms/95YnX).
 
@@ -54,10 +54,10 @@ import 'storybook-readme/register';
 
 Then create your stories with the *withReadme* or *withDocs* API.
 
-**withDocs** - Add README around the story component at the main panel. [Example withDocs](https://tuchk4.github.io/storybook-readme/?selectedKind=Header&selectedStory=Default&downPanel=REACT_STORYBOOK%2Freadme%2Fpanel)
-**withReadme** - Add README to the storybook panels. [Example withReadme](https://tuchk4.github.io/storybook-readme/?selectedKind=Content&selectedStory=Default&downPanel=REACT_STORYBOOK%2Freadme%2Fpanel)
+- *withDocs* - Add README around the story component at the main panel. [Example withDocs](https://tuchk4.github.io/storybook-readme/?knob-alert=false&knob-importnat=false&selectedKind=Header&selectedStory=Default&full=0&down=1&left=1&panelRight=1&downPanel=REACT_STORYBOOK%2Freadme%2Fpanel)
+- *withReadme* - Add README to the storybook panels. [Example withReadme](https://tuchk4.github.io/storybook-readme/?knob-loading=false&knob-error=&selectedKind=Content&selectedStory=Default&full=0&down=1&left=1&panelRight=1&downPanel=REACT_STORYBOOK%2Freadme%2Fpanel)
 
-It is possible to combine **withDocs** and **withReadme** - [Example combined APIs](https://tuchk4.github.io/storybook-readme/?selectedKind=Button&selectedStory=Default&downPanel=REACT_STORYBOOK%2Freadme%2Fpanel)
+It is possible to combine *withDocs* and *withReadme* - [Example combined APIs](https://tuchk4.github.io/storybook-readme/?knob-alert=false&knob-success=false&knob-label=Hello%20Im%20Button&selectedKind=Button&selectedStory=Default&full=0&down=1&left=1&panelRight=1&downPanel=REACT_STORYBOOK%2Freadme%2Fpanel)
 
 ```js
 import ButtonReadme from '../components/button/README.md';
@@ -179,6 +179,6 @@ will render next story:
 
 ![withDocs and splitter](https://tuchk4.tinytake.com/media/6074bf?filename=1507031753381_03-10-2017-14-55-51.png&sub_type=thumbnail_preview&type=attachment&width=700&height=422&_felix_session_id=53f589ad3ebd6ae15ad9850b6bb20044&salt=MjAwMDAxMV82MzIxMzQz)
 
-Have a look on [this REAMDE](example/components/button/DOCS.md) and [live story exmaple](https://tuchk4.github.io/storybook-readme/?selectedKind=Button&selectedStory=Default&downPanel=REACT_STORYBOOK%2Freadme%2Fpanel).
+Have a look on this [REAMDE](example/components/button/DOCS.md) and [live story exmaple](https://tuchk4.github.io/storybook-readme/?knob-alert=false&knob-success=false&knob-label=Hello%20Im%20Button&selectedKind=Button&selectedStory=Default&full=0&down=1&left=1&panelRight=1&downPanel=REACT_STORYBOOK%2Freadme%2Fpanel).
 
-> Have a look at [this example](example/stories/index.js) stories to learn more about the `withReadme` and `withDocs` API.
+More examples at [this example](example/stories/index.js) stories to learn more about the `withReadme` and `withDocs` API.
