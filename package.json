@@ -1,6 +1,6 @@
 {
   "name": "storybook-readme",
-  "version": "3.0.6",
+  "version": "3.1.0-beta2",
   "description": "React storybook addon to show components README",
   "homepage": "https://github.com/tuchk4/storybook-readme",
   "bugs": "https://github.com/tuchk4/storybook-readme/issues",
@@ -17,7 +17,8 @@
     "constants.js",
     "readme-manager.js",
     "register.js",
-    "with-readme.js"
+    "with-readme.js",
+    "with-docs.js"
   ],
   "devDependencies": {
     "@storybook/addon-info": "^3.2.12",
