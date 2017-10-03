@@ -1,25 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-const Header = ({ alert, important, children }) => {
-  const style = {};
-
-  if (alert) {
-    style.color = 'red';
-  }
-
-  return (
-    <h1 style={style}>
-      {children}
-      {important ? '!' : ''}
-    </h1>
-  );
-};
+const Header = styled.h1`
+  color: ${props => (props.alert ? 'red' : 'black')};
+  border-bottom: ${props => (props.important ? '2px solid #cc0000' : 'none')};
+  text-transform: ${props => (props.uppercase ? 'uppercase' : 'none')};
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+`;
 
 Header.propTypes = {
   important: PropTypes.bool,
   alert: PropTypes.bool,
-  children: PropTypes.node.isRequired,
 };
 
 Header.defaultProps = {

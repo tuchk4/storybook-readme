@@ -1,10 +1,12 @@
-## Button component
+## Button
 
 ### Usage
 
 ```js
 import Button from 'components/button';
 ```
+
+<!-- STORY -->
 
 ### Properties
 
@@ -15,6 +17,9 @@ import Button from 'components/button';
 |----------|----------|--------------|------------|
 | onClick  | func     | -            |            |
 | label    | string   | -            | +          |
+| alert    | boolean   | false           | -          |
+| success    | boolean   | false           | -          |
+
 
 ### Roadmap
 

@@ -1,4 +1,4 @@
-## Header
+## Header Advanced usage
 
 <!-- STORY -->
 
@@ -10,5 +10,4 @@ import Header from 'components/header';
 
 ### Properties
 
-* `important`
-* `alert`
+* `uppercase` - Make all letters uppercased

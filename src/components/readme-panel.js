@@ -1,9 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Markdown from './markdown';
 import ReadmeContainer from './readme-container';
-import { setReadme, getReadme } from '../readme-manager';
 import { ADD_README_EVENT } from '../constants';
+import { setReadme, getReadme } from '../readme-manager';
+
+const markdownContainerStyle = {
+  margin: '16px',
+};
 
 export default class ReadmePanel extends React.Component {
   static propTypes = {
@@ -37,7 +40,6 @@ export default class ReadmePanel extends React.Component {
 
   componentDidMount() {
     const { onStory } = this.props;
-
     this.stopListeningOnStory = onStory((kind, storyName) => {
       this.showReadme(kind, storyName);
     });
@@ -66,22 +68,13 @@ export default class ReadmePanel extends React.Component {
 
     if (!readme.length) {
       return (
-        <ReadmeContainer>
-          README.md was not added
-        </ReadmeContainer>
+        <ReadmeContainer
+          style={markdownContainerStyle}
+          markdown={['README.md was not added']}
+        />
       );
     }
 
-    return (
-      <div>
-        {readme.map((md, index) => {
-          return (
-            <ReadmeContainer key={index}>
-              <Markdown source={md} />
-            </ReadmeContainer>
-          );
-        })}
-      </div>
-    );
+    return <ReadmeContainer style={markdownContainerStyle} markdown={readme} />;
   }
 }

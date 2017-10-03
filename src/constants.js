@@ -1,1 +1,1 @@
-export const ADD_README_EVENT = 'tuhck4/readme/add';
+export const ADD_README_EVENT = 'REACT_STORYBOOK/readme/add';
