@@ -61,8 +61,7 @@ It is possible to combine *withDocs* and *withReadme* - [Example combined APIs](
 
 ```js
 import ButtonReadme from '../components/button/README.md';
-import withReadme from 'storybook-readme/with-readme';
-import withDocs from 'storybook-readme/with-docs';
+import { withReadme, withDocs } from 'storybook-readme';
 
 storiesOf('Button', module)
   .add('Default', withReadme(ButtonReadme, () => <Button onClick={action('clicked')} label="Hello Button"/>))
@@ -81,7 +80,7 @@ storiesOf('Content', module)
 
 **withReadme** example:
 ```js
-import withReadme from 'storybook-readme/with-readme';
+import { withReadme } from 'storybook-readme';
 import OriginalButtonREADME from 'node_modules/components/button/README.md';
 import ButtonREADME from '../components/components/button/README.md';
 
@@ -94,7 +93,7 @@ storiesOf('Button', module)
 
 **withDocs** example:
 ```js
-import withDocs from 'storybook-readme/with-docs';
+import { withDocs } from 'storybook-readme';
 import ButtonREADME from '../components/components/button/README.md';
 
 storiesOf('Button', module)
@@ -115,7 +114,7 @@ In this way code of stories is more clean.
 
 **withReadme** example:
 ```js
-import withReadme from 'storybook-readme/with-readme';
+import { withReadme } from 'storybook-readme';
 import OriginalButtonREADME from 'node_modules/components/button/README.md';
 import ButtonREADME from '../components/components/button/README.md';
 
@@ -129,7 +128,7 @@ storiesOf('Button', module)
 
 **withDocs** example:
 ```js
-import withDocs from 'storybook-readme/with-docs';
+import { withDocs } from 'storybook-readme';
 import ButtonREADME from 'node_modules/component/README.md';
 
 storiesOf('Button', module)
@@ -149,7 +148,7 @@ Will appear at all stories that uses `withDocs` api.
 > Note: Should be added before all stories initialization.
 
 ```js
-import withDocs from 'storybook-readme/with-docs';
+import { withDocs } from 'storybook-readme';
 import DocsFooterReadme from 'components/DOCS_FOOTER.md';
 
 withDocs.addFooter(DocsFooterReadme);
