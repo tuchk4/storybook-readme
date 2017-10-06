@@ -4,4 +4,9 @@ node_modules
 npm-debug.log
 /coverage
 /components
-/*.js
+/constants.js
+/readme-manager.js
+/register.js
+/with-readme.js
+/with-docs.js
+/index.js

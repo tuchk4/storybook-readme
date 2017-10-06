@@ -14,8 +14,13 @@
     "string-raw": "^1.0.1"
   },
   "files": [
-    "/components",
-    "/*.js"
+    "components",
+    "constants.js",
+    "readme-manager.js",
+    "register.js",
+    "with-readme.js",
+    "with-docs.js",
+    "index.js"
   ],
   "devDependencies": {
     "@storybook/addon-info": "^3.2.12",
