@@ -1,8 +1,7 @@
 import React from 'react';
 import { storiesOf, action, linkTo } from '@storybook/react';
 import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
-import withReadme from '../../src/with-readme';
-import withDocs from '../../src/with-docs';
+import { withReadme, withDocs } from '../../src';
 
 import Button from '../components/Button';
 import Content from '../components/Content';
