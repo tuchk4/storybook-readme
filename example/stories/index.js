@@ -15,11 +15,13 @@ import ContentReadme from '../components/Content/README.md';
 import HeaderReadme from '../components/Header/README.md';
 import HeaderAdvancedReadme from '../components/Header/ADVANCED.md';
 
+const withDocsInstance = withDocs();
+
 withDocs.addFooter(CommonFooterDocs);
 
 storiesOf('Button', module)
   .addDecorator(withKnobs)
-  .addDecorator(withDocs(ButtonDocs))
+  .addDecorator(withDocsInstance(ButtonDocs))
   .addDecorator(withReadme(ButtonReadme))
   .addWithInfo('Default', () => (
     <Button
@@ -41,7 +43,7 @@ storiesOf('Content', module)
 
 storiesOf('Header', module)
   .addDecorator(withKnobs)
-  .addDecorator(withDocs([HeaderReadme, HeaderAdvancedReadme]))
+  .addDecorator(withDocsInstance([HeaderReadme, HeaderAdvancedReadme]))
   .addWithInfo('Default', () => (
     <Header
       alert={boolean('alert', false)}
