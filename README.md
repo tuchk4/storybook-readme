@@ -1,5 +1,7 @@
 # Storybook README addon
 
+> Note: `withDocs` feature is not released yet. It is available only at `3.1.0-beta2`
+
 ![Storybook README addon](https://tuchk4.tinytake.com/media/6074cc?filename=1507031891423_03-10-2017-14-58-09.png&sub_type=thumbnail_preview&type=attachment&width=700&height=542&_felix_session_id=53f589ad3ebd6ae15ad9850b6bb20044&salt=MjAwMDAyNF82MzIxMzU2)
 
 [Example Storybook with README addon](https://tuchk4.github.io/storybook-readme/?knob-alert=false&knob-success=false&knob-label=Hello%20Im%20Button&selectedKind=Button&selectedStory=Default&full=0&down=1&left=1&panelRight=1&downPanel=storybooks%2Fstorybook-addon-knobs)
