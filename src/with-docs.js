@@ -31,7 +31,10 @@ const Preview = ({ children }) => {
   );
 };
 
-const withDocsContainer = ({ storyFn, kind, story, readme }) => {
+const withDocsContainer = (
+  { storyFn, kind, story, readme },
+  { PreviewElement = Preview }
+) => {
   const source = normalize(readme);
 
   if (common.footer) {
@@ -56,7 +59,7 @@ const withDocsContainer = ({ storyFn, kind, story, readme }) => {
           markdown={readmeBeforePreview}
         />
       )}
-      <Preview>{storyFn()}</Preview>
+      <PreviewElement>{storyFn()}</PreviewElement>
       <ReadmeContainer
         style={markdownContainerStyle}
         markdown={clearSplitter(fullReadmeAfterPreview)}
@@ -65,26 +68,34 @@ const withDocsContainer = ({ storyFn, kind, story, readme }) => {
   );
 };
 
-const withDocs = function(readme, storyFn = null) {
-  if (storyFn === null) {
-    return (storyFn, { kind, story }) => {
-      return withDocsContainer({
-        storyFn,
-        kind,
-        story,
-        readme,
-      });
-    };
-  } else {
-    return ({ kind, story }) => {
-      return withDocsContainer({
-        storyFn,
-        kind,
-        story,
-        readme,
-      });
-    };
-  }
+const withDocs = function(config = {}) {
+  return (readme, storyFn = null) => {
+    if (storyFn === null) {
+      return (storyFn, { kind, story }) => {
+        return withDocsContainer(
+          {
+            storyFn,
+            kind,
+            story,
+            readme,
+          },
+          config
+        );
+      };
+    } else {
+      return ({ kind, story }) => {
+        return withDocsContainer(
+          {
+            storyFn,
+            kind,
+            story,
+            readme,
+          },
+          config
+        );
+      };
+    }
+  };
 };
 
 withDocs.addFooter = footer => {

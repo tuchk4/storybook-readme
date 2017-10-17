@@ -69,13 +69,13 @@ storiesOf('Button', module)
   .add('Default', withReadme(ButtonReadme, () => <Button onClick={action('clicked')} label="Hello Button"/>))
 
 storiesOf('Content', module)
-  .add('Default', withDocs(ButtonReadme, () => <Content>Hello Button<Content/>))
+  .add('Default', withDocs()(ButtonReadme, () => <Content>Hello Button<Content/>))
 ```
 
 #### Use as Higher Order Component
 
 - *withReadme(readme, story)*
-- *withDocs(readme, story)*
+- *withDocs(configuration)(readme, story)*
 
 > Accepts README or array of README in markdown format.
 > Multiple REAMDE is useful when you develop higher order component and want to add its README and original component README.
@@ -100,7 +100,11 @@ import ButtonREADME from '../components/components/button/README.md';
 
 storiesOf('Button', module)
   // add only one README (also supports multiple as array)
-  .add('Default', withDocs(ButtonREADME, () => {
+  .add('Default', withDocs()(ButtonREADME, () => {
+    return <Button onClick={action('clicked')} label="Hello Button"/>;
+  }))
+  // add custom preview element (wraps story)
+  .add('Default', withDocs({PreviewElement: ({ children }) => (<div>{children}</div>)})(ButtonREADME, () => {
     return <Button onClick={action('clicked')} label="Hello Button"/>;
   }));
 ```
@@ -135,7 +139,7 @@ import ButtonREADME from 'node_modules/component/README.md';
 
 storiesOf('Button', module)
   // add only one README (also supports multiple as array)
-  .addDecorator(withDocs(ButtonREADME))
+  .addDecorator(withDocs()(ButtonREADME))
   .add('Default', () => {
     return <Button onClick={action('clicked')} label="Hello Button"/>;
   });
