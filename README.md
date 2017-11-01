@@ -54,28 +54,48 @@ Register addon at *.storybook/addons.js*
 import 'storybook-readme/register';
 ```
 
-Then create your stories with the *withReadme* or *withDocs* API.
+Then create your stories with the *withReadme* or *withDocs* API (use as story HOC or as Storybook Decorator).
 
-- *withDocs* - Add README around the story component at the main panel. [Example withDocs](https://tuchk4.github.io/storybook-readme/?knob-alert=false&knob-importnat=false&selectedKind=Header&selectedStory=Default&full=0&down=1&left=1&panelRight=1&downPanel=REACT_STORYBOOK%2Freadme%2Fpanel)
-- *withReadme* - Add README to the storybook panels. [Example withReadme](https://tuchk4.github.io/storybook-readme/?knob-loading=false&knob-error=&selectedKind=Content&selectedStory=Default&full=0&down=1&left=1&panelRight=1&downPanel=REACT_STORYBOOK%2Freadme%2Fpanel)
+- *withDocs* - Add README around the story component at the main panel. [Example withDocs](https://tuchk4.github.io/storybook-readme/?knob-alert=false&knob-success=false&knob-label=Hello%20Im%20Button&selectedKind=withDocs%2FAs%20Decorator&selectedStory=Button&full=0&down=1&left=1&panelRight=1&downPanel=storybooks%2Fstorybook-addon-knobs)
+- *withReadme* - Add README to the storybook panels. [Example withReadme](https://tuchk4.github.io/storybook-readme/?knob-alert=false&knob-success=false&knob-label=Hello%20Im%20Button&selectedKind=withReadme%2F%20As%20Decorator&selectedStory=Button&full=0&down=1&left=1&panelRight=1&downPanel=REACT_STORYBOOK%2Freadme%2Fpanel)
 
-It is possible to combine *withDocs* and *withReadme* - [Example combined APIs](https://tuchk4.github.io/storybook-readme/?knob-alert=false&knob-success=false&knob-label=Hello%20Im%20Button&selectedKind=Button&selectedStory=Default&full=0&down=1&left=1&panelRight=1&downPanel=REACT_STORYBOOK%2Freadme%2Fpanel)
+It is possible to combine *withDocs* and *withReadme* - [Example combined APIs](https://tuchk4.github.io/storybook-readme/?knob-alert=false&knob-success=false&knob-label=Hello%20Im%20Button&selectedKind=withDocs%20and%20withReadme&selectedStory=Button&full=0&down=1&left=1&panelRight=1&downPanel=REACT_STORYBOOK%2Freadme%2Fpanel)
 
 ```js
 import ButtonReadme from '../components/button/README.md';
-import { withReadme, withDocs } from 'storybook-readme';
+import { withReadme, withDocs }  from 'storybook-readme';
+// or import separetaly
+// import withReadme from 'storybook-readme/with-readme';
+// import withDocs from 'storybook-readme/with-docs';
 
 storiesOf('Button', module)
   .add('Default', withReadme(ButtonReadme, () => <Button onClick={action('clicked')} label="Hello Button"/>))
 
 storiesOf('Content', module)
   .add('Default', withDocs(ButtonReadme, () => <Content>Hello Button<Content/>))
+
+// with custom preview element
+const withCustomPreview = withDocs({
+  PreviewComponent: styled.div`
+    text-align: center;
+    padding: 25px;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+  `,
+  FooterComponent: styled.div`
+    padding: 25px;
+    background: rgba(246, 255, 0, 0.23);
+    border-top: '2px solid rgba(0, 0, 0, 0.1);
+  `,
+});
+
+storiesOf('Content', module)
+  .add('Default', withCustomPreview(ButtonReadme, () => <Content>Hello Button<Content/>))
 ```
 
 #### Use as Higher Order Component
 
 - *withReadme(readme, story)*
-- *withDocs(readme, story)*
+- *withDocs(readme, story)* or *withDocs({ PreviewComponent, FooterComponent })(readme, story)*
 
 > Accepts README or array of README in markdown format.
 > Multiple REAMDE is useful when you develop higher order component and want to add its README and original component README.
@@ -108,7 +128,7 @@ storiesOf('Button', module)
 #### Use as Decorator
 
 - *withReadme(readme)*
-_ *withDocs(readme)*
+- *withDocs(readme)* or *withDocs({ PreviewComponent, FooterComponent })(readme)*
 
 > Pass only first argument - README or array of README in markdown format.
 
@@ -159,27 +179,30 @@ withDocs.addFooter(DocsFooterReadme);
 ### README splitter (only for `withDocs` API)
 
 You can use `<!-- STORY -->` at the README to control component story position.
-Instead of this placeholder story will be rendered. For example this docs:
+Instead of this placeholder story will be rendered. For example:
 
 ```md
 # Button
 
-Normal application button. Could be rendered as link is pass `href` prop.
+Normal application button. 
+
+```js
+import Button from 'components/Button';
+```
 
 <!-- STORY -->
 
 ### Flags usage rules
 
-Use **alert** and **success** flags only in next cases:
+Use **alert** and **success** flags only in these cases:
 
 **alert** - when `onClick` action removes something
-**success** - when `onClick` action adds something
+
+```js
+<Button alert={true} label="Remove user"/>
+```
 ```
 
-will render next story:
+Have a look on this [REAMDE](example/components/button/DOCS.md) and [live story exmaple](https://tuchk4.github.io/storybook-readme/?knob-alert=false&knob-success=false&knob-label=Hello%20Im%20Button&selectedKind=Custom%20Preview%20and%20Footer&selectedStory=Button&full=0&down=1&left=1&panelRight=1&downPanel=REACT_STORYBOOK%2Freadme%2Fpanel).
 
-![withDocs and splitter](https://tuchk4.tinytake.com/media/6074bf?filename=1507031753381_03-10-2017-14-55-51.png&sub_type=thumbnail_preview&type=attachment&width=700&height=422&_felix_session_id=53f589ad3ebd6ae15ad9850b6bb20044&salt=MjAwMDAxMV82MzIxMzQz)
-
-Have a look on this [REAMDE](example/components/button/DOCS.md) and [live story exmaple](https://tuchk4.github.io/storybook-readme/?knob-alert=false&knob-success=false&knob-label=Hello%20Im%20Button&selectedKind=Button&selectedStory=Default&full=0&down=1&left=1&panelRight=1&downPanel=REACT_STORYBOOK%2Freadme%2Fpanel).
-
-More examples at [this example](example/stories/index.js) stories to learn more about the `withReadme` and `withDocs` API.
+Take a look at more examples at [example/stories/index.js](example/stories/index.js) to learn more about the `withReadme` and `withDocs` API.

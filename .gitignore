@@ -10,3 +10,5 @@ npm-debug.log
 /with-readme.js
 /with-docs.js
 /index.js
+/storybook-static
+/out*

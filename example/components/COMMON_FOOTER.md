@@ -1,5 +1,3 @@
-----
-
 > NOTE: This is common footer for all stories that uses `withDocs` decorator. Added with `withDocs.addFooter(markdown)`.
 
 Refs:

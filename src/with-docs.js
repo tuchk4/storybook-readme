@@ -1,4 +1,8 @@
 import React from 'react';
+import isPlainObject from 'lodash/isPlainObject';
+import isString from 'lodash/isString';
+import isArray from 'lodash/isArray';
+
 import { ADD_README_EVENT } from './constants';
 import Markdown from './components/markdown';
 import ReadmeContainer from './components/readme-container';
@@ -12,7 +16,20 @@ const markdownContainerStyle = {
   margin: '16px 16px 36px',
 };
 
-const Preview = ({ children }) => {
+const DefaultFooter = ({ children }) => {
+  return (
+    <div
+      style={{
+        borderTop: '1px dashed #e5e5e5',
+        paddingTop: '16px',
+      }}
+    >
+      {children}
+    </div>
+  );
+};
+
+const DefaultPreview = ({ children }) => {
   return (
     <div
       style={{
@@ -31,12 +48,11 @@ const Preview = ({ children }) => {
   );
 };
 
-const withDocsContainer = ({ storyFn, kind, story, readme }) => {
+const renderDocsContainer = (
+  { storyFn, kind, story, readme },
+  { PreviewComponent = DefaultPreview, FooterComponent = DefaultFooter }
+) => {
   const source = normalize(readme);
-
-  if (common.footer) {
-    source.push(common.footer);
-  }
 
   const main = source[0];
 
@@ -50,42 +66,92 @@ const withDocsContainer = ({ storyFn, kind, story, readme }) => {
 
   return (
     <div>
+      {/* Mardown before Component Story */}
       {readmeBeforePreview && (
         <ReadmeContainer
           style={markdownContainerStyle}
           markdown={readmeBeforePreview}
         />
       )}
-      <Preview>{storyFn()}</Preview>
-      <ReadmeContainer
-        style={markdownContainerStyle}
-        markdown={clearSplitter(fullReadmeAfterPreview)}
-      />
+      <PreviewComponent>{storyFn()}</PreviewComponent>
+
+      {/* Mardown after Component Story */}
+      <ReadmeContainer markdown={clearSplitter(fullReadmeAfterPreview)} />
+
+      {/* Footer Mardown. Could be styled with FooterComponent */}
+      {common.footer && (
+        <FooterComponent>
+          <ReadmeContainer markdown={common.footer} />
+        </FooterComponent>
+      )}
     </div>
   );
 };
 
-const withDocs = function(readme, storyFn = null) {
+const withDocsContainer = ({ readme, storyFn = null, config = {} }) => {
   if (storyFn === null) {
     return (storyFn, { kind, story }) => {
-      return withDocsContainer({
-        storyFn,
-        kind,
-        story,
-        readme,
-      });
+      return renderDocsContainer(
+        {
+          storyFn,
+          kind,
+          story,
+          readme,
+        },
+        config
+      );
     };
   } else {
     return ({ kind, story }) => {
-      return withDocsContainer({
-        storyFn,
-        kind,
-        story,
-        readme,
-      });
+      return renderDocsContainer(
+        {
+          storyFn,
+          kind,
+          story,
+          readme,
+        },
+        config
+      );
     };
   }
 };
+
+function withDocs(...args) {
+  switch (true) {
+    /**
+     * withDocs({
+     *  preview: props => {}
+     *  footer: props => {}
+     * })(README)
+     */
+    case args.length === 1 && isPlainObject(args[0]):
+      const config = args[0];
+      return (readme, storyFn = null) =>
+        withDocsContainer({ readme, storyFn, config });
+
+    /**
+     * .addDecorator(
+     *  withDocs(README)
+     * )
+     * 
+     * .addDecorator(
+     *  withDocs([README1, README2])
+     * )
+     */
+    case args.length === 1 && (isString(args[0]) || isArray(args[0])):
+      return withDocsContainer({ readme: args[0], storyFn: null });
+
+    /**
+     * withDocs(README, storyFn)
+     * withDocs([README1, README2], storyFn)
+     */
+    case args.length === 2:
+      return withDocsContainer({ readme: args[0], storyFn: args[1] });
+
+    default:
+      throw new Error('wrong withDocs arguments');
+  }
+}
 
 withDocs.addFooter = footer => {
   common.footer = footer;

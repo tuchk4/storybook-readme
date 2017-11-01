@@ -4,24 +4,43 @@ import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
 import { withReadme, withDocs } from '../../src';
 
 import Button from '../components/Button';
-import Content from '../components/Content';
-import Header from '../components/Header';
 
 import CommonFooterDocs from '../components/COMMON_FOOTER.md';
 
 import ButtonReadme from '../components/Button/README.md';
 import ButtonDocs from '../components/Button/DOCS.md';
-import ContentReadme from '../components/Content/README.md';
-import HeaderReadme from '../components/Header/README.md';
-import HeaderAdvancedReadme from '../components/Header/ADVANCED.md';
 
 withDocs.addFooter(CommonFooterDocs);
 
-storiesOf('Button', module)
+const withDocsCustom = withDocs({
+  PreviewComponent: ({ children }) => (
+    <div
+      style={{
+        textAlign: 'center',
+        padding: '25px',
+        boxShadow: '0 0 40px rgba(0, 0, 0, 0.1)',
+      }}
+    >
+      {children}
+    </div>
+  ),
+  FooterComponent: ({ children }) => (
+    <div
+      style={{
+        padding: '25px',
+        background: 'rgba(246, 255, 0, 0.23)',
+        borderTop: '2px solid rgba(0, 0, 0, 0.1)',
+      }}
+    >
+      {children}
+    </div>
+  ),
+});
+
+storiesOf('Custom Preview and Footer', module)
   .addDecorator(withKnobs)
-  .addDecorator(withDocs(ButtonDocs))
-  .addDecorator(withReadme(ButtonReadme))
-  .addWithInfo('Default', () => (
+  .addDecorator(withDocsCustom(ButtonDocs))
+  .addWithInfo('Button', () => (
     <Button
       onClick={action('clicked')}
       alert={boolean('alert', false)}
@@ -30,23 +49,83 @@ storiesOf('Button', module)
     />
   ));
 
-storiesOf('Content', module)
+storiesOf('With Docs and Readme', module)
   .addDecorator(withKnobs)
-  .addDecorator(withReadme(ContentReadme))
-  .addWithInfo('Default', () => (
-    <Content loading={boolean('loading', false)} error={text('error', '')}>
-      Hello world!
-    </Content>
+  .addDecorator(withDocs(ButtonDocs))
+  .addDecorator(withReadme(ButtonReadme))
+  .addWithInfo('Button', () => (
+    <Button
+      onClick={action('clicked')}
+      alert={boolean('alert', false)}
+      success={boolean('success', false)}
+      label={text('label', 'Hello Im Button')}
+    />
   ));
 
-storiesOf('Header', module)
+// withReadme and withDocs
+storiesOf('withDocs and withReadme', module)
   .addDecorator(withKnobs)
-  .addDecorator(withDocs([HeaderReadme, HeaderAdvancedReadme]))
-  .addWithInfo('Default', () => (
-    <Header
+  .addDecorator(withDocs(ButtonDocs))
+  .addDecorator(withReadme(ButtonReadme))
+  .addWithInfo('Button', () => (
+    <Button
+      onClick={action('clicked')}
       alert={boolean('alert', false)}
-      important={boolean('importnat', false)}
-    >
-      Hello World
-    </Header>
+      success={boolean('success', false)}
+      label={text('label', 'Hello Im Button')}
+    />
   ));
+
+// withDocs
+storiesOf('withReadme/ As Decorator', module)
+  .addDecorator(withKnobs)
+  .addDecorator(withReadme(ButtonReadme))
+  .addWithInfo('Button', () => (
+    <Button
+      onClick={action('clicked')}
+      alert={boolean('alert', false)}
+      success={boolean('success', false)}
+      label={text('label', 'Hello Im Button')}
+    />
+  ));
+
+storiesOf('withReadme/As HOC', module)
+  .addDecorator(withKnobs)
+  .addWithInfo(
+    'Button',
+    withReadme(ButtonReadme, () => (
+      <Button
+        onClick={action('clicked')}
+        alert={boolean('alert', false)}
+        success={boolean('success', false)}
+        label={text('label', 'Hello Im Button')}
+      />
+    ))
+  );
+
+// with docs
+storiesOf('withDocs/As Decorator', module)
+  .addDecorator(withKnobs)
+  .addDecorator(withDocs(ButtonReadme))
+  .addWithInfo('Button', () => (
+    <Button
+      onClick={action('clicked')}
+      alert={boolean('alert', false)}
+      success={boolean('success', false)}
+      label={text('label', 'Hello Im Button')}
+    />
+  ));
+
+storiesOf('withDocs/As HOC', module)
+  .addDecorator(withKnobs)
+  .addWithInfo(
+    'Button',
+    withDocs(ButtonReadme, () => (
+      <Button
+        onClick={action('clicked')}
+        alert={boolean('alert', false)}
+        success={boolean('success', false)}
+        label={text('label', 'Hello Im Button')}
+      />
+    ))
+  );

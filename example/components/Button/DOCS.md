@@ -2,6 +2,10 @@
 
 Normal application button. 
 
+```js
+import Button from 'components/Button';
+```
+
 <!-- STORY -->
 
 ### Flags usage rules
