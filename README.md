@@ -182,25 +182,11 @@ You can use `<!-- STORY -->` at the README to control component story position.
 Instead of this placeholder story will be rendered. For example:
 
 ```md
-# Button
-
-Normal application button. 
-
-```js
-import Button from 'components/Button';
-```
+Docs before story
 
 <!-- STORY -->
 
-### Flags usage rules
-
-Use **alert** and **success** flags only in these cases:
-
-**alert** - when `onClick` action removes something
-
-```js
-<Button alert={true} label="Remove user"/>
-```
+Docs after story
 ```
 
 Have a look on this [REAMDE](example/components/button/DOCS.md) and [live story exmaple](https://tuchk4.github.io/storybook-readme/?knob-alert=false&knob-success=false&knob-label=Hello%20Im%20Button&selectedKind=Custom%20Preview%20and%20Footer&selectedStory=Button&full=0&down=1&left=1&panelRight=1&downPanel=REACT_STORYBOOK%2Freadme%2Fpanel).
