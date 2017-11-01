@@ -1,6 +1,6 @@
 {
   "name": "storybook-readme",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "React storybook addon to show components README",
   "main": "index.js",
   "homepage": "https://github.com/tuchk4/storybook-readme",
@@ -55,20 +55,20 @@
   "scripts": {
     "storybook": "cross-env NODE_ENV=development start-storybook -p 6006",
     "build-storybook": "cross-env NODE_ENV=production build-storybook",
-    "prepublish": "npm run clear & cross-env NODE_ENV=production babel -d ./ ./src",
-    "dev": "npm run clear & cross-env NODE_ENV=production babel -d ./ ./src --watch",
+    "prepublish":
+      "npm run clear & cross-env NODE_ENV=production babel -d ./ ./src",
+    "dev":
+      "npm run clear & cross-env NODE_ENV=production babel -d ./ ./src --watch",
     "clear": "ls ./src | xargs rm -rf",
     "deploy-storybook": "storybook-to-ghpages",
     "precommit": "lint-staged",
-    "format": "prettier --trailing-comma es5 --single-quote --write 'src/**/*.js'"
+    "format":
+      "prettier --trailing-comma es5 --single-quote --write 'src/**/*.js'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "lint-staged": {
-    "*.js": [
-      "prettier --trailing-comma es5 --single-quote --write",
-      "git add"
-    ]
+    "*.js": ["prettier --trailing-comma es5 --single-quote --write", "git add"]
   }
 }
