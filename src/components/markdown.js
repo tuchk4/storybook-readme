@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ReactDOM from 'react-dom';
 import Remarkable from 'react-remarkable';
-import './prism';
+import Prism from 'prismjs';
+import 'prismjs/components/prism-jsx';
+
 import './prism.theme';
 
 const highlight = instance => {
