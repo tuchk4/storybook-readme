@@ -1,74 +1,38 @@
 {
   "name": "storybook-readme",
-  "version": "3.1.1",
+  "private": true,
   "description": "React storybook addon to show components README",
-  "main": "index.js",
   "homepage": "https://github.com/tuchk4/storybook-readme",
   "bugs": "https://github.com/tuchk4/storybook-readme/issues",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tuchk4/storybook-readme"
   },
-  "dependencies": {
-    "lodash": "^4.17.4",
-    "prismjs": "^1.8.3",
-    "react-remarkable": "^1.1.2",
-    "string-raw": "^1.0.1"
-  },
-  "files": [
-    "components",
-    "constants.js",
-    "readme-manager.js",
-    "register.js",
-    "with-readme.js",
-    "with-docs.js",
-    "index.js"
-  ],
   "devDependencies": {
-    "@storybook/addon-info": "^3.2.12",
-    "@storybook/addon-knobs": "^3.2.12",
-    "@storybook/addon-options": "^3.2.12",
-    "@storybook/react": "^3.2.12",
     "@storybook/storybook-deployer": "^2.0.0",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-preset-react-app": "^3.0.3",
-    "cross-env": "^5.0.5",
-    "css-loader": "^0.28.7",
     "husky": "^0.14.3",
-    "json-loader": "^0.5.7",
-    "lint-staged": "^4.2.3",
-    "prettier": "^1.7.3",
-    "prop-types": "^15.6.0",
-    "raw-loader": "^0.5.1",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "style-loader": "^0.18.2",
-    "styled-components": "^2.2.0"
-  },
-  "peerDependencies": {
-    "@storybook/addons": "^3.0.0-alpha.0",
-    "prop-types": "^15.6.0",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "lerna": "^2.5.1",
+    "lint-staged": "^5.0.0",
+    "prettier": "^1.8.2"
   },
   "scripts": {
-    "storybook": "cross-env NODE_ENV=development start-storybook -p 6006",
-    "build-storybook": "cross-env NODE_ENV=production build-storybook",
-    "prepublish":
-      "npm run clear & cross-env NODE_ENV=production babel -d ./ ./src",
-    "dev":
-      "npm run clear & cross-env NODE_ENV=production babel -d ./ ./src --watch",
-    "clear": "ls ./src | xargs rm -rf",
+    "storybook-react": "npm run storybook ---prefix ./packages/example-react",
+    "storybook-vue": "npm run storybook ---prefix ./packages/example-vue",
+    "dev": "lerna run dev --stream --parallel",
+    "clear": "lerna run clear",
     "deploy-storybook": "storybook-to-ghpages",
     "precommit": "lint-staged",
     "format":
-      "prettier --trailing-comma es5 --single-quote --write 'src/**/*.js'"
+      "prettier --trailing-comma es5 --single-quote --write 'src/**/*.js' 'src/**/*.json'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "lint-staged": {
-    "*.js": ["prettier --trailing-comma es5 --single-quote --write", "git add"]
+    "*.js": ["prettier --trailing-comma es5 --single-quote --write", "git add"],
+    "*.json": [
+      "prettier --trailing-comma es5 --single-quote --write",
+      "git add"
+    ]
   }
 }

@@ -1,0 +1,22 @@
+{
+  "name": "example-react",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "prepublishOnly": "echo \"Error: not allowed to publish\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "cross-env NODE_ENV=development start-storybook -p 6005"
+  },
+  "dependencies": {
+    "@storybook/react": "^3.2.15",
+    "cross-env": "^5.1.1",
+    "html-loader": "^0.5.1",
+    "markdown-loader": "^2.0.1",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
+    "storybook-readme": "=3.1.1",
+    "rockey-react": "=0.0.16-alpha.256b890c"
+  },
+  "devDependencies": {},
+  "license": "ISC"
+}
