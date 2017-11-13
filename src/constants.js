@@ -1,1 +1,1 @@
-export const ADD_README_EVENT = 'REACT_STORYBOOK/readme/add';
+export const ADD_DOC_EVENT = 'REACT_STORYBOOK/doc/add';

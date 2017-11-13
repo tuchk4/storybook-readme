@@ -1,0 +1,16 @@
+{
+  "files.exclude": {
+    "coverage/": true,
+    "flow-typed/": true,
+    "components/": true,
+    "index.js": true,
+    "constants.js": true,
+    "with-readme.js": true,
+    "with-docs.js": true,
+    "register.js": true,
+    "readme-manager.js": true,
+    "env/": true,
+    "styles/": true,
+    "storybook-static/": true
+  }
+}

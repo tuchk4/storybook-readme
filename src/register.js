@@ -1,6 +1,6 @@
 import React from 'react';
 import addons from '@storybook/addons';
-import ReadmePanel from './components/readme-panel';
+import ReadmePanel from './components/ReadmePanel';
 
 const ADDON_ID = 'REACT_STORYBOOK/readme';
 const PANEL_NAME = 'REACT_STORYBOOK/readme/panel';

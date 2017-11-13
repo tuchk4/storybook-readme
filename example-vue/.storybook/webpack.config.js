@@ -1,5 +1,12 @@
 const path = require('path');
-const docsLoader = path.resolve(__dirname, '..', '..', 'vue', 'docs-loader');
+const docsLoader = path.resolve(
+  __dirname,
+  '..',
+  '..',
+  'env',
+  'vue',
+  'docs-loader'
+);
 
 module.exports = (storybookBaseConfig, configType) => {
   storybookBaseConfig.module.rules = storybookBaseConfig.module.rules.map(
@@ -8,7 +15,7 @@ module.exports = (storybookBaseConfig, configType) => {
         return Object.assign({}, rule, {
           options: Object.assign({}, rule.options, {
             loaders: {
-              docs: docsLoader,
+              docs: [docsLoader, 'html-loader', 'markdown-loader'],
             },
           }),
         });
@@ -20,7 +27,14 @@ module.exports = (storybookBaseConfig, configType) => {
 
   storybookBaseConfig.module.rules.push({
     test: /\.md$/,
-    loader: 'raw-loader',
+    use: [
+      {
+        loader: 'html-loader',
+      },
+      {
+        loader: 'markdown-loader',
+      },
+    ],
   });
 
   return storybookBaseConfig;

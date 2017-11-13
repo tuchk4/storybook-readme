@@ -1,12 +1,5 @@
 import { configure, setAddon } from '@storybook/vue';
 import { setOptions } from '@storybook/addon-options';
-import infoAddon from '@storybook/addon-info';
-// import Vue from 'vue';
-
-// import MyButton from '../components/MyButton/MyButton.vue';
-setAddon(infoAddon);
-
-// Vue.component('my-button', MyButton);
 
 setOptions({
   name: 'README addon',

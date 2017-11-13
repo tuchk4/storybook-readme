@@ -1,3 +1,40 @@
+<docs>
+# Button
+
+> NOTE: this docs defined at **docs** section inside MyButton.vue module
+
+Normal application button. 
+
+```js
+import MyButton from 'components/MyButton';
+```
+
+<!-- STORY -->
+
+### Flags usage rules
+
+Use **alert** and **success** flags only in these cases:
+
+**alert** - when `onClick` action removes something
+
+```js
+{
+  components: { MyButton },
+  template: `<my-buton alert="true">Remove User</my-button>`
+}
+```
+
+**success** - when `onClick` action adds something
+
+```js
+{
+  components: { MyButton },
+  template: `<my-buton success="true">Add User</my-button>`
+}
+```
+</docs>
+
+
 <template>
   <button class="button" :class="{
     button_alert: alert, 
@@ -6,15 +43,6 @@
     <slot></slot>
   </button>
 </template>
-
-<docs>
-  ## This is docs inside component
-  Hello world
-  
-  ```js
-    import button from 'button';
-  ```
-</docs>
 
 <script>
 export default {

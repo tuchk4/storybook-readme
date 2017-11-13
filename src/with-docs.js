@@ -6,9 +6,7 @@ import isArray from 'lodash/isArray';
 import { ADD_README_EVENT } from './constants';
 import Markdown from './components/markdown';
 import ReadmeContainer from './components/readme-container';
-import { SPLITTER, clearSplitter, normalize } from './readme-manager';
-import reactHandlers from './react';
-import vueHandlers from './vue';
+import { SPLITTER, clearSplitter, normalize } from './services/readmeManager';
 
 const common = {
   footer: null,

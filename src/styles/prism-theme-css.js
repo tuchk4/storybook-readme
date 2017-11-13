@@ -151,7 +151,7 @@ const styles = stringRaw`
 `;
 
 const styleNode = document.createElement('style');
-styleNode.id = 'highlight-github-css';
+styleNode.id = 'prism-theme-css';
 styleNode.innerHTML = styles;
 
 document.head.appendChild(styleNode);

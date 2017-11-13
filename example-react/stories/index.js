@@ -6,11 +6,10 @@ import { withReadme, withDocs } from '../../src';
 import Button from '../components/Button';
 
 import CommonFooterDocs from '../components/COMMON_FOOTER.md';
-
 import ButtonReadme from '../components/Button/README.md';
 import ButtonDocs from '../components/Button/DOCS.md';
 
-withDocs.addFooter(CommonFooterDocs);
+withDocs.addFooterDocs(CommonFooterDocs);
 
 const withDocsCustom = withDocs({
   PreviewComponent: ({ children }) => (

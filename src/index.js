@@ -2,8 +2,10 @@ import isPlainObject from 'lodash/isPlainObject';
 import isString from 'lodash/isString';
 import isArray from 'lodash/isArray';
 
-import vueHandler from './vue';
-import reactHandler from './react';
+import vueHandler from './env/vue';
+import reactHandler from './env/react';
+import normalizeDocs from './services/normalizeDocs';
+import './styles/github-markdown-css';
 
 let handler = null;
 
@@ -24,7 +26,7 @@ const WITH_DOCS = 'WITH_DOCS';
 const DEFAULT_CONFIG = {
   FooterComponent: null,
   PreviewComponent: null,
-  footer: null,
+  docsAtFooter: null,
 };
 
 const WITH_DOCS_COMMON_CONFIG = {};
@@ -66,7 +68,7 @@ function withCallType({ type, config }) {
        * })(README)
        */
       case args.length === 1 && isPlainObject(args[0]):
-        return withHandler({
+        return withCallType({
           type,
           config: {
             ...config,
@@ -85,11 +87,11 @@ function withCallType({ type, config }) {
        */
       case args.length === 1 && (isString(args[0]) || isArray(args[0])):
         return typeHandler.callAsDecorator({
-          readme: args[0],
+          docs: normalizeDocs(args[0]),
           storyFn: null,
           config: {
-            ...getCommonConfig(type),
             ...config,
+            ...getCommonConfig(type),
           },
         });
 
@@ -99,11 +101,11 @@ function withCallType({ type, config }) {
        */
       case args.length === 2:
         return typeHandler.callAsHoc({
-          readme: args[0],
+          docs: normalizeDocs(args[0]),
           storyFn: args[1],
           config: {
-            ...getCommonConfig(type),
             ...config,
+            ...getCommonConfig(type),
           },
         });
 
@@ -125,10 +127,10 @@ export const withDocs = (...args) => {
   return withCallType({ type: WITH_DOCS, config: DEFAULT_CONFIG })(...args);
 };
 
-withDocs.addFooter = footer => {
-  WITH_DOCS_COMMON_CONFIG.footer = footer;
+withDocs.addFooterDocs = docsAtFooter => {
+  WITH_DOCS_COMMON_CONFIG.docsAtFooter = docsAtFooter;
 };
 
-withReadme.addFooter = footer => {
-  WITH_README_COMMON_CONFIG.footer = footer;
+withReadme.addFooterDocs = docsAtFooter => {
+  WITH_README_COMMON_CONFIG.docsAtFooter = docsAtFooter;
 };

@@ -3,7 +3,7 @@
 ### Usage
 
 ```js
-import Button from 'components/button';
+import MyButton from 'components/MyButton';
 ```
 
 <!-- STORY -->
@@ -16,7 +16,6 @@ import Button from 'components/button';
 | propName | propType | defaultValue | isRequired |
 |----------|----------|--------------|------------|
 | onClick  | func     | -            |            |
-| label    | string   | -            | +          |
 | alert    | boolean   | false           | -          |
 | success    | boolean   | false           | -          |
 
@@ -26,13 +25,14 @@ import Button from 'components/button';
 #### Icons
 
 ```js
-import Button from 'components/button';
+{
+  components: { MyButton },
+  template: `<my-buton icon="mail">Send mail</my-button>`
+}
 
-render() {
-  return (
-    <Button icon="mail">Send mail</Button>
-    <Button icon="trash" iconPosition="right">Remove</Button>
-  );
+{
+  components: { MyButton },
+  template: `<my-buton icon="trash" iconPosition="right">Send mail</my-button>`
 }
 ```
 
@@ -43,14 +43,8 @@ Add `value` property that will be available at all event callback. Helps to prev
 For example:
 
 ```js
-<ListItem key={item.id}>
-  <Button onClick={this.remove} value={item.id}>Remove</Button>
-</ListItem>
-```
-Instead of
-
-```js
-<ListItem key={item.id}>
-  <Button onClick={this.remove.bind(this, item.id)}>Remove</Button>
-</ListItem>
+{
+  components: { MyButton },
+  template: `<my-buton v-on:click=={remove} value={item.id}>Remove</my-button>`
+}
 ```
