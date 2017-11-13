@@ -7,6 +7,8 @@ import { ADD_README_EVENT } from './constants';
 import Markdown from './components/markdown';
 import ReadmeContainer from './components/readme-container';
 import { SPLITTER, clearSplitter, normalize } from './readme-manager';
+import reactHandlers from './react';
+import vueHandlers from './vue';
 
 const common = {
   footer: null,
@@ -133,7 +135,7 @@ function withDocs(...args) {
      * .addDecorator(
      *  withDocs(README)
      * )
-     * 
+     *
      * .addDecorator(
      *  withDocs([README1, README2])
      * )

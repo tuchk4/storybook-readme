@@ -7,6 +7,15 @@
   </button>
 </template>
 
+<docs>
+  ## This is docs inside component
+  Hello world
+  
+  ```js
+    import button from 'button';
+  ```
+</docs>
+
 <script>
 export default {
   props: {
@@ -19,6 +28,7 @@ export default {
 <style>
 .button {
   padding: 5px;
+  cursor: pointer;
   font-size: 15px;
   margin: 1px;
   border: 2px solid black;
