@@ -1,0 +1,28 @@
+{
+  "name": "example-vue",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "prepublishOnly": "echo \"Error: not allowed to publish\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "cross-env NODE_ENV=development start-storybook -p 6006"
+  },
+  "dependencies": {
+    "@storybook/vue": "^3.2.15",
+    "@storybook/addon-info": "^3.2.15",
+    "@storybook/addon-knobs": "^3.2.15",
+    "@storybook/addon-options": "^3.2.15",
+    "@storybook/addons": "^3.2.15",
+    "cross-env": "^5.1.1",
+    "storybook-readme": "=3.1.1",
+    "vue": "^2.5.3",
+    "vue-hot-reload-api": "^2.2.3",
+    "vue-loader": "^13.5.0",
+    "vue-style-loader": "^3.0.3",
+    "vue-template-compiler": "^2.5.3",
+    "html-loader": "^0.5.1",
+    "markdown-loader": "^2.0.1"
+  },
+  "devDependencies": {},
+  "license": "ISC"
+}

@@ -1,16 +1,19 @@
 {
   "files.exclude": {
     "coverage/": true,
+    "lerna-debug.log": true,
     "flow-typed/": true,
-    "components/": true,
-    "index.js": true,
-    "constants.js": true,
-    "with-readme.js": true,
-    "with-docs.js": true,
-    "register.js": true,
-    "readme-manager.js": true,
-    "env/": true,
-    "styles/": true,
+    "packages/storybook-readme/components/": true,
+    "packages/storybook-readme/index.js": true,
+    "packages/storybook-readme/constants.js": true,
+    "packages/storybook-readme/with-readme.js": true,
+    "packages/storybook-readme/with-docs.js": true,
+    "packages/storybook-readme/register.js": true,
+    "packages/storybook-readme/env/": true,
+    "packages/storybook-readme/styles/": true,
+    "packages/storybook-readme/services/": true,
+    "packages/example-react/etc/": true,
+    "packages/example-vue/etc/": true,
     "storybook-static/": true
   }
 }
