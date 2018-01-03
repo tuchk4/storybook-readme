@@ -14,6 +14,7 @@ Features:
 * Code highlighting
 * Accept multiple README (useful for [hoc component](https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e) - add component's and original component's README)
 * Looks like Github's README
+* Supports `<docs/>` tags for vue components ([example-vue/components/MyButton/MyButton.vue](https://github.com/tuchk4/storybook-readme/blob/master/packages/example-vue/components/MyButton/MyButton.vue).
 
 Also it very useful because most projects and components already have *README.md* files. Now it is easy to add them into your Storybook.
 
