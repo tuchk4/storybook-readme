@@ -11,18 +11,18 @@
   },
   "dependencies": {
     "lodash": "^4.17.4",
-    "prismjs": "^1.8.4",
-    "string-raw": "^1.0.1",
-    "rockey-react": "=0.0.16-alpha.256b890c"
+    "prismjs": "^1.9.0",
+    "rockey-react": "=0.0.16-alpha.256b890c",
+    "string-raw": "^1.0.1"
   },
   "devDependencies": {
-    "@storybook/addons": "^3.2.15",
-    "react": "^16.1.1",
-    "react-dom": "^16.1.1",
-    "cross-env": "^5.1.1",
+    "@storybook/addons": "^3.3.3",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
-    "babel-preset-react-app": "^3.0.3"
+    "babel-preset-react-app": "^3.0.3",
+    "cross-env": "^5.1.3",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
   },
   "files": [
     "components",

@@ -8,14 +8,18 @@
     "storybook": "cross-env NODE_ENV=development start-storybook -p 6005"
   },
   "dependencies": {
-    "@storybook/react": "^3.2.15",
-    "cross-env": "^5.1.1",
+    "@storybook/addon-knobs": "^3.3.3",
+    "@storybook/addon-options": "^3.3.3",
+    "@storybook/addons": "^3.3.3",
+    "@storybook/react": "^3.3.3",
+    "babel-core": "^6.26.0",
+    "cross-env": "^5.1.3",
     "html-loader": "^0.5.1",
     "markdown-loader": "^2.0.1",
-    "react": "^16.1.1",
-    "react-dom": "^16.1.1",
-    "storybook-readme": "=3.1.1",
-    "rockey-react": "=0.0.16-alpha.256b890c"
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "rockey-react": "=0.0.16-alpha.256b890c",
+    "storybook-readme": "=3.1.1"
   },
   "devDependencies": {},
   "license": "ISC"
