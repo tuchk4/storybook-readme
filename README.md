@@ -2,15 +2,13 @@
 
 ![Storybook README addon](https://tuchk4.tinytake.com/media/6074cc?filename=1507031891423_03-10-2017-14-58-09.png&sub_type=thumbnail_preview&type=attachment&width=700&height=542&_felix_session_id=53f589ad3ebd6ae15ad9850b6bb20044&salt=MjAwMDAyNF82MzIxMzU2)
 
-[Example Storybook with README addon](https://tuchk4.github.io/storybook-readme/?knob-alert=false&knob-success=false&knob-label=Hello%20Im%20Button&selectedKind=Button&selectedStory=Default&full=0&down=1&left=1&panelRight=1&downPanel=storybooks%2Fstorybook-addon-knobs)
-
-It is very similar with [Storybook Notes](https://github.com/storybooks/storybook/tree/master/addons/notes) addon but using Storybook Notes there is `<WithNotes notes={...}>` wrapper at each story function and thats why [Storybook Info](https://github.com/storybooks/storybook/tree/master/addons/info) always shows that [wrapper at info screen](http://take.ms/95YnX).
-
 This addon is compatible with:
-- Storybook for React
+- Storybook for React ([React example storybook](packages/example-react))
+- Storybook for Vue ([Vue example storybook](packages/example-vue))
 
-Additional features:
+[Live demo](https://tuchk4.github.io/storybook-readme)
 
+Features:
 * Does not affect on *story function*. So [Storybook Info](https://github.com/storybooks/storybook/tree/master/addons/info) works correctly now.
 * 100% markdown support
 * Code highlighting
@@ -29,20 +27,38 @@ or
 
 `yarn add --dev storybook-readme`
 
-### Webpack Configuration
+### Webpack Configuration for React Storybook
+**There is no additional webpack configuration if using with `@storybooks/storyook@3.3.0`.**
 
+For lower versions use:
 ```js
 module.exports = {
-  module: {
-    rules: [{
-      test: /\.md$/,
-      use: "raw-loader"
-    }]
-  }
+   module: {
+    rules: [
+      {
+        test: /\.md$/,
+        use: [
+          {
+            loader: 'html-loader',
+          },
+          {
+            loader: 'markdown-loader',
+          },
+        ],
+      },
+    ],
+  },
 };
 ```
 
-`npm install --save-dev raw-loader`
+### Webpack Configuration for Vue Storybook
+```js
+const updateWebpackConfig = require('storybook-readme/env/vue/updateWebpackConfig');
+
+module.exports = storybookBaseConfig => {
+  return updateWebpackConfig(storybookBaseConfig);
+};
+```
 
 ## Usage
 
@@ -171,7 +187,7 @@ Will appear at all stories that uses `withDocs` api.
 import { withDocs } from 'storybook-readme';
 import DocsFooterReadme from 'components/DOCS_FOOTER.md';
 
-withDocs.addFooter(DocsFooterReadme);
+withDocs.addFooterDocs(DocsFooterReadme);
 ```
 
 ### README splitter (only for `withDocs` API)
@@ -187,6 +203,6 @@ Docs before story
 Docs after story
 ```
 
-Have a look on this [REAMDE](example-react/components/Button/DOCS.md) and [live story exmaple](https://tuchk4.github.io/storybook-readme/?knob-alert=false&knob-success=false&knob-label=Hello%20Im%20Button&selectedKind=Custom%20Preview%20and%20Footer&selectedStory=Button&full=0&down=1&left=1&panelRight=1&downPanel=REACT_STORYBOOK%2Freadme%2Fpanel).
+Have a look on this [REAMDE](https://raw.githubusercontent.com/tuchk4/storybook-readme/master/packages/example-react/components/Button/DOCS.md) and [live story exmaple](https://tuchk4.github.io/storybook-readme/?knob-alert=false&knob-success=false&knob-label=Hello%20Im%20Button&selectedKind=Custom%20Preview%20and%20Footer&selectedStory=Button&full=0&down=1&left=1&panelRight=1&downPanel=REACT_STORYBOOK%2Freadme%2Fpanel).
 
-Take a look at more examples at [example-react/stories/index.js](example-react/stories/index.js) to learn more about the `withReadme` and `withDocs` API.
+Take a look at more examples at [packages/example-react/stories/index.js](packages/example-react/stories/index.js) to learn more about the `withReadme` and `withDocs` API.
