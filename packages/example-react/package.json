@@ -5,9 +5,11 @@
   "scripts": {
     "prepublishOnly": "echo \"Error: not allowed to publish\" && exit 1",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "cross-env NODE_ENV=development start-storybook -p 6005"
+    "storybook": "cross-env NODE_ENV=development start-storybook -p 6005",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "dependencies": {
+    "@storybook/storybook-deployer": "^2.2.0",
     "@storybook/addon-knobs": "^3.3.3",
     "@storybook/addon-options": "^3.3.3",
     "@storybook/addons": "^3.3.3",

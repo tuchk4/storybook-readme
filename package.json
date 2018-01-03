@@ -9,18 +9,18 @@
     "url": "git+https://github.com/tuchk4/storybook-readme"
   },
   "devDependencies": {
-    "@storybook/storybook-deployer": "^2.0.0",
     "husky": "^0.14.3",
     "lerna": "^2.5.1",
-    "lint-staged": "^5.0.0",
-    "prettier": "^1.8.2"
+    "lint-staged": "^6.0.0",
+    "prettier": "^1.9.2"
   },
   "scripts": {
-    "storybook-react": "npm run storybook ---prefix ./packages/example-react",
-    "storybook-vue": "npm run storybook ---prefix ./packages/example-vue",
+    "storybook-react": "npm run storybook --prefix ./packages/example-react",
+    "storybook-vue": "npm run storybook --prefix ./packages/example-vue",
     "dev": "lerna run dev --stream --parallel",
     "clear": "lerna run clear",
-    "deploy-storybook": "storybook-to-ghpages",
+    "deploy-storybook":
+      "npm run deploy-storybook --prefix ./packages/example-react",
     "precommit": "lint-staged",
     "format":
       "prettier --trailing-comma es5 --single-quote --write 'src/**/*.js' 'src/**/*.json'"
