@@ -40,7 +40,7 @@ const withDocsCustom = withDocs({
 storiesOf('Custom Preview and Footer', module)
   .addDecorator(withKnobs)
   .addDecorator(withDocsCustom(ButtonDocs))
-  .addWithInfo('Button', () => (
+  .add('Button', () => (
     <Button
       onClick={action('clicked')}
       alert={boolean('alert', false)}
@@ -53,7 +53,7 @@ storiesOf('With Docs and Readme', module)
   .addDecorator(withKnobs)
   .addDecorator(withDocs(ButtonDocs))
   .addDecorator(withReadme(ButtonReadme))
-  .addWithInfo('Button', () => (
+  .add('Button', () => (
     <Button
       onClick={action('clicked')}
       alert={boolean('alert', false)}
@@ -67,7 +67,7 @@ storiesOf('withDocs and withReadme', module)
   .addDecorator(withKnobs)
   .addDecorator(withDocs(ButtonDocs))
   .addDecorator(withReadme(ButtonReadme))
-  .addWithInfo('Button', () => (
+  .add('Button', () => (
     <Button
       onClick={action('clicked')}
       alert={boolean('alert', false)}
@@ -80,7 +80,7 @@ storiesOf('withDocs and withReadme', module)
 storiesOf('withReadme/ As Decorator', module)
   .addDecorator(withKnobs)
   .addDecorator(withReadme(ButtonReadme))
-  .addWithInfo('Button', () => (
+  .add('Button', () => (
     <Button
       onClick={action('clicked')}
       alert={boolean('alert', false)}
@@ -91,7 +91,7 @@ storiesOf('withReadme/ As Decorator', module)
 
 storiesOf('withReadme/As HOC', module)
   .addDecorator(withKnobs)
-  .addWithInfo(
+  .add(
     'Button',
     withReadme(ButtonReadme, () => (
       <Button
@@ -107,7 +107,7 @@ storiesOf('withReadme/As HOC', module)
 storiesOf('withDocs/As Decorator', module)
   .addDecorator(withKnobs)
   .addDecorator(withDocs(ButtonReadme))
-  .addWithInfo('Button', () => (
+  .add('Button', () => (
     <Button
       onClick={action('clicked')}
       alert={boolean('alert', false)}
@@ -118,7 +118,7 @@ storiesOf('withDocs/As Decorator', module)
 
 storiesOf('withDocs/As HOC', module)
   .addDecorator(withKnobs)
-  .addWithInfo(
+  .add(
     'Button',
     withDocs(ButtonReadme, () => (
       <Button
