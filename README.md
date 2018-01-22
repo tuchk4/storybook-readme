@@ -29,7 +29,7 @@ or
 `yarn add --dev storybook-readme`
 
 ### Webpack Configuration for React Storybook
-**There is no additional webpack configuration if using with `@storybooks/storyook@3.3.0`.**
+**There is no additional webpack configuration if using with `@storybooks/storybook@3.3.0`.**
 
 For lower versions use:
 ```js
