@@ -3,7 +3,15 @@ import 'prismjs/components/prism-jsx';
 import '../styles/prism-theme-css';
 
 export default (dom, { withJSX = false } = {}) => {
-  const nodes = dom.querySelectorAll('pre code');
+  /**
+   * should check dom.hasOwnProperty('querySelectorAll')
+   * for SSR cases
+   * The most common case is using this addon with storyshoots
+   * https://github.com/tuchk4/storybook-readme/issues/52
+   */
+  const nodes = dom.hasOwnProperty('querySelectorAll')
+    ? dom.querySelectorAll('pre code')
+    : [];
 
   if (nodes.length > 0) {
     for (var i = 0; i < nodes.length; i = i + 1) {
