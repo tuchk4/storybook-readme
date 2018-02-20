@@ -14,11 +14,10 @@ import MyButton from 'components/MyButton';
 * `label` - button text
 
 | propName | propType | defaultValue | isRequired |
-|----------|----------|--------------|------------|
+| -------- | -------- | ------------ | ---------- |
 | onClick  | func     | -            |            |
-| alert    | boolean   | false           | -          |
-| success    | boolean   | false           | -          |
-
+| alert    | boolean  | false        | -          |
+| success  | boolean  | false        | -          |
 
 ### Roadmap
 
