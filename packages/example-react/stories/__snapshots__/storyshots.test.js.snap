@@ -1,0 +1,563 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Custom Preview and Footer Button 1`] = `
+<div
+  style={
+    Object {
+      "padding": "10px",
+    }
+  }
+>
+  <div
+    className="markdown-body"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<h1 id=\\"button\\">Button</h1>
+<p>Normal application button. </p>
+<pre><code class=\\"lang-js\\">import Button from &#39;components/Button&#39;;
+</code></pre>
+",
+      }
+    }
+  />
+  <div
+    style={
+      Object {
+        "boxShadow": "0 0 40px rgba(0, 0, 0, 0.1)",
+        "margin": "25px 0",
+        "padding": "25px",
+        "textAlign": "center",
+      }
+    }
+  >
+    <button
+      className="sc-bdVaJa hbPgcv"
+      onClick={[Function]}
+    >
+      Hello Im Button
+    </button>
+  </div>
+  <div
+    className="markdown-body"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "
+<h3 id=\\"flags-usage-rules\\">Flags usage rules</h3>
+<p>Use <strong>alert</strong> and <strong>success</strong> flags only in these cases:</p>
+<p><strong>alert</strong> - when <code>onClick</code> action removes something</p>
+<pre><code class=\\"lang-js\\">&lt;Button alert={true} label=&quot;Remove user&quot;/&gt;
+</code></pre>
+<p><strong>success</strong> - when <code>onClick</code> action adds something</p>
+<pre><code class=\\"lang-js\\">&lt;Button success={true} label=&quot;Add user&quot;/&gt;
+</code></pre>
+",
+      }
+    }
+  />
+  <div
+    style={
+      Object {
+        "background": "rgba(246, 255, 0, 0.23)",
+        "borderTop": "2px solid rgba(0, 0, 0, 0.1)",
+        "padding": "25px",
+      }
+    }
+  >
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<blockquote>
+<p>NOTE: This is common footer for all stories that uses <code>withDocs</code> decorator. Added with <code>withDocs.addFooter(markdown)</code>.</p>
+</blockquote>
+<p>Refs:</p>
+<ul>
+<li><a href=\\"https://github.com/tuchk4/storybook-readme\\">Storybook Readme Github</a></li>
+<li>Me at twitter <a href=\\"https://twitter.com/tuchk4\\">@tuchk4</a></li>
+</ul>
+<p><img src=\\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfS_Bia8sqGFYp-qndJ_eHllQsDsclnU6xth6cZnjgW2hvA6YB\\" alt=\\"nyancat\\"></p>
+",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots With Docs and Readme Button 1`] = `
+<div
+  style={
+    Object {
+      "padding": "10px",
+    }
+  }
+>
+  <div
+    className="markdown-body"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<h1 id=\\"button\\">Button</h1>
+<p>Normal application button. </p>
+<pre><code class=\\"lang-js\\">import Button from &#39;components/Button&#39;;
+</code></pre>
+",
+      }
+    }
+  />
+  <div
+    style={
+      Object {
+        "backgroundColor": "#ffffff",
+        "border": "1px dashed #e5e5e5",
+        "boxSizing": "border-box",
+        "margin": "16px 0 16px 0",
+        "padding": "50px 35px",
+        "position": "relative",
+        "textAlign": "center",
+        "transition": "background-color 0.2s",
+      }
+    }
+  >
+    <button
+      className="sc-bdVaJa hbPgcv"
+      onClick={[Function]}
+    >
+      Hello Im Button
+    </button>
+  </div>
+  <div
+    className="markdown-body"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "
+<h3 id=\\"flags-usage-rules\\">Flags usage rules</h3>
+<p>Use <strong>alert</strong> and <strong>success</strong> flags only in these cases:</p>
+<p><strong>alert</strong> - when <code>onClick</code> action removes something</p>
+<pre><code class=\\"lang-js\\">&lt;Button alert={true} label=&quot;Remove user&quot;/&gt;
+</code></pre>
+<p><strong>success</strong> - when <code>onClick</code> action adds something</p>
+<pre><code class=\\"lang-js\\">&lt;Button success={true} label=&quot;Add user&quot;/&gt;
+</code></pre>
+",
+      }
+    }
+  />
+  <div
+    style={
+      Object {
+        "borderTop": "1px dashed #e5e5e5",
+        "paddingTop": "16px",
+      }
+    }
+  >
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<blockquote>
+<p>NOTE: This is common footer for all stories that uses <code>withDocs</code> decorator. Added with <code>withDocs.addFooter(markdown)</code>.</p>
+</blockquote>
+<p>Refs:</p>
+<ul>
+<li><a href=\\"https://github.com/tuchk4/storybook-readme\\">Storybook Readme Github</a></li>
+<li>Me at twitter <a href=\\"https://twitter.com/tuchk4\\">@tuchk4</a></li>
+</ul>
+<p><img src=\\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfS_Bia8sqGFYp-qndJ_eHllQsDsclnU6xth6cZnjgW2hvA6YB\\" alt=\\"nyancat\\"></p>
+",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots withDocs and withReadme Button 1`] = `
+<div
+  style={
+    Object {
+      "padding": "10px",
+    }
+  }
+>
+  <div
+    className="markdown-body"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<h1 id=\\"button\\">Button</h1>
+<p>Normal application button. </p>
+<pre><code class=\\"lang-js\\">import Button from &#39;components/Button&#39;;
+</code></pre>
+",
+      }
+    }
+  />
+  <div
+    style={
+      Object {
+        "backgroundColor": "#ffffff",
+        "border": "1px dashed #e5e5e5",
+        "boxSizing": "border-box",
+        "margin": "16px 0 16px 0",
+        "padding": "50px 35px",
+        "position": "relative",
+        "textAlign": "center",
+        "transition": "background-color 0.2s",
+      }
+    }
+  >
+    <button
+      className="sc-bdVaJa hbPgcv"
+      onClick={[Function]}
+    >
+      Hello Im Button
+    </button>
+  </div>
+  <div
+    className="markdown-body"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "
+<h3 id=\\"flags-usage-rules\\">Flags usage rules</h3>
+<p>Use <strong>alert</strong> and <strong>success</strong> flags only in these cases:</p>
+<p><strong>alert</strong> - when <code>onClick</code> action removes something</p>
+<pre><code class=\\"lang-js\\">&lt;Button alert={true} label=&quot;Remove user&quot;/&gt;
+</code></pre>
+<p><strong>success</strong> - when <code>onClick</code> action adds something</p>
+<pre><code class=\\"lang-js\\">&lt;Button success={true} label=&quot;Add user&quot;/&gt;
+</code></pre>
+",
+      }
+    }
+  />
+  <div
+    style={
+      Object {
+        "borderTop": "1px dashed #e5e5e5",
+        "paddingTop": "16px",
+      }
+    }
+  >
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<blockquote>
+<p>NOTE: This is common footer for all stories that uses <code>withDocs</code> decorator. Added with <code>withDocs.addFooter(markdown)</code>.</p>
+</blockquote>
+<p>Refs:</p>
+<ul>
+<li><a href=\\"https://github.com/tuchk4/storybook-readme\\">Storybook Readme Github</a></li>
+<li>Me at twitter <a href=\\"https://twitter.com/tuchk4\\">@tuchk4</a></li>
+</ul>
+<p><img src=\\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfS_Bia8sqGFYp-qndJ_eHllQsDsclnU6xth6cZnjgW2hvA6YB\\" alt=\\"nyancat\\"></p>
+",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots withDocs/As Decorator Button 1`] = `
+<div
+  style={
+    Object {
+      "padding": "10px",
+    }
+  }
+>
+  <div
+    className="markdown-body"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<h1 id=\\"button\\">Button</h1>
+<h3 id=\\"usage\\">Usage</h3>
+<pre><code class=\\"lang-js\\">import Button from &#39;components/button&#39;;
+</code></pre>
+",
+      }
+    }
+  />
+  <div
+    style={
+      Object {
+        "backgroundColor": "#ffffff",
+        "border": "1px dashed #e5e5e5",
+        "boxSizing": "border-box",
+        "margin": "16px 0 16px 0",
+        "padding": "50px 35px",
+        "position": "relative",
+        "textAlign": "center",
+        "transition": "background-color 0.2s",
+      }
+    }
+  >
+    <button
+      className="sc-bdVaJa hbPgcv"
+      onClick={[Function]}
+    >
+      Hello Im Button
+    </button>
+  </div>
+  <div
+    className="markdown-body"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "
+<h3 id=\\"properties\\">Properties</h3>
+<ul>
+<li><code>onClick</code> - click callback</li>
+<li><code>label</code> - button text</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>propName</th>
+<th>propType</th>
+<th>defaultValue</th>
+<th>isRequired</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>onClick</td>
+<td>func</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>label</td>
+<td>string</td>
+<td>-</td>
+<td>+</td>
+</tr>
+<tr>
+<td>alert</td>
+<td>boolean</td>
+<td>false</td>
+<td>-</td>
+</tr>
+<tr>
+<td>success</td>
+<td>boolean</td>
+<td>false</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id=\\"roadmap\\">Roadmap</h3>
+<h4 id=\\"icons\\">Icons</h4>
+<pre><code class=\\"lang-js\\">import Button from &#39;components/button&#39;;
+
+render() {
+  return (
+    &lt;Button icon=&quot;mail&quot;&gt;Send mail&lt;/Button&gt;
+    &lt;Button icon=&quot;trash&quot; iconPosition=&quot;right&quot;&gt;Remove&lt;/Button&gt;
+  );
+}
+</code></pre>
+<h4 id=\\"value\\">Value</h4>
+<p>Add <code>value</code> property that will be available at all event callback. Helps to prevent numbers of bind usage</p>
+<p>For example:</p>
+<pre><code class=\\"lang-js\\">&lt;ListItem key={item.id}&gt;
+  &lt;Button onClick={this.remove} value={item.id}&gt;Remove&lt;/Button&gt;
+&lt;/ListItem&gt;
+</code></pre>
+<p>Instead of</p>
+<pre><code class=\\"lang-js\\">&lt;ListItem key={item.id}&gt;
+  &lt;Button onClick={this.remove.bind(this, item.id)}&gt;Remove&lt;/Button&gt;
+&lt;/ListItem&gt;
+</code></pre>
+",
+      }
+    }
+  />
+  <div
+    style={
+      Object {
+        "borderTop": "1px dashed #e5e5e5",
+        "paddingTop": "16px",
+      }
+    }
+  >
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<blockquote>
+<p>NOTE: This is common footer for all stories that uses <code>withDocs</code> decorator. Added with <code>withDocs.addFooter(markdown)</code>.</p>
+</blockquote>
+<p>Refs:</p>
+<ul>
+<li><a href=\\"https://github.com/tuchk4/storybook-readme\\">Storybook Readme Github</a></li>
+<li>Me at twitter <a href=\\"https://twitter.com/tuchk4\\">@tuchk4</a></li>
+</ul>
+<p><img src=\\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfS_Bia8sqGFYp-qndJ_eHllQsDsclnU6xth6cZnjgW2hvA6YB\\" alt=\\"nyancat\\"></p>
+",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots withDocs/As HOC Button 1`] = `
+<div
+  style={
+    Object {
+      "padding": "10px",
+    }
+  }
+>
+  <div
+    className="markdown-body"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<h1 id=\\"button\\">Button</h1>
+<h3 id=\\"usage\\">Usage</h3>
+<pre><code class=\\"lang-js\\">import Button from &#39;components/button&#39;;
+</code></pre>
+",
+      }
+    }
+  />
+  <div
+    style={
+      Object {
+        "backgroundColor": "#ffffff",
+        "border": "1px dashed #e5e5e5",
+        "boxSizing": "border-box",
+        "margin": "16px 0 16px 0",
+        "padding": "50px 35px",
+        "position": "relative",
+        "textAlign": "center",
+        "transition": "background-color 0.2s",
+      }
+    }
+  >
+    <button
+      className="sc-bdVaJa hbPgcv"
+      onClick={[Function]}
+    >
+      Hello Im Button
+    </button>
+  </div>
+  <div
+    className="markdown-body"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "
+<h3 id=\\"properties\\">Properties</h3>
+<ul>
+<li><code>onClick</code> - click callback</li>
+<li><code>label</code> - button text</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>propName</th>
+<th>propType</th>
+<th>defaultValue</th>
+<th>isRequired</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>onClick</td>
+<td>func</td>
+<td>-</td>
+<td></td>
+</tr>
+<tr>
+<td>label</td>
+<td>string</td>
+<td>-</td>
+<td>+</td>
+</tr>
+<tr>
+<td>alert</td>
+<td>boolean</td>
+<td>false</td>
+<td>-</td>
+</tr>
+<tr>
+<td>success</td>
+<td>boolean</td>
+<td>false</td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+<h3 id=\\"roadmap\\">Roadmap</h3>
+<h4 id=\\"icons\\">Icons</h4>
+<pre><code class=\\"lang-js\\">import Button from &#39;components/button&#39;;
+
+render() {
+  return (
+    &lt;Button icon=&quot;mail&quot;&gt;Send mail&lt;/Button&gt;
+    &lt;Button icon=&quot;trash&quot; iconPosition=&quot;right&quot;&gt;Remove&lt;/Button&gt;
+  );
+}
+</code></pre>
+<h4 id=\\"value\\">Value</h4>
+<p>Add <code>value</code> property that will be available at all event callback. Helps to prevent numbers of bind usage</p>
+<p>For example:</p>
+<pre><code class=\\"lang-js\\">&lt;ListItem key={item.id}&gt;
+  &lt;Button onClick={this.remove} value={item.id}&gt;Remove&lt;/Button&gt;
+&lt;/ListItem&gt;
+</code></pre>
+<p>Instead of</p>
+<pre><code class=\\"lang-js\\">&lt;ListItem key={item.id}&gt;
+  &lt;Button onClick={this.remove.bind(this, item.id)}&gt;Remove&lt;/Button&gt;
+&lt;/ListItem&gt;
+</code></pre>
+",
+      }
+    }
+  />
+  <div
+    style={
+      Object {
+        "borderTop": "1px dashed #e5e5e5",
+        "paddingTop": "16px",
+      }
+    }
+  >
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<blockquote>
+<p>NOTE: This is common footer for all stories that uses <code>withDocs</code> decorator. Added with <code>withDocs.addFooter(markdown)</code>.</p>
+</blockquote>
+<p>Refs:</p>
+<ul>
+<li><a href=\\"https://github.com/tuchk4/storybook-readme\\">Storybook Readme Github</a></li>
+<li>Me at twitter <a href=\\"https://twitter.com/tuchk4\\">@tuchk4</a></li>
+</ul>
+<p><img src=\\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfS_Bia8sqGFYp-qndJ_eHllQsDsclnU6xth6cZnjgW2hvA6YB\\" alt=\\"nyancat\\"></p>
+",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots withReadme/ As Decorator Button 1`] = `
+<button
+  className="sc-bdVaJa hbPgcv"
+  onClick={[Function]}
+>
+  Hello Im Button
+</button>
+`;
+
+exports[`Storyshots withReadme/As HOC Button 1`] = `
+<button
+  className="sc-bdVaJa hbPgcv"
+  onClick={[Function]}
+>
+  Hello Im Button
+</button>
+`;
