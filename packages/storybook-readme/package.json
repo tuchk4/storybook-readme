@@ -12,9 +12,9 @@
     "url": "git+https://github.com/tuchk4/storybook-readme"
   },
   "dependencies": {
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
     "lodash": "^4.17.4",
     "prismjs": "^1.9.0",
-    "rockey-react": "=0.0.16-alpha.256b890c",
     "string-raw": "^1.0.1"
   },
   "devDependencies": {

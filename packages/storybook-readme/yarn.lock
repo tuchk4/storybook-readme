@@ -417,7 +417,7 @@ babel-plugin-transform-es2015-modules-amd@^6.22.0, babel-plugin-transform-es2015
     babel-runtime "^6.22.0"
     babel-template "^6.24.1"
 
-babel-plugin-transform-es2015-modules-commonjs@^6.23.0, babel-plugin-transform-es2015-modules-commonjs@^6.24.1:
+babel-plugin-transform-es2015-modules-commonjs@^6.23.0, babel-plugin-transform-es2015-modules-commonjs@^6.24.1, babel-plugin-transform-es2015-modules-commonjs@^6.26.0:
   version "6.26.0"
   resolved "https://registry.yarnpkg.com/babel-plugin-transform-es2015-modules-commonjs/-/babel-plugin-transform-es2015-modules-commonjs-6.26.0.tgz#0d8394029b7dc6abe1a97ef181e00758dd2e5d8a"
   dependencies:
@@ -790,10 +790,6 @@ chokidar@^1.6.1:
   optionalDependencies:
     fsevents "^1.0.0"
 
-classnames@^2.2.5:
-  version "2.2.5"
-  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
-
 clipboard@^1.7.1:
   version "1.7.1"
   resolved "https://registry.yarnpkg.com/clipboard/-/clipboard-1.7.1.tgz#360d6d6946e99a7a1fef395e42ba92b5e9b5a16b"
@@ -864,12 +860,6 @@ cryptiles@2.x.x:
   resolved "https://registry.yarnpkg.com/cryptiles/-/cryptiles-2.0.5.tgz#3bdfecdc608147c1c67202fa291e7dca59eaa3b8"
   dependencies:
     boom "2.x.x"
-
-css-vendor@^0.3.8:
-  version "0.3.8"
-  resolved "https://registry.yarnpkg.com/css-vendor/-/css-vendor-0.3.8.tgz#6421cfd3034ce664fe7673972fd0119fc28941fa"
-  dependencies:
-    is-in-browser "^1.0.2"
 
 dashdash@^1.12.0:
   version "1.14.1"
@@ -1216,10 +1206,6 @@ is-glob@^2.0.0, is-glob@^2.0.1:
   dependencies:
     is-extglob "^1.0.0"
 
-is-in-browser@^1.0.2:
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/is-in-browser/-/is-in-browser-1.1.3.tgz#56ff4db683a078c6082eb95dad7dc62e1d04f835"
-
 is-number@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/is-number/-/is-number-2.1.0.tgz#01fcbbb393463a548f2f466cce16dece49db908f"
@@ -1239,10 +1225,6 @@ is-posix-bracket@^0.1.0:
 is-primitive@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/is-primitive/-/is-primitive-2.0.0.tgz#207bab91638499c07b2adf240a41a87210034575"
-
-is-react-prop@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/is-react-prop/-/is-react-prop-1.0.0.tgz#b90040b44bde7c03e990c8d3046f87445577ee3f"
 
 is-stream@^1.0.1:
   version "1.1.0"
@@ -1716,30 +1698,6 @@ rimraf@2, rimraf@^2.5.1, rimraf@^2.6.1:
   resolved "https://registry.yarnpkg.com/rimraf/-/rimraf-2.6.2.tgz#2ed8150d24a16ea8651e6d6ef0f47c4158ce7a36"
   dependencies:
     glob "^7.0.5"
-
-rockey-css-parse@^0.0.16-alpha.256b890c:
-  version "0.0.16-alpha.256b890c"
-  resolved "https://registry.yarnpkg.com/rockey-css-parse/-/rockey-css-parse-0.0.16-alpha.256b890c.tgz#2d67f7c889a7cde5099a70f5bd6039ca8c3837f7"
-  dependencies:
-    lodash "^4.17.4"
-
-rockey-react@=0.0.16-alpha.256b890c:
-  version "0.0.16-alpha.256b890c"
-  resolved "https://registry.yarnpkg.com/rockey-react/-/rockey-react-0.0.16-alpha.256b890c.tgz#d4f0f5252290218d608b4fc7d16890dd54d5940a"
-  dependencies:
-    classnames "^2.2.5"
-    is-react-prop "^1.0.0"
-    lodash "^4.17.4"
-    rockey "^0.0.16-alpha.256b890c"
-
-rockey@^0.0.16-alpha.256b890c:
-  version "0.0.16-alpha.256b890c"
-  resolved "https://registry.yarnpkg.com/rockey/-/rockey-0.0.16-alpha.256b890c.tgz#989e4dc1841870c1f6c00ba1a09a2d384f71e5eb"
-  dependencies:
-    classnames "^2.2.5"
-    css-vendor "^0.3.8"
-    lodash "^4.17.4"
-    rockey-css-parse "^0.0.16-alpha.256b890c"
 
 safe-buffer@^5.0.1, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.1"
