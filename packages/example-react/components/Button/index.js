@@ -1,27 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import rockey from 'rockey-react';
 
-const StyledButton = rockey.button`
-  padding: 5px;
-  font-size: 15px;
-  margin: 1px;
-  border: 2px solid black;
-  border-radius: 3px;
+const StyledButton = ({ children, alert, success, ...props }) => {
+  const styles = {
+    padding: '5px',
+    fontSize: '15px',
+    margin: '1px',
+    border: '2px solid black',
+    borderRadius: '3px',
+    color: 'black',
+    background: 'white',
+  };
 
-  color: ${props => {
-    if (props.alert || props.success) return 'white';
+  if (alert || success) {
+    styles.color = 'white';
+  }
 
-    return 'black';
-  }};
+  if (alert) {
+    styles.background = 'red';
+  }
 
-  background: ${props => {
-    if (props.alert) return 'red';
-    if (props.success) return 'green';
+  if (success) {
+    styles.background = 'green';
+  }
 
-    return 'white';
-  }};
-`;
+  return <button {...props}>{children}</button>;
+};
 
 const Button = ({ label, ...props }) => {
   return <StyledButton {...props}>{label}</StyledButton>;
