@@ -24,7 +24,11 @@ const StyledButton = ({ children, alert, success, ...props }) => {
     styles.background = 'green';
   }
 
-  return <button {...props}>{children}</button>;
+  return (
+    <button style={styles} {...props}>
+      {children}
+    </button>
+  );
 };
 
 const Button = ({ label, ...props }) => {
