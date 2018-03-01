@@ -92,7 +92,29 @@ function withDocsCallAsDecorator({ docs, config }) {
     });
 }
 
+function doc({ docs, config }) {
+  return ({ kind, story }) =>
+    React.createElement(Story, {
+      docs: {},
+      config: {
+        ...config,
+        PreviewComponent: ({ children }) => <div>{children}</div>,
+      },
+      storyFn: () =>
+        docs.map((doc, index) => (
+          <div
+            key={index}
+            className={'markdown-body'}
+            dangerouslySetInnerHTML={{ __html: doc }}
+          />
+        )),
+      kind,
+      story,
+    });
+}
+
 export default {
+  doc,
   withReadme: commonHandler.withReadme,
   withDocs: {
     callAsDecorator: withDocsCallAsDecorator,

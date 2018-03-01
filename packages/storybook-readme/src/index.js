@@ -22,6 +22,7 @@ switch (window.STORYBOOK_ENV) {
 
 const WITH_README = 'WITH_README';
 const WITH_DOCS = 'WITH_DOCS';
+const DOC = 'DOC';
 
 const DEFAULT_CONFIG = {
   FooterComponent: null,
@@ -46,6 +47,14 @@ function getCommonConfig(type) {
 }
 
 function withCallType({ type, config }) {
+  if (type === DOC) {
+    return (...args) =>
+      handler.doc({
+        docs: args,
+        config,
+      });
+  }
+
   let typeHandler = null;
 
   switch (type) {
@@ -115,16 +124,19 @@ function withCallType({ type, config }) {
   };
 }
 
-// withCallType.addFooter = footer => {
-//   common.footer = footer;
-// };
-
 export const withReadme = (...args) => {
   return withCallType({ type: WITH_README, config: DEFAULT_CONFIG })(...args);
 };
 
 export const withDocs = (...args) => {
   return withCallType({ type: WITH_DOCS, config: DEFAULT_CONFIG })(...args);
+};
+
+export const doc = (...args) => {
+  return withCallType({
+    type: DOC,
+    config: DEFAULT_CONFIG,
+  })(...args);
 };
 
 withDocs.addFooterDocs = docsAtFooter => {
