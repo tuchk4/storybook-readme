@@ -184,3 +184,22 @@ storiesOf('withDocs/As HOC', module)
       };
     })
   );
+
+storiesOf('As JSX/As HOC', module).add(
+  'Button',
+  withDocs(ButtonReadme, () => ({
+    components: { MyButton },
+    render() {
+      return <my-button>MyButton rendered with JSX</my-button>;
+    },
+  }))
+);
+
+storiesOf('As JSX/As Decorator', module)
+  .addDecorator(withDocs(ButtonReadme))
+  .add('Button', () => ({
+    components: { MyButton },
+    render() {
+      return <my-button>MyButton rendered with JSX</my-button>;
+    },
+  }));
