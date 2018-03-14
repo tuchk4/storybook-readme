@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import { storiesOf } from '@storybook/vue';
 import { withKnobs, text, boolean } from '@storybook/addon-knobs';
-import { withReadme, withDocs } from 'storybook-readme';
+import { withReadme, withDocs, doc } from 'storybook-readme';
 
 import MyButton from '../components/MyButton/MyButton.vue';
 
@@ -203,3 +203,5 @@ storiesOf('As JSX/As Decorator', module)
       return <my-button>MyButton rendered with JSX</my-button>;
     },
   }));
+
+storiesOf('Doc', module).add('Common', doc(ButtonReadme));

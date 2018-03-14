@@ -66,7 +66,36 @@ function withDocsCallAsDecorator({ docs, config }) {
     });
 }
 
+function doc({ docs, config }) {
+  return ({ kind, story }) =>
+    renderStory({
+      docs: {},
+      config: {
+        ...config,
+        PreviewComponent: {
+          template: `<div><slot></slot></div>`,
+        },
+      },
+      storyFn: (k, v) => {
+        return {
+          data() {
+            return {
+              docs,
+            };
+          },
+          components: {
+            MarkdownContainer,
+          },
+          template: `<markdown-container :docs="docs" />`,
+        };
+      },
+      kind,
+      story,
+    });
+}
+
 export default {
+  doc,
   withReadme: commonHandler.withReadme,
   withDocs: {
     callAsDecorator: withDocsCallAsDecorator,

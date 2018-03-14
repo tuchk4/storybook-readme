@@ -1,7 +1,7 @@
 import React from 'react';
 import { storiesOf, action } from '@storybook/react';
 import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
-import { withReadme, withDocs } from 'storybook-readme';
+import { withReadme, withDocs, doc } from 'storybook-readme';
 
 import Button from '../components/Button';
 
@@ -129,3 +129,5 @@ storiesOf('withDocs/As HOC', module)
       />
     ))
   );
+
+storiesOf('Doc', module).add('Common', doc(ButtonReadme));
