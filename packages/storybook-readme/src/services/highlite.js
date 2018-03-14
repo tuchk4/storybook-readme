@@ -10,7 +10,7 @@ export default (dom, { withJSX = false } = {}) => {
    * https://github.com/tuchk4/storybook-readme/issues/52
    */
   const nodes = dom.hasOwnProperty('querySelectorAll')
-    ? dom.querySelectorAll('pre code')
+    ? dom.querySelectorAll('code')
     : [];
 
   if (nodes.length > 0) {
