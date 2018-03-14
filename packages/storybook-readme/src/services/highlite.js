@@ -9,9 +9,12 @@ export default (dom, { withJSX = false } = {}) => {
    * The most common case is using this addon with storyshoots
    * https://github.com/tuchk4/storybook-readme/issues/52
    */
-  const nodes = dom.hasOwnProperty('querySelectorAll')
-    ? dom.querySelectorAll('code')
-    : [];
+  const nodes =
+    typeof dom.querySelectorAll === 'function'
+      ? dom.querySelectorAll('pre code')
+      : [];
+
+  // console.log(nodes);
 
   if (nodes.length > 0) {
     for (var i = 0; i < nodes.length; i = i + 1) {
