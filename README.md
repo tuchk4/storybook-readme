@@ -3,22 +3,24 @@
 ![Storybook README addon](https://tuchk4.tinytake.com/media/6074cc?filename=1507031891423_03-10-2017-14-58-09.png&sub_type=thumbnail_preview&type=attachment&width=700&height=542&_felix_session_id=53f589ad3ebd6ae15ad9850b6bb20044&salt=MjAwMDAyNF82MzIxMzU2)
 
 This addon is compatible with:
-- Storybook for React ([React example storybook](packages/example-react))
-- Storybook for Vue ([Vue example storybook](packages/example-vue))
+
+* Storybook for React ([React example storybook](packages/example-react))
+* Storybook for Vue ([Vue example storybook](packages/example-vue))
 
 [Live demo](https://tuchk4.github.io/storybook-readme)
 
 Features:
-* Does not affect on *story function*. So [Storybook Info](https://github.com/storybooks/storybook/tree/master/addons/info) works correctly now.
+
+* Does not affect on _story function_. So [Storybook Info](https://github.com/storybooks/storybook/tree/master/addons/info) works correctly now.
 * 100% markdown support
 * Code highlighting
 * Accept multiple README (useful for [hoc component](https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e) - add component's and original component's README)
 * Looks like Github's README
 * Supports `<docs/>` tags for vue components ([example-vue/components/MyButton/MyButton.vue](https://github.com/tuchk4/storybook-readme/blob/master/packages/example-vue/components/MyButton/MyButton.vue)).
 
-Also it very useful because most projects and components already have *README.md* files. Now it is easy to add them into your Storybook.
+Also it very useful because most projects and components already have _README.md_ files. Now it is easy to add them into your Storybook.
 
-Stories will be added with *.addWithInfo* method if [Storybook Info Addon](https://github.com/storybooks/storybook/tree/master/addons/info) is installed.
+Stories will be added with _.addWithInfo_ method if [Storybook Info Addon](https://github.com/storybooks/storybook/tree/master/addons/info) is installed.
 
 ### Install
 
@@ -29,12 +31,14 @@ or
 `yarn add --dev storybook-readme`
 
 ### Webpack Configuration for React Storybook
+
 **There is no additional webpack configuration if using with `@storybooks/storybook@3.3.0`.**
 
 For lower versions use:
+
 ```js
 module.exports = {
-   module: {
+  module: {
     rules: [
       {
         test: /\.md$/,
@@ -53,6 +57,7 @@ module.exports = {
 ```
 
 ### Webpack Configuration for Vue Storybook
+
 ```js
 const updateWebpackConfig = require('storybook-readme/env/vue/updateWebpackConfig');
 
@@ -63,18 +68,19 @@ module.exports = storybookBaseConfig => {
 
 ## Usage
 
-Register addon at *.storybook/addons.js*
+Register addon at _.storybook/addons.js_
 
 ```js
 import 'storybook-readme/register';
 ```
 
-Then create your stories with the *withReadme* or *withDocs* API (use as story HOC or as Storybook Decorator).
+Then create your stories with the _withReadme_ or _withDocs_ API (use as story HOC or as Storybook Decorator).
 
-- *withDocs* - Add README around the story component at the main panel. [Example withDocs](https://tuchk4.github.io/storybook-readme/?knob-alert=false&knob-success=false&knob-label=Hello%20Im%20Button&selectedKind=withDocs%2FAs%20Decorator&selectedStory=Button&full=0&down=1&left=1&panelRight=1&downPanel=storybooks%2Fstorybook-addon-knobs)
-- *withReadme* - Add README to the storybook panels. [Example withReadme](https://tuchk4.github.io/storybook-readme/?knob-alert=false&knob-success=false&knob-label=Hello%20Im%20Button&selectedKind=withReadme%2F%20As%20Decorator&selectedStory=Button&full=0&down=1&left=1&panelRight=1&downPanel=REACT_STORYBOOK%2Freadme%2Fpanel)
+* _withDocs_ - Add README around the story component at the main panel. [Example withDocs](https://tuchk4.github.io/storybook-readme/?knob-alert=false&knob-success=false&knob-label=Hello%20Im%20Button&selectedKind=withDocs%2FAs%20Decorator&selectedStory=Button&full=0&down=1&left=1&panelRight=1&downPanel=storybooks%2Fstorybook-addon-knobs)
+* _withReadme_ - Add README to the storybook panels. [Example withReadme](https://tuchk4.github.io/storybook-readme/?knob-alert=false&knob-success=false&knob-label=Hello%20Im%20Button&selectedKind=withReadme%2F%20As%20Decorator&selectedStory=Button&full=0&down=1&left=1&panelRight=1&downPanel=REACT_STORYBOOK%2Freadme%2Fpanel)
+* _doc_ - Add README instead of component preview. [Example doc](https://tuchk4.github.io/storybook-readme/?knob-alert=false&knob-success=false&knob-label=Hello%20Im%20Button&selectedKind=Doc&selectedStory=Common&full=0&addons=1&stories=1&panelRight=1&addonPanel=storybooks%2Fstorybook-addon-knobs)
 
-It is possible to combine *withDocs* and *withReadme* - [Example combined APIs](https://tuchk4.github.io/storybook-readme/?knob-alert=false&knob-success=false&knob-label=Hello%20Im%20Button&selectedKind=withDocs%20and%20withReadme&selectedStory=Button&full=0&down=1&left=1&panelRight=1&downPanel=REACT_STORYBOOK%2Freadme%2Fpanel)
+It is possible to combine _withDocs_ and _withReadme_ - [Example combined APIs](https://tuchk4.github.io/storybook-readme/?knob-alert=false&knob-success=false&knob-label=Hello%20Im%20Button&selectedKind=withDocs%20and%20withReadme&selectedStory=Button&full=0&down=1&left=1&panelRight=1&downPanel=REACT_STORYBOOK%2Freadme%2Fpanel)
 
 ```js
 import ButtonReadme from '../components/button/README.md';
@@ -109,13 +115,15 @@ storiesOf('Content', module)
 
 #### Use as Higher Order Component
 
-- *withReadme(readme, story)*
-- *withDocs(readme, story)* or *withDocs({ PreviewComponent, FooterComponent })(readme, story)*
+* _withReadme(readme, story)_
+* _withDocs(readme, story)_ or _withDocs({ PreviewComponent, FooterComponent })(readme, story)_
+* _doc(readme)_
 
 > Accepts README or array of README in markdown format.
 > Multiple REAMDE is useful when you develop higher order component and want to add its README and original component README.
 
 **withReadme** example:
+
 ```js
 import { withReadme } from 'storybook-readme';
 import OriginalButtonREADME from 'node_modules/components/button/README.md';
@@ -123,33 +131,50 @@ import ButtonREADME from '../components/components/button/README.md';
 
 storiesOf('Button', module)
   // add multiple READMEs (also supports only one)
-  .add('Default', withReadme([OriginalButtonREADME, ButtonREADME], () => {
-    return <Button onClick={action('clicked')} label="Hello Button"/>;
-  }));
+  .add(
+    'Default',
+    withReadme([OriginalButtonREADME, ButtonREADME], () => {
+      return <Button onClick={action('clicked')} label="Hello Button" />;
+    })
+  );
 ```
 
 **withDocs** example:
+
 ```js
 import { withDocs } from 'storybook-readme';
 import ButtonREADME from '../components/components/button/README.md';
 
 storiesOf('Button', module)
   // add only one README (also supports multiple as array)
-  .add('Default', withDocs(ButtonREADME, () => {
-    return <Button onClick={action('clicked')} label="Hello Button"/>;
-  }));
+  .add(
+    'Default',
+    withDocs(ButtonREADME, () => {
+      return <Button onClick={action('clicked')} label="Hello Button" />;
+    })
+  );
+```
+
+**doc** example:
+
+```js
+import { doc } from 'storybook-readme';
+import ButtonREADME from '../components/components/button/README.md';
+
+storiesOf('ButtonDoc', module).add('Docs', doc(ButtonREADME));
 ```
 
 #### Use as Decorator
 
-- *withReadme(readme)*
-- *withDocs(readme)* or *withDocs({ PreviewComponent, FooterComponent })(readme)*
+* _withReadme(readme)_
+* _withDocs(readme)_ or _withDocs({ PreviewComponent, FooterComponent })(readme)_
 
 > Pass only first argument - README or array of README in markdown format.
 
 In this way code of stories is more clean.
 
 **withReadme** example:
+
 ```js
 import { withReadme } from 'storybook-readme';
 import OriginalButtonREADME from 'node_modules/components/button/README.md';
@@ -159,11 +184,12 @@ storiesOf('Button', module)
   // add multiple READMEs (also supports only one)
   .addDecorator(withReadme([OriginalButtonREADME, ButtonREADME]))
   .add('Default', () => {
-    return <Button onClick={action('clicked')} label="Hello Button"/>;
+    return <Button onClick={action('clicked')} label="Hello Button" />;
   });
 ```
 
 **withDocs** example:
+
 ```js
 import { withDocs } from 'storybook-readme';
 import ButtonREADME from 'node_modules/component/README.md';
@@ -172,11 +198,9 @@ storiesOf('Button', module)
   // add only one README (also supports multiple as array)
   .addDecorator(withDocs(ButtonREADME))
   .add('Default', () => {
-    return <Button onClick={action('clicked')} label="Hello Button"/>;
+    return <Button onClick={action('clicked')} label="Hello Button" />;
   });
 ```
-
-
 
 ### `withDocs` - Common Footer
 
