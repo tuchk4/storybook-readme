@@ -2,7 +2,8 @@
   "name": "storybook-readme",
   "private": false,
   "version": "3.3.0",
-  "description": "Storybook addon to show components README (for React and Vue)",
+  "description":
+    "Storybook addon to show components README (for React and Vue)",
   "main": "index.js",
   "homepage": "https://github.com/tuchk4/storybook-readme",
   "bugs": "https://github.com/tuchk4/storybook-readme/issues",
@@ -14,7 +15,8 @@
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
     "lodash": "^4.17.4",
     "prismjs": "^1.9.0",
-    "string-raw": "^1.0.1"
+    "string-raw": "^1.0.1",
+    "node-emoji": "1.8.1"
   },
   "devDependencies": {
     "@storybook/addons": "^3.3.3",
@@ -37,8 +39,10 @@
     "with-readme.js"
   ],
   "scripts": {
-    "prepublish": "npm run clear & cross-env NODE_ENV=production babel -d ./ ./src",
-    "dev": "npm run clear & cross-env NODE_ENV=production babel -d ./ ./src --watch",
+    "prepublish":
+      "npm run clear & cross-env NODE_ENV=production babel -d ./ ./src",
+    "dev":
+      "npm run clear & cross-env NODE_ENV=production babel -d ./ ./src --watch",
     "clear": "ls ./src | xargs rm -rf"
   },
   "keywords": [],

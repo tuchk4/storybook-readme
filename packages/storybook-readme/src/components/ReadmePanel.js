@@ -74,7 +74,9 @@ export default class ReadmePanel extends React.Component {
   }
 
   render() {
-    const { docs: { docsAfterPreview, docsBeforePreview } } = this.state;
+    const {
+      docs: { docsAfterPreview, docsBeforePreview },
+    } = this.state;
 
     if (!docsAfterPreview && !docsBeforePreview) {
       return (
