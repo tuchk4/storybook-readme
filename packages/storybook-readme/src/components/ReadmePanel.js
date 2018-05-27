@@ -42,6 +42,8 @@ export default class ReadmePanel extends React.Component {
 
     const el = ReactDOM.findDOMNode(this);
 
+    el.parentNode.style.minWidth = '0';
+
     highlight(el, {
       withJSX: true,
     });
@@ -74,7 +76,9 @@ export default class ReadmePanel extends React.Component {
   }
 
   render() {
-    const { docs: { docsAfterPreview, docsBeforePreview } } = this.state;
+    const {
+      docs: { docsAfterPreview, docsBeforePreview },
+    } = this.state;
 
     if (!docsAfterPreview && !docsBeforePreview) {
       return (
@@ -87,7 +91,7 @@ export default class ReadmePanel extends React.Component {
     }
 
     return (
-      <div style={{ padding: '10px' }}>
+      <div style={{ padding: '10px', minWidth: '0' }}>
         {docsBeforePreview &&
           docsBeforePreview.map((doc, index) => (
             <div
