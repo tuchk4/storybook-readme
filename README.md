@@ -93,7 +93,7 @@ storiesOf('Button', module)
   .add('Default', withReadme(ButtonReadme, () => <Button onClick={action('clicked')} label="Hello Button"/>))
 
 storiesOf('Content', module)
-  .add('Default', withDocs(ButtonReadme, () => <Content>Hello Button<Content/>))
+  .add('Default', withDocs(ButtonReadme, () => <Content>Hello Button</Content>))
 
 // with custom preview element
 const withCustomPreview = withDocs({
@@ -110,7 +110,7 @@ const withCustomPreview = withDocs({
 });
 
 storiesOf('Content', module)
-  .add('Default', withCustomPreview(ButtonReadme, () => <Content>Hello Button<Content/>))
+  .add('Default', withCustomPreview(ButtonReadme, () => <Content>Hello Button</Content>))
 ```
 
 #### Use as Higher Order Component
