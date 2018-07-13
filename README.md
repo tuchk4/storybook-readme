@@ -85,7 +85,7 @@ It is possible to combine _withDocs_ and _withReadme_ - [Example combined APIs](
 ```js
 import ButtonReadme from '../components/button/README.md';
 import { withReadme, withDocs }  from 'storybook-readme';
-// or import separetaly
+// or import separately
 // import withReadme from 'storybook-readme/with-readme';
 // import withDocs from 'storybook-readme/with-docs';
 
