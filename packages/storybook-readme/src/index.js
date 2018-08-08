@@ -5,6 +5,7 @@ import isArray from 'lodash/isArray';
 import vueHandler from './env/vue';
 import reactHandler from './env/react';
 import normalizeDocs from './services/normalizeDocs';
+import marked from './services/marked';
 import './styles/github-markdown-css';
 
 let handler = null;
@@ -140,9 +141,9 @@ export const doc = (...args) => {
 };
 
 withDocs.addFooterDocs = docsAtFooter => {
-  WITH_DOCS_COMMON_CONFIG.docsAtFooter = docsAtFooter;
+  WITH_DOCS_COMMON_CONFIG.docsAtFooter = marked(docsAtFooter);
 };
 
 withReadme.addFooterDocs = docsAtFooter => {
-  WITH_README_COMMON_CONFIG.docsAtFooter = docsAtFooter;
+  WITH_README_COMMON_CONFIG.docsAtFooter = marked(docsAtFooter);
 };

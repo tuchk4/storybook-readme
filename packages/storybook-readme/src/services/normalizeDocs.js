@@ -1,3 +1,5 @@
+import marked from './marked';
+
 export const SPLITTER = '<!-- STORY -->';
 
 export function clearSplitter(docs) {
@@ -28,8 +30,12 @@ export default function(docs) {
 
   return {
     docsBeforePreview:
-      grouped.docsBeforePreview.length === 0 ? null : grouped.docsBeforePreview,
+      grouped.docsBeforePreview.length === 0
+        ? null
+        : grouped.docsBeforePreview.map(marked),
     docsAfterPreview:
-      grouped.docsAfterPreview.length === 0 ? null : grouped.docsAfterPreview,
+      grouped.docsAfterPreview.length === 0
+        ? null
+        : grouped.docsAfterPreview.map(marked),
   };
 }
