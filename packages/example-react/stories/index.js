@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
 import { withReadme, withDocs, doc } from 'storybook-readme';
+import Marked from 'storybook-readme/components/Marked';
 
 import Button from '../components/Button';
 
@@ -132,3 +133,40 @@ storiesOf('withDocs/As HOC', module)
   );
 
 storiesOf('Doc', module).add('Common', doc(ButtonReadme));
+
+storiesOf('Marked', module).add('Marked1', () => {
+  return (
+    <React.Fragment>
+      <div
+        style={{
+          padding: '16px',
+          margin: '32px 0',
+          background: 'rgba(255, 255, 0, 0.41)',
+        }}
+      >
+        <Button onClick={action('clicked')} label="Button before intro" />
+      </div>
+      <Marked md={'### INTRO '} />
+      <div
+        style={{
+          padding: '16px',
+          margin: '32px 0',
+          background: 'rgba(0, 255, 0, 0.41)',
+        }}
+      >
+        <Button onClick={action('clicked')} label="Button before docs" />
+      </div>
+      <Marked md={ButtonReadme} />
+      <div
+        style={{
+          padding: '16px',
+          margin: '32px 0',
+          background: 'rgba(255, 0, 0, 0.41)',
+        }}
+      >
+        <Button onClick={action('clicked')} label="Button before outro" />
+      </div>
+      <Marked md={'### OUTRO '} />
+    </React.Fragment>
+  );
+});

@@ -58,11 +58,18 @@ module.exports = {
 
 ### Webpack Configuration for Vue Storybook
 
-```js
-const updateWebpackConfig = require('storybook-readme/env/vue/updateWebpackConfig');
+Only if using [Single File Components](https://vuejs.org/v2/guide/single-file-components.html) and want to use `<docs>` tag at storybook documentation.
 
+```js
 module.exports = storybookBaseConfig => {
-  return updateWebpackConfig(storybookBaseConfig);
+  storybookBaseConfig.module.rules.push({
+    resourceQuery: /blockType=docs/,
+    use: [
+      'storybook-readme/env/vue/docs-loader',
+      'html-loader',
+      'markdown-loader',
+    ],
+  });
 };
 ```
 
@@ -84,16 +91,22 @@ It is possible to combine _withDocs_ and _withReadme_ - [Example combined APIs](
 
 ```js
 import ButtonReadme from '../components/button/README.md';
-import { withReadme, withDocs }  from 'storybook-readme';
+import { withReadme, withDocs } from 'storybook-readme';
 // or import separately
 // import withReadme from 'storybook-readme/with-readme';
 // import withDocs from 'storybook-readme/with-docs';
 
-storiesOf('Button', module)
-  .add('Default', withReadme(ButtonReadme, () => <Button onClick={action('clicked')} label="Hello Button"/>))
+storiesOf('Button', module).add(
+  'Default',
+  withReadme(ButtonReadme, () => (
+    <Button onClick={action('clicked')} label="Hello Button" />
+  ))
+);
 
-storiesOf('Content', module)
-  .add('Default', withDocs(ButtonReadme, () => <Content>Hello Button</Content>))
+storiesOf('Content', module).add(
+  'Default',
+  withDocs(ButtonReadme, () => <Content>Hello Button</Content>)
+);
 
 // with custom preview element
 const withCustomPreview = withDocs({
@@ -109,8 +122,10 @@ const withCustomPreview = withDocs({
   `,
 });
 
-storiesOf('Content', module)
-  .add('Default', withCustomPreview(ButtonReadme, () => <Content>Hello Button</Content>))
+storiesOf('Content', module).add(
+  'Default',
+  withCustomPreview(ButtonReadme, () => <Content>Hello Button</Content>)
+);
 ```
 
 #### Use as Higher Order Component
@@ -119,8 +134,7 @@ storiesOf('Content', module)
 * _withDocs(readme, story)_ or _withDocs({ PreviewComponent, FooterComponent })(readme, story)_
 * _doc(readme)_
 
-> Accepts README or array of README in markdown format.
-> Multiple REAMDE is useful when you develop higher order component and want to add its README and original component README.
+> Accepts README or array of README in markdown format. Multiple REAMDE is useful when you develop higher order component and want to add its README and original component README.
 
 **withReadme** example:
 
@@ -215,10 +229,33 @@ import DocsFooterReadme from 'components/DOCS_FOOTER.md';
 withDocs.addFooterDocs(DocsFooterReadme);
 ```
 
+### Custom layout
+
+Right now only for React storybooks.
+
+````js
+import Marked from 'storybook-readme/components/Marked';
+import ButtonReadme from './ButtonReadme.md';
+
+storiesOf('Marked', module).add('Marked1', () => {
+  return (
+    <React.Fragment>
+      <Button label="Button before docs" />
+      <Marked md={'### INTRO '} />
+
+      <Button label="Button before docs" />
+      <Marked md={ButtonReadme} />
+
+      <Button label="Button before outro" />
+      <Marked md={'### OUTRO '} />
+    </React.Fragment>
+  );
+});
+```
+
 ### README splitter (only for `withDocs` API)
 
-You can use `<!-- STORY -->` at the README to control component story position.
-Instead of this placeholder story will be rendered. For example:
+You can use `<!-- STORY -->` at the README to control component story position. Instead of this placeholder story will be rendered. For example:
 
 ```md
 Docs before story
@@ -226,7 +263,7 @@ Docs before story
 <!-- STORY -->
 
 Docs after story
-```
+````
 
 Have a look on this [README](https://raw.githubusercontent.com/tuchk4/storybook-readme/master/packages/example-react/components/Button/DOCS.md) and [live story exmaple](https://tuchk4.github.io/storybook-readme/?knob-alert=false&knob-success=false&knob-label=Hello%20Im%20Button&selectedKind=Custom%20Preview%20and%20Footer&selectedStory=Button&full=0&down=1&left=1&panelRight=1&downPanel=REACT_STORYBOOK%2Freadme%2Fpanel).
 

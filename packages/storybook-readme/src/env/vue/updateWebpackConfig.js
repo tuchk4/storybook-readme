@@ -3,6 +3,8 @@ const path = require('path');
 const docsLoader = path.resolve(__dirname, 'docs-loader');
 
 module.exports = (storybookBaseConfig, configType) => {
+  console.log(storybookBaseConfig.module.rules);
+
   storybookBaseConfig.module.rules = storybookBaseConfig.module.rules.map(
     rule => {
       if (rule.loader && rule.loader.indexOf('vue-loader') !== -1) {
