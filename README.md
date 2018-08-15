@@ -233,7 +233,7 @@ withDocs.addFooterDocs(DocsFooterReadme);
 
 Right now only for React storybooks.
 
-````js
+```js
 import Marked from 'storybook-readme/components/Marked';
 import ButtonReadme from './ButtonReadme.md';
 
@@ -263,7 +263,7 @@ Docs before story
 <!-- STORY -->
 
 Docs after story
-````
+```
 
 Have a look on this [README](https://raw.githubusercontent.com/tuchk4/storybook-readme/master/packages/example-react/components/Button/DOCS.md) and [live story exmaple](https://tuchk4.github.io/storybook-readme/?knob-alert=false&knob-success=false&knob-label=Hello%20Im%20Button&selectedKind=Custom%20Preview%20and%20Footer&selectedStory=Button&full=0&down=1&left=1&panelRight=1&downPanel=REACT_STORYBOOK%2Freadme%2Fpanel).
 
