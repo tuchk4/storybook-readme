@@ -110,16 +110,25 @@ storiesOf('Content', module).add(
 
 // with custom preview element
 const withCustomPreview = withDocs({
+  // it is easy with styled-components
   PreviewComponent: styled.div`
     text-align: center;
     padding: 25px;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
   `,
-  FooterComponent: styled.div`
-    padding: 25px;
-    background: rgba(246, 255, 0, 0.23);
-    border-top: '2px solid rgba(0, 0, 0, 0.1);
-  `,
+  FooterComponent: ({ children }) => {
+    return (
+      <div
+        style={{
+          padding: '25px',
+          background: 'rgba(246, 255, 0, 0.23)',
+          borderTop: '2px solid rgba(0, 0, 0, 0.1)',
+        }}
+      >
+        {children}
+      </div>
+    );
+  },
 });
 
 storiesOf('Content', module).add(
