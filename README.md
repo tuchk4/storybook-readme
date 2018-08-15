@@ -255,7 +255,7 @@ storiesOf('Marked', module).add('Marked1', () => {
 
 ### README splitter (only for `withDocs` API)
 
-You can use `<!-- STORY -->` at the README to control component story position. Instead of this placeholder story will be rendered. For example:
+You can use `<!-- STORY -->` at the README to control component story position. For example:
 
 ```md
 Docs before story
