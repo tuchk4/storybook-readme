@@ -15,6 +15,7 @@
     "prettier": "^1.9.2"
   },
   "scripts": {
+    "install-all": "node install-dependencies",
     "storybook-react": "npm run storybook --prefix ./packages/example-react",
     "storybook-vue": "npm run storybook --prefix ./packages/example-vue",
     "dev": "lerna run dev --stream --parallel",
