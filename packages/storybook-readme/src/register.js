@@ -9,8 +9,10 @@ const PANEL_TITLE = 'README';
 addons.register(ADDON_ID, api => {
   addons.addPanel(PANEL_NAME, {
     title: PANEL_TITLE,
-    render: () => (
-      <ReadmePanel channel={addons.getChannel()} onStory={api.onStory} />
-    ),
+    render: ({ active }) => {
+      return active ? (
+        <ReadmePanel channel={addons.getChannel()} onStory={api.onStory} />
+      ) : null;
+    },
   });
 });
