@@ -134,7 +134,7 @@ storiesOf('withDocs/As HOC', module)
 
 storiesOf('Doc', module).add('Common', doc(ButtonReadme));
 
-storiesOf('Marked', module).add('Marked1', () => {
+storiesOf('Custom Layout', module).add('Button', () => {
   return (
     <React.Fragment>
       <div
@@ -154,7 +154,7 @@ storiesOf('Marked', module).add('Marked1', () => {
           background: 'rgba(0, 255, 0, 0.41)',
         }}
       >
-        <Button onClick={action('clicked')} label="Button before docs" />
+        <Button onClick={action('clicked')} label="Button after intro" />
       </div>
       <Marked md={ButtonReadme} />
       <div

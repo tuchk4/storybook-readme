@@ -238,21 +238,21 @@ import DocsFooterReadme from 'components/DOCS_FOOTER.md';
 withDocs.addFooterDocs(DocsFooterReadme);
 ```
 
-### Custom layout
+### Custom Story Layout
 
-Right now only for React storybooks.
+Right now only for React storybooks. Take a look on this [Example].(https://tuchk4.github.io/storybook-readme/?selectedKind=Marked&selectedStory=Marked1&full=0&addons=1&stories=1&panelRight=1&addonPanel=storybooks%2Fstorybook-addon-knobs)
 
 ```js
 import Marked from 'storybook-readme/components/Marked';
 import ButtonReadme from './ButtonReadme.md';
 
-storiesOf('Marked', module).add('Marked1', () => {
+storiesOf('Custom Layout', module).add('Button', () => {
   return (
     <React.Fragment>
-      <Button label="Button before docs" />
+      <Button label="Button before intro" />
       <Marked md={'### INTRO '} />
 
-      <Button label="Button before docs" />
+      <Button label="Button after intro" />
       <Marked md={ButtonReadme} />
 
       <Button label="Button before outro" />
