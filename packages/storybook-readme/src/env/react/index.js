@@ -7,20 +7,23 @@ import commonHandler from '../common';
 import highlight from '../../services/highlite';
 
 class Story extends React.Component {
-  componentDidMount() {
-    const el = ReactDOM.findDOMNode(this);
+  ref = null;
 
-    highlight(el, {
-      withJSX: true,
-    });
+  highlight() {
+    if (this.ref) {
+      highlight(this.ref, {
+        withJSX: true,
+      });
+    }
   }
 
-  componentDidUpdate() {
-    const el = ReactDOM.findDOMNode(this);
+  handleRef = ref => {
+    this.ref = ref;
+    this.highlight();
+  };
 
-    highlight(el, {
-      withJSX: true,
-    });
+  componentDidUpdate() {
+    this.highlight();
   }
 
   render() {
@@ -36,7 +39,7 @@ class Story extends React.Component {
     const FooterComponent = config.FooterComponent || FooterDocs;
 
     return (
-      <div style={{ padding: '10px' }}>
+      <div style={{ padding: '10px' }} ref={this.handleRef}>
         {docsBeforePreview &&
           docsBeforePreview.map((doc, index) => (
             <div

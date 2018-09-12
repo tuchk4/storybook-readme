@@ -3,6 +3,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
 import { withReadme, withDocs, doc } from 'storybook-readme';
+import { withNotes } from '@storybook/addon-notes';
 import Marked from 'storybook-readme/components/Marked';
 
 import Button from '../components/Button';
@@ -170,3 +171,19 @@ storiesOf('Custom Layout', module).add('Button', () => {
     </React.Fragment>
   );
 });
+
+storiesOf('withDocs/withNotes', module)
+  .addDecorator(withKnobs)
+  .add(
+    'Button',
+    withNotes('A very simple component')(
+      withDocs(ButtonReadme, () => (
+        <Button
+          onClick={action('clicked')}
+          alert={boolean('alert', false)}
+          success={boolean('success', false)}
+          label={text('label', 'Hello Im Button')}
+        />
+      ))
+    )
+  );
