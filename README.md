@@ -58,11 +58,18 @@ module.exports = {
 
 ### Webpack Configuration for Vue Storybook
 
-```js
-const updateWebpackConfig = require('storybook-readme/env/vue/updateWebpackConfig');
+Only if using [Single File Components](https://vuejs.org/v2/guide/single-file-components.html) and want to use `<docs>` tag at storybook documentation.
 
+```js
 module.exports = storybookBaseConfig => {
-  return updateWebpackConfig(storybookBaseConfig);
+  storybookBaseConfig.module.rules.push({
+    resourceQuery: /blockType=docs/,
+    use: [
+      'storybook-readme/env/vue/docs-loader',
+      'html-loader',
+      'markdown-loader',
+    ],
+  });
 };
 ```
 
@@ -84,33 +91,50 @@ It is possible to combine _withDocs_ and _withReadme_ - [Example combined APIs](
 
 ```js
 import ButtonReadme from '../components/button/README.md';
-import { withReadme, withDocs }  from 'storybook-readme';
-// or import separetaly
+import { withReadme, withDocs } from 'storybook-readme';
+// or import separately
 // import withReadme from 'storybook-readme/with-readme';
 // import withDocs from 'storybook-readme/with-docs';
 
-storiesOf('Button', module)
-  .add('Default', withReadme(ButtonReadme, () => <Button onClick={action('clicked')} label="Hello Button"/>))
+storiesOf('Button', module).add(
+  'Default',
+  withReadme(ButtonReadme, () => (
+    <Button onClick={action('clicked')} label="Hello Button" />
+  ))
+);
 
-storiesOf('Content', module)
-  .add('Default', withDocs(ButtonReadme, () => <Content>Hello Button<Content/>))
+storiesOf('Content', module).add(
+  'Default',
+  withDocs(ButtonReadme, () => <Content>Hello Button</Content>)
+);
 
 // with custom preview element
 const withCustomPreview = withDocs({
+  // it is easy with styled-components
   PreviewComponent: styled.div`
     text-align: center;
     padding: 25px;
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
   `,
-  FooterComponent: styled.div`
-    padding: 25px;
-    background: rgba(246, 255, 0, 0.23);
-    border-top: '2px solid rgba(0, 0, 0, 0.1);
-  `,
+  FooterComponent: ({ children }) => {
+    return (
+      <div
+        style={{
+          padding: '25px',
+          background: 'rgba(246, 255, 0, 0.23)',
+          borderTop: '2px solid rgba(0, 0, 0, 0.1)',
+        }}
+      >
+        {children}
+      </div>
+    );
+  },
 });
 
-storiesOf('Content', module)
-  .add('Default', withCustomPreview(ButtonReadme, () => <Content>Hello Button<Content/>))
+storiesOf('Content', module).add(
+  'Default',
+  withCustomPreview(ButtonReadme, () => <Content>Hello Button</Content>)
+);
 ```
 
 #### Use as Higher Order Component
@@ -119,8 +143,7 @@ storiesOf('Content', module)
 * _withDocs(readme, story)_ or _withDocs({ PreviewComponent, FooterComponent })(readme, story)_
 * _doc(readme)_
 
-> Accepts README or array of README in markdown format.
-> Multiple REAMDE is useful when you develop higher order component and want to add its README and original component README.
+> Accepts README or array of README in markdown format. Multiple REAMDE is useful when you develop higher order component and want to add its README and original component README.
 
 **withReadme** example:
 
@@ -215,10 +238,33 @@ import DocsFooterReadme from 'components/DOCS_FOOTER.md';
 withDocs.addFooterDocs(DocsFooterReadme);
 ```
 
+### Custom Story Layout
+
+Right now only for React storybooks. Take a look on this [Example].(https://tuchk4.github.io/storybook-readme/?selectedKind=Marked&selectedStory=Marked1&full=0&addons=1&stories=1&panelRight=1&addonPanel=storybooks%2Fstorybook-addon-knobs)
+
+```js
+import Marked from 'storybook-readme/components/Marked';
+import ButtonReadme from './ButtonReadme.md';
+
+storiesOf('Custom Layout', module).add('Button', () => {
+  return (
+    <React.Fragment>
+      <Button label="Button before intro" />
+      <Marked md={'### INTRO '} />
+
+      <Button label="Button after intro" />
+      <Marked md={ButtonReadme} />
+
+      <Button label="Button before outro" />
+      <Marked md={'### OUTRO '} />
+    </React.Fragment>
+  );
+});
+```
+
 ### README splitter (only for `withDocs` API)
 
-You can use `<!-- STORY -->` at the README to control component story position.
-Instead of this placeholder story will be rendered. For example:
+You can use `<!-- STORY -->` at the README to control component story position. For example:
 
 ```md
 Docs before story

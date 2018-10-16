@@ -1,5 +1,6 @@
 import Prism from 'prismjs';
 import 'prismjs/components/prism-jsx';
+import 'prismjs/components/prism-typescript';
 import '../styles/prism-theme-css';
 
 export default (dom, { withJSX = false } = {}) => {

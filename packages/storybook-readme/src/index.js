@@ -5,6 +5,7 @@ import isArray from 'lodash/isArray';
 import vueHandler from './env/vue';
 import reactHandler from './env/react';
 import normalizeDocs from './services/normalizeDocs';
+import marked from './services/marked';
 import './styles/github-markdown-css';
 
 let handler = null;
@@ -42,7 +43,7 @@ function getCommonConfig(type) {
       return WITH_DOCS_COMMON_CONFIG;
 
     default:
-      throw new Error('wrong type');
+      throw new Error('storybook-readme: wrong type (getCommonConfig)');
   }
 }
 
@@ -65,7 +66,7 @@ function withCallType({ type, config }) {
       typeHandler = handler.withDocs;
       break;
     default:
-      throw new Error('wrong type');
+      throw new Error('storybook-readme: wrong type (withCallType)');
   }
 
   return (...args) => {
@@ -119,7 +120,7 @@ function withCallType({ type, config }) {
         });
 
       default:
-        throw new Error('wrong arguments');
+        throw new Error('storybook-readme: wrong arguments');
     }
   };
 }
@@ -136,13 +137,13 @@ export const doc = (...args) => {
   return withCallType({
     type: DOC,
     config: DEFAULT_CONFIG,
-  })(...args);
+  })(...args.map(d => marked(d)));
 };
 
 withDocs.addFooterDocs = docsAtFooter => {
-  WITH_DOCS_COMMON_CONFIG.docsAtFooter = docsAtFooter;
+  WITH_DOCS_COMMON_CONFIG.docsAtFooter = marked(docsAtFooter);
 };
 
 withReadme.addFooterDocs = docsAtFooter => {
-  WITH_README_COMMON_CONFIG.docsAtFooter = docsAtFooter;
+  WITH_README_COMMON_CONFIG.docsAtFooter = marked(docsAtFooter);
 };

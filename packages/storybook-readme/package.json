@@ -1,9 +1,11 @@
 {
   "name": "storybook-readme",
   "private": false,
-  "version": "3.3.0",
+
+  "version": "4.0.0-beta1",
   "description":
     "Storybook addon to show components README (for React and Vue)",
+
   "main": "index.js",
   "homepage": "https://github.com/tuchk4/storybook-readme",
   "bugs": "https://github.com/tuchk4/storybook-readme/issues",
@@ -12,8 +14,10 @@
     "url": "git+https://github.com/tuchk4/storybook-readme"
   },
   "dependencies": {
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "html-loader": "^0.5.5",
     "lodash": "^4.17.4",
+    "markdown-loader": "^4.0.0",
+    "marked": "^0.5.0",
     "prismjs": "^1.9.0",
     "string-raw": "^1.0.1",
     "node-emoji": "1.8.1"
@@ -22,6 +26,7 @@
     "@storybook/addons": "^3.3.3",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
     "babel-preset-react-app": "^3.0.3",
     "cross-env": "^5.1.3",
     "react": "^16.2.0",

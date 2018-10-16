@@ -1,18 +1,22 @@
-const emoji = require('node-emoji');
-const EMOJI = /:\+1:|:-1:|:[\w-]+:/g;
+import emoji from 'node-emoji';
+
+const EMOJI_REGEXP = /:\+1:|:-1:|:[\w-]+:/g;
 
 const transformEmojis = doc => {
   const resultMap = {};
   let result;
-  while ((result = EMOJI.exec(doc)) !== null) {
+
+  while ((result = EMOJI_REGEXP.exec(doc)) !== null) {
     resultMap[result] = true;
   }
+
   Object.keys(resultMap).forEach(result => {
     doc = doc.replace(
       new RegExp(result, 'g'),
       emoji.get(result.replace(/:/g, ''))
     );
   });
+
   return doc;
 };
 

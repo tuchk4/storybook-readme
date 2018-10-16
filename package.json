@@ -23,7 +23,7 @@
       "npm run deploy-storybook --prefix ./packages/example-react",
     "precommit": "lint-staged",
     "format":
-      "prettier --trailing-comma es5 --single-quote --write 'packages/*/src/**/*.js' 'packages/*/src/**/*.json'"
+      "prettier --trailing-comma es5 --single-quote --write 'src/**/*.js' 'src/**/*.json'"
   },
   "keywords": [],
   "author": "",
