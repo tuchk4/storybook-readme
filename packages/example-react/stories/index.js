@@ -63,7 +63,27 @@ storiesOf('With Docs and Readme', module)
       success={boolean('success', false)}
       label={text('label', 'Hello Im Button')}
     />
-  ));
+  ))
+  .add(
+    'Button (override docs)',
+    withDocs(
+      `
+## Custom Readme
+
+This readme overrides readme from decorator
+
+<!-- STORY -->
+`,
+      () => (
+        <Button
+          onClick={action('clicked')}
+          alert={boolean('alert', false)}
+          success={boolean('success', false)}
+          label={text('label', 'Hello Im Button')}
+        />
+      )
+    )
+  );
 
 // withReadme and withDocs
 storiesOf('withDocs and withReadme', module)

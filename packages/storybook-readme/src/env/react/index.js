@@ -9,6 +9,10 @@ import highlight from '../../services/highlite';
 class Story extends React.Component {
   ref = null;
 
+  state = {
+    asProxy: false,
+  };
+
   highlight() {
     if (this.ref) {
       highlight(this.ref, {
@@ -20,6 +24,18 @@ class Story extends React.Component {
   handleRef = ref => {
     this.ref = ref;
     this.highlight();
+
+    if (this.ref) {
+      const childrenReadmeDocs = this.ref.querySelector(
+        '.storybook-readme-story'
+      );
+
+      if (childrenReadmeDocs) {
+        this.setState({
+          asProxy: true,
+        });
+      }
+    }
   };
 
   componentDidUpdate() {
@@ -38,8 +54,16 @@ class Story extends React.Component {
     const PreviewComponent = config.PreviewComponent || StoryPreview;
     const FooterComponent = config.FooterComponent || FooterDocs;
 
+    if (this.state.asProxy) {
+      return storyFn({ kind, story });
+    }
+
     return (
-      <div style={{ padding: '10px' }} ref={this.handleRef}>
+      <div
+        className={'storybook-readme-story'}
+        style={{ padding: '8px' }}
+        ref={this.handleRef}
+      >
         {docsBeforePreview &&
           docsBeforePreview.map((doc, index) => (
             <div
