@@ -23,3 +23,6 @@ Use **alert** and **success** flags only in these cases:
 ```js
 <Button success={true} label="Add user" />
 ```
+
+- [ ] I am a task
+- [x] I am not a finished task

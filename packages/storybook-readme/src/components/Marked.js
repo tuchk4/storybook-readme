@@ -5,27 +5,32 @@ import marked from 'marked';
 import highlight from '../services/highlite';
 
 export default class Marked extends React.Component {
-  componentDidMount() {
-    const el = ReactDOM.findDOMNode(this);
-
-    highlight(el, {
-      withJSX: true,
-    });
-  }
+  ref = null;
 
   componentDidUpdate() {
-    const el = ReactDOM.findDOMNode(this);
-
-    highlight(el, {
-      withJSX: true,
-    });
+    if (this.ref) {
+      highlight(el, {
+        withJSX: true,
+      });
+    }
   }
+
+  handleRef = ref => {
+    this.ref = ref;
+
+    if (this.ref) {
+      highlight(this.ref, {
+        withJSX: true,
+      });
+    }
+  };
 
   render() {
     const { md } = this.props;
 
     return (
       <div
+        ref={this.handleRef}
         className={'markdown-body'}
         dangerouslySetInnerHTML={{ __html: marked(md) }}
       />

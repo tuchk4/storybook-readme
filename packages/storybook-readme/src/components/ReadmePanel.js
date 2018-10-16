@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 import { ADD_DOC_EVENT } from '../constants';
 import { setDocs, getDocs } from '../services/docsManager';
@@ -16,6 +15,7 @@ export default class ReadmePanel extends React.Component {
   };
 
   waitForDocs = null;
+  ref = null;
 
   constructor(...props) {
     super(...props);
@@ -39,22 +39,14 @@ export default class ReadmePanel extends React.Component {
     this.stopListeningOnStory = onStory((kind, storyName) => {
       this.showDocs(kind, storyName);
     });
-
-    const el = ReactDOM.findDOMNode(this);
-
-    el.parentNode.style.minWidth = '0';
-
-    highlight(el, {
-      withJSX: true,
-    });
   }
 
   componentDidUpdate() {
-    const el = ReactDOM.findDOMNode(this);
-
-    highlight(el, {
-      withJSX: true,
-    });
+    if (this.ref) {
+      highlight(this.ref, {
+        withJSX: true,
+      });
+    }
   }
 
   showDocs(kind, storyName) {
@@ -75,10 +67,20 @@ export default class ReadmePanel extends React.Component {
     }
   }
 
+  handleRef = ref => {
+    this.ref = ref;
+
+    if (this.ref) {
+      this.ref.parentNode.style.minWidth = '0';
+
+      highlight(this.ref, {
+        withJSX: true,
+      });
+    }
+  };
+
   render() {
-    const {
-      docs: { docsAfterPreview, docsBeforePreview },
-    } = this.state;
+    const { docs: { docsAfterPreview, docsBeforePreview } } = this.state;
 
     if (!docsAfterPreview && !docsBeforePreview) {
       return (
@@ -91,7 +93,7 @@ export default class ReadmePanel extends React.Component {
     }
 
     return (
-      <div style={{ padding: '10px', minWidth: '0' }}>
+      <div style={{ padding: '10px', minWidth: '0' }} ref={this.handleRef}>
         {docsBeforePreview &&
           docsBeforePreview.map((doc, index) => (
             <div

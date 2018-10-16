@@ -9,13 +9,13 @@
     "test": "jest"
   },
   "dependencies": {
-    "@storybook/addon-actions": "4.0.0-alpha.21",
-    "@storybook/addon-options": "4.0.0-alpha.21",
-    "@storybook/addon-notes": "4.0.0-alpha.21",
-    "@storybook/react": "4.0.0-alpha.21",
-    "@storybook/addon-knobs": "4.0.0-alpha.21",
-    "@storybook/addon-storyshots": "4.0.0-alpha.21",
-    "@storybook/addons": "4.0.0-alpha.21",
+    "@storybook/addon-actions": "4.0.0-rc.0",
+    "@storybook/addon-options": "4.0.0-rc.0",
+    "@storybook/addon-notes": "4.0.0-rc.0",
+    "@storybook/react": "4.0.0-rc.0",
+    "@storybook/addon-knobs": "4.0.0-rc.0",
+    "@storybook/addon-storyshots": "4.0.0-rc.0",
+    "@storybook/addons": "4.0.0-rc.0",
 
     "@storybook/storybook-deployer": "^2.3.0",
     "@babel/core": "^7.0.1",
