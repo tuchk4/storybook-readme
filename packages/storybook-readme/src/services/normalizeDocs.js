@@ -1,3 +1,4 @@
+import transformEmojis from './transformEmojis';
 import marked from './marked';
 
 export const SPLITTER = '<!-- STORY -->';
@@ -11,7 +12,9 @@ export default function(docs) {
 
   const grouped = normalized.reduce(
     (docs, doc) => {
-      let [docsBeforePreview, ...docsAfterPreview] = doc.split(SPLITTER);
+      let [docsBeforePreview, ...docsAfterPreview] = transformEmojis(doc).split(
+        SPLITTER
+      );
 
       if (!docsAfterPreview || docsAfterPreview.length === 0) {
         docs.docsAfterPreview.push(docsBeforePreview);
