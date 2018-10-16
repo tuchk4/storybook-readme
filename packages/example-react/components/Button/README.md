@@ -1,6 +1,6 @@
 # Button
 
-### Usage
+### :smile: Usage
 
 ```js
 import Button from 'components/button';

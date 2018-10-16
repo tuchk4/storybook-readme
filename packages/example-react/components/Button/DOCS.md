@@ -1,4 +1,4 @@
-# Button
+# Button :star:
 
 Normal application button.
 
@@ -8,7 +8,7 @@ import Button from 'components/Button';
 
 <!-- STORY -->
 
-### Flags usage rules
+### :rocket: Flags usage rules
 
 Use **alert** and **success** flags only in these cases:
 
@@ -24,5 +24,5 @@ Use **alert** and **success** flags only in these cases:
 <Button success={true} label="Add user" />
 ```
 
-- [ ] I am a task
-- [x] I am not a finished task
+* [ ] I am a task
+* [x] I am not a finished task
