@@ -9,7 +9,7 @@ export default class Marked extends React.Component {
 
   componentDidUpdate() {
     if (this.ref) {
-      highlight(el, {
+      highlight(this.ref, {
         withJSX: true,
       });
     }
