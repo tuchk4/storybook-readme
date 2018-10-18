@@ -9,7 +9,10 @@ const PANEL_TITLE = 'README';
 addons.register(ADDON_ID, api => {
   addons.addPanel(PANEL_NAME, {
     title: PANEL_TITLE,
-    render: ({ active }) => {
+    render: props => {
+      // compatibility with storybook@3.x
+      const active = !props || props.active;
+
       return active ? (
         <ReadmePanel channel={addons.getChannel()} onStory={api.onStory} />
       ) : null;
