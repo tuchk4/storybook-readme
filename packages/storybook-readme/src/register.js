@@ -13,9 +13,13 @@ addons.register(ADDON_ID, api => {
       // compatibility with storybook@3.x
       const active = !props || props.active;
 
-      return active ? (
-        <ReadmePanel channel={addons.getChannel()} onStory={api.onStory} />
-      ) : null;
+      return (
+        <ReadmePanel
+          active={active}
+          channel={addons.getChannel()}
+          onStory={api.onStory}
+        />
+      );
     },
   });
 });

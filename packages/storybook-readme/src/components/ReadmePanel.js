@@ -17,26 +17,10 @@ export default class ReadmePanel extends React.Component {
   waitForDocs = null;
   ref = null;
 
-  constructor(...props) {
-    super(...props);
-
-    this.props.channel.on(ADD_DOC_EVENT, ({ kind, storyName, docs }) => {
-      setDocs(kind, storyName, docs);
-
-      if (
-        this.waitForDocs &&
-        this.waitForDocs[0] == kind &&
-        this.waitForDocs[1] == storyName
-      ) {
-        this.showDocs(kind, storyName);
-        this.waitForDocs = null;
-      }
-    });
-  }
-
   componentDidMount() {
-    const { onStory } = this.props;
-    this.stopListeningOnStory = onStory((kind, storyName) => {
+    this.props.channel.on(ADD_DOC_EVENT, this.addDoc);
+
+    this.stopListeningOnStory = this.props.onStory((kind, storyName) => {
       this.showDocs(kind, storyName);
     });
   }
@@ -47,6 +31,13 @@ export default class ReadmePanel extends React.Component {
         withJSX: true,
       });
     }
+  }
+
+  componentWillUnmount() {
+    if (this.stopListeningOnStory) {
+      this.stopListeningOnStory();
+    }
+    this.props.channel.removeListener(ADD_DOC_EVENT, this.addDoc);
   }
 
   showDocs(kind, storyName) {
@@ -61,12 +52,6 @@ export default class ReadmePanel extends React.Component {
     });
   }
 
-  componentWillUnmount() {
-    if (this.stopListeningOnStory) {
-      this.stopListeningOnStory();
-    }
-  }
-
   handleRef = ref => {
     this.ref = ref;
 
@@ -79,7 +64,24 @@ export default class ReadmePanel extends React.Component {
     }
   };
 
+  addDoc = ({ kind, storyName, docs }) => {
+    setDocs(kind, storyName, docs);
+
+    if (
+      this.waitForDocs &&
+      this.waitForDocs[0] == kind &&
+      this.waitForDocs[1] == storyName
+    ) {
+      this.showDocs(kind, storyName);
+      this.waitForDocs = null;
+    }
+  };
+
   render() {
+    if (!this.props.active) {
+      return null;
+    }
+
     const { docs: { docsAfterPreview, docsBeforePreview } } = this.state;
 
     if (!docsAfterPreview && !docsBeforePreview) {
