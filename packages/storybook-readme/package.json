@@ -3,7 +3,8 @@
   "license": "MIT",
   "private": false,
   "version": "4.0.3",
-  "description": "Storybook addon to show components README (for React and Vue)",
+  "description":
+    "Storybook addon to show components README (for React and Vue)",
   "main": "index.js",
   "homepage": "https://github.com/tuchk4/storybook-readme",
   "bugs": "https://github.com/tuchk4/storybook-readme/issues",
@@ -42,15 +43,12 @@
     "with-readme.js"
   ],
   "scripts": {
-    "prepublish": "npm run clear & cross-env NODE_ENV=production babel -d ./ ./src",
-    "dev": "npm run clear & cross-env NODE_ENV=production babel -d ./ ./src --watch",
+    "prepublish":
+      "npm run clear & cross-env NODE_ENV=production babel -d ./ ./src",
+    "dev":
+      "npm run clear & cross-env NODE_ENV=production babel -d ./ ./src --watch",
     "clear": "ls ./src | xargs rm -rf"
   },
-  "keywords": [
-    "storybook",
-    "react-storybook",
-    "docs",
-    "readme"
-  ],
+  "keywords": ["storybook", "react-storybook", "docs", "readme"],
   "author": "valeriy.sorokobatko@gmail.com"
 }
