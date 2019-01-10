@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import marked from 'marked';
 
 import highlight from '../services/highlite';
+import transformEmojis from '../services/transformEmojis';
 
 export default class Marked extends React.Component {
   ref = null;
@@ -32,7 +33,7 @@ export default class Marked extends React.Component {
       <div
         ref={this.handleRef}
         className={'markdown-body'}
-        dangerouslySetInnerHTML={{ __html: marked(md) }}
+        dangerouslySetInnerHTML={{ __html: marked(transformEmojis(md)) }}
       />
     );
   }
