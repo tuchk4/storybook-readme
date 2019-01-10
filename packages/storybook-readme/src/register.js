@@ -7,6 +7,8 @@ const PANEL_NAME = 'REACT_STORYBOOK/readme/panel';
 const PANEL_TITLE = 'README';
 
 addons.register(ADDON_ID, api => {
+  const channel = addons.getChannel();
+
   addons.addPanel(PANEL_NAME, {
     title: PANEL_TITLE,
     render: props => {
@@ -14,11 +16,7 @@ addons.register(ADDON_ID, api => {
       const active = !props || props.active;
 
       return (
-        <ReadmePanel
-          active={active}
-          channel={addons.getChannel()}
-          onStory={api.onStory}
-        />
+        <ReadmePanel active={active} channel={channel} onStory={api.onStory} />
       );
     },
   });
