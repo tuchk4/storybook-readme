@@ -85,13 +85,14 @@ export default class ReadmePanel extends React.Component {
     const { docs: { docsAfterPreview, docsBeforePreview } } = this.state;
 
     if (!docsAfterPreview && !docsBeforePreview) {
-      return (
-        <div style={{ padding: '10px' }}>
-          <div className={'markdown-body'}>
-            <p>README.md was not added</p>
-          </div>
-        </div>
-      );
+      return null;
+      // return (
+      //   <div style={{ padding: '10px' }}>
+      //     <div className={'markdown-body'}>
+      //       <p>README.md was not added</p>
+      //     </div>
+      //   </div>
+      // );
     }
 
     return (
