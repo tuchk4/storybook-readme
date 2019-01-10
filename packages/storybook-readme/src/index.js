@@ -53,8 +53,8 @@ function withCallType({ type, config }) {
       const normalizedDocs = normalizeDocs(args);
       return handler.doc({
         docs: [
-          ...normalizedDocs.docsBeforePreview,
-          ...normalizedDocs.docsAfterPreview,
+          ...(normalizedDocs.docsBeforePreview || []),
+          ...(normalizedDocs.docsAfterPreview || []),
         ],
         config,
       });
