@@ -1,5 +1,6 @@
 {
   "name": "example-vue",
+  "license": "MIT",
   "private": true,
   "version": "1.0.0",
   "scripts": {
@@ -24,10 +25,7 @@
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.3",
     "babel-preset-env": "^1.6.0",
-    "babel-preset-vue": "^2.0.1",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "babel-preset-vue": "^2.0.1"
   },
-  "devDependencies": {},
-  "license": "ISC"
+  "devDependencies": {}
 }
