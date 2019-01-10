@@ -25,4 +25,4 @@ Use **alert** and **success** flags only in these cases:
 ```
 
 * [ ] I am a task
-* [x] I am not a finished task
+* [x] Finished task
