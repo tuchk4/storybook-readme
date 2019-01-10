@@ -49,11 +49,16 @@ function getCommonConfig(type) {
 
 function withCallType({ type, config }) {
   if (type === DOC) {
-    return (...args) =>
-      handler.doc({
-        docs: args,
+    return (...args) => {
+      const normalizedDocs = normalizeDocs(args);
+      return handler.doc({
+        docs: [
+          ...normalizedDocs.docsBeforePreview,
+          ...normalizedDocs.docsAfterPreview,
+        ],
         config,
       });
+    };
   }
 
   let typeHandler = null;
