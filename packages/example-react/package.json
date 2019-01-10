@@ -33,7 +33,7 @@
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
     "react-test-renderer": "^16.5.0",
-    "storybook-readme": "=4.0.2"
+    "storybook-readme": "=4.0.4"
   },
   "jest": {
     "testURL": "http://localhost",
