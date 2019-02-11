@@ -125,7 +125,9 @@ function withCallType({ type, config }) {
         });
 
       default:
-        throw new Error('storybook-readme: wrong arguments');
+        throw new Error(
+          'storybook-readme: wrong arguments withReadme / withDocs /doc'
+        );
     }
   };
 }
@@ -142,7 +144,7 @@ export const doc = (...args) => {
   return withCallType({
     type: DOC,
     config: DEFAULT_CONFIG,
-  })(...args.map(d => marked(d)));
+  })(...args);
 };
 
 withDocs.addFooterDocs = docsAtFooter => {
