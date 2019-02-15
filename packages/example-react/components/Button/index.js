@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const StyledButton = ({ children, alert, success, ...props }) => {
+const Button = ({ children, alert, success, label, ...props }) => {
   const styles = {
     padding: '5px',
     fontSize: '15px',
@@ -26,13 +26,9 @@ const StyledButton = ({ children, alert, success, ...props }) => {
 
   return (
     <button style={styles} {...props}>
-      {children}
+      {label}
     </button>
   );
-};
-
-const Button = ({ label, ...props }) => {
-  return <StyledButton {...props}>{label}</StyledButton>;
 };
 
 Button.propTypes = {

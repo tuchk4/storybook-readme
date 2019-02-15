@@ -7,7 +7,7 @@ export function clearSplitter(docs) {
   return docs.map(doc => doc.replace(SPLITTER, ''));
 }
 
-export default function(docs) {
+export default function normalizeDocs(docs) {
   const normalized = Array.isArray(docs) ? [...docs] : [docs];
 
   const grouped = normalized.reduce(
