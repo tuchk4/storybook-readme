@@ -4,6 +4,7 @@ import marked from 'marked';
 
 import highlight from '../services/highlite';
 import transformEmojis from '../services/transformEmojis';
+import '../styles/github-markdown-css';
 
 export default class Marked extends React.Component {
   ref = null;
