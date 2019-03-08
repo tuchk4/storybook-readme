@@ -1,9 +1,6 @@
 const store = new Map();
-const getDocId = (kind, storyName) => `${kind}.${storyName}`;
 
-export const getDocs = (kind, storyName) => {
-  const id = getDocId(kind, storyName);
-
+export const getDocs = id => {
   if (!store.has(id)) {
     return {};
   }
@@ -11,7 +8,6 @@ export const getDocs = (kind, storyName) => {
   return store.get(id);
 };
 
-export const setDocs = (kind, storyName, docs = {}) => {
-  const id = getDocId(kind, storyName);
+export const setDocs = (id, docs = {}) => {
   store.set(id, docs);
 };

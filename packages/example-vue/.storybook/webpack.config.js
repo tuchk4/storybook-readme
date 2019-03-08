@@ -1,13 +1,10 @@
 const path = require('path');
 const updateWebpackConfig = require('storybook-readme/env/vue/updateWebpackConfig');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
-module.exports = storybookBaseConfig => {
+module.exports = ({ config, mode }) => {
+  const storybookBaseConfig = config;
   // updateWebpackConfig(storybookBaseConfig);
-
-  storybookBaseConfig.module.rules.push({
-    test: /\.css$/,
-    use: ['style-loader', 'css-loader'],
-  });
 
   storybookBaseConfig.module.rules.push({
     resourceQuery: /blockType=docs/,

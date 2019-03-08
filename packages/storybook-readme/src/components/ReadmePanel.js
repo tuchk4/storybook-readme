@@ -20,9 +20,12 @@ export default class ReadmePanel extends React.Component {
   componentDidMount() {
     this.props.channel.on(ADD_DOC_EVENT, this.addDoc);
 
-    this.stopListeningOnStory = this.props.onStory((kind, storyName) => {
-      this.showDocs(kind, storyName);
+    this.stopListeningOnStory = this.props.onStory(id => {
+      this.showDocs(id);
     });
+    if (this.props.currentStoryId) {
+      this.showDocs(this.props.currentStoryId);
+    }
   }
 
   componentDidUpdate() {
@@ -40,11 +43,11 @@ export default class ReadmePanel extends React.Component {
     this.props.channel.removeListener(ADD_DOC_EVENT, this.addDoc);
   }
 
-  showDocs(kind, storyName) {
-    const docs = getDocs(kind, storyName);
+  showDocs(storyId) {
+    const docs = getDocs(storyId);
 
     if (!docs.length) {
-      this.waitForDocs = [kind, storyName];
+      this.waitForDocs = storyId;
     }
 
     this.setState({
@@ -65,14 +68,13 @@ export default class ReadmePanel extends React.Component {
   };
 
   addDoc = ({ kind, storyName, docs }) => {
-    setDocs(kind, storyName, docs);
+    const { sanitize } = this.props;
+    const storyId = sanitize(kind) + '--' + sanitize(storyName);
 
-    if (
-      this.waitForDocs &&
-      this.waitForDocs[0] == kind &&
-      this.waitForDocs[1] == storyName
-    ) {
-      this.showDocs(kind, storyName);
+    setDocs(storyId, docs);
+
+    if (this.waitForDocs && this.waitForDocs == storyId) {
+      this.showDocs(storyId);
       this.waitForDocs = null;
     }
   };
@@ -82,7 +84,9 @@ export default class ReadmePanel extends React.Component {
       return null;
     }
 
-    const { docs: { docsAfterPreview, docsBeforePreview } } = this.state;
+    const {
+      docs: { docsAfterPreview, docsBeforePreview },
+    } = this.state;
 
     if (!docsAfterPreview && !docsBeforePreview) {
       return null;

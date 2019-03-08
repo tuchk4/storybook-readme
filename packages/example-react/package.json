@@ -12,13 +12,13 @@
   "dependencies": {
     "@babel/plugin-transform-modules-commonjs": "7.2.0",
     "@babel/core": "=7.1.6",
-    "@storybook/addon-actions": "4.1.6",
-    "@storybook/addon-knobs": "4.1.6",
-    "@storybook/addon-notes": "4.1.6",
-    "@storybook/addon-options": "4.1.6",
-    "@storybook/addon-storyshots": "4.1.6",
-    "@storybook/addons": "4.1.6",
-    "@storybook/react": "4.1.6",
+    "@storybook/addon-actions": "5.0.0",
+    "@storybook/addon-knobs": "5.0.0",
+    "@storybook/addon-notes": "5.0.0",
+    "@storybook/addon-options": "5.0.0",
+    "@storybook/addon-storyshots": "5.0.0",
+    "@storybook/addons": "5.0.0",
+    "@storybook/react": "5.0.0",
     "@storybook/storybook-deployer": "^2.3.0",
     "babel-core": "^7.0.0-bridge.0",
     "babel-jest": "^23.6.0",
@@ -33,7 +33,7 @@
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
     "react-test-renderer": "^16.5.0",
-    "storybook-readme": "=4.0.5"
+    "storybook-readme": "=5.0.0"
   },
   "jest": {
     "testURL": "http://localhost",
@@ -42,8 +42,7 @@
       "^.+\\.js?$": "babel-jest"
     },
     "moduleNameMapper": {
-      "@storybook/addons":
-        "<rootDir>/../storybook-readme/node_modules/@storybook/addons"
+      "@storybook/addons": "<rootDir>/../storybook-readme/node_modules/@storybook/addons"
     }
   }
 }
