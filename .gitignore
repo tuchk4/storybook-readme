@@ -10,6 +10,7 @@ coverage/
 /packages/storybook-readme/services/
 /packages/storybook-readme/styles/
 /packages/storybook-readme/env/
+/packages/storybook-readme/vue/
 /packages/storybook-readme/constants.js
 /packages/storybook-readme/index.js
 /packages/storybook-readme/register.js
