@@ -8,7 +8,6 @@ import Button from '../components/Button';
 
 import ButtonReadme from '../components/Button/README.md';
 import ButtonDocs from '../components/Button/DOCS.md';
-import { METHODS } from 'http';
 
 storiesOf('Content docs', module)
   .addDecorator(withKnobs)
