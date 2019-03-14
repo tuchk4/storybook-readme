@@ -1,14 +1,15 @@
 import Vue from 'vue';
 import { configure, addDecorator, addParameters } from '@storybook/vue';
 import { addReadme } from 'storybook-readme/vue';
-import { themes } from '@storybook/theming';
+// import { themes } from '@storybook/theming';
 
 addParameters({
   name: 'README addon',
   url: 'https://github.com/tuchk4/storybook-readme',
-  addonPanelInRight: true,
+  
   options: {
-    theme: themes.dark,
+    addonPanelInRight: true,
+    // theme: themes.dark,
   },
 });
 
