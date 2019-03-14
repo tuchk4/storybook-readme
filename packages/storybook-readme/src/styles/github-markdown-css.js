@@ -1,4 +1,5 @@
 import stringRaw from 'string-raw';
+import styleFactory from './styleFactory';
 
 // Took from github-markdown-css
 const getStyles = theme => stringRaw`
@@ -430,7 +431,7 @@ const getStyles = theme => stringRaw`
 }
 `;
 
-const DEFAULT_THEME = {
+const defaultTheme = {
   // bodyBackgroundColor: '#969896',
   bodyColor: '#333',
   linkColor: '#4078c0',
@@ -466,8 +467,6 @@ function pickValues(theme) {
     preBackgroundColor: theme.appBg,
     tableTrBackgroundColor: theme.barBg,
     tableOddTrBackgroundColor: theme.appBg,
-    // tableTrBorderTopColor: '#ccc',
-    // tableTdBorderColor: '#ddd',
   };
 
   return Object.keys(t)
@@ -483,30 +482,8 @@ function pickValues(theme) {
     );
 }
 
-let counter = 0;
-const inserted = {};
-
-export default function insert(theme = {}) {
-  const t = {
-    ...DEFAULT_THEME,
-    ...pickValues(theme),
-  };
-
-  const key = JSON.stringify(t);
-
-  if (inserted[key]) {
-    return inserted[key];
-  }
-
-  const styleNode = document.createElement('style');
-  const id = `github-markdown-css-${++counter}`;
-
-  inserted[key] = id;
-  styleNode.id = id;
-
-  styleNode.innerHTML = getStyles(t);
-
-  document.head.prepend(styleNode);
-
-  return inserted[key];
-}
+export default styleFactory('github-markdown-css', {
+  getStyles,
+  pickValues,
+  defaultTheme,
+});

@@ -89,11 +89,7 @@ export default class ReadmeContent extends React.Component {
           notifyParent: this.notifyParent,
         }}
       >
-        <div
-          className={'storybook-readme-story'}
-          style={{ padding: '8px' }}
-          ref={this.handleRef}
-        >
+        <div className={'storybook-readme-story'} ref={this.handleRef}>
           {layout.map(({ type, content }, index) => {
             if (!this.props.types.includes(type)) {
               return null;

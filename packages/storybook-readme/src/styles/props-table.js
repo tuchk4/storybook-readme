@@ -1,13 +1,10 @@
 import stringRaw from 'string-raw';
+import styleFactory from './styleFactory';
 
-const styles = stringRaw`
-    .markdown-props-table {
-      margin: 16px 0;
-    }
-`;
-
-const styleNode = document.createElement('style');
-styleNode.id = 'props-table';
-styleNode.innerHTML = styles;
-
-document.head.appendChild(styleNode);
+export default styleFactory('props-table', {
+  getStyles: () => stringRaw`
+  .markdown-props-table {
+    margin: 16px 0;
+  }
+`,
+});

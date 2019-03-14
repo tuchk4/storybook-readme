@@ -1,4 +1,5 @@
 import stringRaw from 'string-raw';
+import styleFactory from './styleFactory';
 
 const getStyles = theme => stringRaw`
 /*
@@ -104,29 +105,10 @@ function pickValues(theme) {
   return {};
 }
 
-const DEFAULT_THEME = {};
+const defaultTheme = {};
 
-let counter = 0;
-const inserted = {};
-
-export default function insert(theme = {}) {
-  const t = pickValues({ ...DEFAULT_THEME, ...theme });
-
-  const key = JSON.stringify(t);
-
-  if (inserted[key]) {
-    return inserted[key];
-  }
-
-  const styleNode = document.createElement('style');
-  const id = `highlightjs-github-css-${++counter}`;
-
-  inserted[key] = id;
-  styleNode.id = id;
-
-  styleNode.innerHTML = getStyles(t);
-
-  document.head.prepend(styleNode);
-
-  return inserted[key];
-}
+export default styleFactory('highlightjs', {
+  getStyles,
+  defaultTheme,
+  pickValues,
+});
