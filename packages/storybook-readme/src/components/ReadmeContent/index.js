@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import StoryPreviewDefault from '../Preview/StoryPreview';
 import FooterPreviewDefault from '../Preview/FooterPreview';
+import HeaderPreviewDefault from '../Preview/HeaderPreview';
 import MdPreviewDefault from '../Preview/MdPreview';
 
 import highlight from '../../services/highlite';
@@ -79,6 +80,7 @@ export default class ReadmeContent extends React.Component {
       MdPreview = MdPreviewDefault,
       StoryPreview = StoryPreviewDefault,
       FooterPreview = FooterPreviewDefault,
+      HeaderPreview = HeaderPreviewDefault,
     } = this.props;
 
     return (
@@ -99,7 +101,25 @@ export default class ReadmeContent extends React.Component {
 
             switch (type) {
               case LAYOUT_TYPE_FOOTER_MD:
+                return (
+                  <FooterPreview>
+                    <div
+                      key={index}
+                      className={'markdown-body'}
+                      dangerouslySetInnerHTML={{ __html: content }}
+                    />
+                  </FooterPreview>
+                );
               case LAYOUT_TYPE_HEADER_MD:
+                return (
+                  <HeaderPreview>
+                    <div
+                      key={index}
+                      className={'markdown-body'}
+                      dangerouslySetInnerHTML={{ __html: content }}
+                    />
+                  </HeaderPreview>
+                );
               case LAYOUT_TYPE_MD:
                 return (
                   <div
