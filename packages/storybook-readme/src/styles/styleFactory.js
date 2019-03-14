@@ -1,19 +1,22 @@
 export default function styleFactory(
   name,
-  { getStyles, pickValues = t => t, defaultTheme = {} },
+  { getStyles = () => '', pickValues = t => t, defaultTheme = {} } = {},
 ) {
   let counter = 0;
 
   let insertedKey = null;
   let node = null;
 
-  return function insert(theme = {}) {
+  return function insert({ theme, styles }) {
     const t = {
       ...defaultTheme,
       ...pickValues(theme),
     };
 
-    const key = JSON.stringify(t);
+    const key = JSON.stringify({
+      ...t,
+      styles,
+    });
 
     if (key === insertedKey) {
       return;
@@ -29,6 +32,6 @@ export default function styleFactory(
     }
 
     insertedKey = key;
-    node.innerHTML = getStyles(t);
+    node.innerHTML = styles || getStyles(t);
   };
 }

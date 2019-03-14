@@ -1,58 +1,55 @@
 import stringRaw from 'string-raw';
-import styleFactory from './styleFactory';
 
-const getStyles = theme => stringRaw`
+export default stringRaw`
+
+  
+  
 /*
-  github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+Docco style used in http://jashkenas.github.com/docco/ converted by Simon Madine (@thingsinjars)
 */
 
 .hljs {
   display: block;
   overflow-x: auto;
   padding: 0.5em;
-  color: #333;
-  background: #f8f8f8;
+  color: #000;
+  background: #f8f8ff;
 }
 
 .hljs-comment,
 .hljs-quote {
-  color: #998;
+  color: #408080;
   font-style: italic;
 }
 
 .hljs-keyword,
 .hljs-selector-tag,
+.hljs-literal,
 .hljs-subst {
-  color: #333;
-  font-weight: bold;
+  color: #954121;
 }
 
-.hljs-number,
-.hljs-literal,
-.hljs-variable,
-.hljs-template-variable,
-.hljs-tag .hljs-attr {
-  color: #008080;
+.hljs-number {
+  color: #40a070;
 }
 
 .hljs-string,
 .hljs-doctag {
-  color: #d14;
+  color: #219161;
 }
 
-.hljs-title,
+.hljs-selector-id,
+.hljs-selector-class,
 .hljs-section,
-.hljs-selector-id {
-  color: #900;
-  font-weight: bold;
+.hljs-type {
+  color: #19469d;
 }
 
-.hljs-subst {
-  font-weight: normal;
+.hljs-params {
+  color: #00f;
 }
 
-.hljs-type,
-.hljs-class .hljs-title {
+.hljs-title {
   color: #458;
   font-weight: bold;
 }
@@ -64,9 +61,14 @@ const getStyles = theme => stringRaw`
   font-weight: normal;
 }
 
+.hljs-variable,
+.hljs-template-variable {
+  color: #008080;
+}
+
 .hljs-regexp,
 .hljs-link {
-  color: #009926;
+  color: #b68;
 }
 
 .hljs-symbol,
@@ -99,16 +101,8 @@ const getStyles = theme => stringRaw`
 .hljs-strong {
   font-weight: bold;
 }
+
+
+  
+  
 `;
-
-function pickValues(theme) {
-  return {};
-}
-
-const defaultTheme = {};
-
-export default styleFactory('highlightjs', {
-  getStyles,
-  defaultTheme,
-  pickValues,
-});
