@@ -1,156 +1,60 @@
-import isPlainObject from 'lodash/isPlainObject';
-import isString from 'lodash/isString';
-import isArray from 'lodash/isArray';
+import React from 'react';
+import addons, { makeDecorator } from '@storybook/addons';
+import getDocsLayout from './services/getDocsLayout';
+import ReadmeContent from './components/ReadmeContent';
 
-import vueHandler from './env/vue';
-import reactHandler from './env/react';
-import normalizeDocs from './services/normalizeDocs';
-import marked from './services/marked';
-import './styles/github-markdown-css';
+import { CHANNEL_SET_SIDEBAR_DOCS, LAYOUT_TYPE_MD } from './const';
 
-let handler = null;
+import insertGithubMarkdownCSS from './styles/github-markdown-css';
+import insertHighlightJsThemeCSS from './styles/highlightjs-github-css';
 
-switch (window.STORYBOOK_ENV) {
-  case 'vue':
-    handler = vueHandler;
-    break;
-  case 'react':
-    handler = reactHandler;
-    break;
-  default:
-    handler = reactHandler;
-}
+export { default as withDocs } from './with-docs';
+export { default as withReadme } from './with-readme';
 
-const WITH_README = 'WITH_README';
-const WITH_DOCS = 'WITH_DOCS';
-const DOC = 'DOC';
+export const addReadme = makeDecorator({
+  name: 'addReadme',
+  parameterName: 'readme',
+  wrapper: (getStory, context, { options, parameters }) => {
+    const storyOptions = parameters || options || {};
+    const config =
+      typeof storyOptions === 'string'
+        ? { content: storyOptions }
+        : storyOptions;
 
-const DEFAULT_CONFIG = {
-  FooterComponent: null,
-  PreviewComponent: null,
-  docsAtFooter: null,
-};
-
-const WITH_DOCS_COMMON_CONFIG = {};
-const WITH_README_COMMON_CONFIG = {};
-
-function getCommonConfig(type) {
-  switch (type) {
-    case WITH_README:
-      return WITH_README_COMMON_CONFIG;
-
-    case WITH_DOCS:
-      return WITH_DOCS_COMMON_CONFIG;
-
-    default:
-      throw new Error('storybook-readme: wrong type (getCommonConfig)');
-  }
-}
-
-function withCallType({ type, config }) {
-  if (type === DOC) {
-    return (...args) => {
-      const normalizedDocs = normalizeDocs(args);
-      return handler.doc({
-        docs: [
-          ...(normalizedDocs.docsBeforePreview || []),
-          ...(normalizedDocs.docsAfterPreview || []),
-        ],
-        config,
-      });
+    const theme = {
+      ...(context.parameters
+        ? context.parameters.options
+          ? context.parameters.options.theme
+          : {}
+        : {}),
+      ...config.theme,
     };
-  }
 
-  let typeHandler = null;
+    insertGithubMarkdownCSS(theme);
+    insertHighlightJsThemeCSS(theme);
 
-  switch (type) {
-    case WITH_README:
-      typeHandler = handler.withReadme;
-      break;
-    case WITH_DOCS:
-      typeHandler = handler.withDocs;
-      break;
-    default:
-      throw new Error('storybook-readme: wrong type (withCallType)');
-  }
-
-  return (...args) => {
-    switch (true) {
-      /**
-       * withDocs({
-       *  preview: props => {}
-       *  footer: props => {}
-       * })(README)
-       */
-      case args.length === 1 && isPlainObject(args[0]):
-        return withCallType({
-          type,
-          config: {
-            ...config,
-            ...args[0],
-          },
+    const story = <React.Fragment>{getStory(context)}</React.Fragment>;
+    const layout = storyOptions.layout
+      ? storyOptions.layout
+      : getDocsLayout({
+          md: config.content || '',
+          story,
         });
 
-      /**
-       * .addDecorator(
-       *  withDocs(README)
-       * )
-       *
-       * .addDecorator(
-       *  withDocs([README1, README2])
-       * )
-       */
-      case args.length === 1 && (isString(args[0]) || isArray(args[0])):
-        return typeHandler.callAsDecorator({
-          docs: normalizeDocs(args[0]),
-          storyFn: null,
-          config: {
-            ...config,
-            ...getCommonConfig(type),
-          },
-        });
+    const channel = addons.getChannel();
 
-      /**
-       * withDocs(README, storyFn)
-       * withDocs([README1, README2], storyFn)
-       */
-      case args.length === 2:
-        return typeHandler.callAsHoc({
-          docs: normalizeDocs(args[0]),
-          storyFn: args[1],
-          config: {
-            ...config,
-            ...getCommonConfig(type),
-          },
-        });
+    if (config.sidebar) {
+      const sidebarLayout = getDocsLayout({
+        md: config.sidebar,
+        story,
+      });
 
-      default:
-        throw new Error(
-          'storybook-readme: wrong arguments withReadme / withDocs /doc'
-        );
+      channel.emit(CHANNEL_SET_SIDEBAR_DOCS, {
+        layout: sidebarLayout,
+        theme,
+      });
     }
-  };
-}
 
-export const withReadme = (...args) => {
-  return withCallType({ type: WITH_README, config: DEFAULT_CONFIG })(...args);
-};
-
-export const withDocs = (...args) => {
-  return withCallType({ type: WITH_DOCS, config: DEFAULT_CONFIG })(...args);
-};
-
-export const doc = (...args) => {
-  return withCallType({
-    type: DOC,
-    config: DEFAULT_CONFIG,
-  })(...args);
-};
-
-withDocs.addFooterDocs = docsAtFooter => {
-  WITH_DOCS_COMMON_CONFIG.docsAtFooter = marked(docsAtFooter);
-};
-
-withReadme.addFooterDocs = docsAtFooter => {
-  WITH_README_COMMON_CONFIG.docsAtFooter = marked(docsAtFooter);
-};
+    return <ReadmeContent layout={layout} StoryPreview={config.StoryPreview} />;
+  },
+});

@@ -144,6 +144,11 @@
     react-textarea-autosize "^7.0.4"
     render-fragment "^0.1.1"
 
+"@storybook/core-events@^4.1.6":
+  version "4.1.13"
+  resolved "https://repo.dev.wixpress.com/artifactory/api/npm/npm-repos/@storybook/core-events/-/core-events-4.1.13.tgz#f919062bf1ffa9f90ab53138262e06d75e8f0d85"
+  integrity sha1-+RkGK/H/qfkKtTE4Ji4G116PDYU=
+
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"

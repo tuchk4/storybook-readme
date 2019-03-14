@@ -1,15 +1,19 @@
-import { configure, setAddon } from '@storybook/react';
-import { setOptions } from '@storybook/addon-options';
+import { addParameters, addDecorator, configure } from '@storybook/react';
+import { addReadme } from 'storybook-readme';
+// import { themes } from '@storybook/theming';
 
-setOptions({
+import 'highlight.js/styles/shades-of-purple.css';
+
+addParameters({
   name: 'README addon',
   url: 'https://github.com/tuchk4/storybook-readme',
-  goFullScreen: false,
-  showLeftPanel: true,
-  showDownPanel: true,
-  showSearchBox: false,
-  downPanelInRight: true,
+  addonPanelInRight: true,
+  // options: {
+  //   theme: themes.dark,
+  // },
 });
+
+addDecorator(addReadme);
 
 function loadStories() {
   require('../stories');

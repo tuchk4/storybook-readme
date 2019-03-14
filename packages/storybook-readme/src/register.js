@@ -1,6 +1,6 @@
 import React from 'react';
 import addons from '@storybook/addons';
-import ReadmePanel from './components/ReadmePanel';
+import ReadmeSidebar from './components/ReadmeSidebar';
 
 const ADDON_ID = 'REACT_STORYBOOK/readme';
 const PANEL_NAME = 'REACT_STORYBOOK/readme/panel';
@@ -16,7 +16,13 @@ addons.register(ADDON_ID, api => {
       const active = !props || props.active;
 
       return (
-        <ReadmePanel active={active} channel={channel} onStory={api.onStory} />
+        <ReadmeSidebar
+          key={'ReadmeSidebar'}
+          api={api}
+          active={active}
+          channel={channel}
+          onStory={api.onStory}
+        />
       );
     },
   });
