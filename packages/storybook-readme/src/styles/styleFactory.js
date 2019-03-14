@@ -7,7 +7,7 @@ export default function styleFactory(
   let insertedKey = null;
   let node = null;
 
-  return function insert({ theme, styles }) {
+  return function insert({ theme = {}, styles }) {
     const t = {
       ...defaultTheme,
       ...pickValues(theme),

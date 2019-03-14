@@ -154,6 +154,27 @@ storiesOf('Buttons', module)
        * Vue: Vue component
        */
       StoryPreview: ({ children}) => <div>{children}</div>
+
+      /**
+       * Wrapper for hedaer docs. Usually used to set some styles
+       * React: React.ReactNode
+       * Vue: Vue component
+       */
+      HeaderPreview: ({ children}) => <div>{children}</div>
+
+      /**
+       * Wrapper for footer docs. Usually used to set some styles
+       * React: React.ReactNode
+       * Vue: Vue component
+       */
+      FooterPreview: ({ children}) => <div>{children}</div>
+
+      /**
+       * Wrapper for content and sidebar docs. Usually used to set some styles
+       * React: React.ReactNode
+       * Vue: Vue component
+       */
+      DocPreview: ({ children}) => <div>{children}</div>
     },
   })
 ```

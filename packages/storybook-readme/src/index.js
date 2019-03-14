@@ -2,6 +2,7 @@ import React from 'react';
 import addons, { makeDecorator } from '@storybook/addons';
 import getDocsLayout from './services/getDocsLayout';
 import * as config from './services/config';
+import getParameters from './services/getParameters';
 import ReadmeContent from './components/ReadmeContent';
 
 import { CHANNEL_SET_SIDEBAR_DOCS, LAYOUT_TYPE_MD } from './const';
@@ -21,54 +22,42 @@ export const addFooter = md => {
 export const addReadme = makeDecorator({
   name: 'addReadme',
   parameterName: 'readme',
-  wrapper: (getStory, context, { options, parameters }) => {
-    const storyOptions = parameters || options || {};
-    const config =
-      typeof storyOptions === 'string'
-        ? { content: storyOptions }
-        : storyOptions;
-
-    const theme = {
-      ...(context.parameters
-        ? context.parameters.options
-          ? context.parameters.options.theme
-          : {}
-        : {}),
-      ...config.theme,
-    };
+  wrapper: (getStory, context) => {
+    const parameters = getParameters(context);
 
     const story = <React.Fragment>{getStory(context)}</React.Fragment>;
-    const layout = storyOptions.layout
-      ? storyOptions.layout
+    const layout = parameters.layout
+      ? parameters.layout
       : getDocsLayout({
-          md: config.content || '',
+          md: parameters.content || '',
           story,
         });
 
     const channel = addons.getChannel();
 
-    const codeTheme = config.codeTheme || 'github';
-
-    if (config.sidebar) {
+    if (parameters.sidebar) {
       const sidebarLayout = getDocsLayout({
-        md: config.sidebar,
+        md: parameters.sidebar,
         story,
       });
 
       channel.emit(CHANNEL_SET_SIDEBAR_DOCS, {
         layout: sidebarLayout,
-        theme,
-        codeTheme,
+        theme: parameters.theme,
+        codeTheme: parameters.codeTheme,
       });
     }
 
     return (
       <ReadmeContent
         layout={layout}
-        theme={theme}
-        codeTheme={codeTheme}
-        StoryPreview={config.StoryPreview}
-        withPreview={config.content}
+        withPreview={!!parameters.content}
+        theme={parameters.theme}
+        codeTheme={parameters.codeTheme}
+        StoryPreview={parameters.StoryPreview}
+        HeaderPreview={parameters.HeaderPreview}
+        DocPreview={parameters.DocPreview}
+        FooterPreview={parameters.FooterPreview}
       />
     );
   },

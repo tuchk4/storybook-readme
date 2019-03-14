@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 import StoryPreviewDefault from '../Preview/StoryPreview';
 import FooterPreviewDefault from '../Preview/FooterPreview';
 import HeaderPreviewDefault from '../Preview/HeaderPreview';
-import MdPreviewDefault from '../Preview/MdPreview';
+import DocPreviewDefault from '../Preview/DocPreview';
 
 import highlight from '../../services/highlite';
 import insertGithubMarkdownCss from '../../styles/githubMarkdownCss';
@@ -89,10 +89,10 @@ export default class ReadmeContent extends React.Component {
     const {
       layout,
       withPreview = true,
-      MdPreview = MdPreviewDefault,
       StoryPreview = StoryPreviewDefault,
       FooterPreview = FooterPreviewDefault,
       HeaderPreview = HeaderPreviewDefault,
+      DocPreview = DocPreviewDefault,
     } = this.props;
 
     return (
@@ -110,9 +110,8 @@ export default class ReadmeContent extends React.Component {
             switch (type) {
               case LAYOUT_TYPE_FOOTER_MD:
                 return (
-                  <FooterPreview>
+                  <FooterPreview key={index}>
                     <div
-                      key={index}
                       className={'markdown-body'}
                       dangerouslySetInnerHTML={{ __html: content }}
                     />
@@ -120,9 +119,8 @@ export default class ReadmeContent extends React.Component {
                 );
               case LAYOUT_TYPE_HEADER_MD:
                 return (
-                  <HeaderPreview>
+                  <HeaderPreview key={index}>
                     <div
-                      key={index}
                       className={'markdown-body'}
                       dangerouslySetInnerHTML={{ __html: content }}
                     />
@@ -130,11 +128,12 @@ export default class ReadmeContent extends React.Component {
                 );
               case LAYOUT_TYPE_MD:
                 return (
-                  <div
-                    key={index}
-                    className={'markdown-body'}
-                    dangerouslySetInnerHTML={{ __html: content }}
-                  />
+                  <DocPreview key={index}>
+                    <div
+                      className={'markdown-body'}
+                      dangerouslySetInnerHTML={{ __html: content }}
+                    />
+                  </DocPreview>
                 );
 
               case LAYOUT_TYPE_STORY: {

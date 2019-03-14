@@ -12,30 +12,6 @@ import {
 
 import getDocsLayout from '../../../services/getDocsLayout';
 
-function injectStoryAndPropsTable(story, layout) {
-  return [...layout].map(p => {
-    switch (p.type) {
-      case LAYOUT_TYPE_STORY: {
-        return {
-          ...p,
-          content: story,
-        };
-      }
-
-      case LAYOUT_TYPE_PROPS_TABLE: {
-        return {
-          ...p,
-          content: getPropsTables({
-            story,
-          }),
-        };
-      }
-    }
-
-    return p;
-  });
-}
-
 function withDocsCallAsHoc({ md, story }) {
   return context => {
     const layout = getDocsLayout({
