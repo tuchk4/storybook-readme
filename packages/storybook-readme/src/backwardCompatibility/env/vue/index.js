@@ -1,104 +1,102 @@
-// import MarkdownContainer from './components/MarkdownContainer';
-// import Story from './components/Story';
-// import StoryPreview from './components/StoryPreview';
-// import FooterDocs from './components/FooterDocs';
+import commonHandler from '../common';
+import ReadmeContent from '../../../vue/components/ReadmeContent';
+import getDocsLayout from '../../../services/getDocsLayout';
+import getParameters from '../../../services/getParameters';
 
-// import commonHandler from '../common';
+import {
+  LAYOUT_TYPE_STORY,
+  LAYOUT_TYPE_PROPS_TABLE,
+  LAYOUT_TYPE_MD,
+} from '../../../const';
 
-// function renderStory({ storyFn, kind, story, docs, config }) {
-//   return {
-//     data() {
-//       return {
-//         story: storyFn({ kind, story }),
-//       };
-//     },
+function withDocsCallAsHoc({ md, story }) {
+  return context => {
+    const layout = getDocsLayout({
+      md,
+      story: story(context),
+    });
 
-//     render(h) {
-//       return h(
-//         Story,
-//         {
-//           props: {
-//             docs,
-//           },
-//         },
-//         [
-//           h(config.PreviewComponent ? config.PreviewComponent : StoryPreview, [
-//             h(this.story),
-//           ]),
-//           h(
-//             config.FooterComponent ? config.FooterComponent : FooterDocs,
-//             {
-//               slot: 'footer',
-//             },
-//             [
-//               h(MarkdownContainer, {
-//                 props: {
-//                   docs: [config.docsAtFooter],
-//                 },
-//               }),
-//             ]
-//           ),
-//         ]
-//       );
-//     },
-//   };
-// }
+    const parameters = getParameters(context);
 
-// function withDocsCallAsHoc({ docs, config, storyFn }) {
-//   return ({ kind, story }) =>
-//     renderStory({
-//       docs,
-//       config,
-//       storyFn,
-//       kind,
-//       story,
-//     });
-// }
+    return {
+      data() {
+        return {
+          parameters,
+          layout,
+        };
+      },
+      components: {
+        'readme-content': ReadmeContent,
+      },
+      template: `<readme-content 
+        v-bind:withPreview="true"
+        v-bind:theme="parameters.theme"
+        v-bind:codeTheme="parameters.codeTheme"
+        v-bind:layout="layout" />`,
+    };
+  };
+}
 
-// function withDocsCallAsDecorator({ docs, config }) {
-//   return (storyFn, { kind, story }) =>
-//     renderStory({
-//       docs,
-//       config,
-//       storyFn,
-//       kind,
-//       story,
-//     });
-// }
+function withDocsCallAsDecorator({ md }) {
+  return (story, context) => {
+    const layout = getDocsLayout({
+      md,
+      story: story(context),
+    });
 
-// function doc({ docs, config }) {
-//   return ({ kind, story }) =>
-//     renderStory({
-//       docs: {},
-//       config: {
-//         ...config,
-//         PreviewComponent: {
-//           template: `<div><slot></slot></div>`,
-//         },
-//       },
-//       storyFn: (k, v) => {
-//         return {
-//           data() {
-//             return {
-//               docs,
-//             };
-//           },
-//           components: {
-//             MarkdownContainer,
-//           },
-//           template: `<markdown-container :docs="docs" />`,
-//         };
-//       },
-//       kind,
-//       story,
-//     });
-// }
+    const parameters = getParameters(context);
 
-// export default {
-//   doc,
-//   withReadme: commonHandler.withReadme,
-//   withDocs: {
-//     callAsDecorator: withDocsCallAsDecorator,
-//     callAsHoc: withDocsCallAsHoc,
-//   },
-// };
+    return {
+      data() {
+        return {
+          parameters,
+          layout,
+        };
+      },
+      components: {
+        'readme-content': ReadmeContent,
+      },
+      template: `<readme-content
+        v-bind:withPreview="true"
+        v-bind:theme="parameters.theme"
+        v-bind:codeTheme="parameters.codeTheme"
+        v-bind:layout="layout" />`,
+    };
+  };
+}
+
+function doc({ md }) {
+  const layout = getDocsLayout({
+    md,
+    story: null,
+  });
+
+  return context => {
+    const parameters = getParameters(context);
+
+    return {
+      data() {
+        return {
+          parameters,
+          layout,
+        };
+      },
+      components: {
+        'readme-content': ReadmeContent,
+      },
+      template: `<readme-content 
+        v-bind:theme="parameters.theme"
+        v-bind:codeTheme="parameters.codeTheme"
+        v-bind:layout="layout" />`,
+    };
+  };
+}
+
+export default {
+  doc,
+  withReadme: commonHandler.withReadme,
+  withDocs: {
+    callAsDecorator: withDocsCallAsDecorator,
+    callAsHoc: withDocsCallAsHoc,
+  },
+};
