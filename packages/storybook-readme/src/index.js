@@ -1,6 +1,7 @@
 import React from 'react';
 import addons, { makeDecorator } from '@storybook/addons';
 import getDocsLayout from './services/getDocsLayout';
+import * as config from './services/config';
 import ReadmeContent from './components/ReadmeContent';
 
 import { CHANNEL_SET_SIDEBAR_DOCS, LAYOUT_TYPE_MD } from './const';
@@ -11,6 +12,14 @@ import insertHighlightJsThemeCSS from './styles/highlightjs-github-css';
 export { default as withDocs } from './with-docs';
 export { default as withReadme } from './with-readme';
 export { doc } from './backwardCompatibility';
+
+export const addHeader = md => {
+  config.addHeader(md);
+};
+
+export const addFooter = md => {
+  config.addFooter(md);
+};
 
 export const addReadme = makeDecorator({
   name: 'addReadme',
@@ -56,6 +65,12 @@ export const addReadme = makeDecorator({
       });
     }
 
-    return <ReadmeContent layout={layout} StoryPreview={config.StoryPreview} />;
+    return (
+      <ReadmeContent
+        layout={layout}
+        StoryPreview={config.StoryPreview}
+        withPreview={config.content}
+      />
+    );
   },
 });

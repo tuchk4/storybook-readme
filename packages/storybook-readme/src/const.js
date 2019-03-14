@@ -4,5 +4,7 @@ export const MARKER_STORY = '<!-- STORY -->';
 export const MARKER_PROPS_TABLE = '<!-- PROPS -->';
 
 export const LAYOUT_TYPE_MD = 'MD';
+export const LAYOUT_TYPE_FOOTER_MD = 'FOOTER_MD';
+export const LAYOUT_TYPE_HEADER_MD = 'HEADER_MD';
 export const LAYOUT_TYPE_STORY = 'STORY';
 export const LAYOUT_TYPE_PROPS_TABLE = 'PROPS';

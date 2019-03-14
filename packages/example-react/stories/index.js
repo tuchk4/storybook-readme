@@ -1,3 +1,17 @@
+import { addFooter, addHeader } from 'storybook-readme';
+
+addHeader(`
+### Components kit
+
+----
+`);
+
+addFooter(`
+----
+
+tuchk4
+`);
+
 import './Button';
 import './withStoryPreview';
 import './withSidebarDocs';

@@ -5,7 +5,6 @@ import isArray from 'lodash/isArray';
 import vueHandler from './env/vue';
 import reactHandler from './env/react';
 
-import getDocsLayout from '../services/getDocsLayout';
 import marked from '../services/marked';
 
 let handler = null;
@@ -29,9 +28,7 @@ function withCallType({ type }) {
   if (type === DOC) {
     return (...args) => {
       return handler.doc({
-        layout: getDocsLayout({
-          md: args,
-        }),
+        md: args,
       });
     };
   }

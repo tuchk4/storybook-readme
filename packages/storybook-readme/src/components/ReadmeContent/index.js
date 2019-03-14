@@ -11,11 +11,27 @@ import {
   LAYOUT_TYPE_MD,
   LAYOUT_TYPE_STORY,
   LAYOUT_TYPE_PROPS_TABLE,
+  LAYOUT_TYPE_FOOTER_MD,
+  LAYOUT_TYPE_HEADER_MD,
 } from '../../const';
+
+const ReadmeContentContext = React.createContext();
 
 export default class ReadmeContent extends React.Component {
   static defaultProps = {
-    types: [LAYOUT_TYPE_MD, LAYOUT_TYPE_STORY, LAYOUT_TYPE_PROPS_TABLE],
+    types: [
+      LAYOUT_TYPE_MD,
+      LAYOUT_TYPE_STORY,
+      LAYOUT_TYPE_PROPS_TABLE,
+      LAYOUT_TYPE_FOOTER_MD,
+      LAYOUT_TYPE_HEADER_MD,
+    ],
+  };
+
+  static contextType = ReadmeContentContext;
+
+  state = {
+    withPreview: true,
   };
 
   ref = null;
@@ -39,63 +55,94 @@ export default class ReadmeContent extends React.Component {
     this.ref = null;
   }
 
+  componentDidMount() {
+    /**
+     * ReadmeContent notify parent ReadmeContent to hide story preview
+     * if combined decorators/hocs  way with `addParamters()`
+     */
+
+    if (this.context && this.context.notifyParent) {
+      this.context.notifyParent();
+    }
+  }
+
+  notifyParent = () => {
+    this.setState({
+      withPreview: false,
+    });
+  };
+
   render() {
     const {
       layout,
+      withPreview = true,
       MdPreview = MdPreviewDefault,
       StoryPreview = StoryPreviewDefault,
       FooterPreview = FooterPreviewDefault,
     } = this.props;
 
     return (
-      <div
-        className={'storybook-readme-story'}
-        style={{ padding: '8px' }}
-        ref={this.handleRef}
+      <ReadmeContentContext.Provider
+        value={{
+          notifyParent: this.notifyParent,
+        }}
       >
-        {layout.map(({ type, content }, index) => {
-          if (!this.props.types.includes(type)) {
-            return null;
-          }
+        <div
+          className={'storybook-readme-story'}
+          style={{ padding: '8px' }}
+          ref={this.handleRef}
+        >
+          {layout.map(({ type, content }, index) => {
+            if (!this.props.types.includes(type)) {
+              return null;
+            }
 
-          switch (type) {
-            case LAYOUT_TYPE_MD:
-              return (
-                <div
-                  key={index}
-                  className={'markdown-body'}
-                  dangerouslySetInnerHTML={{ __html: content }}
-                />
-              );
-
-            case LAYOUT_TYPE_STORY:
-              return <StoryPreview key={index}>{content}</StoryPreview>;
-
-            case LAYOUT_TYPE_PROPS_TABLE: {
-              if (!content) {
-                return null;
-              }
-
-              return content.map((md, index) => {
-                if (md === null) {
-                  return null;
-                }
-
+            switch (type) {
+              case LAYOUT_TYPE_FOOTER_MD:
+              case LAYOUT_TYPE_HEADER_MD:
+              case LAYOUT_TYPE_MD:
                 return (
                   <div
                     key={index}
-                    className={'markdown-body markdown-props-table'}
-                    dangerouslySetInnerHTML={{ __html: md }}
+                    className={'markdown-body'}
+                    dangerouslySetInnerHTML={{ __html: content }}
                   />
                 );
-              });
-            }
 
-            default:
-              return null;
-          }
-        })}
-      </div>
+              case LAYOUT_TYPE_STORY: {
+                if (!withPreview || !this.state.withPreview) {
+                  return content;
+                } else {
+                  return <StoryPreview key={index}>{content}</StoryPreview>;
+                }
+              }
+
+              case LAYOUT_TYPE_PROPS_TABLE: {
+                if (!content) {
+                  return null;
+                }
+
+                return content.map((md, index) => {
+                  if (md === null) {
+                    return null;
+                  }
+
+                  return (
+                    <div
+                      key={index}
+                      className={'markdown-body markdown-props-table'}
+                      dangerouslySetInnerHTML={{ __html: md }}
+                    />
+                  );
+                });
+              }
+
+              default:
+                return null;
+            }
+          })}
+        </div>
+      </ReadmeContentContext.Provider>
     );
   }
 }
