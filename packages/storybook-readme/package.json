@@ -29,11 +29,11 @@
   },
   "files": [
     "components",
-    "env",
     "services",
     "styles",
+    "vue",
+    "const.js",
     "index.js",
-    "constants.js",
     "register.js",
     "with-docs.js",
     "with-readme.js"
