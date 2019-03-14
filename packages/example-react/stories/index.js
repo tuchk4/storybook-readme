@@ -19,4 +19,5 @@ import './withContentDocs';
 import './withEmoji';
 import './withPropsTable';
 import './withCustomTheme';
+import './withCustomCodeTheme';
 import './withOldApi';

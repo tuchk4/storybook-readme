@@ -138,9 +138,15 @@ storiesOf('Buttons', module)
 
       /**
        * Override theme values
-       *
        */
       theme: {},
+
+      /**
+       * Highlightjs code theme
+       * Import theme at _.storybook/config.js_.
+       * Full list of theme https://highlightjs.org/static/demo/.
+       */
+      codeTheme: 'github',
 
       /**
        * Wrapper for story. Usually used to set some styles
@@ -169,20 +175,4 @@ Example:
 <!-- STORY -->
 
 Some docs after story
-```
-
-## Set code highlighting theme
-
-> NOTE: Theme will set for all stories.
-
-Install _highlight.js_
-
-```bash
-yarn add highlight.js
-```
-
-Import theme at _.storybook/config.js_. Full list of theme https://highlightjs.org/static/demo/.
-
-```js
-import 'highlight.js/styles/shades-of-purple.css';
 ```

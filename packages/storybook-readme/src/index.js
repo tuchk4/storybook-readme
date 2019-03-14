@@ -6,9 +6,6 @@ import ReadmeContent from './components/ReadmeContent';
 
 import { CHANNEL_SET_SIDEBAR_DOCS, LAYOUT_TYPE_MD } from './const';
 
-import insertGithubMarkdownCSS from './styles/github-markdown-css';
-import insertHighlightJsThemeCSS from './styles/highlightjs-github-css';
-
 export { default as withDocs } from './with-docs';
 export { default as withReadme } from './with-readme';
 export { doc } from './backwardCompatibility';
@@ -40,9 +37,6 @@ export const addReadme = makeDecorator({
       ...config.theme,
     };
 
-    insertGithubMarkdownCSS(theme);
-    insertHighlightJsThemeCSS(theme);
-
     const story = <React.Fragment>{getStory(context)}</React.Fragment>;
     const layout = storyOptions.layout
       ? storyOptions.layout
@@ -53,6 +47,8 @@ export const addReadme = makeDecorator({
 
     const channel = addons.getChannel();
 
+    const codeTheme = config.codeTheme || 'github';
+
     if (config.sidebar) {
       const sidebarLayout = getDocsLayout({
         md: config.sidebar,
@@ -62,12 +58,15 @@ export const addReadme = makeDecorator({
       channel.emit(CHANNEL_SET_SIDEBAR_DOCS, {
         layout: sidebarLayout,
         theme,
+        codeTheme,
       });
     }
 
     return (
       <ReadmeContent
         layout={layout}
+        theme={theme}
+        codeTheme={codeTheme}
         StoryPreview={config.StoryPreview}
         withPreview={config.content}
       />

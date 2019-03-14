@@ -7,6 +7,9 @@ import HeaderPreviewDefault from '../Preview/HeaderPreview';
 import MdPreviewDefault from '../Preview/MdPreview';
 
 import highlight from '../../services/highlite';
+import insertGithubMarkdownCss from '../../styles/githubMarkdownCss';
+import insertCodeThemeCss from '../../styles/codeThemeCss';
+import insertPropsTableCss from '../../styles/propsTableCss';
 
 import {
   LAYOUT_TYPE_MD,
@@ -61,9 +64,18 @@ export default class ReadmeContent extends React.Component {
      * ReadmeContent notify parent ReadmeContent to hide story preview
      * if combined decorators/hocs  way with `addParamters()`
      */
-
     if (this.context && this.context.notifyParent) {
       this.context.notifyParent();
+    } else {
+      insertGithubMarkdownCss({
+        theme: this.props.theme,
+      });
+      insertPropsTableCss({
+        theme: this.props.theme,
+      });
+      insertCodeThemeCss({
+        codeTheme: this.props.codeTheme,
+      });
     }
   }
 
