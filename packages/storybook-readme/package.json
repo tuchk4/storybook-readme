@@ -13,17 +13,17 @@
   },
   "dependencies": {
     "@storybook/core-events": "^5.0.1",
+    "highlight.js": "^9.15.6",
     "html-loader": "^0.5.5",
     "markdown-loader": "^5.0.0",
     "marked": "^0.6.1",
     "node-emoji": "1.10.0",
-    "highlight.js": "^9.15.6",
     "string-raw": "^1.0.1"
   },
   "devDependencies": {
-    "@storybook/addons": "^5.0.1",
     "@babel/cli": "7.2.3",
     "@babel/core": "7.3.4",
+    "@storybook/addons": "^5.0.1",
     "babel-preset-react-app": "^7.0.1",
     "cross-env": "^5.1.3"
   },
