@@ -1,38 +1,22 @@
 const path = require('path');
-const updateWebpackConfig = require('storybook-readme/env/vue/updateWebpackConfig');
+const updateWebpackConfig = require('storybook-readme/vue/updateWebpackConfig');
 
-module.exports = storybookBaseConfig => {
-  // updateWebpackConfig(storybookBaseConfig);
+module.exports = ({ config, mode }) => {
+  updateWebpackConfig(config);
 
-  storybookBaseConfig.module.rules.push({
-    test: /\.css$/,
-    use: ['style-loader', 'css-loader'],
-  });
-
-  storybookBaseConfig.module.rules.push({
-    resourceQuery: /blockType=docs/,
-    use: [
-      'storybook-readme/env/vue/docs-loader',
-      'html-loader',
-      'markdown-loader',
-    ],
-  });
-  // ----------------
-  // NOTE: this alias is needed only for this example
-  // ----------------
-  if (!storybookBaseConfig.resolve.alias) {
-    storybookBaseConfig.resolve.alias = {};
+  if (mode === 'PRODUCTION') {
+    // ...
   }
 
-  Object.assign(storybookBaseConfig.resolve.alias, {
-    '@storybook/addons': path.resolve(
-      __dirname,
-      '..',
-      'node_modules',
-      '@storybook',
-      'addons'
-    ),
-  });
+  // config.module.rules.push({
+  //   test: /\.css$/,
+  //   use: ['style-loader', 'css-loader'],
+  // });
 
-  return storybookBaseConfig;
+  //  config.module.rules.push({
+  //   resourceQuery: /blockType=docs/,
+  //   use: ['storybook-readme/docs-loader', 'html-loader', 'markdown-loader'],
+  // });
+
+  return config;
 };

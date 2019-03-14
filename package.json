@@ -19,20 +19,26 @@
     "storybook-vue": "npm run storybook --prefix ./packages/example-vue",
     "dev": "lerna run dev --stream --parallel",
     "clear": "lerna run clear",
-    "deploy-storybook":
-      "npm run deploy-storybook --prefix ./packages/example-react",
+    "deploy-storybook": "npm run deploy-storybook --prefix ./packages/example-react",
     "precommit": "lint-staged",
-    "format":
-      "prettier --trailing-comma es5 --single-quote --write 'src/**/*.js' 'src/**/*.json'"
+    "format": "prettier --trailing-comma es5 --single-quote --write 'src/**/*.js' 'src/**/*.json'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "lint-staged": {
-    "*.js": ["prettier --trailing-comma es5 --single-quote --write", "git add"],
+    "*.js": [
+      "prettier --trailing-comma es5 --single-quote --write",
+      "git add"
+    ],
     "*.json": [
       "prettier --trailing-comma es5 --single-quote --write",
       "git add"
     ]
-  }
+  },
+  "workspaces": [
+    "packages/storybook-readme",
+    "packages/example-react",
+    "packages/example-vue"
+  ]
 }

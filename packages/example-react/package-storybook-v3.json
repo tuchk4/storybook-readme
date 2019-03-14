@@ -40,8 +40,7 @@
       "^.+\\.md?$": "markdown-loader-jest"
     },
     "moduleNameMapper": {
-      "@storybook/addons":
-        "<rootDir>/../storybook-readme/node_modules/@storybook/addons"
+      "@storybook/addons": "<rootDir>/../storybook-readme/node_modules/@storybook/addons"
     }
   }
 }

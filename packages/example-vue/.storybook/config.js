@@ -1,15 +1,18 @@
-import { configure, setAddon } from '@storybook/vue';
-import { setOptions } from '@storybook/addon-options';
+import Vue from 'vue';
+import { configure, addDecorator, addParameters } from '@storybook/vue';
+import { addReadme } from 'storybook-readme/vue';
+import { themes } from '@storybook/theming';
 
-setOptions({
+addParameters({
   name: 'README addon',
   url: 'https://github.com/tuchk4/storybook-readme',
-  goFullScreen: false,
-  showLeftPanel: true,
-  showDownPanel: true,
-  showSearchBox: false,
-  downPanelInRight: true,
+  addonPanelInRight: true,
+  options: {
+    theme: themes.dark,
+  },
 });
+
+addDecorator(addReadme);
 
 function loadStories() {
   require('../stories');

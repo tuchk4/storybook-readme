@@ -2,25 +2,17 @@
 
 ### :smile: Usage
 
+Buttons allow users to take actions, and make choices, with a single tap. Supports all default HTML Button properties. See Material Design Button for UI/UX information.
+
+Button variants could be imported separately.
+
 ```js
-import Button from 'components/button';
+import { OutlinedButton, ContainedButton, TextButton } from 'Button';
 ```
 
+<!-- PROPS -->
+
 <!-- STORY -->
-
-### Properties
-
-* `onClick` - click callback
-* `label` - button text
-
-| propName | propType | defaultValue | isRequired |
-| -------- | -------- | ------------ | ---------- |
-| onClick  | func     | -            |            |
-| label    | string   | -            | +          |
-| alert    | boolean  | false        | -          |
-| success  | boolean  | false        | -          |
-
-### Roadmap
 
 #### Icons
 
@@ -30,29 +22,29 @@ import Button from 'components/button';
 render() {
   return (
     <Button icon="mail">Send mail</Button>
-    <Button icon="trash" iconPosition="right">Remove</Button>
+    <Button icon="trash">Remove</Button>
   );
 }
 ```
 
-#### Value
+#### Button types
 
-Add `value` property that will be available at all event callback. Helps to prevent numbers of bind usage
-
-For example:
+Means `OutlinedButton`, `ContainedButton`, `TextButton`. It is possible to import as standalone component or pass `variant` property. Defautl value is `contained`.
 
 ```js
-<ListItem key={item.id}>
-  <Button onClick={this.remove} value={item.id}>
-    Remove
-  </Button>
-</ListItem>
+<Button variant="outlined" />
+<Button variant="contained" />
+<Button variant="text" />
 ```
 
-Instead of
+Which one does @torvalds like most?
 
-```js
-<ListItem key={item.id}>
-  <Button onClick={this.remove.bind(this, item.id)}>Remove</Button>
-</ListItem>
-```
+- [ ] tiger \#
+- [ ] whale \*
+- [x] octocat \!
+
+> Stay hungry; stay foolish.
+>
+> > Quality is better than quantity.
+> >
+> > > Life is not fair; get used to it.

@@ -3,8 +3,7 @@
   "license": "MIT",
   "private": false,
   "version": "4.0.5",
-  "description":
-    "Storybook addon to show components README (for React and Vue)",
+  "description": "Storybook addon to show components README (for React and Vue)",
   "main": "index.js",
   "homepage": "https://github.com/tuchk4/storybook-readme",
   "bugs": "https://github.com/tuchk4/storybook-readme/issues",
@@ -13,24 +12,20 @@
     "url": "git+https://github.com/tuchk4/storybook-readme"
   },
   "dependencies": {
+    "@storybook/core-events": "^5.0.1",
     "html-loader": "^0.5.5",
-    "lodash": "^4.17.4",
-    "markdown-loader": "^4.0.0",
-    "marked": "^0.5.0",
-    "node-emoji": "1.8.1",
-    "prismjs": "^1.9.0",
-    "string-raw": "^1.0.1",
-    "@storybook/addon-info": "^4.1.11"
+    "markdown-loader": "^5.0.0",
+    "marked": "^0.6.1",
+    "node-emoji": "1.10.0",
+    "highlight.js": "^9.15.6",
+    "string-raw": "^1.0.1"
   },
   "devDependencies": {
-    "@storybook/addons": "^4.1.6",
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
-    "babel-preset-react-app": "^3.0.3",
-    "cross-env": "^5.1.3",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "@storybook/addons": "^5.0.1",
+    "@babel/cli": "7.2.3",
+    "@babel/core": "7.3.4",
+    "babel-preset-react-app": "^7.0.1",
+    "cross-env": "^5.1.3"
   },
   "files": [
     "components",
@@ -44,12 +39,15 @@
     "with-readme.js"
   ],
   "scripts": {
-    "prepublish":
-      "npm run clear & cross-env NODE_ENV=production babel -d ./ ./src",
-    "dev":
-      "npm run clear & cross-env NODE_ENV=production babel -d ./ ./src --watch",
+    "prepublish": "npm run clear & cross-env NODE_ENV=production babel -d ./ ./src",
+    "dev": "npm run clear & cross-env NODE_ENV=production babel -d ./ ./src --watch",
     "clear": "ls ./src | xargs rm -rf"
   },
-  "keywords": ["storybook", "react-storybook", "docs", "readme"],
+  "keywords": [
+    "storybook",
+    "react-storybook",
+    "docs",
+    "readme"
+  ],
   "author": "valeriy.sorokobatko@gmail.com"
 }

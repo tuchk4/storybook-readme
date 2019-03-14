@@ -1,9 +1,14 @@
-import Prism from 'prismjs';
-import 'prismjs/components/prism-jsx';
-import 'prismjs/components/prism-typescript';
-import '../styles/prism-theme-css';
+// import Prism from 'prismjs';
+// import 'prismjs/components/prism-jsx';
+// import 'prismjs/components/prism-typescript';
 
-export default (dom, { withJSX = false } = {}) => {
+import hljs from 'highlight.js';
+
+hljs.configure({
+  skip: true,
+});
+
+export default dom => {
   /**
    * should check dom.hasOwnProperty('querySelectorAll')
    * for SSR cases
@@ -15,18 +20,9 @@ export default (dom, { withJSX = false } = {}) => {
       ? dom.querySelectorAll('pre code')
       : [];
 
-  // console.log(nodes);
-
   if (nodes.length > 0) {
     for (var i = 0; i < nodes.length; i = i + 1) {
-      if (withJSX) {
-        if (nodes[i].classList.contains('language-js')) {
-          nodes[i].classList.remove('language-js');
-          nodes[i].classList.add('language-jsx');
-        }
-      }
-
-      Prism.highlightElement(nodes[i]);
+      hljs.highlightBlock(nodes[i]);
     }
   }
 };
