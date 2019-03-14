@@ -5,7 +5,7 @@ import isArray from 'lodash/isArray';
 import vueHandler from './env/vue';
 import reactHandler from './env/react';
 
-import marked from '../services/marked';
+import * as config from '../services/config';
 
 let handler = null;
 
@@ -117,7 +117,7 @@ export const doc = (...args) => {
  * @deprecated
  */
 export const withReadme = (...args) => {
-  console.error(`
+  console.warn(`
 storybook-readme:
 
 At version ^5.0.0 "withReadme()" is deprectaed. Now it works but will be removed at next release.
@@ -145,7 +145,7 @@ storiesOf('My Component', module)
  * @deprecated
  */
 export const withDocs = (...args) => {
-  console.error(`
+  console.warn(`
 storybook-readme:
 
 At version ^5.0.0 "withDocs()" is deprectaed. Now it works but will be removed at next release.
@@ -172,25 +172,23 @@ storiesOf('My Component', module)
 /**
  * @deprecated
  */
-withDocs.addFooterDocs = docsAtFooter => {
-  console.error(`
+withDocs.addFooterDocs = md => {
+  console.warn(`
 storybook-readme:
-
-withDocs.addFooterDocs() is deprecated at v5.0.0 and do nothing.
-In next releases will be removed.
-
+withDocs.addFooterDocs() is deprecated at v5.0.0 and will be removed.
 `);
+
+  config.addHeader(md);
 };
 
 /**
  * @deprecated
  */
-withReadme.addFooterDocs = docsAtFooter => {
-  console.error(`
+withReadme.addFooterDocs = md => {
+  console.warn(`
 storybook-readme:
-
-withReadme.addFooterDocs() is deprecated at v5.0.0 and do nothing.
-In next releases will be removed.
-
+withReadme.addFooterDocs() is deprecated at v5.0.0 and will be removed.
 `);
+
+  config.addFooter(md);
 };
