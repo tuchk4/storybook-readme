@@ -72,6 +72,10 @@ export default class ReadmeContent extends React.Component {
               return <StoryPreview key={index}>{content}</StoryPreview>;
 
             case LAYOUT_TYPE_PROPS_TABLE: {
+              if (!content) {
+                return null;
+              }
+
               return content.map((md, index) => {
                 if (md === null) {
                   return null;

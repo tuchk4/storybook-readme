@@ -13,6 +13,7 @@
     "packages/storybook-readme/vue/": true,
     "packages/storybook-readme/styles/": true,
     "packages/storybook-readme/services/": true,
+    "packages/storybook-readme/backwardCompatibility/": true,
     "packages/example-react/etc/": true,
     "packages/example-vue/etc/": true,
     "storybook-static/": true

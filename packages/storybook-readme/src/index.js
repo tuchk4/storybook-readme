@@ -10,6 +10,7 @@ import insertHighlightJsThemeCSS from './styles/highlightjs-github-css';
 
 export { default as withDocs } from './with-docs';
 export { default as withReadme } from './with-readme';
+export { doc } from './backwardCompatibility';
 
 export const addReadme = makeDecorator({
   name: 'addReadme',
