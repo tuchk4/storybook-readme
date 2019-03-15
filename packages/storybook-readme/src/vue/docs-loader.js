@@ -4,6 +4,6 @@ module.exports = function(source, map) {
     'module.exports = function(Component) {Component.options.__docs = ' +
       source +
       '}',
-    map
+    map,
   );
 };
