@@ -139,7 +139,7 @@ export default class ReadmeContent extends React.Component {
 
               case LAYOUT_TYPE_STORY: {
                 if (!withPreview || !this.state.withPreview) {
-                  return content;
+                  return <React.Fragment key={index}>{content}</React.Fragment>;
                 } else {
                   return <StoryPreview key={index}>{content}</StoryPreview>;
                 }
