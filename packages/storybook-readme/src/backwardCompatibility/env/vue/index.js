@@ -3,12 +3,6 @@ import ReadmeContent from '../../../vue/components/ReadmeContent';
 import getDocsLayout from '../../../services/getDocsLayout';
 import getParameters from '../../../services/getParameters';
 
-import {
-  LAYOUT_TYPE_STORY,
-  LAYOUT_TYPE_PROPS_TABLE,
-  LAYOUT_TYPE_MD,
-} from '../../../const';
-
 function withDocsCallAsHoc({ md, story }) {
   return context => {
     const layout = getDocsLayout({

@@ -1,5 +1,899 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots Button Alert Button 1`] = `
+<div
+  className="storybook-readme-story"
+>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h3 id=\\"components-kit\\">Components kit</h3>
+<hr>
+",
+        }
+      }
+    />
+  </div>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h1 id=\\"button-star-\\">Button ⭐</h1>
+<p>Application button.</p>
+<pre><code class=\\"lang-js\\">import Button from &#39;components/Button&#39;;
+</code></pre>
+",
+        }
+      }
+    />
+  </div>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "justifyContent": "center",
+        "margin": "32px 0",
+      }
+    }
+  >
+    <div>
+      <button
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "red",
+            "border": "2px solid black",
+            "borderRadius": "3px",
+            "color": "white",
+            "fontSize": "15px",
+            "margin": "1px",
+            "padding": "5px",
+          }
+        }
+      >
+        Hello Im Button
+      </button>
+    </div>
+  </div>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<hr>
+<p>tuchk4</p>
+",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Button Button 1`] = `
+<div
+  className="storybook-readme-story"
+>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h3 id=\\"components-kit\\">Components kit</h3>
+<hr>
+",
+        }
+      }
+    />
+  </div>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h1 id=\\"button-star-\\">Button ⭐</h1>
+<p>Application button.</p>
+<pre><code class=\\"lang-js\\">import Button from &#39;components/Button&#39;;
+</code></pre>
+",
+        }
+      }
+    />
+  </div>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "justifyContent": "center",
+        "margin": "32px 0",
+      }
+    }
+  >
+    <div>
+      <button
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "white",
+            "border": "2px solid black",
+            "borderRadius": "3px",
+            "color": "black",
+            "fontSize": "15px",
+            "margin": "1px",
+            "padding": "5px",
+          }
+        }
+      >
+        Hello Im Button
+      </button>
+    </div>
+  </div>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<hr>
+<p>tuchk4</p>
+",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Button Success Button 1`] = `
+<div
+  className="storybook-readme-story"
+>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h3 id=\\"components-kit\\">Components kit</h3>
+<hr>
+",
+        }
+      }
+    />
+  </div>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h1 id=\\"button-star-\\">Button ⭐</h1>
+<p>Application button.</p>
+<pre><code class=\\"lang-js\\">import Button from &#39;components/Button&#39;;
+</code></pre>
+",
+        }
+      }
+    />
+  </div>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "justifyContent": "center",
+        "margin": "32px 0",
+      }
+    }
+  >
+    <div>
+      <button
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "green",
+            "border": "2px solid black",
+            "borderRadius": "3px",
+            "color": "white",
+            "fontSize": "15px",
+            "margin": "1px",
+            "padding": "5px",
+          }
+        }
+      >
+        Hello Im Button
+      </button>
+    </div>
+  </div>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<hr>
+<p>tuchk4</p>
+",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Content docs Alert Button 1`] = `
+<div
+  className="storybook-readme-story"
+>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h3 id=\\"components-kit\\">Components kit</h3>
+<hr>
+",
+        }
+      }
+    />
+  </div>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h1 id=\\"button\\">Button</h1>
+<h3 id=\\"-smile-usage\\">😄 Usage</h3>
+<p>Buttons allow users to take actions, and make choices, with a single tap. Supports all default HTML Button properties. See Material Design Button for UI/UX information.</p>
+<p>Button variants could be imported separately.</p>
+<pre><code class=\\"lang-js\\">import { OutlinedButton, ContainedButton, TextButton } from &#39;Button&#39;;
+</code></pre>
+",
+        }
+      }
+    />
+  </div>
+  <div
+    className="markdown-body markdown-props-table"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<h3 id=\\"button-props\\">Button Props</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Type</th>
+<th>DefaultValue</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>label</td>
+<td>+</td>
+<td>undefined</td>
+<td></td>
+<td>null</td>
+</tr>
+<tr>
+<td>onClick</td>
+<td>-</td>
+<td>undefined</td>
+<td></td>
+<td>null</td>
+</tr>
+<tr>
+<td>alert</td>
+<td>-</td>
+<td>undefined</td>
+<td></td>
+<td>null</td>
+</tr>
+<tr>
+<td>success</td>
+<td>-</td>
+<td>undefined</td>
+<td></td>
+<td>null</td>
+</tr>
+</tbody></table>
+",
+      }
+    }
+  />
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "justifyContent": "center",
+        "margin": "32px 0",
+      }
+    }
+  >
+    <div>
+      <button
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "red",
+            "border": "2px solid black",
+            "borderRadius": "3px",
+            "color": "white",
+            "fontSize": "15px",
+            "margin": "1px",
+            "padding": "5px",
+          }
+        }
+      >
+        Hello Im Button
+      </button>
+    </div>
+  </div>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "
+<h4 id=\\"icons\\">Icons</h4>
+<pre><code class=\\"lang-js\\">import Button from &#39;components/button&#39;;
+
+<p>render() {
+  return (
+    &lt;Button icon=&quot;mail&quot;&gt;Send mail&lt;/Button&gt;
+    &lt;Button icon=&quot;trash&quot;&gt;Remove&lt;/Button&gt;
+  );
+}
+</code></pre></p>
+<h4 id=\\"button-types\\">Button types</h4>
+<p>Means <code>OutlinedButton</code>, <code>ContainedButton</code>, <code>TextButton</code>. It is possible to import as standalone component or pass <code>variant</code> property. Defautl value is <code>contained</code>.</p>
+<pre><code class=\\"lang-js\\">&lt;Button variant=&quot;outlined&quot; /&gt;
+&lt;Button variant=&quot;contained&quot; /&gt;
+&lt;Button variant=&quot;text&quot; /&gt;
+</code></pre>
+<p>Which one does @torvalds like most?</p>
+<ul>
+<li>[ ] tiger #</li>
+<li>[ ] whale *</li>
+<li>[x] octocat !</li>
+</ul>
+<blockquote>
+<p>Stay hungry; stay foolish.</p>
+<blockquote>
+<p>Quality is better than quantity.</p>
+<blockquote>
+<p>Life is not fair; get used to it.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+",
+        }
+      }
+    />
+  </div>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<hr>
+<p>tuchk4</p>
+",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Content docs Button 1`] = `
+<div
+  className="storybook-readme-story"
+>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h3 id=\\"components-kit\\">Components kit</h3>
+<hr>
+",
+        }
+      }
+    />
+  </div>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h2 id=\\"sidebar-docs\\">Sidebar docs</h2>
+",
+        }
+      }
+    />
+  </div>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "justifyContent": "center",
+        "margin": "32px 0",
+      }
+    }
+  >
+    <div>
+      <button
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "white",
+            "border": "2px solid black",
+            "borderRadius": "3px",
+            "color": "black",
+            "fontSize": "15px",
+            "margin": "1px",
+            "padding": "5px",
+          }
+        }
+      >
+        Hello Im Button
+      </button>
+    </div>
+  </div>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "
+
+<p><code>sidebar</code> added with <code>addParameters</code> will be applied for all stories in the same series.
+To override it - define <code>sidebar</code> at <code>add</code> method.</p>
+<pre><code class=\\"language-js\\">import README from &#39;./README.md&#39;;
+import CUSTOM_README from &#39;./CUSTOM_README.md&#39;;
+
+storiesOf(&#39;Sidebar docs&#39;, module)
+  .addDecorator(withKnobs)
+  .addParameters({
+    readme: {
+      content: README,
+    },
+  })
+  .add(..., {
+    readme: {
+      // will override
+      content: CUSTOM_README,
+    },
+  })
+  .add(...)
+  .add(...)</code></pre>
+",
+        }
+      }
+    />
+  </div>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<hr>
+<p>tuchk4</p>
+",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Content docs Override Content docs 1`] = `
+<div
+  className="storybook-readme-story"
+>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h3 id=\\"components-kit\\">Components kit</h3>
+<hr>
+",
+        }
+      }
+    />
+  </div>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<p>This <code>md</code> is overriden.</p>
+",
+        }
+      }
+    />
+  </div>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "justifyContent": "center",
+        "margin": "32px 0",
+      }
+    }
+  >
+    <div>
+      <button
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "green",
+            "border": "2px solid black",
+            "borderRadius": "3px",
+            "color": "white",
+            "fontSize": "15px",
+            "margin": "1px",
+            "padding": "5px",
+          }
+        }
+      >
+        Hello Im Button
+      </button>
+    </div>
+  </div>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<hr>
+<p>tuchk4</p>
+",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Content docs Success Button 1`] = `
+<div
+  className="storybook-readme-story"
+>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h3 id=\\"components-kit\\">Components kit</h3>
+<hr>
+",
+        }
+      }
+    />
+  </div>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h1 id=\\"button\\">Button</h1>
+<h3 id=\\"-smile-usage\\">😄 Usage</h3>
+<p>Buttons allow users to take actions, and make choices, with a single tap. Supports all default HTML Button properties. See Material Design Button for UI/UX information.</p>
+<p>Button variants could be imported separately.</p>
+<pre><code class=\\"lang-js\\">import { OutlinedButton, ContainedButton, TextButton } from &#39;Button&#39;;
+</code></pre>
+",
+        }
+      }
+    />
+  </div>
+  <div
+    className="markdown-body markdown-props-table"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<h3 id=\\"button-props\\">Button Props</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Type</th>
+<th>DefaultValue</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>label</td>
+<td>+</td>
+<td>undefined</td>
+<td></td>
+<td>null</td>
+</tr>
+<tr>
+<td>onClick</td>
+<td>-</td>
+<td>undefined</td>
+<td></td>
+<td>null</td>
+</tr>
+<tr>
+<td>alert</td>
+<td>-</td>
+<td>undefined</td>
+<td></td>
+<td>null</td>
+</tr>
+<tr>
+<td>success</td>
+<td>-</td>
+<td>undefined</td>
+<td></td>
+<td>null</td>
+</tr>
+</tbody></table>
+",
+      }
+    }
+  />
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "justifyContent": "center",
+        "margin": "32px 0",
+      }
+    }
+  >
+    <div>
+      <button
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "green",
+            "border": "2px solid black",
+            "borderRadius": "3px",
+            "color": "white",
+            "fontSize": "15px",
+            "margin": "1px",
+            "padding": "5px",
+          }
+        }
+      >
+        Hello Im Button
+      </button>
+    </div>
+  </div>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "
+<h4 id=\\"icons\\">Icons</h4>
+<pre><code class=\\"lang-js\\">import Button from &#39;components/button&#39;;
+
+<p>render() {
+  return (
+    &lt;Button icon=&quot;mail&quot;&gt;Send mail&lt;/Button&gt;
+    &lt;Button icon=&quot;trash&quot;&gt;Remove&lt;/Button&gt;
+  );
+}
+</code></pre></p>
+<h4 id=\\"button-types\\">Button types</h4>
+<p>Means <code>OutlinedButton</code>, <code>ContainedButton</code>, <code>TextButton</code>. It is possible to import as standalone component or pass <code>variant</code> property. Defautl value is <code>contained</code>.</p>
+<pre><code class=\\"lang-js\\">&lt;Button variant=&quot;outlined&quot; /&gt;
+&lt;Button variant=&quot;contained&quot; /&gt;
+&lt;Button variant=&quot;text&quot; /&gt;
+</code></pre>
+<p>Which one does @torvalds like most?</p>
+<ul>
+<li>[ ] tiger #</li>
+<li>[ ] whale *</li>
+<li>[x] octocat !</li>
+</ul>
+<blockquote>
+<p>Stay hungry; stay foolish.</p>
+<blockquote>
+<p>Quality is better than quantity.</p>
+<blockquote>
+<p>Life is not fair; get used to it.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+",
+        }
+      }
+    />
+  </div>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<hr>
+<p>tuchk4</p>
+",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Custom Code Theme Button 1`] = `
+<div
+  className="storybook-readme-story"
+>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h3 id=\\"components-kit\\">Components kit</h3>
+<hr>
+",
+        }
+      }
+    />
+  </div>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h1 id=\\"button\\">Button</h1>
+<h3 id=\\"-smile-usage\\">😄 Usage</h3>
+<p>Buttons allow users to take actions, and make choices, with a single tap. Supports all default HTML Button properties. See Material Design Button for UI/UX information.</p>
+<p>Button variants could be imported separately.</p>
+<pre><code class=\\"lang-js\\">import { OutlinedButton, ContainedButton, TextButton } from &#39;Button&#39;;
+</code></pre>
+",
+        }
+      }
+    />
+  </div>
+  <div
+    className="markdown-body markdown-props-table"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<h3 id=\\"button-props\\">Button Props</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Type</th>
+<th>DefaultValue</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>label</td>
+<td>+</td>
+<td>undefined</td>
+<td></td>
+<td>null</td>
+</tr>
+<tr>
+<td>onClick</td>
+<td>-</td>
+<td>undefined</td>
+<td></td>
+<td>null</td>
+</tr>
+<tr>
+<td>alert</td>
+<td>-</td>
+<td>undefined</td>
+<td></td>
+<td>null</td>
+</tr>
+<tr>
+<td>success</td>
+<td>-</td>
+<td>undefined</td>
+<td></td>
+<td>null</td>
+</tr>
+</tbody></table>
+",
+      }
+    }
+  />
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "justifyContent": "center",
+        "margin": "32px 0",
+      }
+    }
+  >
+    <div>
+      <button
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "white",
+            "border": "2px solid black",
+            "borderRadius": "3px",
+            "color": "black",
+            "fontSize": "15px",
+            "margin": "1px",
+            "padding": "5px",
+          }
+        }
+      >
+        Hello Im Button
+      </button>
+    </div>
+  </div>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "
+<h4 id=\\"icons\\">Icons</h4>
+<pre><code class=\\"lang-js\\">import Button from &#39;components/button&#39;;
+
+<p>render() {
+  return (
+    &lt;Button icon=&quot;mail&quot;&gt;Send mail&lt;/Button&gt;
+    &lt;Button icon=&quot;trash&quot;&gt;Remove&lt;/Button&gt;
+  );
+}
+</code></pre></p>
+<h4 id=\\"button-types\\">Button types</h4>
+<p>Means <code>OutlinedButton</code>, <code>ContainedButton</code>, <code>TextButton</code>. It is possible to import as standalone component or pass <code>variant</code> property. Defautl value is <code>contained</code>.</p>
+<pre><code class=\\"lang-js\\">&lt;Button variant=&quot;outlined&quot; /&gt;
+&lt;Button variant=&quot;contained&quot; /&gt;
+&lt;Button variant=&quot;text&quot; /&gt;
+</code></pre>
+<p>Which one does @torvalds like most?</p>
+<ul>
+<li>[ ] tiger #</li>
+<li>[ ] whale *</li>
+<li>[x] octocat !</li>
+</ul>
+<blockquote>
+<p>Stay hungry; stay foolish.</p>
+<blockquote>
+<p>Quality is better than quantity.</p>
+<blockquote>
+<p>Life is not fair; get used to it.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+",
+        }
+      }
+    />
+  </div>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<hr>
+<p>tuchk4</p>
+",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
 exports[`Storyshots Custom Layout Button 1`] = `
 Array [
   <div
@@ -278,6 +1172,172 @@ exports[`Storyshots Custom Preview and Footer Button 1`] = `
 </div>
 `;
 
+exports[`Storyshots Custom Theme Button 1`] = `
+<div
+  className="storybook-readme-story"
+>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h3 id=\\"components-kit\\">Components kit</h3>
+<hr>
+",
+        }
+      }
+    />
+  </div>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h1 id=\\"button\\">Button</h1>
+<h3 id=\\"-smile-usage\\">😄 Usage</h3>
+<p>Buttons allow users to take actions, and make choices, with a single tap. Supports all default HTML Button properties. See Material Design Button for UI/UX information.</p>
+<p>Button variants could be imported separately.</p>
+<pre><code class=\\"lang-js\\">import { OutlinedButton, ContainedButton, TextButton } from &#39;Button&#39;;
+</code></pre>
+",
+        }
+      }
+    />
+  </div>
+  <div
+    className="markdown-body markdown-props-table"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<h3 id=\\"button-props\\">Button Props</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Type</th>
+<th>DefaultValue</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>label</td>
+<td>+</td>
+<td>undefined</td>
+<td></td>
+<td>null</td>
+</tr>
+<tr>
+<td>onClick</td>
+<td>-</td>
+<td>undefined</td>
+<td></td>
+<td>null</td>
+</tr>
+<tr>
+<td>alert</td>
+<td>-</td>
+<td>undefined</td>
+<td></td>
+<td>null</td>
+</tr>
+<tr>
+<td>success</td>
+<td>-</td>
+<td>undefined</td>
+<td></td>
+<td>null</td>
+</tr>
+</tbody></table>
+",
+      }
+    }
+  />
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "justifyContent": "center",
+        "margin": "32px 0",
+      }
+    }
+  >
+    <div>
+      <button
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "white",
+            "border": "2px solid black",
+            "borderRadius": "3px",
+            "color": "black",
+            "fontSize": "15px",
+            "margin": "1px",
+            "padding": "5px",
+          }
+        }
+      >
+        Hello Im Button
+      </button>
+    </div>
+  </div>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "
+<h4 id=\\"icons\\">Icons</h4>
+<pre><code class=\\"lang-js\\">import Button from &#39;components/button&#39;;
+
+<p>render() {
+  return (
+    &lt;Button icon=&quot;mail&quot;&gt;Send mail&lt;/Button&gt;
+    &lt;Button icon=&quot;trash&quot;&gt;Remove&lt;/Button&gt;
+  );
+}
+</code></pre></p>
+<h4 id=\\"button-types\\">Button types</h4>
+<p>Means <code>OutlinedButton</code>, <code>ContainedButton</code>, <code>TextButton</code>. It is possible to import as standalone component or pass <code>variant</code> property. Defautl value is <code>contained</code>.</p>
+<pre><code class=\\"lang-js\\">&lt;Button variant=&quot;outlined&quot; /&gt;
+&lt;Button variant=&quot;contained&quot; /&gt;
+&lt;Button variant=&quot;text&quot; /&gt;
+</code></pre>
+<p>Which one does @torvalds like most?</p>
+<ul>
+<li>[ ] tiger #</li>
+<li>[ ] whale *</li>
+<li>[x] octocat !</li>
+</ul>
+<blockquote>
+<p>Stay hungry; stay foolish.</p>
+<blockquote>
+<p>Quality is better than quantity.</p>
+<blockquote>
+<p>Life is not fair; get used to it.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+",
+        }
+      }
+    />
+  </div>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<hr>
+<p>tuchk4</p>
+",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
 exports[`Storyshots Doc Common 1`] = `
 <div
   className="storybook-readme-story"
@@ -370,6 +1430,1231 @@ exports[`Storyshots Doc Common 1`] = `
   &lt;Button onClick={this.remove.bind(this, item.id)}&gt;Remove&lt;/Button&gt;
 &lt;/ListItem&gt;
 </code></pre>
+",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Emoji Button 1`] = `
+<div
+  className="storybook-readme-story"
+>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h3 id=\\"components-kit\\">Components kit</h3>
+<hr>
+",
+        }
+      }
+    />
+  </div>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h3 id=\\"emoji\\">Emoji</h3>
+<p>Use shortcodes between colon to insert emoji into the docs. For example </p>
+<p>Here is rocket &#58;rocket&#58;</p>
+<p>Here is rocket 🚀</p>
+<p>List of all shortcodes could be found at <a href=\\"https://emojipedia.org\\">Emojipedia</a> or at <a href=\\"https://gist.github.com/rxaviers/7360908\\">Gist/rxaviers</a></p>
+<ul>
+<li>🚀 </li>
+<li>😀</li>
+<li>🐒</li>
+</ul>
+",
+        }
+      }
+    />
+  </div>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "justifyContent": "center",
+        "margin": "32px 0",
+      }
+    }
+  >
+    <div>
+      <button
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "white",
+            "border": "2px solid black",
+            "borderRadius": "3px",
+            "color": "black",
+            "fontSize": "15px",
+            "margin": "1px",
+            "padding": "5px",
+          }
+        }
+      >
+        Hello Im Button
+      </button>
+    </div>
+  </div>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<hr>
+<p>tuchk4</p>
+",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Old Api doc 1`] = `
+<div
+  className="storybook-readme-story"
+>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h3 id=\\"components-kit\\">Components kit</h3>
+<hr>
+",
+        }
+      }
+    />
+  </div>
+  <div
+    className="storybook-readme-story"
+  >
+    <div>
+      <div
+        className="markdown-body"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<h1 id=\\"button\\">Button</h1>
+<h3 id=\\"-smile-usage\\">😄 Usage</h3>
+<p>Buttons allow users to take actions, and make choices, with a single tap. Supports all default HTML Button properties. See Material Design Button for UI/UX information.</p>
+<p>Button variants could be imported separately.</p>
+<pre><code class=\\"lang-js\\">import { OutlinedButton, ContainedButton, TextButton } from &#39;Button&#39;;
+</code></pre>
+",
+          }
+        }
+      />
+    </div>
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "justifyContent": "center",
+          "margin": "32px 0",
+        }
+      }
+    >
+      <div />
+    </div>
+    <div>
+      <div
+        className="markdown-body"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "
+<h4 id=\\"icons\\">Icons</h4>
+<pre><code class=\\"lang-js\\">import Button from &#39;components/button&#39;;
+
+<p>render() {
+  return (
+    &lt;Button icon=&quot;mail&quot;&gt;Send mail&lt;/Button&gt;
+    &lt;Button icon=&quot;trash&quot;&gt;Remove&lt;/Button&gt;
+  );
+}
+</code></pre></p>
+<h4 id=\\"button-types\\">Button types</h4>
+<p>Means <code>OutlinedButton</code>, <code>ContainedButton</code>, <code>TextButton</code>. It is possible to import as standalone component or pass <code>variant</code> property. Defautl value is <code>contained</code>.</p>
+<pre><code class=\\"lang-js\\">&lt;Button variant=&quot;outlined&quot; /&gt;
+&lt;Button variant=&quot;contained&quot; /&gt;
+&lt;Button variant=&quot;text&quot; /&gt;
+</code></pre>
+<p>Which one does @torvalds like most?</p>
+<ul>
+<li>[ ] tiger #</li>
+<li>[ ] whale *</li>
+<li>[x] octocat !</li>
+</ul>
+<blockquote>
+<p>Stay hungry; stay foolish.</p>
+<blockquote>
+<p>Quality is better than quantity.</p>
+<blockquote>
+<p>Life is not fair; get used to it.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<hr>
+<p>tuchk4</p>
+",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Old Api withDocs decorator 1`] = `
+<div
+  className="storybook-readme-story"
+>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h3 id=\\"components-kit\\">Components kit</h3>
+<hr>
+",
+        }
+      }
+    />
+  </div>
+  <div
+    className="storybook-readme-story"
+  >
+    <div>
+      <div
+        className="markdown-body"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<h1 id=\\"button\\">Button</h1>
+<h3 id=\\"-smile-usage\\">😄 Usage</h3>
+<p>Buttons allow users to take actions, and make choices, with a single tap. Supports all default HTML Button properties. See Material Design Button for UI/UX information.</p>
+<p>Button variants could be imported separately.</p>
+<pre><code class=\\"lang-js\\">import { OutlinedButton, ContainedButton, TextButton } from &#39;Button&#39;;
+</code></pre>
+",
+          }
+        }
+      />
+    </div>
+    <div
+      className="markdown-body markdown-props-table"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h3 id=\\"button-props\\">Button Props</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Type</th>
+<th>DefaultValue</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>label</td>
+<td>+</td>
+<td>undefined</td>
+<td></td>
+<td>null</td>
+</tr>
+<tr>
+<td>onClick</td>
+<td>-</td>
+<td>undefined</td>
+<td></td>
+<td>null</td>
+</tr>
+<tr>
+<td>alert</td>
+<td>-</td>
+<td>undefined</td>
+<td></td>
+<td>null</td>
+</tr>
+<tr>
+<td>success</td>
+<td>-</td>
+<td>undefined</td>
+<td></td>
+<td>null</td>
+</tr>
+</tbody></table>
+",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "justifyContent": "center",
+          "margin": "32px 0",
+        }
+      }
+    >
+      <div>
+        <button
+          style={
+            Object {
+              "background": "white",
+              "border": "2px solid black",
+              "borderRadius": "3px",
+              "color": "black",
+              "fontSize": "15px",
+              "margin": "1px",
+              "padding": "5px",
+            }
+          }
+        >
+          Hello Im Button
+        </button>
+      </div>
+    </div>
+    <div>
+      <div
+        className="markdown-body"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "
+<h4 id=\\"icons\\">Icons</h4>
+<pre><code class=\\"lang-js\\">import Button from &#39;components/button&#39;;
+
+<p>render() {
+  return (
+    &lt;Button icon=&quot;mail&quot;&gt;Send mail&lt;/Button&gt;
+    &lt;Button icon=&quot;trash&quot;&gt;Remove&lt;/Button&gt;
+  );
+}
+</code></pre></p>
+<h4 id=\\"button-types\\">Button types</h4>
+<p>Means <code>OutlinedButton</code>, <code>ContainedButton</code>, <code>TextButton</code>. It is possible to import as standalone component or pass <code>variant</code> property. Defautl value is <code>contained</code>.</p>
+<pre><code class=\\"lang-js\\">&lt;Button variant=&quot;outlined&quot; /&gt;
+&lt;Button variant=&quot;contained&quot; /&gt;
+&lt;Button variant=&quot;text&quot; /&gt;
+</code></pre>
+<p>Which one does @torvalds like most?</p>
+<ul>
+<li>[ ] tiger #</li>
+<li>[ ] whale *</li>
+<li>[x] octocat !</li>
+</ul>
+<blockquote>
+<p>Stay hungry; stay foolish.</p>
+<blockquote>
+<p>Quality is better than quantity.</p>
+<blockquote>
+<p>Life is not fair; get used to it.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<hr>
+<p>tuchk4</p>
+",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Old Api withDocs hoc 1`] = `
+<div
+  className="storybook-readme-story"
+>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h3 id=\\"components-kit\\">Components kit</h3>
+<hr>
+",
+        }
+      }
+    />
+  </div>
+  <div
+    className="storybook-readme-story"
+  >
+    <div>
+      <div
+        className="markdown-body"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "<h1 id=\\"button\\">Button</h1>
+<h3 id=\\"-smile-usage\\">😄 Usage</h3>
+<p>Buttons allow users to take actions, and make choices, with a single tap. Supports all default HTML Button properties. See Material Design Button for UI/UX information.</p>
+<p>Button variants could be imported separately.</p>
+<pre><code class=\\"lang-js\\">import { OutlinedButton, ContainedButton, TextButton } from &#39;Button&#39;;
+</code></pre>
+",
+          }
+        }
+      />
+    </div>
+    <div
+      className="markdown-body markdown-props-table"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h3 id=\\"button-props\\">Button Props</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Type</th>
+<th>DefaultValue</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>label</td>
+<td>+</td>
+<td>undefined</td>
+<td></td>
+<td>null</td>
+</tr>
+<tr>
+<td>onClick</td>
+<td>-</td>
+<td>undefined</td>
+<td></td>
+<td>null</td>
+</tr>
+<tr>
+<td>alert</td>
+<td>-</td>
+<td>undefined</td>
+<td></td>
+<td>null</td>
+</tr>
+<tr>
+<td>success</td>
+<td>-</td>
+<td>undefined</td>
+<td></td>
+<td>null</td>
+</tr>
+</tbody></table>
+",
+        }
+      }
+    />
+    <div
+      style={
+        Object {
+          "alignItems": "center",
+          "display": "flex",
+          "justifyContent": "center",
+          "margin": "32px 0",
+        }
+      }
+    >
+      <div>
+        <button
+          style={
+            Object {
+              "background": "white",
+              "border": "2px solid black",
+              "borderRadius": "3px",
+              "color": "black",
+              "fontSize": "15px",
+              "margin": "1px",
+              "padding": "5px",
+            }
+          }
+        >
+          Hello Im Button
+        </button>
+      </div>
+    </div>
+    <div>
+      <div
+        className="markdown-body"
+        dangerouslySetInnerHTML={
+          Object {
+            "__html": "
+<h4 id=\\"icons\\">Icons</h4>
+<pre><code class=\\"lang-js\\">import Button from &#39;components/button&#39;;
+
+<p>render() {
+  return (
+    &lt;Button icon=&quot;mail&quot;&gt;Send mail&lt;/Button&gt;
+    &lt;Button icon=&quot;trash&quot;&gt;Remove&lt;/Button&gt;
+  );
+}
+</code></pre></p>
+<h4 id=\\"button-types\\">Button types</h4>
+<p>Means <code>OutlinedButton</code>, <code>ContainedButton</code>, <code>TextButton</code>. It is possible to import as standalone component or pass <code>variant</code> property. Defautl value is <code>contained</code>.</p>
+<pre><code class=\\"lang-js\\">&lt;Button variant=&quot;outlined&quot; /&gt;
+&lt;Button variant=&quot;contained&quot; /&gt;
+&lt;Button variant=&quot;text&quot; /&gt;
+</code></pre>
+<p>Which one does @torvalds like most?</p>
+<ul>
+<li>[ ] tiger #</li>
+<li>[ ] whale *</li>
+<li>[x] octocat !</li>
+</ul>
+<blockquote>
+<p>Stay hungry; stay foolish.</p>
+<blockquote>
+<p>Quality is better than quantity.</p>
+<blockquote>
+<p>Life is not fair; get used to it.</p>
+</blockquote>
+</blockquote>
+</blockquote>
+",
+          }
+        }
+      />
+    </div>
+  </div>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<hr>
+<p>tuchk4</p>
+",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Old Api withReadme decorator 1`] = `
+<div
+  className="storybook-readme-story"
+>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h3 id=\\"components-kit\\">Components kit</h3>
+<hr>
+",
+        }
+      }
+    />
+  </div>
+  <button
+    style={
+      Object {
+        "background": "white",
+        "border": "2px solid black",
+        "borderRadius": "3px",
+        "color": "black",
+        "fontSize": "15px",
+        "margin": "1px",
+        "padding": "5px",
+      }
+    }
+  >
+    Hello Im Button
+  </button>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<hr>
+<p>tuchk4</p>
+",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Old Api withReadme hoc 1`] = `
+<div
+  className="storybook-readme-story"
+>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h3 id=\\"components-kit\\">Components kit</h3>
+<hr>
+",
+        }
+      }
+    />
+  </div>
+  <button
+    style={
+      Object {
+        "background": "white",
+        "border": "2px solid black",
+        "borderRadius": "3px",
+        "color": "black",
+        "fontSize": "15px",
+        "margin": "1px",
+        "padding": "5px",
+      }
+    }
+  >
+    Hello Im Button
+  </button>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<hr>
+<p>tuchk4</p>
+",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots PropsTable Button 1`] = `
+<div
+  className="storybook-readme-story"
+>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h3 id=\\"components-kit\\">Components kit</h3>
+<hr>
+",
+        }
+      }
+    />
+  </div>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "justifyContent": "center",
+        "margin": "32px 0",
+      }
+    }
+  >
+    <div>
+      <button
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "white",
+            "border": "2px solid black",
+            "borderRadius": "3px",
+            "color": "black",
+            "fontSize": "15px",
+            "margin": "1px",
+            "padding": "5px",
+          }
+        }
+      >
+        Hello Im Button
+      </button>
+    </div>
+  </div>
+  <div
+    className="markdown-body markdown-props-table"
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "<h3 id=\\"button-props\\">Button Props</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Required</th>
+<th>Type</th>
+<th>DefaultValue</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>label</td>
+<td>+</td>
+<td>undefined</td>
+<td></td>
+<td>null</td>
+</tr>
+<tr>
+<td>onClick</td>
+<td>-</td>
+<td>undefined</td>
+<td></td>
+<td>null</td>
+</tr>
+<tr>
+<td>alert</td>
+<td>-</td>
+<td>undefined</td>
+<td></td>
+<td>null</td>
+</tr>
+<tr>
+<td>success</td>
+<td>-</td>
+<td>undefined</td>
+<td></td>
+<td>null</td>
+</tr>
+</tbody></table>
+",
+      }
+    }
+  />
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<hr>
+<p>tuchk4</p>
+",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Sidebar docs Alert Button 1`] = `
+<div
+  className="storybook-readme-story"
+>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h3 id=\\"components-kit\\">Components kit</h3>
+<hr>
+",
+        }
+      }
+    />
+  </div>
+  <button
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "red",
+        "border": "2px solid black",
+        "borderRadius": "3px",
+        "color": "white",
+        "fontSize": "15px",
+        "margin": "1px",
+        "padding": "5px",
+      }
+    }
+  >
+    Hello Im Button
+  </button>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<hr>
+<p>tuchk4</p>
+",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Sidebar docs Button 1`] = `
+<div
+  className="storybook-readme-story"
+>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h3 id=\\"components-kit\\">Components kit</h3>
+<hr>
+",
+        }
+      }
+    />
+  </div>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h2 id=\\"sidebar-docs\\">Sidebar docs</h2>
+",
+        }
+      }
+    />
+  </div>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "justifyContent": "center",
+        "margin": "32px 0",
+      }
+    }
+  >
+    <div>
+      <button
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "white",
+            "border": "2px solid black",
+            "borderRadius": "3px",
+            "color": "black",
+            "fontSize": "15px",
+            "margin": "1px",
+            "padding": "5px",
+          }
+        }
+      >
+        Hello Im Button
+      </button>
+    </div>
+  </div>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "
+
+<p><code>sidebar</code> added with <code>addParameters</code> will be applied for all stories in the same series.
+To override it - define <code>sidebar</code> at <code>add</code> method.</p>
+<pre><code class=\\"language-js\\">import README from &#39;./README.md&#39;;
+import CUSTOM_README from &#39;./CUSTOM_README.md&#39;;
+
+storiesOf(&#39;Sidebar docs&#39;, module)
+  .addDecorator(withKnobs)
+  .addParameters({
+    readme: {
+      sidebar: README,
+    },
+  })
+  .add(..., {
+    readme: {
+      // will override
+      sidebar: CUSTOM_README,
+    },
+  })
+  .add(...)
+  .add(...)</code></pre>
+",
+        }
+      }
+    />
+  </div>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<hr>
+<p>tuchk4</p>
+",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Sidebar docs Override Sidebar docs 1`] = `
+<div
+  className="storybook-readme-story"
+>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h3 id=\\"components-kit\\">Components kit</h3>
+<hr>
+",
+        }
+      }
+    />
+  </div>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<p>This <code>sidebar</code> is overriden.</p>
+",
+        }
+      }
+    />
+  </div>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "justifyContent": "center",
+        "margin": "32px 0",
+      }
+    }
+  >
+    <div>
+      <button
+        onClick={[Function]}
+        style={
+          Object {
+            "background": "green",
+            "border": "2px solid black",
+            "borderRadius": "3px",
+            "color": "white",
+            "fontSize": "15px",
+            "margin": "1px",
+            "padding": "5px",
+          }
+        }
+      >
+        Hello Im Button
+      </button>
+    </div>
+  </div>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<hr>
+<p>tuchk4</p>
+",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Sidebar docs Success Button 1`] = `
+<div
+  className="storybook-readme-story"
+>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h3 id=\\"components-kit\\">Components kit</h3>
+<hr>
+",
+        }
+      }
+    />
+  </div>
+  <button
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "green",
+        "border": "2px solid black",
+        "borderRadius": "3px",
+        "color": "white",
+        "fontSize": "15px",
+        "margin": "1px",
+        "padding": "5px",
+      }
+    }
+  >
+    Hello Im Button
+  </button>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<hr>
+<p>tuchk4</p>
+",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Story Preview Alert Button 1`] = `
+<div
+  className="storybook-readme-story"
+>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h3 id=\\"components-kit\\">Components kit</h3>
+<hr>
+",
+        }
+      }
+    />
+  </div>
+  <button
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "red",
+        "border": "2px solid black",
+        "borderRadius": "3px",
+        "color": "white",
+        "fontSize": "15px",
+        "margin": "1px",
+        "padding": "5px",
+      }
+    }
+  >
+    Hello Im Button
+  </button>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<hr>
+<p>tuchk4</p>
+",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Story Preview Button 1`] = `
+<div
+  className="storybook-readme-story"
+>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h3 id=\\"components-kit\\">Components kit</h3>
+<hr>
+",
+        }
+      }
+    />
+  </div>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h2 id=\\"storypreview\\">StoryPreview</h2>
+<p><code>StoryPreview</code> added with <code>addParameters</code> will be applied for all stories in the same series.
+To override it - define <code>StoryPreview</code> at <code>add</code> method.</p>
+",
+        }
+      }
+    />
+  </div>
+  <div
+    style={
+      Object {
+        "border": "1px dashed #ccc",
+        "margin": "8px 0",
+        "padding": "8px 16px",
+        "textAlign": "center",
+      }
+    }
+  >
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "white",
+          "border": "2px solid black",
+          "borderRadius": "3px",
+          "color": "black",
+          "fontSize": "15px",
+          "margin": "1px",
+          "padding": "5px",
+        }
+      }
+    >
+      Hello Im Button
+    </button>
+  </div>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<hr>
+<p>tuchk4</p>
+",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Story Preview Override Story Preview 1`] = `
+<div
+  className="storybook-readme-story"
+>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h3 id=\\"components-kit\\">Components kit</h3>
+<hr>
+",
+        }
+      }
+    />
+  </div>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<p>This <code>StoryPreview</code> is overriden.</p>
+",
+        }
+      }
+    />
+  </div>
+  <div
+    style={
+      Object {
+        "boxShadow": "0 0 40px rgba(0, 0, 0, 0.1)",
+        "margin": "25px 0",
+        "padding": "25px",
+        "textAlign": "center",
+      }
+    }
+  >
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "background": "green",
+          "border": "2px solid black",
+          "borderRadius": "3px",
+          "color": "white",
+          "fontSize": "15px",
+          "margin": "1px",
+          "padding": "5px",
+        }
+      }
+    >
+      Hello Im Button
+    </button>
+  </div>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<hr>
+<p>tuchk4</p>
+",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`Storyshots Story Preview Success Button 1`] = `
+<div
+  className="storybook-readme-story"
+>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<h3 id=\\"components-kit\\">Components kit</h3>
+<hr>
+",
+        }
+      }
+    />
+  </div>
+  <button
+    onClick={[Function]}
+    style={
+      Object {
+        "background": "green",
+        "border": "2px solid black",
+        "borderRadius": "3px",
+        "color": "white",
+        "fontSize": "15px",
+        "margin": "1px",
+        "padding": "5px",
+      }
+    }
+  >
+    Hello Im Button
+  </button>
+  <div>
+    <div
+      className="markdown-body"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "<hr>
+<p>tuchk4</p>
 ",
         }
       }

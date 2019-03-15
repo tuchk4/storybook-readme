@@ -15,6 +15,7 @@
     "@storybook/core-events": "^5.0.1",
     "highlight.js": "^9.15.6",
     "html-loader": "^0.5.5",
+    "lodash": "^4.17.11",
     "markdown-loader": "^5.0.0",
     "marked": "^0.6.1",
     "node-emoji": "1.10.0",

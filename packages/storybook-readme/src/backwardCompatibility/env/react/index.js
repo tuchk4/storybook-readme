@@ -1,9 +1,6 @@
 import React from 'react';
-
 import ReadmeContent from '../../../components/ReadmeContent';
-
 import commonHandler from '../common';
-import getPropsTables from '../../../services/getPropsTables';
 import {
   LAYOUT_TYPE_STORY,
   LAYOUT_TYPE_PROPS_TABLE,

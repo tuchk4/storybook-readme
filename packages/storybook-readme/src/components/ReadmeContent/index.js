@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 import StoryPreviewDefault from '../Preview/StoryPreview';
 import FooterPreviewDefault from '../Preview/FooterPreview';
@@ -19,7 +18,9 @@ import {
   LAYOUT_TYPE_HEADER_MD,
 } from '../../const';
 
-const ReadmeContentContext = React.createContext();
+const ReadmeContentContext = React.createContext({
+  withPreview: true,
+});
 
 export default class ReadmeContent extends React.Component {
   static defaultProps = {
@@ -138,7 +139,7 @@ export default class ReadmeContent extends React.Component {
 
               case LAYOUT_TYPE_STORY: {
                 if (!withPreview || !this.state.withPreview) {
-                  return content;
+                  return <React.Fragment key={index}>{content}</React.Fragment>;
                 } else {
                   return <StoryPreview key={index}>{content}</StoryPreview>;
                 }
