@@ -3,6 +3,10 @@ const path = require('path');
 const docsLoader = path.resolve(__dirname, 'docs-loader');
 
 module.exports = function(config, configType) {
+  // if (configType === 'PRODUCTION') {
+  //
+  // }
+
   config.module.rules = config.module.rules.map(function(rule) {
     if (rule.loader && rule.loader.indexOf('vue-loader') !== -1) {
       return Object.assign(

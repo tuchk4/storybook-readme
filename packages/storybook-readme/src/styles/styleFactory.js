@@ -25,8 +25,7 @@ export default function styleFactory(
     if (!node) {
       node = document.createElement('style');
 
-      const id = `${name}-${++counter}`;
-      node.id = id;
+      node.id = `${name}-${++counter}`;
 
       document.head.prepend(node);
     }

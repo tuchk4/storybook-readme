@@ -5,8 +5,6 @@ import getPropsTables from './getPropsTables';
 import { getConfig } from './config';
 
 import {
-  MARKER_PROPS_TABLE,
-  MARKER_STORY,
   LAYOUT_TYPE_MD,
   LAYOUT_TYPE_PROPS_TABLE,
   LAYOUT_TYPE_STORY,

@@ -6,7 +6,7 @@ import getParameters from '../services/getParameters';
 
 import ReadmeContent from './components/ReadmeContent';
 
-import { CHANNEL_SET_SIDEBAR_DOCS, LAYOUT_TYPE_MD } from '../const';
+import { CHANNEL_SET_SIDEBAR_DOCS } from '../const';
 import * as config from '../services/config';
 
 export const addHeader = md => {

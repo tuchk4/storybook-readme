@@ -1,4 +1,3 @@
-import stringRaw from 'string-raw';
 import styleFactory from './styleFactory';
 
 let insert = styleFactory('highlight-code-theme');

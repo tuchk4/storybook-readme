@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 import StoryPreviewDefault from '../Preview/StoryPreview';
 import FooterPreviewDefault from '../Preview/FooterPreview';
@@ -19,7 +18,9 @@ import {
   LAYOUT_TYPE_HEADER_MD,
 } from '../../const';
 
-const ReadmeContentContext = React.createContext();
+const ReadmeContentContext = React.createContext({
+  withPreview: true,
+});
 
 export default class ReadmeContent extends React.Component {
   static defaultProps = {

@@ -5,7 +5,7 @@ import * as config from './services/config';
 import getParameters from './services/getParameters';
 import ReadmeContent from './components/ReadmeContent';
 
-import { CHANNEL_SET_SIDEBAR_DOCS, LAYOUT_TYPE_MD } from './const';
+import { CHANNEL_SET_SIDEBAR_DOCS } from './const';
 
 export { default as withDocs } from './with-docs';
 export { default as withReadme } from './with-readme';

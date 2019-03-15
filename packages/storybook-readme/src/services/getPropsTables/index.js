@@ -3,7 +3,7 @@ import parseProps from './parseProps';
 
 const getName = type => type.displayName || type.name;
 
-const getMarkdown = ({ type, name, config }) => {
+const getMarkdown = ({ type, name }) => {
   const propDefinitions = parseProps(type);
 
   if (propDefinitions.length === 0) {
@@ -31,10 +31,10 @@ export default function getPropsTables({ story, config = {} }) {
 
   const {
     propTablesExclude,
-    maxPropObjectKeys,
-    maxPropArrayLength,
-    maxPropStringLength,
-    excludedPropTypes,
+    // maxPropObjectKeys,
+    // maxPropArrayLength,
+    // maxPropStringLength,
+    // excludedPropTypes,
   } = config;
 
   if (!story) {
