@@ -1,61 +1,38 @@
-import Vue from 'vue';
 import { storiesOf } from '@storybook/vue';
-import { withKnobs, text, boolean } from '@storybook/addon-knobs';
-// import { withReadme, withDocs, doc } from 'storybook-readme';
 
 import MyButton from '../components/MyButton/MyButton.vue';
 
-// import CommonFooterDocs from '../components/COMMON_FOOTER.md';
-// import ButtonReadme from '../components/MyButton/README.md';
-// import ButtonDocs from '../components/MyButton/DOCS.md';
+import ButtonReadme from '../components/MyButton/README.md';
+import ButtonUsage from '../components/MyButton/USAGE.md';
 
 storiesOf('Button', module)
-  .addDecorator(withKnobs)
   .addParameters({
     readme: {
-      sidebar: 'asdsa',
-      codeTheme: 'atelier-dune-dark',
-      DocPreview: {
-        data() {
-          return {
-            styles: {
-              border: '1px dashed #ccc',
-              padding: '12px',
-            },
-          };
-        },
-        template: '<div v-bind:style="styles"><slot></slot></div>',
-      },
+      content: ButtonUsage,
+      sidebar: `<!-- PROPS -->`,
     },
   })
-  .add(
-    'Button',
-    () => {
-      const warning = boolean('Warning', false);
-      const success = boolean('Success', false);
-
-      return {
-        components: {
-          MyButton,
-        },
-        template: `<my-button
-      :alert="${warning}"
-      :success="${success}">My Button</my-button>`,
-      };
-    },
-    {
-      readme: {
-        content: `
-### EXAMPLE YO 
-
-<!-- STORY --> 
-
-### END HERE
-\`\`\`\js
-function foo() {}
-\`\`\`
-
-`,
+  .add('Button', () => {
+    return {
+      components: {
+        MyButton,
       },
-    },
-  );
+      template: `<my-button>My Button</my-button>`,
+    };
+  })
+  .add('Alert Button', () => {
+    return {
+      components: {
+        MyButton,
+      },
+      template: `<my-button variant="alert">My Button</my-button>`,
+    };
+  })
+  .add('Success Button', () => {
+    return {
+      components: {
+        MyButton,
+      },
+      template: `<my-button variant="success">My Button</my-button>`,
+    };
+  });

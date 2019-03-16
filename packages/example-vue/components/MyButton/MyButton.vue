@@ -2,6 +2,7 @@
   <button class="button" :class="{
     button_alert: alert, 
     button_success: success
+
   }">
     <slot></slot>
   </button>
@@ -9,32 +10,57 @@
 
 <script>
 export default {
-  props: {
-    alert: Boolean,
-    success: Boolean,
+  props: ['variant'],
+  data() {
+    return {
+      success: this.$props.variant === 'success',
+      warning: this.$props.variant === 'warning',
+      alert: this.$props.variant === 'alert',
+    };
   },
 };
 </script>
 
 <style>
 .button {
-  padding: 5px;
+  font-size: 16px;
+  font-weight: bold;
+
   cursor: pointer;
-  font-size: 15px;
-  margin: 1px;
-  border: 2px solid black;
-  border-radius: 3px;
-  color: black;
-  background: white;
+  padding: 8px 12px;
+  outline: none;
+
+  border-width: 2px;
+  border-style: solid;
+  border-color: black;
+
+  border-radius: 8px;
+  color: rgba(0, 0, 0, 0.96);
 }
 
-.button_alert {
-  color: white;
-  background: red;
+.button:hover {
+  background: yellow;
+  border-width: 3px;
+
+  padding: 7px 11px;
+}
+
+.button:active {
+  background: yellow;
+  border-width: 4px;
+
+  padding: 6px 10px;
 }
 
 .button_success {
-  color: white;
-  background: green;
+  border-color: green;
+}
+
+.button_alert {
+  border-color: red;
+}
+
+.button_warning {
+  border-color: orange;
 }
 </style>
