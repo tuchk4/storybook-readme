@@ -2,6 +2,8 @@
 
 NOTE: This README only for version `^5.0.0`. For older versions [LEGACY_README.md](./LEGACY_README.md)
 
+All previous api should work correctly at `^5.0.0` and above.
+
 ---
 
 ![Storybook README addon](https://user-images.githubusercontent.com/5140611/54478027-86d38400-4816-11e9-96a0-aecef64e3ea7.png)
