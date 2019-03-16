@@ -1,7 +1,4 @@
-const config = {
-  footer: null,
-  header: null,
-};
+const config = {};
 
 export function addFooter(footer) {
   config.footer = footer;

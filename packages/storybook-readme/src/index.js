@@ -47,8 +47,6 @@ export const addReadme = makeDecorator({
 
     const channel = addons.getChannel();
 
-    console.log(context);
-
     if (parameters.sidebar) {
       const sidebarLayout = getDocsLayout({
         footer: parameters.footer || '',
@@ -67,7 +65,6 @@ export const addReadme = makeDecorator({
     return (
       <ReadmeContent
         layout={layout}
-        withPreview={!!parameters.content}
         theme={parameters.theme}
         codeTheme={parameters.codeTheme}
         StoryPreview={parameters.StoryPreview}

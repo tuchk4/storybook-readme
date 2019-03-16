@@ -14,7 +14,7 @@ export default function getParameters(context) {
     ...config.theme,
   };
 
-  const codeTheme = config.codeTheme || 'github';
+  const codeTheme = config.codeTheme;
 
   return {
     ...config,

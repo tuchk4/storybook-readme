@@ -9,7 +9,6 @@ import highlight from '../../services/highlite';
 import { getConfig } from '../../services/config';
 import insertGithubMarkdownCss from '../../styles/githubMarkdownCss';
 import insertCodeThemeCss from '../../styles/codeThemeCss';
-// import insertPropsTableCss from '../../styles/propsTableCss';
 
 import {
   LAYOUT_TYPE_MD,
@@ -72,11 +71,9 @@ export default class ReadmeContent extends React.Component {
       insertGithubMarkdownCss({
         theme: this.props.theme,
       });
-      // insertPropsTableCss({
-      //   theme: this.props.theme,
-      // });
+
       insertCodeThemeCss({
-        codeTheme: this.props.codeTheme,
+        codeTheme: this.props.codeTheme || 'github',
       });
     }
   }
@@ -89,6 +86,7 @@ export default class ReadmeContent extends React.Component {
 
   render() {
     const config = getConfig();
+
     const {
       layout,
       withPreview = true,

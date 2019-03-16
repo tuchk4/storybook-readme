@@ -9,6 +9,16 @@ import ReadmeContent from './components/ReadmeContent';
 import { CHANNEL_SET_SIDEBAR_DOCS } from '../const';
 import * as config from '../services/config';
 
+export const configureReadme = parameters => {
+  config.addHeader(parameters.header);
+  config.addFooter(parameters.footer);
+
+  config.addStoryPreview(parameters.StoryPreview);
+  config.addDocPreview(parameters.DocPreview);
+  config.addHedaerPreview(parameters.HeaderPreview);
+  config.addFooterPreview(parameters.FooterPreview);
+};
+
 export const addHeader = md => {
   config.addHeader(md);
 };
@@ -41,7 +51,7 @@ export const addReadme = makeDecorator({
       store,
       computed: {
         withPreview() {
-          return store.state.withPreview || !!parameters.content;
+          return store.state.withPreview; // || !!parameters.content;
         },
       },
       data() {
@@ -49,6 +59,8 @@ export const addReadme = makeDecorator({
         const layout = parameters.layout
           ? parameters.layout
           : getDocsLayout({
+              footer: parameters.footer || '',
+              header: parameters.header || '',
               md: parameters.content || '',
               story,
             });
@@ -65,6 +77,7 @@ export const addReadme = makeDecorator({
             layout: sidebarLayout,
             theme: parameters.theme,
             codeTheme: parameters.codeTheme,
+            config: config.getConfig(),
           });
         }
 

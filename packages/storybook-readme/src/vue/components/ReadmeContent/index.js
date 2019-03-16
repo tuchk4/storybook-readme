@@ -6,7 +6,6 @@ import DocPreviewDefault from '../Preview/DocPreview';
 import { getConfig } from '../../../services/config';
 import insertGithubMarkdownCss from '../../../styles/githubMarkdownCss';
 import insertCodeThemeCss from '../../../styles/codeThemeCss';
-// import insertPropsTableCss from '../../../styles/propsTableCss';
 
 import highlight from '../../../services/highlite';
 
@@ -52,11 +51,9 @@ export default {
     insertGithubMarkdownCss({
       theme: this.theme,
     });
-    // insertPropsTableCss({
-    //   theme: this.theme,
-    // });
+
     insertCodeThemeCss({
-      codeTheme: this.codeTheme,
+      codeTheme: this.codeTheme || 'github',
     });
   },
   props: [

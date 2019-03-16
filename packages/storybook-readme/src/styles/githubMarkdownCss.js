@@ -128,6 +128,7 @@ const getStyles = theme => stringRaw`
 }
 
 .markdown-body pre {
+  padding: 0;
   font-size: 12px;
   font-family: ${theme.preFontFamily};
   word-wrap: normal;
