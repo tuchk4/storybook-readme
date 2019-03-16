@@ -1,5 +1,4 @@
 import { storiesOf } from '@storybook/vue';
-import { action } from '@storybook/addon-actions';
 
 import MyButton from '../components/MyButton/MyButton.vue';
 
