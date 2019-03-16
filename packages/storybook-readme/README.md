@@ -152,6 +152,8 @@ Will be applied for series of stories.
 
       /**
        * Wrapper for story. Usually used to set some styles
+       * NOTE: will be applied only for content docs (docs around the story)
+       *
        * React: React.ReactNode
        * Vue: Vue component
        */
@@ -159,6 +161,8 @@ Will be applied for series of stories.
 
       /**
        * Wrapper for hedaer docs. Usually used to set some styles
+       * NOTE: will be applied only for content docs (docs around the story)
+       *
        * React: React.ReactNode
        * Vue: Vue component
        */
@@ -166,6 +170,8 @@ Will be applied for series of stories.
 
       /**
        * Wrapper for footer docs. Usually used to set some styles
+       * NOTE: will be applied only for content docs (docs around the story)
+       *
        * React: React.ReactNode
        * Vue: Vue component
        */
@@ -173,6 +179,8 @@ Will be applied for series of stories.
 
       /**
        * Wrapper for content and sidebar docs. Usually used to set some styles
+       * NOTE: will be applied only for content docs (docs around the story)
+       *
        * React: React.ReactNode
        * Vue: Vue component
        */
@@ -184,6 +192,7 @@ Will be applied for series of stories.
 ## Global configuration
 
 Will be applied for all stories.
+NOTE: that `global configuration` is applied only for content docs (docs around the story).
 
 ```js
 import { configureReadme } from 'storybook-readme';
