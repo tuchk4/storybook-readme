@@ -48,7 +48,7 @@ storiesOf('Sidebar docs', module)
     <Button variant="alert" label={'Hello Im Button'} />
   ))
   .add('Success Button', () => (
-    <Button variant="alert" label={'Hello Im Button'} />
+    <Button variant="success" label={'Hello Im Button'} />
   ))
   .add('Override Sidebar docs', () => <Button label={'Hello Im Button'} />, {
     readme: {
