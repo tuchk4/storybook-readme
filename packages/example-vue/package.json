@@ -6,7 +6,8 @@
   "scripts": {
     "prepublishOnly": "echo \"Error: not allowed to publish\" && exit 1",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "cross-env NODE_ENV=development start-storybook -p 6006"
+    "storybook": "cross-env NODE_ENV=development start-storybook -p 6006",
+    "build-storybook": "build-storybook -c .storybook -o .out"
   },
   "dependencies": {
     "@babel/core": "7.3.4",
