@@ -117,7 +117,8 @@ export const doc = (...args) => {
  * @deprecated
  */
 export const withReadme = (...args) => {
-  console.warn(`
+  false &&
+    console.warn(`
 storybook-readme:
 
 At version ^5.0.0 "withReadme()" is deprectaed. Now it works but will be removed at next release.
@@ -145,7 +146,8 @@ storiesOf('My Component', module)
  * @deprecated
  */
 export const withDocs = (...args) => {
-  console.warn(`
+  false &&
+    console.warn(`
 storybook-readme:
 
 At version ^5.0.0 "withDocs()" is deprectaed. Now it works but will be removed at next release.

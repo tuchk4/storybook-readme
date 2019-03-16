@@ -3,9 +3,10 @@ import HeaderPreviewDefault from '../Preview/HeaderPreview';
 import FooterPreviewDefault from '../Preview/FooterPreview';
 import DocPreviewDefault from '../Preview/DocPreview';
 
+import { getConfig } from '../../../services/config';
 import insertGithubMarkdownCss from '../../../styles/githubMarkdownCss';
 import insertCodeThemeCss from '../../../styles/codeThemeCss';
-import insertPropsTableCss from '../../../styles/propsTableCss';
+// import insertPropsTableCss from '../../../styles/propsTableCss';
 
 import highlight from '../../../services/highlite';
 
@@ -20,6 +21,15 @@ import {
 export default {
   name: 'readme-content',
   data() {
+    const config = getConfig();
+
+    const {
+      StoryPreview = config.StoryPreview || StoryPreviewDefault,
+      FooterPreview = config.FooterPreview || FooterPreviewDefault,
+      HeaderPreview = config.HeaderPreview || HeaderPreviewDefault,
+      DocPreview = config.DocPreview || DocPreviewDefault,
+    } = this.$props;
+
     return {
       LAYOUT_TYPE_MD,
       LAYOUT_TYPE_STORY,
@@ -27,18 +37,10 @@ export default {
       LAYOUT_TYPE_FOOTER_MD,
       LAYOUT_TYPE_HEADER_MD,
       preview: {
-        StoryPreview: this.$props.StoryPreview
-          ? this.$props.StoryPreview
-          : StoryPreviewDefault,
-        HeaderPreview: this.$props.HeaderPreview
-          ? this.$props.HeaderPreview
-          : HeaderPreviewDefault,
-        FooterPreview: this.$props.FooterPreview
-          ? this.$props.FooterPreview
-          : FooterPreviewDefault,
-        DocPreview: this.$props.DocPreview
-          ? this.$props.DocPreview
-          : DocPreviewDefault,
+        StoryPreview,
+        FooterPreview,
+        HeaderPreview,
+        DocPreview,
       },
     };
   },
@@ -50,9 +52,9 @@ export default {
     insertGithubMarkdownCss({
       theme: this.theme,
     });
-    insertPropsTableCss({
-      theme: this.theme,
-    });
+    // insertPropsTableCss({
+    //   theme: this.theme,
+    // });
     insertCodeThemeCss({
       codeTheme: this.codeTheme,
     });

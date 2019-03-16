@@ -11,6 +11,16 @@ export { default as withDocs } from './with-docs';
 export { default as withReadme } from './with-readme';
 export { doc } from './backwardCompatibility';
 
+export const configureReadme = parameters => {
+  config.addHeader(parameters.header);
+  config.addFooter(parameters.footer);
+
+  config.addStoryPreview(parameters.StoryPreview);
+  config.addDocPreview(parameters.DocPreview);
+  config.addHedaerPreview(parameters.HeaderPreview);
+  config.addFooterPreview(parameters.FooterPreview);
+};
+
 export const addHeader = md => {
   config.addHeader(md);
 };
@@ -29,14 +39,20 @@ export const addReadme = makeDecorator({
     const layout = parameters.layout
       ? parameters.layout
       : getDocsLayout({
+          footer: parameters.footer || '',
+          header: parameters.header || '',
           md: parameters.content || '',
           story,
         });
 
     const channel = addons.getChannel();
 
+    console.log(context);
+
     if (parameters.sidebar) {
       const sidebarLayout = getDocsLayout({
+        footer: parameters.footer || '',
+        header: parameters.header || '',
         md: parameters.sidebar,
         story,
       });

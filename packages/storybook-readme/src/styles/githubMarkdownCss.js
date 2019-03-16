@@ -17,6 +17,7 @@ const getStyles = theme => stringRaw`
   word-wrap: break-word;
   font-family: ${theme.fontFamily};
   color: ${theme.bodyColor};
+  margin-bottom: 8px;
 }
 
 .markdown-body .octicon {
