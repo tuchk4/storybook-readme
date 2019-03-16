@@ -4,7 +4,7 @@ NOTE: This README only for version `^5.0.0`. For older versions [LEGACY_README.m
 
 ---
 
-![Storybook README addon](https://user-images.githubusercontent.com/5140611/54326373-e8290680-460e-11e9-8d6b-8091a4b63c3c.png)
+![Storybook README addon](https://user-images.githubusercontent.com/5140611/54478027-86d38400-4816-11e9-96a0-aecef64e3ea7.png)
 
 This addon is compatible with:
 
@@ -260,3 +260,19 @@ Example:
 
 Some docs after story
 ```
+
+## Emoji
+
+Use shortcodes between colon to insert emoji into the docs. For example
+
+Here is rocket &#58;rocket&#58;
+
+Here is rocket :rocket:
+
+List of all shortcodes could be found at [Emojipedia](https://emojipedia.org) or at [Gist/rxaviers](https://gist.github.com/rxaviers/7360908)
+
+- :rocket:
+- :grinning:
+- :monkey:
+
+Fell free to suggest new features or report bugs :)

@@ -5,7 +5,12 @@ Buttons allow users to take actions, and make choices, with a single tap. Suppor
 Button variants could be imported separately.
 
 ```js
-import { OutlinedButton, ContainedButton, TextButton } from 'Button';
+import {
+  SuccessButton,
+  AlertButton,
+  WarningButton,
+  AccentButton,
+} from 'Button';
 ```
 
 <!-- PROPS -->

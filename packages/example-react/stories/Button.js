@@ -9,8 +9,9 @@ import ButtonUsage from '../components/Button/USAGE.md';
 storiesOf('Button', module)
   .addParameters({
     readme: {
-      content: ButtonUsage,
-      sidebar: `<!-- PROPS -->`,
+      codeTheme: 'shades-of-purple',
+      content: ButtonReadme,
+      sidebar: ButtonUsage,
     },
   })
   .add('Button', () => <Button label={'Hello Im Button'} />)
