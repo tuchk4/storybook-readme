@@ -166,6 +166,8 @@ Will be applied for series of stories.
 
       /**
        * Override theme values
+       *
+       * All theme values https://github.com/tuchk4/storybook-readme/blob/master/packages/storybook-readme/src/styles/githubMarkdownCss.js#L436
        */
       theme: {},
 
