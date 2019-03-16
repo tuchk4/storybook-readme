@@ -31,3 +31,4 @@ import './withEmoji';
 import './withCustomTheme';
 import './withCustomCodeTheme';
 import './withOldApi';
+import './withVueDocs';

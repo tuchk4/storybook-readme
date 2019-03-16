@@ -52,6 +52,32 @@ module.exports = storybookBaseConfig => {
 };
 ```
 
+Define `<docs>` tag inside vue module:
+
+```vue
+<docs>
+Docs inside vue module 
+</docs>
+
+<template>
+  <button class="button">
+    <slot></slot>
+  </button>
+</template>
+```
+
+Use it to defone docs at story:
+
+```js
+import MyButton from '../components/MyButton/MyButton.vue';
+
+storiesOf('Vue <docs>', module).addParameters({
+  readme: {
+    content: MyButton.__docs,
+  },
+});
+```
+
 ## Setup
 
 Register addon at _.storybook/addons.js_
