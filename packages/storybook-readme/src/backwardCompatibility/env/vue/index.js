@@ -3,6 +3,12 @@ import ReadmeContent from '../../../vue/components/ReadmeContent';
 import getDocsLayout from '../../../services/getDocsLayout';
 import getParameters from '../../../services/getParameters';
 
+import {
+  LAYOUT_TYPE_STORY,
+  LAYOUT_TYPE_PROPS_TABLE,
+  LAYOUT_TYPE_MD,
+} from '../../../const';
+
 function withDocsCallAsHoc({ md, story }) {
   return context => {
     const layout = getDocsLayout({
@@ -17,12 +23,15 @@ function withDocsCallAsHoc({ md, story }) {
         return {
           parameters,
           layout,
+          types: [LAYOUT_TYPE_PROPS_TABLE, LAYOUT_TYPE_STORY, LAYOUT_TYPE_MD],
         };
       },
       components: {
         'readme-content': ReadmeContent,
       },
       template: `<readme-content 
+        v-bind:backward="true"
+        v-bind:types="types"
         v-bind:withPreview="true"
         v-bind:theme="parameters.theme"
         v-bind:codeTheme="parameters.codeTheme"
@@ -45,12 +54,15 @@ function withDocsCallAsDecorator({ md }) {
         return {
           parameters,
           layout,
+          types: [LAYOUT_TYPE_PROPS_TABLE, LAYOUT_TYPE_STORY, LAYOUT_TYPE_MD],
         };
       },
       components: {
         'readme-content': ReadmeContent,
       },
       template: `<readme-content
+        v-bind:backward="true"
+        v-bind:types="types"
         v-bind:withPreview="true"
         v-bind:theme="parameters.theme"
         v-bind:codeTheme="parameters.codeTheme"
@@ -78,7 +90,8 @@ function doc({ md }) {
       components: {
         'readme-content': ReadmeContent,
       },
-      template: `<readme-content 
+      template: `<readme-content
+        v-bind:backward="true" 
         v-bind:theme="parameters.theme"
         v-bind:codeTheme="parameters.codeTheme"
         v-bind:layout="layout" />`,

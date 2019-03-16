@@ -19,6 +19,7 @@ import {
 
 export default {
   name: 'readme-content',
+
   data() {
     const config = getConfig();
 
@@ -30,6 +31,16 @@ export default {
     } = this.$props;
 
     return {
+      // backward,
+      availableTypes: this.$props.types
+        ? this.$props.types
+        : [
+            LAYOUT_TYPE_MD,
+            LAYOUT_TYPE_STORY,
+            LAYOUT_TYPE_PROPS_TABLE,
+            LAYOUT_TYPE_FOOTER_MD,
+            LAYOUT_TYPE_HEADER_MD,
+          ],
       LAYOUT_TYPE_MD,
       LAYOUT_TYPE_STORY,
       LAYOUT_TYPE_PROPS_TABLE,
@@ -44,7 +55,9 @@ export default {
     };
   },
   mounted() {
-    this.$store.commit('notify');
+    if (this.backward) {
+      this.$store.commit('notify');
+    }
 
     highlight(this.$el);
 
@@ -57,6 +70,7 @@ export default {
     });
   },
   props: [
+    'types',
     'layout',
     'codeTheme',
     'theme',
@@ -65,6 +79,7 @@ export default {
     'DocPreview',
     'HeaderPreview',
     'FooterPreview',
+    'backward',
   ],
   template: `
     <div>
@@ -72,25 +87,25 @@ export default {
      
         <component class="markdown-body"
           :is="preview.HeaderPreview"
-          v-if="item.type === LAYOUT_TYPE_HEADER_MD" 
+          v-if="availableTypes.includes(item.type) && item.type === LAYOUT_TYPE_HEADER_MD" 
           v-html="item.content"/>
 
         <component class="markdown-body"
           :is="preview.DocPreview"
-          v-if="item.type === LAYOUT_TYPE_MD" 
+          v-if="availableTypes.includes(item.type) && item.type === LAYOUT_TYPE_MD" 
           v-html="item.content"/>
 
         <component class="markdown-body"
           :is="preview.FooterPreview"
-          v-if="item.type === LAYOUT_TYPE_FOOTER_MD"
+          v-if="availableTypes.includes(item.type) && item.type === LAYOUT_TYPE_FOOTER_MD"
           v-html="item.content" />
           
-        <component v-if="withPreview && item.type === LAYOUT_TYPE_STORY" 
+        <component v-if="availableTypes.includes(item.type) && withPreview && item.type === LAYOUT_TYPE_STORY" 
           :is="preview.StoryPreview">
           <component :is="item.content" />
         </component>
 
-        <div v-if="!withPreview && item.type === LAYOUT_TYPE_STORY">
+        <div v-if="availableTypes.includes(item.type) && !withPreview && item.type === LAYOUT_TYPE_STORY">
           <component :is="item.content" />
         </div>
 
