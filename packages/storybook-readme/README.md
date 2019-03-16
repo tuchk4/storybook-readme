@@ -27,7 +27,7 @@ Also it very useful because most projects and components already have _README.md
 
 Stories will be added with _.addWithInfo_ method if [Storybook Info Addon](https://github.com/storybooks/storybook/tree/master/addons/info) is installed.
 
-### Install
+## Install
 
 `npm install --save-dev storybook-readme`
 
@@ -121,6 +121,8 @@ storiesOf('Buttons', module)
 
 ## Full list of options
 
+Will be applied for series of stories.
+
 ```js
 .addParameters({
     readme: {
@@ -177,6 +179,58 @@ storiesOf('Buttons', module)
       DocPreview: ({ children}) => <div>{children}</div>
     },
   })
+```
+
+## Global configuration
+
+Will be applied for all stories.
+
+```js
+import { configureReadme } from 'storybook-readme';
+
+configureReadme({
+  /**
+   * Wrapper for story. Usually used to set some styles
+   * React: React.ReactNode
+   * Vue: Vue component
+   */
+  StoryPreview: ({ children }) => <div>{children}</div>,
+
+  /**
+   * Wrapper for content and sidebar docs. Usually used to set some styles
+   * React: React.ReactNode
+   * Vue: Vue component
+   */
+  DocPreview: ({ children }) => (
+    <div style={{ background: '#000' }}> {children}</div>
+  ),
+
+  /**
+   * Wrapper for hedaer docs. Usually used to set some styles
+   * React: React.ReactNode
+   * Vue: Vue component
+   */
+  HeaderPreview: ({ children }) => (
+    <div style={{ background: 'red' }}>{children}</div>
+  ),
+
+  /**
+   * Wrapper for footer docs. Usually used to set some styles
+   * React: React.ReactNode
+   * Vue: Vue component
+   */
+  FooterPreview: ({ children }) => <div>{children}</div>,
+
+  /**
+   * Header docs in markdown format
+   */
+  header: '',
+
+  /**
+   * Footer docs in markdown format
+   */
+  footer: '',
+});
 ```
 
 ## Readme placeholders
