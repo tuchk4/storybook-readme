@@ -5,7 +5,7 @@ import { withDocs, withReadme, doc } from 'storybook-readme';
 import Button from '../components/Button';
 
 import ButtonReadme from '../components/Button/README.md';
-import ButtonDocs from '../components/Button/DOCS.md';
+import ButtonUsage from '../components/Button/USAGE.md';
 
 storiesOf('Old Api', module).add(
   'withDocs hoc',

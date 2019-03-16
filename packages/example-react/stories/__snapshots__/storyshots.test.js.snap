@@ -457,7 +457,6 @@ To override it - define <code>sidebar</code> at <code>add</code> method.</p>
 import CUSTOM_README from &#39;./CUSTOM_README.md&#39;;
 
 storiesOf(&#39;Sidebar docs&#39;, module)
-  .addDecorator(withKnobs)
   .addParameters({
     readme: {
       content: README,
@@ -2277,7 +2276,6 @@ To override it - define <code>sidebar</code> at <code>add</code> method.</p>
 import CUSTOM_README from &#39;./CUSTOM_README.md&#39;;
 
 storiesOf(&#39;Sidebar docs&#39;, module)
-  .addDecorator(withKnobs)
   .addParameters({
     readme: {
       sidebar: README,
