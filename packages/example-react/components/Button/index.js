@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 
 function getBorderColor(variant) {
   switch (variant) {
@@ -53,4 +53,4 @@ Button.propTypes = {
   variant: PropTypes.oneOf(['success', 'warning', 'alert']),
 };
 
-export default Button;
+export default withTheme(Button);
