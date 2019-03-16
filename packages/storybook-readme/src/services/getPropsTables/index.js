@@ -6,6 +6,8 @@ const getName = type => type.displayName || type.name;
 const getMarkdown = ({ type, name }) => {
   const propDefinitions = parseProps(type);
 
+  console.log(propDefinitions);
+
   if (propDefinitions.length === 0) {
     return null;
   }
@@ -15,9 +17,9 @@ const getMarkdown = ({ type, name }) => {
   md += '|---|---|---|---|---|\n';
 
   propDefinitions.forEach(prop => {
-    md += `|${prop.property}|${prop.required ? '+' : '-'}|${
-      prop.propType.name
-    }|${prop.defaultValue ? prop.defaultValue : ''}|${prop.description}\n`;
+    md += `|${prop.property}|${prop.required ? '+' : '-'}|${prop.propType}|${
+      prop.defaultValue ? prop.defaultValue : ''
+    }|${prop.description || '-'}\n`;
   });
 
   return marked(md);
