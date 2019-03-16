@@ -6,8 +6,6 @@ const getName = type => type.displayName || type.name;
 const getMarkdown = ({ type, name }) => {
   const propDefinitions = parseProps(type);
 
-  console.log(propDefinitions);
-
   if (propDefinitions.length === 0) {
     return null;
   }
