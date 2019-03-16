@@ -1,34 +1,20 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
-import { withInfo } from '@storybook/addon-info';
 
 import Button from '../components/Button';
 
 import ButtonReadme from '../components/Button/README.md';
-import ButtonDocs from '../components/Button/DOCS.md';
+import ButtonUsage from '../components/Button/USAGE.md';
 
 storiesOf('Sidebar docs', module)
-  .addDecorator(withKnobs)
   .addParameters({
     readme: {
       sidebar: ButtonReadme,
     },
   })
-  .add(
-    'Button',
-    () => (
-      <Button
-        onClick={action('clicked')}
-        alert={boolean('alert', false)}
-        success={boolean('success', false)}
-        label={text('label', 'Hello Im Button')}
-      />
-    ),
-    {
-      readme: {
-        content: `
+  .add('Button', () => <Button label={'Hello Im Button'} />, {
+    readme: {
+      content: `
 ## Sidebar docs
 
 <!-- STORY -->
@@ -41,7 +27,6 @@ import README from './README.md';
 import CUSTOM_README from './CUSTOM_README.md';
 
 storiesOf('Sidebar docs', module)
-  .addDecorator(withKnobs)
   .addParameters({
     readme: {
       sidebar: README,
@@ -57,40 +42,21 @@ storiesOf('Sidebar docs', module)
   .add(...)
 \`\`\`
 `,
-      },
     },
-  )
+  })
   .add('Alert Button', () => (
-    <Button
-      onClick={action('clicked')}
-      alert={true}
-      label={text('label', 'Hello Im Button')}
-    />
+    <Button variant="alert" label={'Hello Im Button'} />
   ))
   .add('Success Button', () => (
-    <Button
-      onClick={action('clicked')}
-      success={true}
-      label={text('label', 'Hello Im Button')}
-    />
+    <Button variant="success" label={'Hello Im Button'} />
   ))
-  .add(
-    'Override Sidebar docs',
-    () => (
-      <Button
-        onClick={action('clicked')}
-        success={true}
-        label={text('label', 'Hello Im Button')}
-      />
-    ),
-    {
-      readme: {
-        content: `This \`sidebar\` is overriden.`,
-        sidebar: `
+  .add('Override Sidebar docs', () => <Button label={'Hello Im Button'} />, {
+    readme: {
+      content: `This \`sidebar\` is overriden.`,
+      sidebar: `
 ## SuccesButton
 
 Use \`SuccessButton\` for form / filters submit actions only.
         `,
-      },
     },
-  );
+  });

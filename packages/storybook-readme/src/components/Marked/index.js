@@ -1,6 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-
 import marked from '../../services/marked';
 import highlight from '../../services/highlite';
 import transformEmojis from '../../services/transformEmojis';

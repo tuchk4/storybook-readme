@@ -1,41 +1,56 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
 
-const Button = ({ children, alert, success, label, ...props }) => {
-  const styles = {
-    padding: '5px',
-    fontSize: '15px',
-    margin: '1px',
-    border: '2px solid black',
-    borderRadius: '3px',
-    color: 'black',
-    background: 'white',
-  };
+function getBorderColor(variant) {
+  switch (variant) {
+    case 'alert':
+      return 'red';
+    case 'success':
+      return 'green';
+    case 'warning':
+      return 'orange';
+    default:
+      return 'black';
+  }
+}
 
-  if (alert || success) {
-    styles.color = 'white';
+const Button = styled(({ label, ...props }) => (
+  <button {...props}>{label}</button>
+))`
+  font-size: 16px;
+  font-weight: bold;
+
+  cursor: pointer;
+  padding: 8px 12px;
+  outline: none;
+
+  border-width: 2px;
+  border-style: solid;
+  border-color: ${props => getBorderColor(props.variant)};
+
+  border-radius: 8px;
+  color: rgba(0, 0, 0, 0.96);
+
+  :hover {
+    background: yellow;
+    border-width: 3px;
+
+    padding: 7px 11px;
   }
 
-  if (alert) {
-    styles.background = 'red';
-  }
+  :active {
+    background: yellow;
+    border-width: 4px;
 
-  if (success) {
-    styles.background = 'green';
+    padding: 6px 10px;
   }
-
-  return (
-    <button style={styles} {...props}>
-      {label}
-    </button>
-  );
-};
+`;
 
 Button.propTypes = {
   label: PropTypes.string.isRequired,
   onClick: PropTypes.func,
-  alert: PropTypes.bool,
-  success: PropTypes.bool,
+  variant: PropTypes.oneOf(['success', 'warning', 'alert']),
 };
 
 export default Button;

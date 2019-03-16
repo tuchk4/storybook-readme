@@ -3,7 +3,7 @@ import parseProps from './parseProps';
 
 const getName = type => type.displayName || type.name;
 
-const getMarkdown = ({ type, name, config }) => {
+const getMarkdown = ({ type, name }) => {
   const propDefinitions = parseProps(type);
 
   if (propDefinitions.length === 0) {
@@ -15,9 +15,9 @@ const getMarkdown = ({ type, name, config }) => {
   md += '|---|---|---|---|---|\n';
 
   propDefinitions.forEach(prop => {
-    md += `|${prop.property}|${prop.required ? '+' : '-'}|${
-      prop.propType.name
-    }|${prop.defaultValue ? prop.defaultValue : ''}|${prop.description}\n`;
+    md += `|${prop.property}|${prop.required ? '+' : '-'}|${prop.propType}|${
+      prop.defaultValue ? prop.defaultValue : ''
+    }|${prop.description || '-'}\n`;
   });
 
   return marked(md);
@@ -31,10 +31,10 @@ export default function getPropsTables({ story, config = {} }) {
 
   const {
     propTablesExclude,
-    maxPropObjectKeys,
-    maxPropArrayLength,
-    maxPropStringLength,
-    excludedPropTypes,
+    // maxPropObjectKeys,
+    // maxPropArrayLength,
+    // maxPropStringLength,
+    // excludedPropTypes,
   } = config;
 
   if (!story) {

@@ -16,13 +16,14 @@ addons.register(ADDON_ID, api => {
       const active = !props || props.active;
 
       return (
-        <ReadmeSidebar
-          key={'ReadmeSidebar'}
-          api={api}
-          active={active}
-          channel={channel}
-          onStory={api.onStory}
-        />
+        <div style={{ margin: '8px' }} key={'ReadmeSidebar'}>
+          <ReadmeSidebar
+            api={api}
+            active={active}
+            channel={channel}
+            onStory={api.onStory}
+          />
+        </div>
       );
     },
   });

@@ -4,7 +4,7 @@ NOTE: This README only for version `^5.0.0`. For older versions [LEGACY_README.m
 
 ---
 
-![Storybook README addon](https://user-images.githubusercontent.com/5140611/54326373-e8290680-460e-11e9-8d6b-8091a4b63c3c.png)
+![Storybook README addon](https://user-images.githubusercontent.com/5140611/54478027-86d38400-4816-11e9-96a0-aecef64e3ea7.png)
 
 This addon is compatible with:
 
@@ -27,7 +27,7 @@ Also it very useful because most projects and components already have _README.md
 
 Stories will be added with _.addWithInfo_ method if [Storybook Info Addon](https://github.com/storybooks/storybook/tree/master/addons/info) is installed.
 
-### Install
+## Install
 
 `npm install --save-dev storybook-readme`
 
@@ -50,6 +50,32 @@ module.exports = storybookBaseConfig => {
     use: ['storybook-readme/vue/docs-loader', 'html-loader', 'markdown-loader'],
   });
 };
+```
+
+Define `<docs>` tag inside vue module:
+
+```vue
+<docs>
+Docs inside vue module 
+</docs>
+
+<template>
+  <button class="button">
+    <slot></slot>
+  </button>
+</template>
+```
+
+Use it to defone docs at story:
+
+```js
+import MyButton from '../components/MyButton/MyButton.vue';
+
+storiesOf('Vue <docs>', module).addParameters({
+  readme: {
+    content: MyButton.__docs,
+  },
+});
 ```
 
 ## Setup
@@ -121,6 +147,8 @@ storiesOf('Buttons', module)
 
 ## Full list of options
 
+Will be applied for series of stories.
+
 ```js
 .addParameters({
     readme: {
@@ -138,18 +166,106 @@ storiesOf('Buttons', module)
 
       /**
        * Override theme values
-       *
        */
       theme: {},
 
       /**
+       * Highlightjs code theme
+       * Import theme at _.storybook/config.js_.
+       * Full list of theme https://highlightjs.org/static/demo/.
+       */
+      codeTheme: 'github',
+
+      /**
        * Wrapper for story. Usually used to set some styles
+       * NOTE: will be applied only for content docs (docs around the story)
+       *
        * React: React.ReactNode
        * Vue: Vue component
        */
       StoryPreview: ({ children}) => <div>{children}</div>
+
+      /**
+       * Wrapper for hedaer docs. Usually used to set some styles
+       * NOTE: will be applied only for content docs (docs around the story)
+       *
+       * React: React.ReactNode
+       * Vue: Vue component
+       */
+      HeaderPreview: ({ children}) => <div>{children}</div>
+
+      /**
+       * Wrapper for footer docs. Usually used to set some styles
+       * NOTE: will be applied only for content docs (docs around the story)
+       *
+       * React: React.ReactNode
+       * Vue: Vue component
+       */
+      FooterPreview: ({ children}) => <div>{children}</div>
+
+      /**
+       * Wrapper for content and sidebar docs. Usually used to set some styles
+       * NOTE: will be applied only for content docs (docs around the story)
+       *
+       * React: React.ReactNode
+       * Vue: Vue component
+       */
+      DocPreview: ({ children}) => <div>{children}</div>
     },
   })
+```
+
+## Global configuration
+
+Will be applied for all stories.
+NOTE: that `global configuration` is applied only for content docs (docs around the story).
+
+```js
+import { configureReadme } from 'storybook-readme';
+
+configureReadme({
+  /**
+   * Wrapper for story. Usually used to set some styles
+   * React: React.ReactNode
+   * Vue: Vue component
+   */
+  StoryPreview: ({ children }) => <div>{children}</div>,
+
+  /**
+   * Wrapper for content and sidebar docs. Usually used to set some styles
+   * React: React.ReactNode
+   * Vue: Vue component
+   */
+  DocPreview: ({ children }) => (
+    <div style={{ background: '#000' }}> {children}</div>
+  ),
+
+  /**
+   * Wrapper for hedaer docs. Usually used to set some styles
+   * React: React.ReactNode
+   * Vue: Vue component
+   */
+  HeaderPreview: ({ children }) => (
+    <div style={{ background: 'red' }}>{children}</div>
+  ),
+
+  /**
+   * Wrapper for footer docs. Usually used to set some styles
+   * React: React.ReactNode
+   * Vue: Vue component
+   */
+  FooterPreview: ({ children }) => <div>{children}</div>,
+
+  /**
+   * Header docs in markdown format
+   */
+  header: '',
+
+  /**
+   * Footer docs in markdown format
+   */
+  footer: '',
+});
 ```
 
 ## Readme placeholders
@@ -171,18 +287,18 @@ Example:
 Some docs after story
 ```
 
-## Set code highlighting theme
+## Emoji
 
-> NOTE: Theme will set for all stories.
+Use shortcodes between colon to insert emoji into the docs. For example
 
-Install _highlight.js_
+Here is rocket &#58;rocket&#58;
 
-```bash
-yarn add highlight.js
-```
+Here is rocket :rocket:
 
-Import theme at _.storybook/config.js_. Full list of theme https://highlightjs.org/static/demo/.
+List of all shortcodes could be found at [Emojipedia](https://emojipedia.org) or at [Gist/rxaviers](https://gist.github.com/rxaviers/7360908)
 
-```js
-import 'highlight.js/styles/shades-of-purple.css';
-```
+- :rocket:
+- :grinning:
+- :monkey:
+
+Fell free to suggest new features or report bugs :)

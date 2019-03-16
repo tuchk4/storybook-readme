@@ -1,43 +1,23 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
-import { withInfo } from '@storybook/addon-info';
 
 import Button from '../components/Button';
 
 import ButtonReadme from '../components/Button/README.md';
-import ButtonDocs from '../components/Button/DOCS.md';
-
-import './withStoryPreview';
+import ButtonUsage from '../components/Button/USAGE.md';
 
 storiesOf('Button', module)
-  .addDecorator(withKnobs)
   .addParameters({
     readme: {
-      content: ButtonDocs,
-      sidebar: `<!-- PROPS -->`,
+      codeTheme: 'shades-of-purple',
+      content: ButtonReadme,
+      sidebar: ButtonUsage,
     },
   })
-  .add('Button', () => (
-    <Button
-      onClick={action('clicked')}
-      alert={boolean('alert', false)}
-      success={boolean('success', false)}
-      label={text('label', 'Hello Im Button')}
-    />
-  ))
+  .add('Button', () => <Button label={'Hello Im Button'} />)
   .add('Alert Button', () => (
-    <Button
-      onClick={action('clicked')}
-      alert={true}
-      label={text('label', 'Hello Im Button')}
-    />
+    <Button variant="alert" label={'Hello Im Button'} />
   ))
   .add('Success Button', () => (
-    <Button
-      onClick={action('clicked')}
-      success={true}
-      label={text('label', 'Hello Im Button')}
-    />
+    <Button variant="success" label={'Hello Im Button'} />
   ));

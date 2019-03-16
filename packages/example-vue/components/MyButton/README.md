@@ -1,49 +1,44 @@
-# Button
+# Button :star:
 
-### Usage
+Application button.
 
 ```js
-import MyButton from 'components/MyButton';
+import Button from 'components/Button';
 ```
 
 <!-- STORY -->
 
-### Properties
-
-* `onClick` - click callback
-* `label` - button text
-
-| propName | propType | defaultValue | isRequired |
-| -------- | -------- | ------------ | ---------- |
-| onClick  | func     | -            |            |
-| alert    | boolean  | false        | -          |
-| success  | boolean  | false        | -          |
-
-### Roadmap
-
 #### Icons
 
 ```js
-{
-  components: { MyButton },
-  template: `<my-buton icon="mail">Send mail</my-button>`
-}
+import Button from 'components/button';
 
-{
-  components: { MyButton },
-  template: `<my-buton icon="trash" iconPosition="right">Send mail</my-button>`
+render() {
+  return (
+    <Button icon="mail">Send mail</Button>
+    <Button icon="trash">Remove</Button>
+  );
 }
 ```
 
-#### Value
+#### Button types
 
-Add `value` property that will be available at all event callback. Helps to prevent numbers of bind usage
-
-For example:
+Means `OutlinedButton`, `ContainedButton`, `TextButton`. It is possible to import as standalone component or pass `variant` property. Defautl value is `contained`.
 
 ```js
-{
-  components: { MyButton },
-  template: `<my-buton v-on:click=={remove} value={item.id}>Remove</my-button>`
-}
+<Button variant="outlined" />
+<Button variant="contained" />
+<Button variant="text" />
 ```
+
+Which one does @torvalds like most?
+
+- [ ] tiger \#
+- [ ] whale \*
+- [x] octocat \!
+
+> Stay hungry; stay foolish.
+>
+> > Quality is better than quantity.
+> >
+> > > Life is not fair; get used to it.

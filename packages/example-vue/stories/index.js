@@ -1,45 +1,34 @@
-import Vue from 'vue';
-import { storiesOf } from '@storybook/vue';
-import { withKnobs, text, boolean } from '@storybook/addon-knobs';
-// import { withReadme, withDocs, doc } from 'storybook-readme';
+import { configureReadme, addFooter, addHeader } from 'storybook-readme';
 
-import MyButton from '../components/MyButton/MyButton.vue';
+configureReadme({
+  // codeTheme: 'far',
+  header: `
 
-// import CommonFooterDocs from '../components/COMMON_FOOTER.md';
-// import ButtonReadme from '../components/MyButton/README.md';
-// import ButtonDocs from '../components/MyButton/DOCS.md';
+### \`storybook-readme\` addon example
+<img src="https://storybook.js.org//images/logos/logo-storybook.svg"/>
 
-storiesOf('Button', module)
-  .addDecorator(withKnobs)
-  .addParameters({
-    readme: {
-      sidebar: 'asdsa',
-    },
-  })
-  .add(
-    'Button',
-    () => {
-      const warning = boolean('Warning', false);
-      const success = boolean('Success', false);
-
-      return {
-        components: {
-          MyButton,
-        },
-        template: `<my-button
-      :alert="${warning}"
-      :success="${success}">My Button</my-button>`,
-      };
-    },
-    {
-      readme: {
-        md: `
-### EXAMPLE YO <!-- STORY --> ### END HERE
-\`\`\`\js
-function foo() {}
-\`\`\`
+---
 
 `,
-      },
-    }
-  );
+  footer: `
+
+---
+
+- Sources of this storybook (with React components) [tuchk4/storybook-readme/packages/example-react](https://github.com/tuchk4/storybook-readme/tree/master/packages/example-react)
+- Sources of the same Vue storybook [tuchk4/storybook-readme/packages/example-vue](https://github.com/tuchk4/storybook-readme/tree/master/packages/example-vue)
+- Issues and suggestions [storybook-readme/issues](https://github.com/tuchk4/storybook-readme/issues). You are welcome to suggest to awesome feature or report an annoying bug.
+- <img src="https://upload.wikimedia.org/wikipedia/ru/thumb/9/9f/Twitter_bird_logo_2012.svg/1200px-Twitter_bird_logo_2012.svg.png" alt="twitter" style="width:16px;"/> [tuchk4](https://twitter.com/tuchk)
+
+
+`,
+});
+
+import './Button';
+import './withCustomPreview';
+import './withSidebarDocs';
+import './withContentDocs';
+import './withEmoji';
+import './withCustomTheme';
+import './withCustomCodeTheme';
+import './withOldApi';
+import './withVueDocs';

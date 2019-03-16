@@ -1,34 +1,20 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { withKnobs, text, boolean, number } from '@storybook/addon-knobs';
-import { withInfo } from '@storybook/addon-info';
 
 import Button from '../components/Button';
 
 import ButtonReadme from '../components/Button/README.md';
-import ButtonDocs from '../components/Button/DOCS.md';
+import ButtonUsage from '../components/Button/USAGE.md';
 
 storiesOf('Content docs', module)
-  .addDecorator(withKnobs)
   .addParameters({
     readme: {
       content: ButtonReadme,
     },
   })
-  .add(
-    'Button',
-    () => (
-      <Button
-        onClick={action('clicked')}
-        alert={boolean('alert', false)}
-        success={boolean('success', false)}
-        label={text('label', 'Hello Im Button')}
-      />
-    ),
-    {
-      readme: {
-        content: `
+  .add('Button', () => <Button label={'Hello Im Button'} />, {
+    readme: {
+      content: `
 ## Sidebar docs
 
 <!-- STORY -->
@@ -41,7 +27,6 @@ import README from './README.md';
 import CUSTOM_README from './CUSTOM_README.md';
 
 storiesOf('Sidebar docs', module)
-  .addDecorator(withKnobs)
   .addParameters({
     readme: {
       content: README,
@@ -57,35 +42,16 @@ storiesOf('Sidebar docs', module)
   .add(...)
 \`\`\`
 `,
-      },
     },
-  )
+  })
   .add('Alert Button', () => (
-    <Button
-      onClick={action('clicked')}
-      alert={true}
-      label={text('label', 'Hello Im Button')}
-    />
+    <Button varinat="alert" label={'Hello Im Button'} />
   ))
   .add('Success Button', () => (
-    <Button
-      onClick={action('clicked')}
-      success={true}
-      label={text('label', 'Hello Im Button')}
-    />
+    <Button varinat="success" label={'Hello Im Button'} />
   ))
-  .add(
-    'Override Content docs',
-    () => (
-      <Button
-        onClick={action('clicked')}
-        success={true}
-        label={text('label', 'Hello Im Button')}
-      />
-    ),
-    {
-      readme: {
-        content: `This \`md\` is overriden.`,
-      },
+  .add('Override Content docs', () => <Button label={'Hello Im Button'} />, {
+    readme: {
+      content: `This \`md\` is overriden.`,
     },
-  );
+  });

@@ -13,7 +13,7 @@ const transformEmojis = doc => {
   Object.keys(resultMap).forEach(result => {
     doc = doc.replace(
       new RegExp(result, 'g'),
-      emoji.get(result.replace(/:/g, ''))
+      emoji.get(result.replace(/:/g, '')),
     );
   });
 

@@ -87,7 +87,5 @@ export default function parseProps(type) {
     ? propsFromDocgen(type)
     : propsFromPropTypes(type);
 
-  const propDefinitions = Object.values(propDefinitionsMap);
-
-  return propDefinitions;
+  return Object.values(propDefinitionsMap);
 }
