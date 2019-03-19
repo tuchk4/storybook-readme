@@ -68,7 +68,7 @@ Docs inside vue module
 </template>
 ```
 
-Use it to defone docs at story:
+Use it to define docs at story:
 
 ```js
 import MyButton from '../components/MyButton/MyButton.vue';
