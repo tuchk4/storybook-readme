@@ -27,7 +27,7 @@ export default function styleFactory(
 
       node.id = `${name}-${++counter}`;
 
-      document.head.prepend(node);
+      document.head.appendChild(node);
     }
 
     insertedKey = key;
