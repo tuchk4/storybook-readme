@@ -2,7 +2,7 @@
 
 NOTE: This README only for version `^5.0.0`. For older versions [LEGACY_README.md](./LEGACY_README.md)
 
-All previous api should work correctly at `^5.0.0` and above.
+All previous api should work correctly at `^5.0.0` and above. **But vue users will need to change their import path, as vue commands have been moved to their own folder.**
 
 ---
 
@@ -92,6 +92,13 @@ Add decorator at _.storybook/config.js_
 
 ```js
 import { addReadme } from 'storybook-readme';
+addDecorator(addReadme);
+```
+
+> **Important 5.0 change:** the core commands of this addon are now imported from different locations depending on the framework you're using. React, for example, will import its commands from the main folder, seen above, just as it was in `v4.0`. Vue, on the other hand, now has a vue specific import location. See below:
+
+```js
+import { addReadme } from 'storybook-readme/vue'; // <---- Vue subpackage
 addDecorator(addReadme);
 ```
 
