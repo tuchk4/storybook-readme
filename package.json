@@ -1,12 +1,12 @@
 {
-  "name": "storybook-readme",
+  "name": "storybook-readme-customize",
   "private": true,
-  "description": "React storybook addon to show components README",
-  "homepage": "https://github.com/tuchk4/storybook-readme",
-  "bugs": "https://github.com/tuchk4/storybook-readme/issues",
+  "description": "React storybook addon to show components README. Fork from storybook-readme",
+  "homepage": "https://github.com/beyondghx/storybook-readme",
+  "bugs": "https://github.com/beyondghx/storybook-readme/issues",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tuchk4/storybook-readme"
+    "url": "git+https://github.com/beyondghx/storybook-readme"
   },
   "devDependencies": {
     "husky": "^0.14.3",

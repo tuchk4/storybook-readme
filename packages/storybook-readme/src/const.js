@@ -8,3 +8,4 @@ export const LAYOUT_TYPE_FOOTER_MD = 'FOOTER_MD';
 export const LAYOUT_TYPE_HEADER_MD = 'HEADER_MD';
 export const LAYOUT_TYPE_STORY = 'STORY';
 export const LAYOUT_TYPE_PROPS_TABLE = 'PROPS';
+export const README_CODE_CLASS = 'sb-readme-code';

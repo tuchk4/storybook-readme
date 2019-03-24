@@ -3,6 +3,7 @@
 // import 'prismjs/components/prism-typescript';
 
 import hljs from 'highlight.js';
+import { README_CODE_CLASS } from '../const';
 
 hljs.configure({
   skip: true,
@@ -17,7 +18,7 @@ export default dom => {
    */
   const nodes =
     typeof dom.querySelectorAll === 'function'
-      ? dom.querySelectorAll('pre code')
+      ? dom.querySelectorAll(`pre code[class~="${README_CODE_CLASS}"]`)
       : [];
 
   if (nodes.length > 0) {
