@@ -2,9 +2,9 @@ export default {
   data() {
     return {
       styles: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
+        // display: 'flex',
+        // alignItems: 'center',
+        // justifyContent: 'center',
         margin: '32px 0',
       },
     };

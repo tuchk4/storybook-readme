@@ -3,9 +3,9 @@ import React from 'react';
 export default props => (
   <div
     style={{
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
+      // display: 'flex',
+      // alignItems: 'center',
+      // justifyContent: 'center',
       margin: '32px 0',
     }}
   >
