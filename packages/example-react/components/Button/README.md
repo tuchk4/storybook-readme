@@ -8,6 +8,12 @@ import Button from 'components/Button';
 
 <!-- STORY -->
 
+<!-- STORY HIDE START -->
+
+The content here won't be shown in stories.
+
+<!-- STORY HIDE END -->
+
 #### Icons
 
 ```js
