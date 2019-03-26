@@ -10,6 +10,7 @@ import {
   LAYOUT_TYPE_STORY,
   LAYOUT_TYPE_HEADER_MD,
   LAYOUT_TYPE_FOOTER_MD,
+  MARKER_HIDDEN,
 } from '../const';
 
 function split(md, story) {
@@ -43,7 +44,7 @@ function split(md, story) {
 }
 
 function processMd(md) {
-  return marked(transformEmojis(md));
+  return marked(transformEmojis(md.replace(MARKER_HIDDEN, '')));
 }
 
 export default function getDocsLayout({ md, story }) {

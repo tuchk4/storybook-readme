@@ -291,6 +291,7 @@ configureReadme({
 
 - `<!-- STORY -->` placeholder for story
 - `<!-- PROPS -->` placeholder for props table
+- `<!-- STORY HIDE START -->`, `<!-- STORY HIDE END -->` content enclosed by the tags won't be shown in stories
 
 ```md
 Button variants could be imported separately.
@@ -302,6 +303,10 @@ Button variants could be imported separately.
 Example:
 
 <!-- STORY -->
+
+<!-- STORY HIDE START -->
+content here won't be shown in stories
+<!-- STORY HIDE END -->
 
 Some docs after story
 ```
