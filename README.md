@@ -312,7 +312,7 @@ List of all shortcodes could be found at [Emojipedia](https://emojipedia.org) or
 - :grinning:
 - :monkey:
 
-Fell free to suggest new features or report bugs :)
+Feel free to suggest new features or report bugs :)
 
 ## Api from v4.
 
