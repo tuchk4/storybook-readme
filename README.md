@@ -1,6 +1,6 @@
 # Storybook README addon
 
-NOTE: This README only for version `^5.0.0`. For older versions [LEGACY_README.md](./LEGACY_README.md)
+NOTE: This README only for version `^5.0.0`. For older versions [README_V4.md](./README_V4.md)
 
 All previous api should work correctly at `^5.0.0` and above. **But vue users will need to change their import path, as vue commands have been moved to their own folder.**
 
@@ -313,3 +313,59 @@ List of all shortcodes could be found at [Emojipedia](https://emojipedia.org) or
 - :monkey:
 
 Fell free to suggest new features or report bugs :)
+
+## Api from v4.
+
+Full docs for previous api are at [README_V4.md](./README_V4.md)
+
+TL;DR:
+
+> Accepts README or array of README in markdown format. Multiple README is useful when you develop higher order components and want to add multiple READMEs along with the original component docs.
+
+#### withReadme
+
+Renders README at the addons panel.
+
+```js
+import { withReadme } from 'storybook-readme';
+import withReadme from 'storybook-readme/with-readme';
+
+// as HigherOrder Component
+storiesOf('Button', module).add(
+  'Default',
+  withReadme(ButtonReadme, () => <Button />),
+);
+// as Decorator
+storiesOf('Button', module)
+  .addDecorator(withReadme(ButtonReadme))
+  .add('Default', () => <Button />);
+```
+
+#### withDocs
+
+Renders README around the story.
+
+```js
+import { withDocs } from 'storybook-readme';
+import withDocs from 'storybook-readme/with-docs';
+
+// as HigherOrder Component
+storiesOf('Button', module).add(
+  'Default',
+  withDocs(ButtonReadme, () => <Button />),
+);
+// as Decorator
+storiesOf('Button', module)
+  .addDecorator(withDocs(ButtonReadme))
+  .add('Default', () => <Button />);
+```
+
+#### docs
+
+Renders README in main frame without story.
+
+```js
+import { docs } from 'storybook-readme';
+
+storiesOf('Button', module).add('Default', () => docs(ButtonReadme));
+```
