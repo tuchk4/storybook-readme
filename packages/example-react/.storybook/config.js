@@ -1,13 +1,19 @@
 import { addParameters, addDecorator, configure } from '@storybook/react';
 import { addReadme } from 'storybook-readme';
-// import { themes } from '@storybook/theming';
+import { themes, create } from '@storybook/theming';
+
+const basicTheme = create({
+  base: 'light',
+  brandTitle: 'README addon',
+  brandUrl: 'https://github.com/tuchk4/storybook-readme',
+  brandImage: null
+})
 
 addParameters({
   options: {
-    name: 'README addon',
-    url: 'https://github.com/tuchk4/storybook-readme',
     showPanel: true,
     panelPosition: 'right',
+    theme: basicTheme
     // theme: themes.dark,
   },
   readme: {
