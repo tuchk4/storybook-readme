@@ -3,14 +3,17 @@ import { addReadme } from 'storybook-readme';
 // import { themes } from '@storybook/theming';
 
 addParameters({
-  name: 'README addon',
-  url: 'https://github.com/tuchk4/storybook-readme',
   options: {
-    addonPanelInRight: true,
+    name: 'README addon',
+    url: 'https://github.com/tuchk4/storybook-readme',
+    showPanel: true,
+    panelPosition: 'right',
+    // theme: themes.dark,
   },
-  // options: {
-  //   theme: themes.dark,
-  // },
+  readme: {
+    // You can set the global code theme here. 
+    codeTheme: 'dracula'
+  }
 });
 
 addDecorator(addReadme);
