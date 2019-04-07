@@ -12,7 +12,7 @@ addParameters({
   },
   readme: {
     // You can set the global code theme here. 
-    codeTheme: 'dracula'
+    codeTheme: 'github'
   }
 });
 
