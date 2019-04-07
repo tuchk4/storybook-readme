@@ -193,13 +193,14 @@ Will be applied for series of stories.
        * Override theme values
        *
        * All theme values https://github.com/tuchk4/storybook-readme/blob/master/packages/storybook-readme/src/styles/githubMarkdownCss.js#L436
+       
        */
       theme: {},
 
       /**
        * Highlightjs code theme
-       * Import theme at _.storybook/config.js_.
        * Full list of theme https://highlightjs.org/static/demo/.
+       * To be used with storybook-readme, naming of the code theme should be used in one of these styles. https://github.com/tuchk4/storybook-readme/tree/master/packages/storybook-readme/src/styles/codeThemes
        */
       codeTheme: 'github',
 
@@ -248,6 +249,7 @@ Will be applied for all stories.
 NOTE: that `global configuration` is applied only for content docs (docs around the story).
 
 ```js
+import { addParameters } from '@storybook/react'; // or @storybook/vue for vuejs
 import { configureReadme } from 'storybook-readme';
 
 configureReadme({
@@ -292,6 +294,13 @@ configureReadme({
    * Footer docs in markdown format
    */
   footer: '',
+});
+
+addParameters({
+  readme: {
+    // You can set a code theme globally.
+    codeTheme: 'github'
+  }
 });
 ```
 
