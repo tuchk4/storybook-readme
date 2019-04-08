@@ -21,7 +21,7 @@ const propsFromDocgen = type => {
   Object.keys(docgenInfoProps).forEach(property => {
     const docgenInfoProp = docgenInfoProps[property];
     const defaultValueDesc = docgenInfoProp.defaultValue || {};
-    const propType = docgenInfoProp.flowType || docgenInfoProp.type || 'other';
+    const propType = docgenInfoProp.flowType || (typeof docgenInfoProp.type === "object" ? docgenInfoProp.type.name : docgenInfoProp.type) || 'other';
 
     props[property] = {
       property,
