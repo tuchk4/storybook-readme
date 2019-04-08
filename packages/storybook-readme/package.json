@@ -12,7 +12,7 @@
     "url": "git+https://github.com/tuchk4/storybook-readme"
   },
   "dependencies": {
-    "@storybook/core-events": "^5.0.3",
+    "@storybook/core-events": "^5.0.5",
     "highlight.js": "^9.15.6",
     "html-loader": "^0.5.5",
     "lodash": "^4.17.11",
@@ -25,7 +25,7 @@
   "devDependencies": {
     "@babel/cli": "7.2.3",
     "@babel/core": "7.3.4",
-    "@storybook/addons": "^5.0.3",
+    "@storybook/addons": "^5.0.5",
     "babel-preset-react-app": "^7.0.1",
     "cross-env": "^5.1.3"
   },
