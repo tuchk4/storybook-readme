@@ -11,14 +11,30 @@ const getMarkdown = ({ type, name }) => {
   }
 
   let md = `### ${name} Props\n`;
-  md += '|Name|Required|Type|DefaultValue|Description|\n';
-  md += '|---|---|---|---|---|\n';
+  /* copy & modified from addon-info */
+  md += `<table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Required</th>
+        <th>Type</th>
+        <th>DefaultValue</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>`;
 
   propDefinitions.forEach(prop => {
-    md += `|${prop.property}|${prop.required ? '+' : '-'}|${prop.propType}|${
-      prop.defaultValue ? prop.defaultValue : ''
-    }|${prop.description || '-'}\n`;
-  });
+    md += `<tr>
+      <td>${prop.property}</td>
+      <td>${prop.required ? '+' : '-'}</td>
+      <td>${prop.propType}</td>
+      <td>${prop.defaultValue ? prop.defaultValue : ''}</td>
+      <td>${prop.description || '-'}</td>
+    </tr>`
+  })
+  
+  md += '</tbody></table>';
 
   return marked(md);
 };
