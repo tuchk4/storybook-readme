@@ -1,12 +1,9 @@
-// import Prism from 'prismjs';
-// import 'prismjs/components/prism-jsx';
-// import 'prismjs/components/prism-typescript';
-
-import hljs from 'highlight.js';
-
-hljs.configure({
-  skip: true,
-});
+import prism from 'prismjs';
+import 'prismjs/components/prism-javascript';
+import 'prismjs/components/prism-jsx';
+import 'prismjs/components/prism-typescript';
+import 'prismjs/components/prism-tsx';
+import 'prismjs/components/prism-bash';
 
 export default dom => {
   /**
@@ -22,7 +19,7 @@ export default dom => {
 
   if (nodes.length > 0) {
     for (var i = 0; i < nodes.length; i = i + 1) {
-      hljs.highlightBlock(nodes[i]);
+      prism.highlightElement(nodes[i]);
     }
   }
 };

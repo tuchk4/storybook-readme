@@ -18,7 +18,7 @@ addParameters({
   },
   readme: {
     // You can set the global code theme here.
-    codeTheme: 'github',
+    codeTheme: 'ghcolors',
   },
 });
 

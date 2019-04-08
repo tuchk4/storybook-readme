@@ -9,7 +9,7 @@ import ButtonUsage from '../components/Button/USAGE.md';
 storiesOf('Button', module)
   .addParameters({
     readme: {
-      codeTheme: 'shades-of-purple',
+      codeTheme: 'duotone-sea',
       content: ButtonReadme,
       sidebar: ButtonUsage,
     },

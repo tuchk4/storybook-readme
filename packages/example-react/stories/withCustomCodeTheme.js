@@ -18,7 +18,7 @@ storiesOf('Custom Code Theme', module)
   .add('Global (all stories)', () => null)
   .addParameters({
     readme: {
-      codeTheme: 'dracula',
+      codeTheme: 'atom-dark',
       content: LocalCodeThemeMD,
       sidebar: ButtonReadme,
     },

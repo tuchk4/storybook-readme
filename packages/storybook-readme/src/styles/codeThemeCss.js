@@ -7,7 +7,8 @@ export default function insertCodeThemeCss({ codeTheme }) {
     return;
   }
 
-  import(`./codeThemes/${codeTheme}.css.js`).then(t => {
+  // import(`./codeThemes/${codeTheme}.css.js`).then(t => {
+  import(`./prismCodeThemes/${codeTheme}.css.js`).then(t => {
     insert({
       styles: t.default,
     });
