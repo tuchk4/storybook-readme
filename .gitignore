@@ -15,5 +15,6 @@ coverage/
 /packages/storybook-readme/const.js
 /packages/storybook-readme/index.js
 /packages/storybook-readme/register.js
+/packages/storybook-readme/registerWithPanelTitle.js
 /packages/storybook-readme/with-docs.js
 /packages/storybook-readme/with-readme.js

@@ -38,6 +38,7 @@
     "const.js",
     "index.js",
     "register.js",
+    "registerWithPanelTitle.js",
     "with-docs.js",
     "with-readme.js"
   ],

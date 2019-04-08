@@ -9,6 +9,7 @@
     "packages/storybook-readme/with-readme.js": true,
     "packages/storybook-readme/with-docs.js": true,
     "packages/storybook-readme/register.js": true,
+    "packages/storybook-readme/registerWithPanelTitle.js": true,
     "packages/storybook-readme/env/": true,
     "packages/storybook-readme/vue/": true,
     "packages/storybook-readme/styles/": true,

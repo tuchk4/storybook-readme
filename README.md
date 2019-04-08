@@ -88,6 +88,14 @@ Register addon at _.storybook/addons.js_
 import 'storybook-readme/register';
 ```
 
+NOTE: It is possible to set addon's panel title
+
+```js
+import registerWithPanelTitle from 'storybook-readme/registerWithPanelTitle';
+
+registerWithPanelTitle('Docs');
+```
+
 Add decorator at _.storybook/config.js_
 
 ```js
