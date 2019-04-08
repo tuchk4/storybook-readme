@@ -6,6 +6,8 @@ Application button.
 import Button from 'components/Button';
 ```
 
+<!-- Brief summary of what the component is, and what it's for. -->
+
 <!-- STORY -->
 
 <!-- STORY HIDE START -->

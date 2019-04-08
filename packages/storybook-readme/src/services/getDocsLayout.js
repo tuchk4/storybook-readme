@@ -11,36 +11,46 @@ import {
   LAYOUT_TYPE_HEADER_MD,
   LAYOUT_TYPE_FOOTER_MD,
   MARKER_HIDDEN,
+  MARKER_STORY,
+  MARKER_PROPS_TABLE,
 } from '../const';
 
 function split(md, story) {
-  return md
-    .split(/<!--\s|\s-->/)
-    .filter(p => p.trim().length !== 0)
-    .map(part => {
-      switch (part.trim()) {
-        case LAYOUT_TYPE_STORY:
-          return {
-            type: LAYOUT_TYPE_STORY,
-            content: story,
-          };
+  return (
+    md
+      /**
+       * Should replace <!-- --> with custom placeholders to allow default md/html comments
+       */
+      .replace(MARKER_STORY, `___{{${LAYOUT_TYPE_STORY}}}___`)
+      .replace(MARKER_PROPS_TABLE, `___{{${LAYOUT_TYPE_PROPS_TABLE}}}___`)
+      .split(/___{{|}}___/)
+      // .split(/<!--|-->/)
+      .filter(p => p.trim().length !== 0)
+      .map(part => {
+        switch (part.trim()) {
+          case LAYOUT_TYPE_STORY:
+            return {
+              type: LAYOUT_TYPE_STORY,
+              content: story,
+            };
 
-        case LAYOUT_TYPE_PROPS_TABLE:
-          return {
-            type: LAYOUT_TYPE_PROPS_TABLE,
-            content: getPropsTables({
-              story,
-            }),
-          };
+          case LAYOUT_TYPE_PROPS_TABLE:
+            return {
+              type: LAYOUT_TYPE_PROPS_TABLE,
+              content: getPropsTables({
+                story,
+              }),
+            };
 
-        default:
-          return {
-            type: LAYOUT_TYPE_MD,
-            // content: marked(part),
-            content: part,
-          };
-      }
-    });
+          default:
+            return {
+              type: LAYOUT_TYPE_MD,
+              // content: marked(part),
+              content: part,
+            };
+        }
+      })
+  );
 }
 
 function processMd(md) {
