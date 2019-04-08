@@ -340,35 +340,18 @@ const getStyles = theme => stringRaw`
   word-break: normal;
 }
 
-/*
+
 .markdown-body .highlight pre,
 .markdown-body pre {
-  padding: 16px;
   overflow: auto;
   font-size: 85%;
   line-height: 1.45;
   border-radius: 3px;
-  background-color: ${theme.preBackgroundColor};
-}
-
-
-.markdown-body pre code {
-  display: inline;
-  max-width: auto;
-  padding: 0;
-  margin: 0;
-  overflow: visible;
-  line-height: inherit;
-  word-wrap: normal;
-  border: 0;
 }
 
 
 .markdown-body code {
-  padding: .2em 0;
   margin: 0;
-  font-size: 85%;
-  background-color: ${theme.codeBackgroundColor};
   border-radius: 3px;
 }
 
@@ -378,15 +361,43 @@ const getStyles = theme => stringRaw`
   content: "\00a0";
 }
 
-.markdown-body pre>code {
-  padding: 0;
-  margin: 0;
-  font-size: 100%;
-  word-break: normal;
-  white-space: pre;
-  background: 0 0;
-  border: 0;
-}
+
+/*
+  .markdown-body pre code {
+    display: inline;
+    max-width: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    line-height: inherit;
+    word-wrap: normal;
+    border: 0;
+  }
+
+
+  .markdown-body code {
+    padding: .2em 0;
+    margin: 0;
+    font-size: 85%;
+    background-color: ${theme.codeBackgroundColor};
+    border-radius: 3px;
+  }
+
+  .markdown-body code::after,
+  .markdown-body code::before {
+    letter-spacing: -.2em;
+    content: "\00a0";
+  }
+
+  .markdown-body pre>code {
+    padding: 0;
+    margin: 0;
+    font-size: 100%;
+    word-break: normal;
+    white-space: pre;
+    background: 0 0;
+    border: 0;
+  }
 */
 
 .markdown-body pre code::after,
