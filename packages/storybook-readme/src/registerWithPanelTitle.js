@@ -17,14 +17,13 @@ export default function registerWithPanelTitle(name = PANEL_TITLE) {
         const active = !props || props.active;
 
         return (
-          <div style={{ margin: '8px' }} key={'ReadmeSidebar'}>
-            <ReadmeSidebar
-              api={api}
-              active={active}
-              channel={channel}
-              onStory={api.onStory}
-            />
-          </div>
+          <ReadmeSidebar
+            key={'ReadmeSidebar'}
+            api={api}
+            active={active}
+            channel={channel}
+            onStory={api.onStory}
+          />
         );
       },
     });

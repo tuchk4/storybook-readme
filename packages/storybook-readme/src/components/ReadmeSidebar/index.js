@@ -63,12 +63,14 @@ export default class ReadmeSidebar extends React.Component {
     }
 
     return (
-      <ReadmeContent
-        types={SIDEBAR_LAYOUT_TYPES}
-        layout={this.state.layout}
-        codeTheme={this.state.codeTheme}
-        theme={this.state.theme}
-      />
+      <div style={{ margin: '8px' }}>
+        <ReadmeContent
+          types={SIDEBAR_LAYOUT_TYPES}
+          layout={this.state.layout}
+          codeTheme={this.state.codeTheme}
+          theme={this.state.theme}
+        />
+      </div>
     );
   }
 }
