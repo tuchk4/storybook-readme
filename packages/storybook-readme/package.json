@@ -13,12 +13,13 @@
   },
   "dependencies": {
     "@storybook/core-events": "^5.0.5",
-    "highlight.js": "^9.15.6",
     "html-loader": "^0.5.5",
     "lodash": "^4.17.11",
     "markdown-loader": "^5.0.0",
     "marked": "^0.6.1",
     "node-emoji": "1.10.0",
+    "prism-themes": "^1.1.0",
+    "prismjs": "^1.16.0",
     "string-raw": "^1.0.1",
     "vuex": "^3.1.0"
   },
