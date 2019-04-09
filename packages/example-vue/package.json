@@ -11,9 +11,9 @@
   },
   "dependencies": {
     "@babel/core": "7.3.4",
-    "@storybook/addon-knobs": "5.0.5",
-    "@storybook/addons": "5.0.5",
-    "@storybook/vue": "5.0.5",
+    "@storybook/addon-knobs": "5.0.6",
+    "@storybook/addons": "5.0.6",
+    "@storybook/vue": "5.0.6",
     "@vue/babel-preset-app": "^3.4.1",
     "babel-loader": "^8.0.2",
     "babel-preset-vue": "^2.0.1",

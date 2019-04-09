@@ -3,6 +3,42 @@ import parseProps from './parseProps';
 
 const getName = type => type.displayName || type.name;
 
+const renderPropMeta = (propType, propMeta) => {
+  if (!propMeta) {
+    return '';
+  }
+
+  switch (propType) {
+    case 'enum': {
+      return propMeta.join(' | ');
+    }
+
+    case 'instanceOf':
+    case 'arrayOf': {
+      return propMeta;
+    }
+
+    case 'union': {
+      return propMeta.join(' | ');
+    }
+
+    case 'objectOf': {
+      return propMeta;
+    }
+
+    case 'shape': {
+      return Object.keys(propMeta)
+        .map(k => {
+          return `<div class="property_meta">${k}: ${propMeta[k].name}</div>`;
+        })
+        .join('');
+    }
+
+    default:
+      return '';
+  }
+};
+
 const getMarkdown = ({ type, name }) => {
   const propDefinitions = parseProps(type);
 
@@ -28,12 +64,18 @@ const getMarkdown = ({ type, name }) => {
     md += `<tr>
       <td>${prop.property}</td>
       <td>${prop.required ? '+' : '-'}</td>
-      <td>${prop.propType}</td>
-      <td>${prop.defaultValue ? prop.defaultValue : ''}</td>
+      <td>
+        <div><b>${prop.propType}</b></div>
+        <div class="property_meta">${renderPropMeta(
+          prop.propType,
+          prop.propMeta,
+        )}</div>
+      </td>
+      <td>${prop.defaultValue ? prop.defaultValue : '-'}</td>
       <td>${prop.description || '-'}</td>
-    </tr>`
-  })
-  
+    </tr>`;
+  });
+
   md += '</tbody></table>';
 
   return marked(md);

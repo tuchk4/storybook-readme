@@ -1,7 +1,8 @@
 import React from 'react';
+
 import { storiesOf } from '@storybook/react';
 
-import Button from '../components/Button';
+import Button from '../components/Button/ButtonWithPropTypes';
 
 import ButtonReadme from '../components/Button/README.md';
 import ButtonUsage from '../components/Button/USAGE.md';

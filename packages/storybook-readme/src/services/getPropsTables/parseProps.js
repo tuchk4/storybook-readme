@@ -3,12 +3,13 @@ import React from 'react';
 
 const PropTypesMap = new Map();
 
-Object.keys(PropTypes).forEach(typeName => {
-  const type = PropTypes[typeName];
+// Object.keys(PropTypes).forEach(typeName => {
+//   const type = PropTypes[typeName];
 
-  PropTypesMap.set(type, typeName);
-  PropTypesMap.set(type.isRequired, typeName);
-});
+//   PropTypesMap.set(type, typeName);
+//   PropTypesMap.set(type.isRequired, typeName);
+// });
+const clearString = str => str.replace(/^\'|\'$/g, '');
 
 const isNotEmpty = obj => obj && obj.props && Object.keys(obj.props).length > 0;
 
@@ -21,14 +22,70 @@ const propsFromDocgen = type => {
   Object.keys(docgenInfoProps).forEach(property => {
     const docgenInfoProp = docgenInfoProps[property];
     const defaultValueDesc = docgenInfoProp.defaultValue || {};
-    const propType = docgenInfoProp.flowType || (typeof docgenInfoProp.type === "object" ? docgenInfoProp.type.name : docgenInfoProp.type) || 'other';
+
+    // console.log(docgenInfoProp);
+
+    const propType =
+      // docgenInfoProp.flowType ||
+      (typeof docgenInfoProp.type === 'object'
+        ? docgenInfoProp.type.name
+        : docgenInfoProp.type) || 'other';
+
+    let propMeta = null;
+
+    switch (propType) {
+      case 'enum': {
+        // if (typeof docgenInfoProp.type === 'object') {
+        propMeta = docgenInfoProp.type.value.map(v => clearString(v.value));
+        // }
+
+        break;
+      }
+      case 'instanceOf': {
+        // if (typeof docgenInfoProp.type === 'object') {
+        propMeta = docgenInfoProp.type.value;
+        // }
+
+        break;
+      }
+      case 'arrayOf': {
+        // if (typeof docgenInfoProp.type === 'object') {
+        propMeta = docgenInfoProp.type.value.name;
+        // }
+
+        break;
+      }
+      case 'objectOf': {
+        // if (typeof docgenInfoProp.type === 'object') {
+        propMeta = docgenInfoProp.type.value.name;
+        // }
+
+        break;
+      }
+      case 'union': {
+        // if (typeof docgenInfoProp.type === 'object') {
+        propMeta = docgenInfoProp.type.value.map(v => v.value || v.name);
+        // }
+
+        break;
+      }
+
+      case 'shape': {
+        // if (typeof docgenInfoProp.type === 'object') {
+        propMeta = docgenInfoProp.type.value;
+        // }
+
+        break;
+      }
+    }
 
     props[property] = {
       property,
       propType,
+      propMeta,
       required: docgenInfoProp.required,
       description: docgenInfoProp.description,
-      defaultValue: defaultValueDesc.value,
+      defaultValue: clearString(defaultValueDesc.value || ''),
     };
   });
 

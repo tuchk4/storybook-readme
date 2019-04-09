@@ -10,14 +10,14 @@ function getBorderColor(variant) {
       return 'green';
     case 'warning':
       return 'orange';
+
+    case 'normal':
     default:
       return 'black';
   }
 }
 
-const Button = styled(({ label, ...props }) => (
-  <button {...props}>{label}</button>
-))`
+const StyledButton = styled.button`
   font-size: 16px;
   font-weight: bold;
 
@@ -47,10 +47,23 @@ const Button = styled(({ label, ...props }) => (
   }
 `;
 
+const Button = ({ label, ...props }) => (
+  <StyledButton {...props}>{label}</StyledButton>
+);
+
 Button.propTypes = {
+  /**
+   * Button label
+   */
   label: PropTypes.string.isRequired,
+  /** on click event handler */
   onClick: PropTypes.func,
-  variant: PropTypes.oneOf(['success', 'warning', 'alert']),
+  /**  Button type */
+  variant: PropTypes.oneOf(['success', 'normal', 'warning', 'alert']),
 };
 
-export default withTheme(Button);
+Button.defaultProps = {
+  variant: 'normal',
+};
+
+export default Button;
