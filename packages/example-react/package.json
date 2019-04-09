@@ -1,7 +1,7 @@
 {
   "name": "example-react",
   "private": true,
-  "version": "5.0.1",
+  "version": "5.0.2",
   "license": "MIT",
   "scripts": {
     "prepublishOnly": "echo \"Error: not allowed to publish\" && exit 1",
