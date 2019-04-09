@@ -8,7 +8,7 @@ import ButtonUsage from '../components/MyButton/USAGE.md';
 storiesOf('Custom Code Theme', module)
   .addParameters({
     readme: {
-      codeTheme: 'atelier-cave-dark',
+      codeTheme: 'duotone-sea',
       content: ButtonReadme,
       sidebar: ButtonReadme,
     },

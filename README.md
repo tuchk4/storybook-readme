@@ -99,7 +99,7 @@ registerWithPanelTitle('Docs');
 Add decorator at _.storybook/config.js_
 
 ```js
-import { addDecorator, configure } from '@storybook/react'; 
+import { addDecorator, configure } from '@storybook/react';
 import { addReadme } from 'storybook-readme';
 
 addDecorator(addReadme);
@@ -201,14 +201,14 @@ Will be applied for series of stories.
        * Override theme values
        *
        * All theme values https://github.com/tuchk4/storybook-readme/blob/master/packages/storybook-readme/src/styles/githubMarkdownCss.js#L436
-       
+
        */
       theme: {},
 
       /**
-       * Highlightjs code theme
-       * Full list of theme https://highlightjs.org/static/demo/.
-       * To be used with storybook-readme, naming of the code theme should be used in one of these styles. https://github.com/tuchk4/storybook-readme/tree/master/packages/storybook-readme/src/styles/codeThemes
+       * Prism code theme
+       * Full list of theme https://github.com/PrismJS/prism-themes
+       * To be used with storybook-readme, naming of the code theme should be used in one of these styles. https://github.com/tuchk4/storybook-readme/tree/master/packages/storybook-readme/src/styles/prismCodeThemes
        */
       codeTheme: 'github',
 
@@ -307,8 +307,8 @@ configureReadme({
 addParameters({
   readme: {
     // You can set a code theme globally.
-    codeTheme: 'github'
-  }
+    codeTheme: 'github',
+  },
 });
 ```
 
@@ -330,7 +330,9 @@ Example:
 <!-- STORY -->
 
 <!-- STORY HIDE START -->
+
 content here won't be shown in stories
+
 <!-- STORY HIDE END -->
 
 Some docs after story
