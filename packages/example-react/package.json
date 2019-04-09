@@ -33,7 +33,7 @@
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-test-renderer": "^16.8.3",
-    "storybook-readme": "^5.0.1",
+    "storybook-readme": "^5.0.2",
     "styled-components": "^4.1.3"
   },
   "jest": {
