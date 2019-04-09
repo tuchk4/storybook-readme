@@ -315,7 +315,7 @@ addParameters({
 ## Readme placeholders
 
 - `<!-- STORY -->` placeholder for story
-- `<!-- PROPS -->` placeholder for props table
+- `<!-- PROPS -->` placeholder for props table. There are some issue with props parsing. Here is small clarification https://github.com/tuchk4/storybook-readme/issues/137#issuecomment-481307652
 - `<!-- STORY HIDE START -->`, `<!-- STORY HIDE END -->` content enclosed by the tags won't be shown in stories
 
 ```md
