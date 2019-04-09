@@ -72,7 +72,8 @@ Button.propTypes = {
   optionalString: PropTypes.string,
   optionalSymbol: PropTypes.symbol,
 
-  /**  Anything that can be rendered: numbers, strings, elements or an array
+  /**
+   * Anything that can be rendered: numbers, strings, elements or an array
    * (or fragment) containing these types.
    */
   optionalNode: PropTypes.node,
@@ -80,12 +81,14 @@ Button.propTypes = {
   /** A React element. */
   optionalElement: PropTypes.element,
 
-  /**  You can also declare that a prop is an instance of a class. This uses
+  /**
+   * You can also declare that a prop is an instance of a class. This uses
    * JS's instanceof operator.
    */
   optionalMessage: PropTypes.instanceOf(Message),
 
-  /**  You can ensure that your prop is limited to specific values by treating
+  /**
+   * You can ensure that your prop is limited to specific values by treating
    * it as an enum
    */
   optionalEnum: PropTypes.oneOf(['News', 'Photos']),
@@ -109,7 +112,8 @@ Button.propTypes = {
     fontSize: PropTypes.number,
   }),
 
-  /**  You can also supply a custom validator to `arrayOf` and `objectOf`.
+  /**
+   * You can also supply a custom validator to `arrayOf` and `objectOf`.
    * It should return an Error object if the validation fails. The validator
    * will be called for each key in the array or object. The first two
    * arguments of the validator are the array or object itself, and the
