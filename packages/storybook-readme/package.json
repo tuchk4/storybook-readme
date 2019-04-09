@@ -12,6 +12,7 @@
     "url": "git+https://github.com/tuchk4/storybook-readme"
   },
   "dependencies": {
+    "@storybook/components": "^5.0.6",
     "@storybook/core-events": "^5.0.6",
     "html-loader": "^0.5.5",
     "lodash": "^4.17.11",

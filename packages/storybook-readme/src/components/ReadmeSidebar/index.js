@@ -1,4 +1,5 @@
 import React from 'react';
+import { Placeholder, Link } from '@storybook/components';
 import { STORY_CHANGED } from '@storybook/core-events';
 
 import ReadmeContent from '../ReadmeContent';
@@ -59,7 +60,21 @@ export default class ReadmeSidebar extends React.Component {
     }
 
     if (this.state.layout.length === 0) {
-      return null;
+      return (
+        <Placeholder>
+          <React.Fragment>No README found</React.Fragment>
+          <React.Fragment>
+            Learn how to{' '}
+            <Link
+              href="https://github.com/tuchk4/storybook-readme"
+              target="_blank"
+              withArrow={true}
+            >
+              add component's docs
+            </Link>
+          </React.Fragment>
+        </Placeholder>
+      );
     }
 
     return (
