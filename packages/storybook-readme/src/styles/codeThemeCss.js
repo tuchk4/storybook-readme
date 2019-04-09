@@ -27,7 +27,7 @@ export default function insertCodeThemeCss({ codeTheme }) {
     return;
   }
 
-  if (!availableCodeThemes[codeTheme]) {
+  if (!availableCodeThemes.includes(codeTheme)) {
     codeTheme = 'github';
 
     console.warn(`
