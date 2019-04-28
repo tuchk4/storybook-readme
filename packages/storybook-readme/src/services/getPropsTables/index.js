@@ -93,6 +93,8 @@ export default function getPropsTables({ story, config = {} }) {
     // maxPropArrayLength,
     // maxPropStringLength,
     // excludedPropTypes,
+    excludePropTables,
+    includePropTables
   } = config;
 
   if (!story) {
