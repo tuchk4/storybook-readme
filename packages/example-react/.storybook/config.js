@@ -1,6 +1,7 @@
 import { addParameters, addDecorator, configure } from '@storybook/react';
 import { addReadme } from 'storybook-readme';
 import { themes, create } from '@storybook/theming';
+import ButtonWithPropTypes from "../components/Button/ButtonWithPropTypes";
 
 const basicTheme = create({
   base: 'light',
@@ -19,6 +20,7 @@ addParameters({
   readme: {
     // You can set the global code theme here.
     codeTheme: 'github',
+    excludePropTables: [ButtonWithPropTypes]
   },
 });
 
