@@ -1,5 +1,6 @@
 import marked from '../../services/marked';
 import parseProps from './parseProps';
+import { excludePropTable } from "./excludePropTable";
 
 const getName = type => type.displayName || type.name;
 
@@ -88,7 +89,6 @@ export default function getPropsTables({ story, config = {} }) {
   const types = new Map();
 
   const {
-    propTablesExclude,
     // maxPropObjectKeys,
     // maxPropArrayLength,
     // maxPropStringLength,
@@ -114,7 +114,7 @@ export default function getPropsTables({ story, config = {} }) {
       extract(innerChildren.props.children);
     }
 
-    // exclude specific propTable if it matches the exclude, include rules.
+    // Exclude specific propTable according to its exclude and include rules.
     if (
       typeof innerChildren.type === 'function' &&
       excludePropTable(innerChildren, excludePropTables, includePropTables)

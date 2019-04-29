@@ -1,35 +1,43 @@
-
 // Exclude propTables according to the user inputs(excludePropTables,
-// includePropTables) It prioritize includePropTables over excludePropTables
-// lists. User can exclude propTables globally, but it is possible to include
-// it from specific story by prioritizing include rule.
+// includePropTables) It prioritizes includePropTables over excludePropTables.
+// User can exclude propTables globally for convenience and it is possible to
+// include it from a specific story by prioritizing include rule.
 export const excludePropTable = (
-    innerChildren,
-    excludePropTables,
-    includePropTables
-  ) => {
-    // If inputs from user are invalid, it doesn't apply any exclude logic.
-    if (
-      !isValidInput(excludePropTables, `${excludePropTables}`) ||
-      !isValidInput(includePropTables, `${includePropTables}`)
-    ) {
-        return false;
-    }
+  innerChildren,
+  excludePropTables,
+  includePropTables
+) => {
+  const isComponentInExcludePropTables = excludePropTables.some(component =>
+    isSameComponent(component, innerChildren)
+  );
+  const isComponentInIncludePropTables = includePropTables.some(component =>
+    isSameComponent(component, innerChildren)
+  );
 
-    return false
-}
+  // If nothings are in includePropTables, then excludePropTables decides
+  // whether this component should be excluded or not.
+  if (includePropTables.length === 0 && isComponentInExcludePropTables) {
+    return true;
+  }
 
-// Check if parameters from user are valid by type guarding whether it is 
-// an array and its items are a function. For now, type checking if it
-// is a real React component(class, stateless, renderable) looks overkill
-// since displayName, name is only be used.
-const isValidInput = (propTables, parameterName) => {
-    if (
-      Array.isArray(propTables) &&
-      propTables.some((component) => typeof component === 'function')
-    ) {
-        return true;
-    }
+  // If somethings are in includePropTables, then it only includes components
+  // that are in incluePropTables and ignores excludePropTables at all.
+  if (includePropTables.length > 0 && !isComponentInIncludePropTables) {
+    return true;
+  }
 
-    console.warn(`storybook-readme: ${parameterName} is not an array. It must be an array of React component`);
-}
+  return false;
+};
+
+// Compare if the name of the function is identical.
+const isSameComponent = (component, innerChildren) => {
+  if (component.displayName && innerChildren.type.displayName) {
+    return component.displayName === innerChildren.type.displayName;
+  }
+
+  if (component.name && innerChildren.type.name) {
+    return component.name === innerChildren.type.name;
+  }
+
+  return false;
+};
