@@ -405,7 +405,7 @@ storiesOf('Button', module)
 Renders README in main frame without story.
 
 ```js
-import { docs } from 'storybook-readme';
+import { doc } from 'storybook-readme';
 
-storiesOf('Button', module).add('Default', () => docs(ButtonReadme));
+storiesOf('Button', module).add('Default', () => doc(ButtonReadme));
 ```
