@@ -7,11 +7,11 @@ export const excludePropTable = (
   excludePropTables,
   includePropTables
 ) => {
-  const isComponentInExcludePropTables = excludePropTables.some(component =>
-    isSameComponent(component, innerChildren)
+  const isComponentInExcludePropTables = excludePropTables.some(
+    component => component === innerChildren.type
   );
-  const isComponentInIncludePropTables = includePropTables.some(component =>
-    isSameComponent(component, innerChildren)
+  const isComponentInIncludePropTables = includePropTables.some(
+    component => component === innerChildren.type
   );
 
   // If nothings are in includePropTables, then excludePropTables decides
@@ -24,19 +24,6 @@ export const excludePropTable = (
   // that are in incluePropTables and ignores excludePropTables at all.
   if (includePropTables.length > 0 && !isComponentInIncludePropTables) {
     return true;
-  }
-
-  return false;
-};
-
-// Compare if the name of the function is identical.
-const isSameComponent = (component, innerChildren) => {
-  if (component.displayName && innerChildren.type.displayName) {
-    return component.displayName === innerChildren.type.displayName;
-  }
-
-  if (component.name && innerChildren.type.name) {
-    return component.name === innerChildren.type.name;
   }
 
   return false;

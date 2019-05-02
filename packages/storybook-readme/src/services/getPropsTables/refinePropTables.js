@@ -6,7 +6,7 @@ export const refinePropTables = (excludePropTables, includePropTables) => {
   if (!Array.isArray(excludePropTables) || !Array.isArray(includePropTables)) {
     console.warn(
       'storybook-readme: excludePropTables or includePropTables is not an' +
-      'array. It must be an array of React component.'
+      'array. It must be an array of React components.'
     );
 
     return { excludePropTables: [], includePropTables: [] };
@@ -33,7 +33,7 @@ const filterPropTables = (propTables, propTableName) => {
     if (typeof component !== 'function') {
       console.warn(
         `storybook-readme: Value '${component}' from '${propTableName}'` +
-          `is not a React component`
+        `is not a React component`
       );
       return false;
     }
