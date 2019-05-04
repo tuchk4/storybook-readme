@@ -20,6 +20,8 @@ addParameters({
   readme: {
     // You can set the global code theme here.
     codeTheme: 'github',
+
+    // You can exclude prop tables globally here.
     excludePropTables: [ButtonWithPropTypes]
   },
 });

@@ -1,7 +1,7 @@
 import transformEmojis from './transformEmojis';
 import marked from './marked';
 import getPropsTables from './getPropsTables';
-import { refinePropTables } from "./getPropsTables/refinePropTables";
+import { validatePropTables } from "./getPropsTables/validatePropTables";
 import { getConfig } from './config';
 
 import {
@@ -64,11 +64,11 @@ export default function getDocsLayout({ md, story, excludePropTables, includePro
   const mdWithEmojis = mdAsArray.map(processMd);
 
   const main = mdWithEmojis[0];
-  const refinedPropTables = refinePropTables(excludePropTables, includePropTables);
-  const layout = [...split(main, story, refinedPropTables)];
+  const propTables = validatePropTables(excludePropTables, includePropTables);
+  const layout = [...split(main, story, propTables)];
 
   mdWithEmojis.slice(1).map(md => {
-    layout.push(...split(md, story, refinedPropTables));
+    layout.push(...split(md, story, propTables));
   });
 
   if (layout.findIndex(p => p.type === LAYOUT_TYPE_STORY) === -1) {
