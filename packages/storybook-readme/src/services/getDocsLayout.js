@@ -1,7 +1,7 @@
 import transformEmojis from './transformEmojis';
 import marked from './marked';
 import getPropsTables from './getPropsTables';
-
+import { validatePropTables } from "./getPropsTables/validatePropTables";
 import { getConfig } from './config';
 
 import {
@@ -15,7 +15,7 @@ import {
   MARKER_PROPS_TABLE,
 } from '../const';
 
-function split(md, story) {
+function split(md, story, config) {
   return (
     md
       /**
@@ -39,6 +39,7 @@ function split(md, story) {
               type: LAYOUT_TYPE_PROPS_TABLE,
               content: getPropsTables({
                 story,
+                config
               }),
             };
 
@@ -57,17 +58,17 @@ function processMd(md) {
   return marked(transformEmojis(md.replace(MARKER_HIDDEN, '')));
 }
 
-export default function getDocsLayout({ md, story }) {
+export default function getDocsLayout({ md, story, excludePropTables, includePropTables }) {
   const mdAsArray = Array.isArray(md) ? [...md] : [md];
   // const mdWithEmojis = mdAsArray.map(md => transformEmojis(md));
   const mdWithEmojis = mdAsArray.map(processMd);
 
   const main = mdWithEmojis[0];
-
-  const layout = [...split(main, story)];
+  const propTables = validatePropTables(excludePropTables, includePropTables);
+  const layout = [...split(main, story, propTables)];
 
   mdWithEmojis.slice(1).map(md => {
-    layout.push(...split(md, story));
+    layout.push(...split(md, story, propTables));
   });
 
   if (layout.findIndex(p => p.type === LAYOUT_TYPE_STORY) === -1) {
