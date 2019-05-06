@@ -37,6 +37,7 @@
     "services",
     "styles",
     "vue",
+    "html",
     "const.js",
     "index.js",
     "register.js",

@@ -12,6 +12,7 @@
     "packages/storybook-readme/registerWithPanelTitle.js": true,
     "packages/storybook-readme/env/": true,
     "packages/storybook-readme/vue/": true,
+    "packages/storybook-readme/html/": true,
     "packages/storybook-readme/styles/": true,
     "packages/storybook-readme/services/": true,
     "packages/storybook-readme/backwardCompatibility/": true,

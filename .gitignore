@@ -12,6 +12,7 @@ coverage/
 /packages/storybook-readme/backwardCompatibility/
 /packages/storybook-readme/env/
 /packages/storybook-readme/vue/
+/packages/storybook-readme/html/
 /packages/storybook-readme/const.js
 /packages/storybook-readme/index.js
 /packages/storybook-readme/register.js

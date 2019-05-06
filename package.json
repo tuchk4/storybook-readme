@@ -39,6 +39,12 @@
   "workspaces": [
     "packages/storybook-readme",
     "packages/example-react",
-    "packages/example-vue"
-  ]
+    "packages/example-vue",
+    "packages/example-html"
+  ],
+  "dependencies": {
+    "@babel/core": "^7.4.4",
+    "@storybook/html": "^5.0.11",
+    "babel-loader": "^8.0.5"
+  }
 }
