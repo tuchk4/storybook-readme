@@ -10,17 +10,18 @@ All previous api should work correctly at `^5.0.0` and above. **But vue users wi
 
 This addon is compatible with:
 
-- Storybook for React ([React example storybook](packages/example-react))
-- Storybook for Vue ([Vue example storybook](packages/example-vue))
+- [React Storybook](https://storybook.js.org/docs/guides/guide-react/) ([React example storybook](packages/example-react))
+- [Vue Storybook](https://storybook.js.org/docs/guides/guide-vue/) ([Vue example storybook](packages/example-vue))
+- Particularly [HTML Storybook](https://storybook.js.org/docs/guides/guide-html/)
 
 [Live demo](https://tuchk4.github.io/storybook-readme)
 
 Features:
 
-- Automatically generate props table (Only for React)
-- Does not affect on _story function_. So [Storybook Info](https://github.com/storybooks/storybook/tree/master/addons/info) works correctly now.
+- Automatically generate props table (only for React)
 - 100% markdown support
 - Code highlighting
+- Possible to add docs to addons panel or around the story
 - Accept multiple README (useful for [hoc component](https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e) - add component's and original component's README)
 - Looks like Github's README
 - Supports `<docs/>` tags for vue components ([example-vue/components/MyButton/MyButton.vue](https://github.com/tuchk4/storybook-readme/blob/master/packages/example-vue/components/MyButton/MyButton.vue)).
@@ -37,13 +38,13 @@ or
 
 `yarn add --dev storybook-readme`
 
-### Webpack Configuration for React Storybook
+#### Webpack Configuration for React Storybook
 
 Nothing to do :)
 
-### Webpack Configuration for Vue Storybook
+#### Webpack Configuration for Vue Storybook
 
-Only if using [Single File Components](https://vuejs.org/v2/guide/single-file-components.html) and want to use `<docs>` tag at storybook documentation.
+Only for [Single File Components](https://vuejs.org/v2/guide/single-file-components.html) with `<docs>` tag used for documentation.
 
 ```js
 module.exports = storybookBaseConfig => {
@@ -400,7 +401,7 @@ storiesOf('Button', module)
   .add('Default', () => <Button />);
 ```
 
-#### docs
+#### doc
 
 Renders README in main frame without story.
 
