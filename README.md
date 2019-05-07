@@ -445,7 +445,7 @@ export const Story = () => <HelloWorld />;
 ```md
 # Hello World
 
-THis is example of documentation for HelloWorld component
+This is example of documentation for HelloWorld component
 ```
 
 </details>
