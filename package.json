@@ -9,10 +9,10 @@
     "url": "git+https://github.com/tuchk4/storybook-readme"
   },
   "devDependencies": {
-    "husky": "^0.14.3",
+    "husky": "^2.2.0",
     "lerna": "^3.8.0",
-    "lint-staged": "^6.0.0",
-    "prettier": "^1.9.2"
+    "lint-staged": "^8.1.6",
+    "prettier": "^1.17.0"
   },
   "scripts": {
     "storybook-react": "npm run storybook --prefix ./packages/example-react",
