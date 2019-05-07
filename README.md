@@ -103,10 +103,10 @@ registerWithPanelTitle('Docs');
 import { addDecorator, configure } from '@storybook/react';
 import { addReadme } from 'storybook-readme';
 
-// for Vue storybook 
+// for Vue storybook
 import { addReadme } from 'storybook-readme/vue'; // <---- vue subpackage
 
-// for HTML storybook 
+// for HTML storybook
 import { addReadme } from 'storybook-readme/html'; // <---- html subpackage
 
 addDecorator(addReadme);
@@ -347,6 +347,108 @@ List of all shortcodes could be found at [Emojipedia](https://emojipedia.org) or
 - :monkey:
 
 Feel free to suggest new features or report bugs :)
+
+## Automatically add README to story
+
+To add README files automatically by specific pattern needs to update config file.
+Thanks @kristof0425 for solution described at [#83](https://github.com/tuchk4/storybook-readme/issues/83#issuecomment-455606818).
+
+<details>
+  <summary>Click to expand `.storybook/config.js`</summary>
+
+```js
+import path from 'path';
+import {
+  configure,
+  storiesOf,
+  getStorybook,
+  addDecorator,
+} from '@storybook/react';
+
+/**
+ * Path to directory with the stories
+ */
+const PATH_TO_STORIES = path.resolve(__dirname, '..', 'stories');
+
+/**
+ * Extract component name from component's path
+ */
+const getComponentName = filePath => {
+  const basename = path.posix.basename(filePath, '.js');
+  if (basename === 'index') {
+    return path.dirname(filePath);
+  } else {
+    return basename;
+  }
+};
+
+/**
+ * require context for stories
+ * NOTE that all story files should be ended with .story.js
+ */
+const requireStoryContext = require.context(
+  PATH_TO_STORIES,
+  true,
+  /^((?!node_modules).)*\.story\.(js|tsx)$/,
+);
+
+const requireREADMEContext = require.context(
+  PATH_TO_STORIES,
+  true,
+  /^((?!node_modules).)*.md$/,
+);
+
+configure(() => {
+  requireStoryContext.keys().forEach(pathToExample => {
+    const { name, Story, options = {} } = requireStoryContext(pathToExample);
+
+    const componentName = getComponentName(pathToExample);
+    const README = requireREADMEContext
+      .keys()
+      .find(rm => rm.includes(packageName));
+    const readme = requireREADMEContext(readmePath);
+
+    /**
+     * Register story to storybook
+     */
+    storiesOf(componentName, module)
+      .addParameters({
+        readme: {
+          sidebar: README,
+        },
+      })
+      .add(name, () => <Story />, { options });
+  });
+}, module);
+```
+
+</details>
+<details>
+  <summary>Click to expand story example</summary>
+
+To automatically link story with readme file its paths should follow the pattern:
+
+- _stories/HelloWord/index.story.js_:
+- _stories/HelloWord/README.md_:
+  or
+- _stories/HelloWord.story.js_:
+- _stories/HelloWord.md_:
+
+```js
+import React from 'react';
+import HelloWorld from 'path/to/hello-world';
+
+export const name = 'HelloWorld';
+export const Story = () => <HelloWorld />;
+```
+
+```md
+# Hello World
+
+THis is example of documentation for HelloWorld component
+```
+
+</details>
 
 ## Api from v4.
 
