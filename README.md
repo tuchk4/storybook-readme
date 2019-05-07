@@ -83,7 +83,7 @@ storiesOf('Vue <docs>', module).addParameters({
 
 ## Setup
 
-Register addon at _.storybook/addons.js_
+#### Register addon at _.storybook/addons.js_
 
 ```js
 import 'storybook-readme/register';
@@ -97,26 +97,17 @@ import registerWithPanelTitle from 'storybook-readme/registerWithPanelTitle';
 registerWithPanelTitle('Docs');
 ```
 
-Add decorator at _.storybook/config.js_
+#### Add decorator at _.storybook/config.js_
 
 ```js
 import { addDecorator, configure } from '@storybook/react';
 import { addReadme } from 'storybook-readme';
 
-addDecorator(addReadme);
+// for Vue storybook 
+import { addReadme } from 'storybook-readme/vue'; // <---- vue subpackage
 
-function loadStories() {
-  require('../stories/index.js');
-}
-
-configure(loadStories, module);
-```
-
-> **Important 5.0 change:** the core commands of this addon are now imported from different locations depending on the framework you're using. React, for example, will import its commands from the main folder, seen above, just as it was in `v4.0`. Vue, on the other hand, now has a vue specific import location. See below:
-
-```js
-import { addDecorator, configure } from '@storybook/vue';
-import { addReadme } from 'storybook-readme/vue'; // <---- Vue subpackage
+// for HTML storybook 
+import { addReadme } from 'storybook-readme/html'; // <---- html subpackage
 
 addDecorator(addReadme);
 
