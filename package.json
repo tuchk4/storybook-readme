@@ -20,19 +20,19 @@
     "dev": "lerna run dev --stream --parallel",
     "clear": "lerna run clear",
     "deploy-storybook": "npm run deploy-storybook --prefix ./packages/example-react",
-    "precommit": "lint-staged",
     "format": "prettier --trailing-comma es5 --single-quote --write 'packages/**/*.js' 'packages/**/*.json'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
-    "*.js": [
-      "prettier --trailing-comma es5 --single-quote --write",
-      "git add"
-    ],
-    "*.json": [
-      "prettier --trailing-comma es5 --single-quote --write",
+    "*.{js,json}": [
+      "yarn format",
       "git add"
     ]
   },
