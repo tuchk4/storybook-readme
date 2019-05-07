@@ -52,7 +52,7 @@ storiesOf('Sidebar docs', module)
 \`\`\`
 `,
       },
-    },
+    }
   )
   .add('Alert Button', () => {
     return {
@@ -84,5 +84,5 @@ storiesOf('Sidebar docs', module)
       readme: {
         content: `This \`md\` is overriden.`,
       },
-    },
+    }
   );

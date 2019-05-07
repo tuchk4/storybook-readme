@@ -1,6 +1,6 @@
 import marked from '../../services/marked';
 import parseProps from './parseProps';
-import { excludePropTable } from "./excludePropTable";
+import { excludePropTable } from './excludePropTable';
 
 const getName = type => type.displayName || type.name;
 
@@ -69,7 +69,7 @@ const getMarkdown = ({ type, name }) => {
         <div><b>${prop.propType}</b></div>
         <div class="property_meta">${renderPropMeta(
           prop.propType,
-          prop.propMeta,
+          prop.propMeta
         )}</div>
       </td>
       <td>${prop.defaultValue ? prop.defaultValue : '-'}</td>

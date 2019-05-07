@@ -42,14 +42,13 @@ however whenever user wants, they can include whatever component they want
 and ignore global \`excludePropTables\` rule.
 `;
 
-storiesOf("PropsTable", module).add(
-  "Include locally",
-  () => <ButtonWithPropTypes label={"Hello Im Button"} />,
+storiesOf('PropsTable', module).add(
+  'Include locally',
+  () => <ButtonWithPropTypes label={'Hello Im Button'} />,
   {
     readme: {
       content: `${IncludeLocally}<!-- STORY --><!-- PROPS -->`,
-      includePropTables: [ButtonWithPropTypes]
-    }
+      includePropTables: [ButtonWithPropTypes],
+    },
   }
 );
-

@@ -1,7 +1,7 @@
 import { addParameters, addDecorator, configure } from '@storybook/react';
 import { addReadme } from 'storybook-readme';
 import { themes, create } from '@storybook/theming';
-import ButtonWithPropTypes from "../components/Button/ButtonWithPropTypes";
+import ButtonWithPropTypes from '../components/Button/ButtonWithPropTypes';
 
 const basicTheme = create({
   base: 'light',
@@ -22,7 +22,7 @@ addParameters({
     codeTheme: 'github',
 
     // You can exclude prop tables globally here.
-    excludePropTables: [ButtonWithPropTypes]
+    excludePropTables: [ButtonWithPropTypes],
   },
 });
 

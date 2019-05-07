@@ -1,7 +1,7 @@
 import transformEmojis from './transformEmojis';
 import marked from './marked';
 import getPropsTables from './getPropsTables';
-import { validatePropTables } from "./getPropsTables/validatePropTables";
+import { validatePropTables } from './getPropsTables/validatePropTables';
 import { getConfig } from './config';
 
 import {
@@ -39,7 +39,7 @@ function split(md, story, config) {
               type: LAYOUT_TYPE_PROPS_TABLE,
               content: getPropsTables({
                 story,
-                config
+                config,
               }),
             };
 
@@ -58,7 +58,12 @@ function processMd(md) {
   return marked(transformEmojis(md.replace(MARKER_HIDDEN, '')));
 }
 
-export default function getDocsLayout({ md, story, excludePropTables, includePropTables }) {
+export default function getDocsLayout({
+  md,
+  story,
+  excludePropTables,
+  includePropTables,
+}) {
   const mdAsArray = Array.isArray(md) ? [...md] : [md];
   // const mdWithEmojis = mdAsArray.map(md => transformEmojis(md));
   const mdWithEmojis = mdAsArray.map(processMd);
