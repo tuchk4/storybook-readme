@@ -118,6 +118,8 @@ function loadStories() {
 configure(loadStories, module);
 ```
 
+> NOTE: for html storybook only sidebar docs are available.
+
 ## Usage
 
 Hope it is very simple.
