@@ -124,7 +124,7 @@ Button.propTypes = {
     key,
     componentName,
     location,
-    propFullName,
+    propFullName
   ) {
     if (!/matchme/.test(propValue[key])) {
       return new Error(
@@ -133,7 +133,7 @@ Button.propTypes = {
           '` supplied to' +
           ' `' +
           componentName +
-          '`. Validation failed.',
+          '`. Validation failed.'
       );
     }
   }),

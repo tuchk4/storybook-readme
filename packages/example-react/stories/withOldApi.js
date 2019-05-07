@@ -9,7 +9,7 @@ import ButtonUsage from '../components/Button/USAGE.md';
 
 storiesOf('Old Api', module).add(
   'withDocs hoc',
-  withDocs(ButtonReadme, () => <Button label={'Hello Im Button'} />),
+  withDocs(ButtonReadme, () => <Button label={'Hello Im Button'} />)
 );
 
 storiesOf('Old Api', module)
@@ -20,7 +20,7 @@ storiesOf('Old Api', module).add('doc', doc(ButtonReadme));
 
 storiesOf('Old Api', module).add(
   'withReadme hoc',
-  withReadme(ButtonReadme, () => <Button label={'Hello Im Button'} />),
+  withReadme(ButtonReadme, () => <Button label={'Hello Im Button'} />)
 );
 
 storiesOf('Old Api', module)

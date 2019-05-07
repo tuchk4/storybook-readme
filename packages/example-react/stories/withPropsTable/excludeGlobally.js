@@ -37,13 +37,12 @@ is not showing eventhough \`<!-- PROPS -->\` is specified.
 
 `;
 
-storiesOf("PropsTable", module).add(
-  "Exclude globally",
-  () => <ButtonWithPropTypes label={"Hello Im Button"} />,
+storiesOf('PropsTable', module).add(
+  'Exclude globally',
+  () => <ButtonWithPropTypes label={'Hello Im Button'} />,
   {
     readme: {
-      content: `${ExcludeGlobally}<!-- STORY --><!-- PROPS -->`
-    }
+      content: `${ExcludeGlobally}<!-- STORY --><!-- PROPS -->`,
+    },
   }
 );
-

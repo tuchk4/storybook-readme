@@ -15,7 +15,7 @@ storiesOf('Old Api', module).add(
       },
       template: `<my-button>My Button</my-button>`,
     };
-  }),
+  })
 );
 
 storiesOf('Old Api', module)
@@ -40,7 +40,7 @@ storiesOf('Old Api', module).add(
       },
       template: `<my-button>My Button</my-button>`,
     };
-  }),
+  })
 );
 
 storiesOf('Old Api', module)

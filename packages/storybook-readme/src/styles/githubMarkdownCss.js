@@ -495,7 +495,7 @@ function pickValues(theme) {
       },
       {
         ...theme,
-      },
+      }
     );
 }
 

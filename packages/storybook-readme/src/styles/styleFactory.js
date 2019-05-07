@@ -1,6 +1,6 @@
 export default function styleFactory(
   name,
-  { getStyles = () => '', pickValues = t => t, defaultTheme = {} } = {},
+  { getStyles = () => '', pickValues = t => t, defaultTheme = {} } = {}
 ) {
   let counter = 0;
 

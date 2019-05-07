@@ -52,7 +52,7 @@ storiesOf('Sidebar docs', module)
 \`\`\`
 `,
       },
-    },
+    }
   )
   .add('Alert Button', () => {
     return {
@@ -89,5 +89,5 @@ storiesOf('Sidebar docs', module)
 Use \`SuccessButton\` for form / filters submit actions only.
         `,
       },
-    },
+    }
   );

@@ -33,5 +33,5 @@ List of all shortcodes could be found at [Emojipedia](https://emojipedia.org) or
 - :monkey:
 `,
     },
-  },
+  }
 );

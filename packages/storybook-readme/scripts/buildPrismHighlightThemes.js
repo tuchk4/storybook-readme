@@ -8,7 +8,7 @@ const dir = path.resolve(
   '..',
   'node_modules',
   'prism-themes',
-  'themes',
+  'themes'
 );
 
 const template = fs
@@ -30,7 +30,7 @@ fs.readdirSync(dir).forEach(name => {
   
 ${content}
 
-  `,
+  `
     )
     .replace('%name%', name.replace('.css', ''));
 
@@ -41,8 +41,8 @@ ${content}
       'src',
       'styles',
       'prismCodeThemes',
-      `${name.replace('prism-', '')}.js`,
+      `${name.replace('prism-', '')}.js`
     ),
-    theme,
+    theme
   );
 });

@@ -100,7 +100,7 @@ withDocs({
 
       default: {
         throw new Error(
-          'storybook-readme: wrong arguments withReadme / withDocs /doc',
+          'storybook-readme: wrong arguments withReadme / withDocs /doc'
         );
       }
     }

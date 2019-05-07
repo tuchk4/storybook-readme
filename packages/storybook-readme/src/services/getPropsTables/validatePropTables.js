@@ -9,22 +9,22 @@ export const validatePropTables = (excludePropTables, includePropTables) => {
 
   if (!isValidArrayItems(excludePropTables, includePropTables)) {
     return { excludePropTables: [], includePropTables: [] };
-  } 
+  }
 
   return {
     excludePropTables,
-    includePropTables
-  }
+    includePropTables,
+  };
 };
 
-// Validate if the inputs are an array. 
+// Validate if the inputs are an array.
 const isValidArray = (excludePropTables, includePropTables) => {
   let isValidArray = true;
   if (!Array.isArray(excludePropTables)) {
     isValidArray = false;
     console.warn(
       'storybook-readme: excludePropTables is not an array. It must be an ' +
-      'array of React components.'
+        'array of React components.'
     );
   }
 
@@ -32,7 +32,7 @@ const isValidArray = (excludePropTables, includePropTables) => {
     isValidArray = false;
     console.warn(
       'storybook-readme: includePropTables is not an array. It must be an ' +
-      'array of React components.'
+        'array of React components.'
     );
   }
 
@@ -47,22 +47,22 @@ const isValidArrayItems = (excludePropTables, includePropTables) => {
       isValidArrayItems = false;
       console.warn(
         `storybook-readme: Value ${value}(${typeof value}) from ` +
-        'excludePropTables is not a React component. It must be an' +
-        'actual React component.'
+          'excludePropTables is not a React component. It must be an' +
+          'actual React component.'
       );
     }
-  })
+  });
 
   includePropTables.map(value => {
     if (typeof value !== 'function') {
       isValidArrayItems = false;
       console.warn(
         `storybook-readme: Value ${value}(${typeof value}) from ` +
-        'excludePropTables is not a React component. It must be an' +
-        'actual React component.'
+          'excludePropTables is not a React component. It must be an' +
+          'actual React component.'
       );
     }
-  })
+  });
 
   return isValidArrayItems;
 };

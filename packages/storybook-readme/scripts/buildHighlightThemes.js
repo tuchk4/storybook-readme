@@ -6,7 +6,7 @@ const dir = path.resolve(
   '..',
   'node_modules',
   'highlight.js',
-  'styles',
+  'styles'
 );
 
 const template = fs
@@ -28,7 +28,7 @@ fs.readdirSync(dir).forEach(name => {
   
 ${content}
 
-  `,
+  `
     )
     .replace('%name%', name.replace('.css', ''));
 
@@ -39,8 +39,8 @@ ${content}
       'src',
       'styles',
       'highlightThemes',
-      `${name}.js`,
+      `${name}.js`
     ),
-    theme,
+    theme
   );
 });
