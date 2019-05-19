@@ -207,6 +207,12 @@ Will be applied for series of stories.
       codeTheme: 'github',
 
       /**
+       * You can include prop tables locally here. See `propTables` example
+       * for more information
+       */
+      includePropTables: [YourImportedReactComponent],
+
+      /**
        * Wrapper for story. Usually used to set some styles
        * NOTE: will be applied only for content docs (docs around the story)
        *
@@ -302,6 +308,10 @@ addParameters({
   readme: {
     // You can set a code theme globally.
     codeTheme: 'github',
+
+    // You can exclude prop tables globally here. See `propTables` example
+    // for more information
+    excludePropTables: [YourImportedReactComponent]
   },
 });
 ```
