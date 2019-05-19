@@ -28,7 +28,7 @@ export const withHOC = options => WrappedComponent => {
 \`\`\`
 `;
 
-const Multiple = `
+const HocPattern = `
 # HOC Pattern
 
 Currently using HOC pattern in actual usage is very limited. It will show the
@@ -87,7 +87,7 @@ storiesOf('PropsTable|More usages', module).add(
   ),
   {
     readme: {
-      content: `${Multiple}<!-- STORY --><!-- PROPS -->`,
+      content: `${HocPattern}<!-- STORY --><!-- PROPS -->`,
     },
   }
 );
