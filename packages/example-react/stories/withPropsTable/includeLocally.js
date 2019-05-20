@@ -40,6 +40,11 @@ inside of \`excludePropTables\`. This is because the implementation of
 this is to give the user an excluding feature globally for conveninece, 
 however whenever user wants, they can include whatever component they want
 and ignore global \`excludePropTables\` rule.
+
+**Note**: \`includePropTables\` doesn't add propTable to its showing list.
+It shows that are **already** inside of list which is rendered from 
+story. Currently you can't add whatever propTable that are not rendered
+from story.
 `;
 
 storiesOf('PropsTable', module).add(
