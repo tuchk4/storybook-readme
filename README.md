@@ -103,10 +103,10 @@ registerWithPanelTitle('Docs');
 import { addDecorator, configure } from '@storybook/react';
 import { addReadme } from 'storybook-readme';
 
-// for Vue storybook 
+// for Vue storybook
 import { addReadme } from 'storybook-readme/vue'; // <---- vue subpackage
 
-// for HTML storybook 
+// for HTML storybook
 import { addReadme } from 'storybook-readme/html'; // <---- html subpackage
 
 addDecorator(addReadme);
@@ -190,6 +190,16 @@ Will be applied for series of stories.
        * string | Array<string>
        */
       sidebar: Readme,
+
+      /**
+       * Enable / disable code highlighting for sidebar. true by default
+       */
+      highlightSidebar: true,
+
+      /**
+       * Enable / disable code highlighting for content. true by default
+       */
+      highlightContent: true,
 
       /**
        * Override theme values
@@ -311,7 +321,7 @@ addParameters({
 
     // You can exclude prop tables globally here. See `propTables` example
     // for more information
-    excludePropTables: [YourImportedReactComponent]
+    excludePropTables: [YourImportedReactComponent],
   },
 });
 ```

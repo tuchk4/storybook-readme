@@ -5,20 +5,17 @@ export default function getParameters(context) {
   const config =
     typeof storyOptions === 'string' ? { content: storyOptions } : storyOptions;
 
-  const theme = {
-    ...(context.parameters
-      ? context.parameters.options
-        ? context.parameters.options.theme
-        : {}
-      : {}),
-    ...config.theme,
-  };
-
   const codeTheme = config.codeTheme;
 
   return {
+    highlightContent: true,
+    highlightSidebar: true,
+
     ...config,
     codeTheme,
-    theme,
+    theme: {
+      ...parameters.options.theme,
+      ...config.theme,
+    },
   };
 }

@@ -62,7 +62,7 @@ export const addReadme = makeDecorator({
       channel.emit(CHANNEL_SET_SIDEBAR_DOCS, {
         layout: sidebarLayout,
         theme: parameters.theme,
-        codeTheme: parameters.codeTheme,
+        codeTheme: parameters.highlightSidebar ? parameters.codeTheme : null,
       });
     }
 
@@ -70,7 +70,7 @@ export const addReadme = makeDecorator({
       <ReadmeContent
         layout={layout}
         theme={parameters.theme}
-        codeTheme={parameters.codeTheme}
+        codeTheme={parameters.highlightContent ? parameters.codeTheme : null}
         StoryPreview={parameters.StoryPreview}
         HeaderPreview={parameters.HeaderPreview}
         DocPreview={parameters.DocPreview}

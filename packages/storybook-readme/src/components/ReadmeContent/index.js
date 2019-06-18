@@ -42,7 +42,7 @@ export default class ReadmeContent extends React.Component {
   ref = null;
 
   highlight() {
-    if (this.ref) {
+    if (this.ref && this.props.codeTheme) {
       highlight(this.ref);
     }
   }
@@ -72,9 +72,11 @@ export default class ReadmeContent extends React.Component {
         theme: this.props.theme,
       });
 
-      insertCodeThemeCss({
-        codeTheme: this.props.codeTheme || 'github',
-      });
+      if (this.props.codeTheme) {
+        insertCodeThemeCss({
+          codeTheme: this.props.codeTheme,
+        });
+      }
     }
   }
 
