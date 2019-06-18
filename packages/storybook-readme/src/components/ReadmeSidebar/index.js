@@ -78,7 +78,7 @@ export default class ReadmeSidebar extends React.Component {
     }
 
     return (
-      <div style={{ margin: '8px' }}>
+      <div style={{ padding: '8px' }}>
         <ReadmeContent
           types={SIDEBAR_LAYOUT_TYPES}
           layout={this.state.layout}
