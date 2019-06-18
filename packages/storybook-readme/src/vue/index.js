@@ -76,14 +76,21 @@ export const addReadme = makeDecorator({
           channel.emit(CHANNEL_SET_SIDEBAR_DOCS, {
             layout: sidebarLayout,
             theme: parameters.theme,
-            codeTheme: parameters.codeTheme,
+            codeTheme: parameters.highlightSidebar
+              ? parameters.codeTheme
+              : null,
             config: config.getConfig(),
           });
         }
 
         return {
           layout,
-          parameters,
+          parameters: {
+            ...parameters,
+            codeTheme: parameters.highlightContent
+              ? parameters.codeTheme
+              : null,
+          },
         };
       },
       components: {
