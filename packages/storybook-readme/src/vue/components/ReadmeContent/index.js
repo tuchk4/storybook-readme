@@ -59,15 +59,16 @@ export default {
       this.$store.commit('notify');
     }
 
-    highlight(this.$el);
-
     insertGithubMarkdownCss({
       theme: this.theme,
     });
 
-    insertCodeThemeCss({
-      codeTheme: this.codeTheme || 'github',
-    });
+    if (this.codeTheme) {
+      insertCodeThemeCss({
+        codeTheme: this.codeTheme,
+      });
+      highlight(this.$el);
+    }
   },
   props: [
     'types',
