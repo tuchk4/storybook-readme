@@ -16,6 +16,8 @@ export const addReadme = makeDecorator({
           footer: parameters.footer || '',
           header: parameters.header || '',
           md: parameters.content || '',
+          excludePropTables: parameters.excludePropTables || [],
+          includePropTables: parameters.includePropTables || [],
           story,
         });
 
@@ -26,6 +28,8 @@ export const addReadme = makeDecorator({
         footer: parameters.footer || '',
         header: parameters.header || '',
         md: parameters.sidebar,
+        excludePropTables: parameters.excludePropTables || [],
+        includePropTables: parameters.includePropTables || [],
         story,
       });
 
