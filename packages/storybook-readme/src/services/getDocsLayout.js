@@ -61,8 +61,8 @@ function processMd(md) {
 export default function getDocsLayout({
   md,
   story,
-  excludePropTables,
-  includePropTables,
+  excludePropTables = [],
+  includePropTables = [],
 }) {
   const mdAsArray = Array.isArray(md) ? [...md] : [md];
   // const mdWithEmojis = mdAsArray.map(md => transformEmojis(md));
