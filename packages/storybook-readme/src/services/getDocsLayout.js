@@ -3,15 +3,18 @@ import marked from './marked';
 import getPropsTables from './getPropsTables';
 import { validatePropTables } from './getPropsTables/validatePropTables';
 import { getConfig } from './config';
+import jsxToString from 'react-element-to-jsx-string';
 
 import {
   LAYOUT_TYPE_MD,
   LAYOUT_TYPE_PROPS_TABLE,
   LAYOUT_TYPE_STORY,
+  LAYOUT_TYPE_STORY_SOURCE,
   LAYOUT_TYPE_HEADER_MD,
   LAYOUT_TYPE_FOOTER_MD,
   MARKER_HIDDEN,
   MARKER_STORY,
+  MARKER_STORY_SOURCE,
   MARKER_PROPS_TABLE,
 } from '../const';
 
@@ -22,6 +25,7 @@ function split(md, story, config) {
        * Should replace <!-- --> with custom placeholders to allow default md/html comments
        */
       .replace(MARKER_STORY, `___{{${LAYOUT_TYPE_STORY}}}___`)
+      .replace(MARKER_STORY_SOURCE, `___{{${LAYOUT_TYPE_STORY_SOURCE}}}___`)
       .replace(MARKER_PROPS_TABLE, `___{{${LAYOUT_TYPE_PROPS_TABLE}}}___`)
       .split(/___{{|}}___/)
       // .split(/<!--|-->/)
@@ -32,6 +36,14 @@ function split(md, story, config) {
             return {
               type: LAYOUT_TYPE_STORY,
               content: story,
+            };
+
+          case LAYOUT_TYPE_STORY_SOURCE:
+            const source = story ? jsxToString(story.props.children) : '';
+
+            return {
+              type: LAYOUT_TYPE_STORY_SOURCE,
+              content: processMd('```jsx\n ' + source + ' \n```'),
             };
 
           case LAYOUT_TYPE_PROPS_TABLE:
