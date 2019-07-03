@@ -232,7 +232,7 @@ Will be applied for series of stories.
       StoryPreview: ({ children}) => <div>{children}</div>
 
       /**
-       * Wrapper for hedaer docs. Usually used to set some styles
+       * Wrapper for header docs. Usually used to set some styles
        * NOTE: will be applied only for content docs (docs around the story)
        *
        * React: React.ReactNode
@@ -288,7 +288,7 @@ configureReadme({
   ),
 
   /**
-   * Wrapper for hedaer docs. Usually used to set some styles
+   * Wrapper for header docs. Usually used to set some styles
    * React: React.ReactNode
    * Vue: Vue component
    */
@@ -329,6 +329,7 @@ addParameters({
 ## Readme placeholders
 
 - `<!-- STORY -->` placeholder for story
+- `<!-- STORY_SOURCE -->` placeholder for story source
 - `<!-- PROPS -->` placeholder for props table. There are some issue with props parsing. Clarification [issue#137](https://github.com/tuchk4/storybook-readme/issues/137#issuecomment-481307652)
 - `<!-- STORY HIDE START -->`, `<!-- STORY HIDE END -->` content enclosed by the tags won't be shown in stories
 
