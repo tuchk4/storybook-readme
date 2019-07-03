@@ -14,7 +14,7 @@ export function addStoryPreview(Preview) {
 export function addDocPreview(Preview) {
   config.DocPreview = Preview;
 }
-export function addHedaerPreview(Preview) {
+export function addHeaderPreview(Preview) {
   config.HeaderPreview = Preview;
 }
 export function addFooterPreview(Preview) {
