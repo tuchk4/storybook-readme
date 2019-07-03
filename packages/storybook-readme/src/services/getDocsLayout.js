@@ -43,7 +43,7 @@ function split(md, story, config) {
 
             return {
               type: LAYOUT_TYPE_STORY_SOURCE,
-              content: processMd('```jsx\n ' + source + ' \n```'),
+              content: processMd('```jsx\n' + source + '\n```'),
             };
 
           case LAYOUT_TYPE_PROPS_TABLE:
