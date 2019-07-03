@@ -13,6 +13,7 @@ import insertCodeThemeCss from '../../styles/codeThemeCss';
 import {
   LAYOUT_TYPE_MD,
   LAYOUT_TYPE_STORY,
+  LAYOUT_TYPE_STORY_SOURCE,
   LAYOUT_TYPE_PROPS_TABLE,
   LAYOUT_TYPE_FOOTER_MD,
   LAYOUT_TYPE_HEADER_MD,
@@ -27,6 +28,7 @@ export default class ReadmeContent extends React.Component {
     types: [
       LAYOUT_TYPE_MD,
       LAYOUT_TYPE_STORY,
+      LAYOUT_TYPE_STORY_SOURCE,
       LAYOUT_TYPE_PROPS_TABLE,
       LAYOUT_TYPE_FOOTER_MD,
       LAYOUT_TYPE_HEADER_MD,
@@ -145,6 +147,17 @@ export default class ReadmeContent extends React.Component {
                 } else {
                   return <StoryPreview key={index}>{content}</StoryPreview>;
                 }
+              }
+
+              case LAYOUT_TYPE_STORY_SOURCE: {
+                return (
+                  <DocPreview key={index}>
+                    <div
+                      className={'markdown-body'}
+                      dangerouslySetInnerHTML={{ __html: content }}
+                    />
+                  </DocPreview>
+                );
               }
 
               case LAYOUT_TYPE_PROPS_TABLE: {
