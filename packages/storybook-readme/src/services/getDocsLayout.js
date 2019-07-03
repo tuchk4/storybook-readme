@@ -39,11 +39,9 @@ function split(md, story, config) {
             };
 
           case LAYOUT_TYPE_STORY_SOURCE:
-            const source = story ? jsxToString(story.props.children) : '';
-
             return {
               type: LAYOUT_TYPE_STORY_SOURCE,
-              content: processMd('```jsx\n' + source + '\n```'),
+              content: getStorySource(story),
             };
 
           case LAYOUT_TYPE_PROPS_TABLE:
@@ -64,6 +62,19 @@ function split(md, story, config) {
         }
       })
   );
+}
+
+function getStorySource(
+  story,
+  options = {
+    tabStop: 2,
+    sortProps: true,
+    maxInlineAttributesLineLength: 100,
+  }
+) {
+  const source = story ? jsxToString(story.props.children, options) : '';
+
+  return processMd('```jsx\n' + source + '\n```');
 }
 
 function processMd(md) {
