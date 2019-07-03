@@ -17,7 +17,7 @@ export const configureReadme = parameters => {
 
   config.addStoryPreview(parameters.StoryPreview);
   config.addDocPreview(parameters.DocPreview);
-  config.addHedaerPreview(parameters.HeaderPreview);
+  config.addHeaderPreview(parameters.HeaderPreview);
   config.addFooterPreview(parameters.FooterPreview);
 };
 
