@@ -5,7 +5,7 @@ export default {
         // display: 'flex',
         // alignItems: 'center',
         // justifyContent: 'center',
-        margin: '32px 0',
+        // margin: '32px 0',
       },
     };
   },
