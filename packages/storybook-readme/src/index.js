@@ -34,7 +34,7 @@ export const addReadme = makeDecorator({
   parameterName: 'readme',
   wrapper: (getStory, context) => {
     const parameters = getParameters(context);
-
+    const codeTheme = parameters.codeTheme || 'github';
     const story = <React.Fragment>{getStory(context)}</React.Fragment>;
     const layout = parameters.layout
       ? parameters.layout
@@ -62,7 +62,7 @@ export const addReadme = makeDecorator({
       channel.emit(CHANNEL_SET_SIDEBAR_DOCS, {
         layout: sidebarLayout,
         theme: parameters.theme,
-        codeTheme: parameters.highlightSidebar ? parameters.codeTheme : null,
+        codeTheme: parameters.highlightSidebar ? codeTheme : null,
       });
     }
 
@@ -70,7 +70,7 @@ export const addReadme = makeDecorator({
       <ReadmeContent
         layout={layout}
         theme={parameters.theme}
-        codeTheme={parameters.highlightContent ? parameters.codeTheme : null}
+        codeTheme={parameters.highlightContent ? codeTheme : null}
         StoryPreview={parameters.StoryPreview}
         HeaderPreview={parameters.HeaderPreview}
         DocPreview={parameters.DocPreview}
