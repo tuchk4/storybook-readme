@@ -5,7 +5,7 @@ export default function getParameters(context) {
   const config =
     typeof storyOptions === 'string' ? { content: storyOptions } : storyOptions;
 
-  const codeTheme = config.codeTheme;
+  const codeTheme = config.codeTheme || 'github';
 
   return {
     highlightContent: true,
