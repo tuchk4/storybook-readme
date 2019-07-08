@@ -72,9 +72,12 @@ function getStorySource(
     maxInlineAttributesLineLength: 100,
   }
 ) {
-  const source = story ? jsxToString(story.props.children, options) : '';
+  const storySource = story && story.props && story.props.children;
+  const stringifiedSource = storySource
+    ? jsxToString(storySource, options)
+    : '';
 
-  return processMd('```jsx\n' + source + '\n```');
+  return processMd('```jsx\n' + stringifiedSource + '\n```');
 }
 
 function processMd(md) {
