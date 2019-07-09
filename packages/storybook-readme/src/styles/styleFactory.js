@@ -7,6 +7,20 @@ export default function styleFactory(
   let insertedKey = null;
   let node = null;
 
+  function injectStyle(content) {
+    try {
+      node = document.createElement('style');
+
+      node.id = `${name}-${++counter}`;
+      node.innerHTML = content;
+
+      document.head.appendChild(node);
+    } catch (e) {
+      // assume we're not in a browser env, just abort
+      return;
+    }
+  }
+
   return function insert({ theme = {}, styles }) {
     const t = {
       ...defaultTheme,
@@ -23,14 +37,9 @@ export default function styleFactory(
     }
 
     if (!node) {
-      node = document.createElement('style');
-
-      node.id = `${name}-${++counter}`;
-
-      document.head.appendChild(node);
+      injectStyle(styles || getStyles(t));
     }
 
     insertedKey = key;
-    node.innerHTML = styles || getStyles(t);
   };
 }
