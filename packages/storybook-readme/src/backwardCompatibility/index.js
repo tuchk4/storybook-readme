@@ -9,7 +9,15 @@ import * as config from '../services/config';
 
 let handler = null;
 
-switch (window.STORYBOOK_ENV) {
+function getEnvType() {
+  try {
+    return window.STORYBOOK_ENV;
+  } catch (e) {
+    return null;
+  }
+}
+
+switch (getEnvType()) {
   case 'vue':
     handler = vueHandler;
     break;
