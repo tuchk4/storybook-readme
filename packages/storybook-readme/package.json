@@ -14,10 +14,13 @@
   "dependencies": {
     "@storybook/components": "^5.0.6",
     "@storybook/core-events": "^5.0.6",
+    "acorn": "^6.1.1",
+    "buble": "^0.19.7",
     "html-loader": "^0.5.5",
     "lodash": "^4.17.11",
     "markdown-loader": "^5.0.0",
     "marked": "^0.6.1",
+    "marksy": "^8.0.0",
     "node-emoji": "1.10.0",
     "prism-themes": "^1.1.0",
     "prismjs": "^1.16.0",

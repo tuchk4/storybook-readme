@@ -132,10 +132,11 @@ export default class ReadmeContent extends React.Component {
               case LAYOUT_TYPE_MD:
                 return (
                   <DocPreview key={index}>
-                    <div
+                    <div className={'markdown-body'}>{content}</div>
+                    {/* <div
                       className={'markdown-body'}
                       dangerouslySetInnerHTML={{ __html: content }}
-                    />
+                    /> */}
                   </DocPreview>
                 );
 

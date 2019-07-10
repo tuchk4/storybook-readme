@@ -66,6 +66,14 @@ export default function getDocsLayout({
 }) {
   const mdAsArray = Array.isArray(md) ? [...md] : [md];
   // const mdWithEmojis = mdAsArray.map(md => transformEmojis(md));
+
+  return [
+    {
+      type: LAYOUT_TYPE_MD,
+      content: mdAsArray.map(processMd),
+    },
+  ];
+
   const mdWithEmojis = mdAsArray.map(processMd);
 
   const main = mdWithEmojis[0];
