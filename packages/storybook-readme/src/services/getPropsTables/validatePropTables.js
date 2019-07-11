@@ -3,6 +3,10 @@
 // is a real React component(class, stateless, renderable) looks overkill
 // since components are compared directly.
 export const validatePropTables = (excludePropTables, includePropTables) => {
+  if (!excludePropTables && !includePropTables) {
+    return { excludePropTables: [], includePropTables: [] };
+  }
+
   if (!isValidArray(excludePropTables, includePropTables)) {
     return { excludePropTables: [], includePropTables: [] };
   }
