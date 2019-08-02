@@ -329,6 +329,7 @@ addParameters({
 ## Readme placeholders
 
 - `<!-- STORY -->` placeholder for story
+- `<!-- SOURCE -->` placeholder for story source
 - `<!-- STORY_SOURCE -->` placeholder for story source
 - `<!-- PROPS -->` placeholder for props table. There are some issue with props parsing. Clarification [issue#137](https://github.com/tuchk4/storybook-readme/issues/137#issuecomment-481307652)
 - `<!-- STORY HIDE START -->`, `<!-- STORY HIDE END -->` content enclosed by the tags won't be shown in stories
@@ -343,6 +344,7 @@ Button variants could be imported separately.
 Example:
 
 <!-- STORY -->
+<!-- SOURCE -->
 
 <!-- STORY HIDE START -->
 
