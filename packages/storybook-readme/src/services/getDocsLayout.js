@@ -81,6 +81,9 @@ function getStorySource(
 }
 
 function processMd(md) {
+  if (typeof md !== 'string') {
+    md = md.default || ''
+  }
   return marked(transformEmojis(md.replace(MARKER_HIDDEN, '')));
 }
 
