@@ -42,6 +42,19 @@ or
 
 Nothing to do :)
 
+But if you are using Typescript with React you need to add [markdown-loader](https://www.npmjs.com/package/markdown-loader) in your webpack config
+
+```js
+{
+  test: /\.md$/,
+  use: [
+    {
+      loader: 'markdown-loader',
+    }
+  ]
+}
+```
+
 #### Webpack Configuration for Vue Storybook
 
 Only for [Single File Components](https://vuejs.org/v2/guide/single-file-components.html) with `<docs>` tag used for documentation.
