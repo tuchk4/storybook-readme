@@ -1,6 +1,6 @@
 # Storybook README addon
 
-NOTE: This README only for version `^5.0.0`. For older versions [README_V4.md](./README_V4.md)
+NOTE: This README is only for version `^5.0.0`. For older versions [README_V4.md](./README_V4.md)
 
 All previous api should work correctly at `^5.0.0` and above. **But vue users will need to change their import path, as vue commands have been moved to their own folder.**
 
