@@ -47,11 +47,13 @@ Nothing to do :)
 Only for [Single File Components](https://vuejs.org/v2/guide/single-file-components.html) with `<docs>` tag used for documentation.
 
 ```js
-module.exports = storybookBaseConfig => {
-  storybookBaseConfig.module.rules.push({
+module.exports = async ({ config }) => {
+  config.module.rules.push({
     resourceQuery: /blockType=docs/,
     use: ['storybook-readme/vue/docs-loader', 'html-loader', 'markdown-loader'],
   });
+  
+  return config;
 };
 ```
 
