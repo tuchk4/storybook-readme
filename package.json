@@ -1,12 +1,10 @@
 {
-  "name": "storybook-readme",
-  "private": true,
+  "name": "storybook-readme2",
   "description": "React storybook addon to show components README",
-  "homepage": "https://github.com/tuchk4/storybook-readme",
-  "bugs": "https://github.com/tuchk4/storybook-readme/issues",
+  "homepage": "https://github.com/chalecao/storybook-readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tuchk4/storybook-readme"
+    "url": "git+https://github.com/chalecao/storybook-readme"
   },
   "devDependencies": {
     "husky": "^2.2.0",
