@@ -1,5 +1,6 @@
 {
   "name": "storybook-readme2",
+  "version": "2.0.0",
   "description": "React storybook addon to show components README",
   "homepage": "https://github.com/chalecao/storybook-readme",
   "repository": {
