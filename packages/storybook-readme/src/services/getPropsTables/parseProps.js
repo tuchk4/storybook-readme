@@ -9,7 +9,7 @@ const PropTypesMap = new Map();
 //   PropTypesMap.set(type, typeName);
 //   PropTypesMap.set(type.isRequired, typeName);
 // });
-const clearString = str => str.replace(/^\'|\'$/g, '');
+const clearString = str => typeof str === "string" ? str.replace(/^\'|\'$/g, '') : str;
 
 const isNotEmpty = obj => obj && obj.props && Object.keys(obj.props).length > 0;
 
