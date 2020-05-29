@@ -9,7 +9,7 @@ const PropTypesMap = new Map();
 //   PropTypesMap.set(type, typeName);
 //   PropTypesMap.set(type.isRequired, typeName);
 // });
-const getClearStringForVal = val => `${val || ''}`.replace(/^\'|\'$/g, '');
+const getClearStringForVal = val => val ? `${val}`.replace(/^\'|\'$/g, '') : '';
 
 const isNotEmpty = obj => obj && obj.props && Object.keys(obj.props).length > 0;
 
