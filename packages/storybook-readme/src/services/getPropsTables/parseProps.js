@@ -9,7 +9,7 @@ const PropTypesMap = new Map();
 //   PropTypesMap.set(type, typeName);
 //   PropTypesMap.set(type.isRequired, typeName);
 // });
-const clearString = str => typeof str === "string" ? str.replace(/^\'|\'$/g, '') : str;
+const getClearStringForVal = val => `${val || ''}`.replace(/^\'|\'$/g, '');
 
 const isNotEmpty = obj => obj && obj.props && Object.keys(obj.props).length > 0;
 
@@ -36,7 +36,7 @@ const propsFromDocgen = type => {
     switch (propType) {
       case 'enum': {
         // if (typeof docgenInfoProp.type === 'object') {
-        propMeta = docgenInfoProp.type.value.map(v => clearString(v.value));
+        propMeta = docgenInfoProp.type.value.map(v => getClearStringForVal(v.value));
         // }
 
         break;
@@ -85,7 +85,7 @@ const propsFromDocgen = type => {
       propMeta,
       required: docgenInfoProp.required,
       description: docgenInfoProp.description,
-      defaultValue: clearString(defaultValueDesc.value || ''),
+      defaultValue: getClearStringForVal(defaultValueDesc.value),
     };
   });
 
