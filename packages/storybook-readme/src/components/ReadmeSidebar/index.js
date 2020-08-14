@@ -8,9 +8,14 @@ import {
   CHANNEL_SET_SIDEBAR_DOCS,
   LAYOUT_TYPE_PROPS_TABLE,
   LAYOUT_TYPE_MD,
+  LAYOUT_TYPE_STORY_SOURCE,
 } from '../../const';
 
-const SIDEBAR_LAYOUT_TYPES = [LAYOUT_TYPE_PROPS_TABLE, LAYOUT_TYPE_MD];
+const SIDEBAR_LAYOUT_TYPES = [
+  LAYOUT_TYPE_PROPS_TABLE,
+  LAYOUT_TYPE_MD,
+  LAYOUT_TYPE_STORY_SOURCE,
+];
 
 export default class ReadmeSidebar extends React.Component {
   state = {
