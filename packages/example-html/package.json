@@ -1,7 +1,7 @@
 {
   "name": "example-html",
   "private": true,
-  "version": "1.0.3",
+  "version": "5.0.10",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -11,6 +11,6 @@
     "@babel/core": "^7.4.4",
     "@storybook/html": "^5.0.11",
     "babel-loader": "^8.0.5",
-    "storybook-readme": "^5.0.8"
+    "storybook-readme": "^5.0.10"
   }
 }
