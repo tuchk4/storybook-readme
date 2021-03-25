@@ -55,7 +55,12 @@
     "storybook",
     "react-storybook",
     "docs",
-    "readme"
+    "readme",
+    "storybook-addon",
+    "organize"
   ],
-  "author": "valeriy.sorokobatko@gmail.com"
+  "author": "valeriy.sorokobatko@gmail.com",
+  "storybook": {
+    "displayName": "Readme"
+  }
 }
