@@ -17,7 +17,7 @@
     "html-loader": "^0.5.5",
     "lodash": "^4.17.11",
     "markdown-loader": "^5.0.0",
-    "marked": "^0.7.0",
+    "marked": "^4.0.10",
     "node-emoji": "1.10.0",
     "prism-themes": "^1.1.0",
     "prismjs": "^1.16.0",
