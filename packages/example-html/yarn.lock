@@ -4466,9 +4466,9 @@ locate-path@^3.0.0:
     path-exists "^3.0.0"
 
 lodash-es@^4.17.11:
-  version "4.17.14"
-  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.14.tgz#12a95a963cc5955683cee3b74e85458954f37ecc"
-  integrity sha512-7zchRrGa8UZXjD/4ivUWP1867jDkhzTG2c/uj739utSd7O/pFFdxspCemIFKEEjErbcqRzn8nKnGsi7mvTgRPA==
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.21.tgz#43e626c46e6591b7750beb2b50117390c609e3ee"
+  integrity sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==
 
 lodash.debounce@^4.0.8:
   version "4.0.8"
@@ -6567,10 +6567,10 @@ statuses@~1.4.0:
   resolved "https://registry.yarnpkg.com/statuses/-/statuses-1.4.0.tgz#bb73d446da2796106efcc1b601a253d6c46bd087"
   integrity sha512-zhSCtt8v2NDrRlPQpCNtw/heZLtfUDqxBM1udqikb/Hbk52LK4nQSwr10u77iopCW5LsyHpuXS0GnEc48mLeew==
 
-storybook-readme@^5.0.8:
-  version "5.0.8"
-  resolved "https://registry.yarnpkg.com/storybook-readme/-/storybook-readme-5.0.8.tgz#bc5bb9343191bb333cec2633555cec41f3ab6067"
-  integrity sha512-Ej3RotbnfFtk4yAFqJ/39RpaDO/1Yw81TzSHJIQDL7O4E/tKn51247zq3KvAC8b7JM5IY5GlNNjS4q8cBEeBAA==
+storybook-readme@^5.0.9:
+  version "5.0.9"
+  resolved "https://registry.yarnpkg.com/storybook-readme/-/storybook-readme-5.0.9.tgz#a6670e43cf7d53383f6edffb0a534f52004f3945"
+  integrity sha512-rKMWyqXZ4HSMk2qTF0oog2tn94QxgkOMb+YQ6gs9ibcdJWmWEcsXhK/87HO4Lix6kTNNmTh3brnjOTu9w2bJEQ==
   dependencies:
     "@storybook/components" "^5.0.6"
     "@storybook/core-events" "^5.0.6"
