@@ -26,7 +26,7 @@ Features:
 - Looks like Github's README
 - Supports `<docs/>` tags for vue components ([example-vue/components/MyButton/MyButton.vue](https://github.com/tuchk4/storybook-readme/blob/master/packages/example-vue/components/MyButton/MyButton.vue)).
 
-Also it very useful because most projects and components already have _README.md_ files. Now it is easy to add them into your Storybook.
+Also it is very useful because most projects and components already have _README.md_ files. Now it is easy to add them into your Storybook.
 
 Stories will be added with _.addWithInfo_ method if [Storybook Info Addon](https://github.com/storybooks/storybook/tree/master/addons/info) is installed.
 
