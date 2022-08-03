@@ -1,3 +1,3 @@
-import marked from 'marked';
+import { marked } from 'marked';
 
 export default md => marked(md);
